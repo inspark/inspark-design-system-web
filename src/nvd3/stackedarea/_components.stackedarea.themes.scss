@@ -1,0 +1,145 @@
+/* Stacked area */
+
+.nvd3.nv-stackedarea {
+  path.nv-area {
+    //fill-opacity: 0.7;
+    //stroke-opacity: 0;
+    transition: fill-opacity $nvd3-transition-default, stroke-opacity $nvd3-transition-default;
+  }
+
+  //path.nv-area.hover {
+  //  fill-opacity: 0.9;
+  //}
+  //
+  //.nv-groups .nv-point {
+  //  stroke-opacity: 0;
+  //  fill-opacity: 0;
+  //}
+}
+
+.nv-controlsWrap {
+  .nv-legend-symbol {
+    fill: $nvd3-controls-fill !important;
+    stroke: $nvd3-controls-fill !important;
+  }
+}
+
+//.nvd3.nv-stackedAreaChart {
+//  // area series fill and stroke
+//  .nv-stackedarea .nv-area,
+//  .nv-scatterWrap .nv-scatter .nv-series {
+//    &-0 {
+//      fill: $nvd3-color-1 !important;
+//      stroke: $nvd3-color-1 !important;
+//    }
+//
+//    &-1 {
+//      fill: $nvd3-color-2 !important;
+//      stroke: $nvd3-color-2 !important;
+//    }
+//
+//    &-2 {
+//      fill: $nvd3-color-3 !important;
+//      stroke: $nvd3-color-3 !important;
+//    }
+//
+//    &-3 {
+//      fill: $nvd3-color-4 !important;
+//      stroke: $nvd3-color-4 !important;
+//    }
+//
+//    &-4 {
+//      fill: $nvd3-color-5 !important;
+//      stroke: $nvd3-color-5 !important;
+//    }
+//
+//    &-5 {
+//      fill: $nvd3-color-6 !important;
+//      stroke: $nvd3-color-6 !important;
+//    }
+//
+//    &-6 {
+//      fill: $nvd3-color-7 !important;
+//      stroke: $nvd3-color-7 !important;
+//    }
+//
+//    &-7 {
+//      fill: $nvd3-color-8 !important;
+//      stroke: $nvd3-color-8 !important;
+//    }
+//
+//    &-8 {
+//      fill: $nvd3-color-9 !important;
+//      stroke: $nvd3-color-9 !important;
+//    }
+//
+//    &-9 {
+//      fill: $nvd3-color-10 !important;
+//      stroke: $nvd3-color-10 !important;
+//    }
+//
+//    &-10 {
+//      fill: $nvd3-color-11 !important;
+//      stroke: $nvd3-color-11 !important;
+//    }
+//  }
+//
+//  // legend series fill and stroke
+//  .nv-legendWrap .nv-legend .nv-series {
+//    &:nth-child(1) .nv-legend-symbol {
+//      fill: $nvd3-color-1 !important;
+//      stroke: $nvd3-color-1 !important;
+//    }
+//
+//    &:nth-child(2) .nv-legend-symbol {
+//      fill: $nvd3-color-2 !important;
+//      stroke: $nvd3-color-2 !important;
+//    }
+//
+//    &:nth-child(3) .nv-legend-symbol {
+//      fill: $nvd3-color-3 !important;
+//      stroke: $nvd3-color-3 !important;
+//    }
+//
+//    &:nth-child(4) .nv-legend-symbol {
+//      fill: $nvd3-color-4 !important;
+//      stroke: $nvd3-color-4 !important;
+//    }
+//
+//    &:nth-child(5) .nv-legend-symbol {
+//      fill: $nvd3-color-5 !important;
+//      stroke: $nvd3-color-5 !important;
+//    }
+//
+//    &:nth-child(6) .nv-legend-symbol {
+//      fill: $nvd3-color-6 !important;
+//      stroke: $nvd3-color-6 !important;
+//    }
+//
+//    &:nth-child(7) .nv-legend-symbol {
+//      fill: $nvd3-color-7 !important;
+//      stroke: $nvd3-color-7 !important;
+//    }
+//
+//    &:nth-child(8) .nv-legend-symbol {
+//      fill: $nvd3-color-8 !important;
+//      stroke: $nvd3-color-8 !important;
+//    }
+//
+//    &:nth-child(9) .nv-legend-symbol {
+//      fill: $nvd3-color-9 !important;
+//      stroke: $nvd3-color-9 !important;
+//    }
+//
+//    &:nth-child(10) .nv-legend-symbol {
+//      fill: $nvd3-color-10 !important;
+//      stroke: $nvd3-color-10 !important;
+//    }
+//
+//    &:nth-child(11) .nv-legend-symbol {
+//      fill: $nvd3-color-11 !important;
+//      stroke: $nvd3-color-11 !important;
+//    }
+//
+//  }
+//}

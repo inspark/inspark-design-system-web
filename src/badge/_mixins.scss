@@ -1,0 +1,163 @@
+@import "../theme/variables";
+@import "./variables";
+@import "../tools/tools.hover";
+@import "../tools/tools.border-radius";
+@import "../typography/variables";
+
+// Base class
+//
+// Requires one of the contextual, color modifier classes for `color` and
+// `background-color`.
+
+@mixin badge-variant($color: $badge-default-bg, $text-color: $text-color) {
+  background-color: $color;
+  @if ($text-color) {
+    color: $text-color;
+  }
+
+  &[href] {
+    @include hover-focus {
+      filter: brightness(85%);
+    }
+  }
+}
+
+@mixin ids-badge {
+  .c-badge {
+    display: inline-block;
+    padding: $badge-padding-y $badge-padding-x;
+    font-size: $badge-font-size;
+    font-weight: $badge-font-weight;
+    line-height: 1;
+    color: $badge-color;
+    color: var(--ids-theme-badge-color, $badge-color);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    @include border-radius();
+
+    // Empty badges collapse automatically
+    &:empty {
+      display: none;
+    }
+  }
+
+  // Quick fix for badges in buttons
+  .c-btn .c-badge {
+    position: relative;
+    top: -1px;
+  }
+
+  // scss-lint:disable QualifyingElement
+  // Add hover effects, but only for links
+  a.c-badge {
+    @include hover-focus {
+      color: $badge-link-hover-color;
+      color: var(--ids-theme-badge-link-hover-color, $badge-link-hover-color);
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin ids-badge-sizes {
+  .c-badge_large {
+    font-size: $badge-font-size-large;
+  }
+}
+
+// scss-lint:enable QualifyingElement
+
+
+// Pill badges
+//
+// Make them extra rounded with a modifier to replace v3's badges.
+
+@mixin ids-badge-pill {
+  .c-badge_pill {
+    padding-right: $badge-pill-padding-x;
+    padding-left: $badge-pill-padding-x;
+    @include border-radius($badge-pill-border-radius);
+  }
+}
+
+
+// Colors
+//
+// Contextual variations (linked badges get darker on :hover).
+
+@mixin ids-badge-state {
+
+  .c-badge_default {
+    @include badge-variant($badge-default-bg);
+    @include badge-variant(
+        var(--ids-theme-badge-default-bg, $badge-default-bg)
+    );
+  }
+
+  .c-badge_primary {
+    @include badge-variant($badge-primary-bg);
+    @include badge-variant(var(--ids-theme-badge-primary-bg, $badge-primary-bg));
+  }
+
+  .c-badge_success {
+    @include badge-variant($ids-theme-status-success, $badge-text-on-light);
+    @include badge-variant(
+        var(--ids-theme-status-success, $ids-theme-status-success),
+        var(--ids-theme-badge-text-on-light, $badge-text-on-light)
+    );
+  }
+
+  .c-badge_info {
+    @include badge-variant($badge-pending-bg);
+    @include badge-variant(var(--ids-theme-badge-pending-bg, $badge-pending-bg));
+  }
+
+  .c-badge_warning {
+    @include badge-variant($ids-theme-status-warning, $badge-text-on-light);
+    @include badge-variant(
+        var(--ids-theme-status-warning, $ids-theme-status-warning),
+        var(--ids-theme-badge-text-on-light, $badge-text-on-light)
+    );
+  }
+
+  // todo: remove unnecessary states
+  .c-badge_danger {
+    @include badge-variant($ids-theme-status-error, $badge-text-on-dark);
+    @include badge-variant(
+        var(--ids-theme-status-error, $ids-theme-status-error),
+        var(--ids-theme-badge-text-on-light, $badge-text-on-light)
+    );
+  }
+
+  .c-badge_error {
+    @include badge-variant($ids-theme-status-error, $badge-text-on-dark);
+    @include badge-variant(
+        var(--ids-theme-status-error, $ids-theme-status-error),
+        var(--ids-theme-badge-text-on-dark, $badge-text-on-dark)
+    );
+  }
+
+  .c-badge_critical {
+    @include badge-variant($ids-theme-status-critical, $badge-text-on-light);
+    @include badge-variant(
+        var(--ids-theme-status-critical, $ids-theme-status-critical),
+        var(--ids-theme-badge-text-on-light, $badge-text-on-light)
+    );
+  }
+
+  .c-badge_falsevalue {
+    @include badge-variant($ids-theme-status-falsevalue);
+    @include badge-variant(
+        var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue),
+        var(--ids-theme-badge-text-falsevalue, $badge-text-falsevalue)
+    );
+  }
+}
+
+@mixin ids-badge-core-styles {
+  @include ids-badge;
+  @include ids-badge-sizes;
+  @include ids-badge-pill;
+  @include ids-badge-state;
+}

@@ -1,0 +1,133 @@
+@import "../theme/variables";
+//@import "../base/variables";
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $ids-theme-primary !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-disabled-color: $color-gray-40 !default;
+$link-hover-decoration: underline !default;
+
+//
+// Typography
+//
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+//$FontPathOpenSans: "../fonts/open-sans" !default;
+$text-font-family: "Open Sans", "Helvetica Neue", sans-serif !default;
+$text-font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$text-font-family-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace !default;
+$font-family-base: $text-font-family !default;
+
+$text-color: $color-base-white !default;
+$text-color-gray: $color-gray-10 !default;
+$text-color-success: $ids-theme-status-success !default;
+$text-color-warning: $ids-theme-status-warning !default;
+$text-color-critical: $ids-theme-status-critical !default;
+$text-color-error: $ids-theme-status-error !default;
+
+$line-height-base: $line-height-computed !default;
+$line-height-1: 1;
+
+$paragraph-color: $color-base-white !default;
+
+$inuit-font-size-h1: round($inuit-global-font-size * 2.25) !default; // 32px
+$inuit-font-size-h2: round($inuit-global-font-size * 1.75) !default; //25px
+$inuit-font-size-h3: round($inuit-global-font-size * 1.5) !default; // 21px
+$inuit-font-size-h4: round($inuit-global-font-size * 1.25) !default; // 18px
+$inuit-font-size-h5: round($inuit-global-font-size * 1.125) !default; // 16px
+$inuit-font-size-h6: $inuit-global-font-size !default; // 14px
+$inuit-font-size-large: $inuit-global-font-size * 1.125 !default; // 16px
+$inuit-font-size-small: 12px !default; // 12px
+$inuit-font-size-tiny: $inuit-global-font-size * 0.75 !default; // 11px
+$inuit-font-size-caption: $inuit-font-size-small !default;
+
+
+// aliases
+// todo(turchaninov): refactor and remove aliases for font size variables (SCSS)
+$font-size-base: $inuit-global-font-size !default;
+$font-size-lg: $inuit-font-size-large !default;
+$font-size-sm: $inuit-font-size-small !default;
+$font-size-xs: $inuit-font-size-tiny !default;
+
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+$font-weight-base: $font-weight-normal !default;
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family: $text-font-family;
+$headings-font-weight: 400;
+$headings-line-height: $line-height-computed;
+$headings-color: $color-gray-5;
+$headings-small-color: $color-base-white;
+$headings-margin-bottom: (inuit-rem($inuit-global-spacing-unit-small)) !default;
+
+$display1-size: 6rem !default; // 84px
+$display2-size: 5.5rem !default; // 70px
+$display3-size: 4.5rem !default; // 63px
+$display4-size: 3.5rem !default; // 49px
+$display5-size: 2.5rem !default; // 35px
+$display6-size: 2rem !default; // 28px
+
+$display1-weight: 300 !default;
+$display2-weight: 300 !default;
+$display3-weight: 300 !default;
+$display4-weight: 300 !default;
+$display-line-height: $headings-line-height !default;
+
+$lead-font-size: $inuit-font-size-large !default;
+$lead-font-weight: 300 !default;
+
+$small-font-size: 80% !default;
+
+$text-muted: $color-gray-20 !default;
+
+$abbr-border-color: $color-gray-20 !default;
+
+$blockquote-small-color: $color-gray-20 !default;
+$blockquote-font-size: ($font-size-base * 1.25) !default;
+$blockquote-border-color: $color-gray-20 !default;
+$blockquote-border-width: .25rem !default;
+
+$hr-border-color: rgba($color-base-white, .1) !default;
+$hr-border-width: $border-width !default;
+
+$mark-padding: 0.2em !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$kbd-box-shadow: inset 0 -0.1rem 0 rgba($color-base-white, 0.25) !default;
+$nested-kbd-font-weight: $font-weight-bold !default;
+$text-highlight-background: $color-yellow-dark-800 !default;
+$text-highlight-color: $color-base-black !default;
+
+$ids-typography-theme-property-values: (
+  link-color: $link-color,
+  link-hover-color: $link-hover-color,
+  link-disabled-color: $link-disabled-color,
+  text-font-family: $text-font-family,
+  text-color: $text-color,
+  text-color-gray: $text-color-gray,
+  text-color-success: $text-color-success,
+  text-color-warning: $text-color-warning,
+  text-color-critical: $text-color-critical,
+  text-color-error: $text-color-error,
+  paragraph-color: $paragraph-color,
+  headings-color: $headings-color,
+  headings-small-color: $headings-small-color,
+  text-muted: $text-muted,
+  abbr-border-color: $abbr-border-color,
+  blockquote-small-color: $blockquote-small-color,
+  blockquote-border-color: $blockquote-border-color,
+  hr-border-color: $hr-border-color,
+  kbd-box-shadow: $kbd-box-shadow,
+  text-highlight-background: $text-highlight-background,
+  text-highlight-color: $color-base-black
+)

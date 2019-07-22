@@ -1,0 +1,38 @@
+@import "../typography/variables";
+@import "../mediaqueries/variables";
+
+// todo: need whole component refactoring
+
+@mixin ids-overlay-core-styles {
+  ._c-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($text-color, 0.6);
+    background-color: rgba(var(--ids-theme-text-color, $text-color), 0.6);
+  }
+
+  ._c-overlay_invisible {
+    background-color: rgba($text-color, 0);
+    background-color: rgba(var(--ids-theme-text-color, $text-color), 0);
+  }
+
+  ._c-overlay\@large {
+    @media (min-width: $screen-lg-min) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba($text-color, 0.6);
+      background-color: rgba(var(--ids-theme-text-color, $text-color), 0.6);
+    }
+  }
+
+  ._c-overlay_invisible {
+    background-color: rgba($text-color, 0);
+    background-color: rgba(var(--ids-theme-text-color, $text-color), 0);
+  }
+}

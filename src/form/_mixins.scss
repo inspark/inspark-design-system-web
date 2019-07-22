@@ -1,0 +1,218 @@
+@import "../base/variables";
+@import "../mediaqueries/variables";
+@import "./variables";
+
+// todo: отрефакторить структуру миксинов в core и названия переменных
+
+@mixin ids-form-core-styles {
+  @include c-form_inline;
+  @include c-form_compact;
+}
+/*
+Inline form
+
+Use the .form-inline class to display a series of labels, form controls, and buttons on a single horizontal row.
+Form controls within inline forms vary slightly from their default states.
+
+Controls are display: flex, collapsing any HTML white space and allowing you to provide alignment control with spacing
+and flexbox utilities.
+
+Controls and input groups receive width: auto to override the Bootstrap default width: 100%.
+
+Controls only appear inline in viewports that are at least 576px wide to account for narrow viewports on mobile devices.
+
+You may need to manually address the width and alignment of individual form controls with spacing utilities (as shown below).
+
+Lastly, be sure to always include a <label> with each form control, even if you need to hide it from non-screenreader visitors with .sr-only.
+
+markup:
+<form class="c-form c-form_inline">
+  <div class="c-form-group">
+    <label class="c-label" for="input222">
+      <span class="c-label__content c-label__content_inline">Input Label</span>
+      <input id="input222" placeholder="Type something..." class="c-input c-input_small" type="text">
+    </label>
+  </div>
+  <div class="c-form-group">
+    <label class="c-label" for="inputfl2" >Readonly Input</label>
+    <input class="c-input" id="inputfl2" placeholder="Type something..." type="text" readonly value="Unchangeble info">
+  </div>
+  <div class="c-form-group">
+    <label class="c-checkbox c-checkbox_inline">
+      <input type="checkbox" class="c-checkbox__input" id="ci1">
+      <i class="c-checkbox__icon"></i>
+      <span class="c-checkbox__label">Check this</span>
+    </label>
+    <label class="c-checkbox c-checkbox_inline">
+      <input type="checkbox" class="c-checkbox__input" id="ci1">
+      <i class="c-checkbox__icon"></i>
+      <span class="c-checkbox__label">Check this</span>
+    </label>
+  </div>
+</form>
+
+*/
+
+@mixin c-form_inline {
+  .c-form_inline {
+    // Kick in the inline
+    @media (min-width: $screen-sm-min) {
+      // Inline-block all the things for "inline"
+      .c-form-group {
+        display: inline-flex;
+        margin-bottom: 0;
+        vertical-align: middle;
+        margin-right: $unit-small;
+      }
+
+      .c-input {
+        display: inline-block;
+        width: auto; // Prevent labels from stacking above inputs in `.c-form-group`
+        vertical-align: middle;
+      }
+
+      // Make static controls behave like regular ones
+      .c-static {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .c-input-group {
+        display: inline-flex;
+        vertical-align: middle;
+
+        .c-input-addon,
+        .c-btn_in-input-group,
+        .c-input_in-input-group {
+          width: auto;
+        }
+      }
+
+      // Input groups need that 100% width though
+      .c-input-group > .c-input_in-input-group {
+        width: 100%;
+      }
+
+      .c-label {
+        display: inline-block;
+        margin-right: $unit-tiny;
+        margin-bottom: 0;
+        vertical-align: middle;
+      }
+
+      .c-label__content {
+        display: inline-block;
+        margin-right: 6px;
+        margin-bottom: 0;
+        vertical-align: middle;
+      }
+
+      .c-label__content_width-small {
+        width: $unit-small;
+      }
+
+      .c-label__content_width-medium {
+        width: $unit;
+      }
+
+      // Remove default margin on radios/checkboxes that were used for stacking, and
+      // then undo the floating of radios and checkboxes to match.
+      .c-radio,
+      .c-checkbox {
+        display: inline-block;
+        //margin-top: 0;
+        //margin-bottom: 0;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/*
+Compact form
+
+For forms inside of smaller containers like modals or wizards, the whitespace around form groups and form blocks can be
+minimized by using the .c-form_compact classname.
+
+markup:
+<form class="c-form c-form_compact">
+  <div class="c-form-group">
+    <label class="c-label for="inputflc1" >Text Input</label>
+    <input class="c-input" id="inputflc1" placeholder="Type something..." type="text">
+  </div>
+  <div class="c-form-group">
+    <label class="c-label" for="inputflc2" >Readonly Input</label>
+    <input class="c-input" id="inputflc2" placeholder="Type something..." type="text" readonly value="Unchangeble info">
+  </div>
+  <div class="c-form-group">
+    <label class="c-checkbox c-checkbox_inline">
+      <input type="checkbox" class="c-checkbox__input" id="ci1">
+      <i class="c-checkbox__icon"></i>
+      <span class="c-checkbox__label">Check this</span>
+    </label>
+    <label class="c-checkbox c-checkbox_inline">
+      <input type="checkbox" class="c-checkbox__input" id="ci1">
+      <i class="c-checkbox__icon"></i>
+      <span class="c-checkbox__label">Check this</span>
+    </label>
+  </div>
+</form>
+
+*/
+
+@mixin c-form_compact {
+  .c-form-group {
+    margin-bottom: 0;
+  }
+}
+
+/*
+Form Inside a Grid
+
+Forms can be used in a grid. Extend the .o-grid class on a .c-form-group and place the form fields in the grid column
+classes. To occupy 100% of the column width, extend the .c-input_block class on the form field. Resize your browser to
+see how forms in grids work.
+
+To align Label with input use `.c-label__content_inline` modifier on `.c-label__content`.
+
+markup:
+<form class="c-form">
+  <section class="c-form-block">
+    <h3>Form Inside a Grid</h3>
+    <div class="c-form-group o-grid">
+      <div class="o-grid__cell">
+        <label class="c-label" for="inputflg1" >
+          <span class="c-label__content c-label__content_inline">Text Input</span>
+        </label>
+      </div>
+      <div class="o-grid__cell o-grid__cell_width-75">
+        <input class="c-input c-input_block" id="inputflg1" placeholder="Type something..." type="text">
+      </div>
+    </div>
+    <div class="c-form-group o-grid">
+      <div class="o-grid__cell">
+        <label class="c-label" for="inputflg2" >
+          <span class="c-label__content c-label__content_inline">Readonly Input</span>
+        </label>
+      </div>
+      <div class="o-grid__cell o-grid__cell_width-75">
+        <input class="c-input c-input_block" id="inputflg2" placeholder="Type something..." type="text" readonly value="Unchangeble info">
+      </div>
+    </div>
+    <div class="c-form-group o-grid">
+      <label class="c-checkbox c-checkbox_inline">
+        <input type="checkbox" class="c-checkbox__input" id="ci1">
+        <i class="c-checkbox__icon"></i>
+        <span class="c-checkbox__label">Check this</span>
+      </label>
+      <label class="c-checkbox c-checkbox_inline">
+        <input type="checkbox" class="c-checkbox__input" id="ci1">
+        <i class="c-checkbox__icon"></i>
+        <span class="c-checkbox__label">Check this</span>
+      </label>
+    </div>
+    <button class="c-btn c-btn_primary" type="submit">Button</button>
+  </section>
+</form>
+
+*/

@@ -1,0 +1,629 @@
+@import "../base/variables";
+@import "./variables";
+@import "../tools/tools.clearfix";
+@import "../nav/mixins";
+@import "../tools/tools.border-radius";
+@import "../sidebar/variables";
+@import "../mediaqueries/mixins";
+@import "../typography/variables";
+
+@mixin ids-navbar-core-styles {
+  @include ids-navbar;
+  @include ids-navbar-static;
+  @include ids-navbar-header;
+  @include ids-navbar-collapse;
+  @include ids-navbar-alignment-vertical;
+  @include ids-navbar-brand;
+  @include ids-navbar-toggle;
+  @include ids-navbar-nav;
+  @include ids-navbar-dropdown;
+  @include ids-navbar-btn;
+  @include ids-navbar-text;
+  @include ids-navbar-alignment-horizontal;
+  @include ids-navbar-default;
+}
+
+/*
+Navbar
+
+markup:
+<header class="c-navbar c-navbar_default u-hidden-print" ng-controller="CollapseDemoCtrl">
+    <div class="c-navbar__header">
+        <a class="c-navbar__brand" > <img class="o-image" src="https://unsplash.it/g/500/200?random" alt="Company logo"></a>
+        <!--<span class="c-nav__content u-window-box--none">
+            <img class="o-image" src="https://unsplash.it/500/200">
+        </span> -->
+        <!--<a class="c-navbar__brand c-navbar-brand-collapsed" ui-sref="app.dashboard" href="#/app/dashboard"> <img ng-src="assets/images/logo-collapsed2.png" alt="" src="assets/images/logo-collapsed2.png"> </a>-->
+        <!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+         <!-- <div class="close-handle visible-xs-block menu-toggler" ng-click="isNavCollapsed = !isNavCollapsed" ng-swipe-up="navbarCollapsed = true">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="fa fa-bars"></span>
+        </div>-->
+        <button type="button" class="c-navbar__toggle" ng-click="isNavCollapsed = !isNavCollapsed" ng-swipe-up="navbarCollapsed = true">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="fa fa-ellipsis-h"></span>
+        </button>
+        <!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+    </div>
+    <div class="c-navbar__collapse" uib-collapse="isNavCollapsed">
+        <ul class="c-navbar__nav c-navbar__right" ng-controller="NavbarCtrl">
+            <li class="c-navbar__nav-listitem c-dropdown">
+                <a href="" class="c-navbar__nav-content" data-toggle="dropdown"> <span class="badge"> 3 </span> <i class="fa fa-envelope"></i> </a>
+            </li>
+            <li class="c-navbar__nav-listitem c-dropdown" uib-dropdown>
+              <a href id="lang-choose" class="c-navbar__nav-content" uib-dropdown-toggle>
+                <i class="flag-icon flag-icon-us"></i> English <span class="c-caret"></span>
+              </a>
+              <ul class="c-dropdown-menu c-dropdown-menu_right" uib-dropdown-menu role="menu" aria-labelledby="lang-choose">
+                <li class="c-dropdown-menu__listitem" role="menuitem" ng-repeat="lang in items">
+                    <a href="#" class="c-dropdown-menu__content" ng-click="setLanguage('ru')">{{lang}}</a>
+                </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+
+sg-wrapper:
+<div class="sg sg-box-lg">
+  <sg-wrapper-content/>
+</div>
+
+ */
+
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+
+@mixin ids-navbar {
+  .c-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $navbar-height;
+    z-index: $zindex-navbar;
+    border: none;
+    margin-bottom: $navbar-margin-bottom;
+    min-height: $navbar-height; // Ensure a navbar always shows (e.g., without a .c-navbar-brand in collapsed mode)
+
+    // Prevent floats from breaking the navbar
+    @include clearfix;
+
+    @media (min-width: $grid-float-breakpoint) {
+      border-radius: $navbar-border-radius;
+    }
+  }
+}
+
+@mixin ids-navbar-static {
+  .c-navbar_static {
+    position: relative;
+  }
+}
+
+// Navbar heading
+//
+// Groups `.c-navbar-brand` and `.c-navbar-toggle` into a single component for easy
+// styling of responsive aspects.
+
+@mixin ids-navbar-header {
+  .c-navbar__header {
+    @include clearfix;
+    background: $navbar-default-bg;
+    background: var(--ids-theme-navbar-default-bg, $navbar-default-bg);
+  }
+}
+
+// Navbar vertical align
+//
+// Vertically center elements in the navbar.
+// Example: an element has a height of 30px, so write out `.navbar-vertical-align(30px);` to calculate the appropriate top margin.
+
+// todo: add _ to mixin name
+@mixin navbar-vertical-align($element-height) {
+  margin-top: (($navbar-height - $element-height) / 2);
+  margin-bottom: (($navbar-height - $element-height) / 2);
+}
+
+// Navbar collapse (body)
+//
+// Group your navbar content into this for easy collapsing and expanding across
+// various device sizes. By default, this content is collapsed when <768px, but
+// will expand past that for a horizontal display.
+//
+// To start (on mobile devices) the navbar links, forms, and buttons are stacked
+// vertically and include a `max-height` to overflow in case you have too much
+// content for the user's viewport.
+
+@mixin ids-navbar-collapse {
+  .c-navbar__collapse {
+    display: none;
+    overflow-x: visible;
+    padding-right: $navbar-padding-horizontal;
+    padding-left: $navbar-padding-horizontal;
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    @include clearfix;
+    -webkit-overflow-scrolling: touch;
+
+    @media (min-width: $grid-float-breakpoint) {
+      display: block;
+      height: $navbar-height;
+      width: auto;
+      margin-left: $sidebar-open-width; // todo: отрефакторить кросскомпонентную зависимость
+      border-top: 0;
+      box-shadow: none;
+      padding-bottom: 0; // Override default setting
+      overflow: visible !important;
+      // TODO(tur): add c-navbar_fixed-top rules
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      &.collapse {
+        display: block !important;
+        height: auto !important;
+        padding-bottom: 0;
+        overflow: visible !important;
+      }
+    }
+  }
+
+  .is-navbar__collapse_open {
+    display: block;
+    height: auto !important;
+    padding-bottom: 0; // Override default setting
+    overflow-y: auto;
+    @media (min-width: $grid-float-breakpoint) {
+      overflow: visible !important;
+    }
+
+  }
+
+  .c-navbar_fixed-top,
+  .c-navbar_fixed-bottom {
+    .c-navbar__collapse {
+      max-height: $navbar-collapse-max-height;
+
+      @media (max-device-width: $screen-xs-min) and (orientation: landscape) {
+        max-height: 200px;
+      }
+    }
+  }
+
+  // Both navbar header and collapse
+  //
+  // When a container is present, change the behavior of the header and collapse.
+  // todo: отрефакторить кросскомпонентную зависимость
+  .c-container,
+  .c-container-fluid {
+    > .c-navbar__header,
+    > .c-navbar__collapse {
+      margin-right: -$navbar-padding-horizontal;
+      margin-left: -$navbar-padding-horizontal;
+
+      @media (min-width: $grid-float-breakpoint) {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//
+// Navbar alignment options
+//
+// Display the navbar across the entirety of the page or fixed it to the top or
+// bottom of the page.
+
+@mixin ids-navbar-alignment-vertical {
+  // Static top (unfixed, but 100% wide) navbar
+  .c-navbar-static-top {
+    z-index: $zindex-navbar;
+    border-width: 0 0 1px;
+
+    @media (min-width: $grid-float-breakpoint) {
+      border-radius: 0;
+    }
+  }
+
+  // Fix the top/bottom navbars when screen real estate supports it
+  .c-navbar-fixed-top,
+  .c-navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: $zindex-navbar-fixed;
+
+    // Undo the rounded corners
+    @media (min-width: $grid-float-breakpoint) {
+      border-radius: 0;
+    }
+  }
+
+  .c-navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+
+  .c-navbar-fixed-bottom {
+    bottom: 0;
+    margin-bottom: 0; // override .c-navbar defaults
+    border-width: 1px 0 0;
+  }
+}
+
+// Brand/project name
+
+@mixin ids-navbar-brand {
+  .c-navbar__brand {
+    float: left;
+    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+    font-size: $font-size-lg;
+    line-height: $line-height-computed;
+    height: $navbar-height;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    > img {
+      display: block;
+      height: 100%;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      .c-navbar > .c-container &,
+      .c-navbar > .c-container-fluid & {
+        margin-left: -$navbar-padding-horizontal;
+      }
+    }
+  }
+
+  .c-navbar__brand-logo {
+    max-height: 100%;
+
+    svg {
+      height: 100%;
+    }
+  }
+}
+
+// Navbar toggle
+//
+// Custom button for toggling the `.c-navbar-collapse`, powered by the collapse
+// JavaScript plugin.
+
+@mixin ids-navbar-toggle {
+  .c-navbar__toggle {
+    position: relative;
+    float: right;
+    margin-right: $navbar-padding-horizontal;
+    padding: $unit-tiny $unit-small;
+    @include navbar-vertical-align(38px);
+    background-color: transparent;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: none;
+    color: $navbar-default-toggle-color;
+    color: var(--ids-theme-navbar-default-toggle-color, $navbar-default-toggle-color);
+    border-radius: $global-radius;
+
+    // We remove the `outline` here, but later compensate by attaching `:hover`
+    // styles to `:focus`.
+    &:focus {
+      outline: 0;
+    }
+
+    // Bars
+    .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+    }
+
+    .icon-bar + .icon-bar {
+      margin-top: 4px;
+    }
+
+    @media (min-width: $grid-float-breakpoint) {
+      display: none;
+    }
+  }
+}
+
+// Navbar nav links
+//
+// Builds on top of the `.nav` components with its own modifier class to make
+// the nav the full height of the horizontal nav (above 768px).
+
+@mixin ids-navbar-nav {
+  .c-navbar__nav {
+    @include c-nav;
+  }
+
+  .c-navbar__nav-listitem {
+    float: left;
+    background: none;
+    border: none;
+  }
+
+  .c-navbar__nav-content {
+    position: relative;
+    padding: 0 $unit-tiny;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: $navbar-height;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+    opacity: 0.9;
+    text-align: center;
+
+    &,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    // Uncollapse the nav
+    @media (min-width: $grid-float-breakpoint) {
+      padding-top: $navbar-padding-vertical;
+      padding-bottom: $navbar-padding-vertical;
+      padding: 0 $unit-small;
+    }
+  }
+}
+
+// Dropdown menus
+
+@mixin ids-navbar-dropdown {
+  // Menu position and menu carets
+  .c-navbar__nav > li > .c-dropdown-menu {
+    margin-top: 0;
+    @include border-top-radius(0);
+  }
+
+  // Menu position and menu caret support for dropups via extra dropup class
+  .c-navbar_fixed-bottom .c-navbar__nav > li > .c-dropdown-menu {
+    margin-bottom: 0;
+    @include border-top-radius($navbar-border-radius);
+    @include border-bottom-radius(0);
+  }
+}
+
+// Buttons in navbars
+//
+// Vertically center a button within a navbar (when *not* in a form).
+
+@mixin ids-navbar-btn {
+  .c-navbar__btn {
+    @include navbar-vertical-align($input-height-base);
+
+    &.c-btn_small {
+      @include navbar-vertical-align($input-height-small);
+    }
+
+    &.c-btn_tiny {
+      @include navbar-vertical-align($input-height-tiny);
+    }
+  }
+}
+
+// Text in navbars
+//
+// Add a class to make any element properly align itself vertically within the navbars.
+
+@mixin ids-navbar-text {
+  .c-navbar__text {
+    @include navbar-vertical-align($line-height-computed);
+
+    @media (min-width: $grid-float-breakpoint) {
+      float: left;
+      margin-left: $navbar-padding-horizontal;
+      margin-right: $navbar-padding-horizontal;
+    }
+  }
+}
+
+// Component alignment
+//
+// Repurpose the pull utilities as their own navbar utilities to avoid specificity
+// issues with parents and chaining. Only do this when the navbar is uncollapsed
+// though so that navbar contents properly stack and align in mobile.
+//
+// Declared after the navbar components to ensure more specificity on the margins.
+
+@mixin ids-navbar-alignment-horizontal {
+  @media (min-width: $grid-float-breakpoint) {
+    .c-navbar_left {
+      float: left !important;
+    }
+
+    .c-navbar_right {
+      float: right !important;
+      margin-right: -$navbar-padding-horizontal;
+
+      ~ .c-navbar_right {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Alternate navbars
+// --------------------------------------------------
+
+// Default navbar
+
+@mixin ids-navbar-default {
+  .c-navbar_default {
+    background-color: $navbar-default-bg;
+    background-color: var(--ids-theme-navbar-default-bg, $navbar-default-bg);
+    border-color: $navbar-default-border;
+    border-color: var(--ids-theme-navbar-default-border, $navbar-default-border);
+
+    .c-navbar__brand {
+      color: $navbar-default-brand-color;
+      color: var(--ids-theme-navbar-default-brand-color, $navbar-default-brand-color);
+
+      &:hover,
+      &:focus {
+        color: $navbar-default-brand-hover-color;
+        color: var(--ids-theme-navbar-default-brand-hover-color, $navbar-default-brand-hover-color);
+      }
+    }
+
+    .c-navbar__text {
+      color: $navbar-default-color;
+      color: var(--ids-theme-navbar-default-color, $navbar-default-color);
+    }
+
+    .c-navbar__nav {
+      > li > a {
+        color: $navbar-default-link-color;
+        color: var(--ids-theme-navbar-default-link-color, $navbar-default-link-color);
+
+        &:hover,
+        &:focus {
+          color: $navbar-default-link-hover-color;
+          color: var(--ids-theme-navbar-default-link-hover-color, $navbar-default-link-hover-color);
+        }
+      }
+
+      > .active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: $navbar-default-link-active-color;
+          color: var(--ids-theme-navbar-default-link-active-color, $navbar-default-link-active-color);
+        }
+      }
+
+      > .disabled > a {
+        &,
+        &:hover,
+        &:focus {
+          color: $navbar-default-link-disabled-color;
+          color: var(--ids-theme-navbar-default-link-disabled-color, $navbar-default-link-disabled-color);
+        }
+      }
+    }
+
+    .c-navbar__toggle {
+      border-color: $navbar-default-toggle-border-color;
+      border-color: var(--ids-theme-navbar-default-toggle-border-color, $navbar-default-toggle-border-color);
+
+      &:hover,
+      &:focus {
+        color: $navbar-default-toggle-hover-color;
+        color: var(--ids-theme-navbar-default-toggle-hover-color, $navbar-default-toggle-hover-color);
+      }
+
+      .icon-bar {
+        background-color: $navbar-default-toggle-icon-bar-bg;
+        background-color: var(--ids-theme-navbar-default-toggle-icon-bar-bg, $navbar-default-toggle-icon-bar-bg);
+      }
+    }
+
+    .c-navbar__collapse,
+    .c-navbar__form {
+      border-color: $navbar-default-border;
+      border-color: var(--ids-theme-navbar-default-border, $navbar-default-border);
+    }
+
+    // Dropdown menu items
+    .c-navbar__nav {
+      // Remove background color from open dropdown
+      > .is-dropdown_open > a {
+        &,
+        &:hover,
+        &:focus {
+          //background-color: $navbar-default-link-active-bg;
+          color: $navbar-default-link-active-color;
+          color: var(--ids-theme-navbar-default-link-active-color, $navbar-default-link-active-color);
+        }
+      }
+
+      @media (max-width: $grid-float-breakpoint-max) {
+        // Dropdowns get custom display when collapsed
+        .is-dropdown_open .c-dropdown-menu {
+          > li > a {
+            color: $navbar-default-link-color;
+            color: var(--ids-theme-navbar-default-link-color, $navbar-default-link-color);
+
+            &:hover,
+            &:focus {
+              color: $navbar-default-link-hover-color;
+              color: var(--ids-theme-navbar-default-link-hover-color, $navbar-default-link-hover-color);
+              background-color: $navbar-default-link-hover-bg;
+              background-color: var(--ids-theme-navbar-default-link-hover-bg, $navbar-default-link-hover-bg);
+            }
+          }
+
+          > .active > a {
+            &,
+            &:hover,
+            &:focus {
+              color: $navbar-default-link-active-color;
+              color: var(--ids-theme-navbar-default-link-active-color, $navbar-default-link-active-color);
+              background-color: $navbar-default-link-active-bg;
+              background-color: var(--ids-theme-navbar-default-link-active-bg, $navbar-default-link-active-bg);
+            }
+          }
+
+          > .disabled > a {
+            &,
+            &:hover,
+            &:focus {
+              color: $navbar-default-link-disabled-color;
+              color: var(--ids-theme-navbar-default-link-disabled-color, $navbar-default-link-disabled-color);
+              background-color: $navbar-default-link-disabled-bg;
+              background-color: var(--ids-theme-navbar-default-link-disabled-bg, $navbar-default-link-disabled-bg);
+            }
+          }
+        }
+      }
+    }
+
+    // Links in navbars
+    //
+    // Add a class to ensure links outside the navbar nav are colored correctly.
+
+    .c-navbar__link {
+      color: $navbar-default-link-color;
+      color: var(--ids-theme-navbar-default-link-color, $navbar-default-link-color);
+
+      &:hover {
+        color: $navbar-default-link-hover-color;
+        color: var(--ids-theme-navbar-default-link-hover-color, $navbar-default-link-hover-color);
+      }
+    }
+
+    .c-btn_link {
+      color: $navbar-default-link-color;
+      color: var(--ids-theme-navbar-default-link-color, $navbar-default-link-color);
+
+      &:hover,
+      &:focus {
+        color: $navbar-default-link-hover-color;
+        color: var(--ids-theme-navbar-default-link-hover-color, $navbar-default-link-hover-color);
+      }
+
+      &[disabled],
+      fieldset[disabled] & {
+        &:hover,
+        &:focus {
+          color: $navbar-default-link-disabled-color;
+          color: var(--ids-theme-navbar-default-link-disabled-color, $navbar-default-link-disabled-color);
+        }
+      }
+    }
+  }
+}
+
+

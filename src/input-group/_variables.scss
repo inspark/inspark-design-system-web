@@ -1,0 +1,12 @@
+@import "../theme/variables";
+@import "../base/variables";
+
+$input-group-addon-border: $color-gray-80 !default;
+$input-group-addon-background: $color-gray-80 !default;
+$input-group-addon-color: $color-gray-20 !default;
+
+$ids-input-group-theme-property-values: (
+  input-group-addon-border: $input-group-addon-border,
+  input-group-addon-background: $input-group-addon-background,
+  input-group-addon-color: $input-group-addon-color
+);

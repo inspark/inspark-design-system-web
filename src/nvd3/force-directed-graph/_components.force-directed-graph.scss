@@ -1,0 +1,16 @@
+/* Force Directed Graph */
+
+.nv-force-node {
+  stroke: $nvd3-force-node-stroke;
+  stroke-width: 1.5px;
+
+  text {
+    stroke-width: 0;
+  }
+}
+
+.nv-force-link {
+  stroke: $nvd3-force-link-stroke;
+  stroke-opacity: 0.6;
+}
+

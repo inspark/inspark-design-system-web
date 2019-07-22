@@ -1,0 +1,122 @@
+@import "../theme/variables";
+@import "../base/variables";
+@import "../typography/variables";
+
+// NVD3 Charts
+$nvd3-box-shadow: $component-active-box-shadow !default;
+$nvd3-border-radius: $global-radius !default;
+$nvd3-font-family: $font-family-base !default;
+$nvd3-font-size-base: $font-size-base !default;
+$nvd3-text-color: $text-color !default;
+$nvd3-text-color-fill: $nvd3-text-color !default;
+$nvd3-text-color-stroke: $nvd3-text-color !default;
+
+$nvd3-background-fill: $body-bg !default;
+$nvd3-background-fill-opacity: 0 !default;
+$nvd3-nv-brush-resize-fill: $color-gray-5 !default;
+$nvd3-nv-brush-resize-stroke: $color-gray-40 !default;
+$nvd3-nv-brush-background-stroke: $color-base-black !default;
+$nvd3-nv-brush-background-fill: $color-base-white !default;
+$nvd3-axis-path-stroke: $color-base-black !default;
+$nvd3-axis-line: rgba($color-gray-10, 0.6) !default;
+
+// NVD3 Controls
+$nvd3-controls-fill: $color-base-white !default;
+
+// NVD3 Transitions
+$nvd3-transition-duration-default: 250ms !default;
+$nvd3-transition-duration-short: 50ms !default;
+$nvd3-transition-function-default: linear !default;
+$nvd3-transition-delay-default: 200ms !default;
+$nvd3-transition-default: $nvd3-transition-duration-default $nvd3-transition-function-default !default;
+
+// Bars
+$nvd3-bars-react-hover: $ids-theme-primary !default;
+
+// Boxplot
+$nvd3-boxplot-median-stroke: $color-base-black !default;
+
+// Bullet
+$nvd3-bullet-marker-stroke: $color-base-black !default;
+$nvd3-bullet-marker-triangle-stroke: $nvd3-bullet-marker-stroke !default;
+$nvd3-bullet-marker-triangle-fill: $color-base-white !default;
+$nvd3-bullet-marker-line-stroke: $nvd3-bullet-marker-stroke !default;
+$nvd3-bullet-tick-line-stroke: $color-gray-40 !default;
+$nvd3-bullet-range-s0-fill: $color-gray-5 !default;
+$nvd3-bullet-range-s1-fill: $color-gray-10 !default;
+$nvd3-bullet-range-s2-fill: $color-gray-20 !default;
+$nvd3-bullet-subtitle-fill: $color-gray-10 !default;
+$nvd3-bullet-range-fill: $color-gray-5 !default;
+
+// Candlestick Bar
+$nvd3-candlestickbar-tick-positive-rect-stroke: $ids-theme-status-success !default;
+$nvd3-candlestickbar-tick-positive-rect-fill: $nvd3-candlestickbar-tick-positive-rect-stroke !default;
+$nvd3-candlestickbar-tick-negative-rect-stroke: $ids-theme-status-error !default;
+$nvd3-candlestickbar-tick-negative-rect-fill: $nvd3-candlestickbar-tick-negative-rect-stroke !default;
+$nvd3-candlestickbar-ticks-line-stroke: $color-gray-10 !default;
+
+// Force Directed Graph
+$nvd3-force-node-stroke: $color-base-white !default;
+$nvd3-force-link-stroke: $color-gray-20 !default;
+
+// Lines
+$nvd3-lines-groups-line-fill: none !default;
+$nvd3-lines-groups-area-stroke: none !default;
+$nvd3-lines-point-paths-stroke: $color-gray-10 !default;
+$nvd3-lines-point-paths-fill: $color-gray-5 !default;
+
+// OHLC
+$nvd3-ohlcbar-tick-positive-stroke: $ids-theme-status-success !default;
+$nvd3-ohlcbar-tick-negative-stroke: $ids-theme-status-error !default;
+
+// Parallel Coordinates
+$nvd3-background-path-fill: none !default;
+$nvd3-background-path-stroke: $color-gray-5 !default;
+$nvd3-foreground-path-fill: none !default;
+$nvd3-parallelcoordinates-brush-extent-fill: $color-base-white !default;
+$nvd3-parallelcoordinates-brush-extent-stroke: $color-gray-40 !default;
+$nvd3-missingvaluesline-line-fill: none !default;
+$nvd3-missingvaluesline-line-stroke: $color-base-black !default;
+
+// Pie
+$nvd3-pie-title-font-size: $inuit-font-size-h3 !default;
+$nvd3-pie-title-fill: $ids-theme-primary !default;
+$nvd3-pie-slice-text-stroke: $color-base-black !default;
+$nvd3-pie-path: $color-base-white !default;
+
+// Sparkline
+$nvd3-sparkline-path-fill: none !default;
+$nvd3-sparklineplus-hovervalue-stroke: $color-gray-80 !default;
+$nvd3-sparklineplus-yvalue-stroke: lighten($ids-theme-status-error, 20%) !default;
+$nvd3-sparklineplus-maxvalue-stroke: $ids-theme-status-success !default;
+$nvd3-sparklineplus-maxvalue-fill: $ids-theme-status-success !default;
+$nvd3-sparklineplus-minvalue-stroke: $ids-theme-status-error !default;
+$nvd3-sparklineplus-minvalue-fill: $ids-theme-status-error !default;
+$nvd3-sparklineplus-currentvalue-font-size: $inuit-font-size-large !default;
+
+// NVD3 Tooltip
+$nvd3-tooltip-zindex: $zindex-charts-tooltip !default;
+$nvd3-tooltip-font-size: $inuit-font-size-small !default;
+$nvd3-tooltip-background: $body-bg !default;
+$nvd3-tooltip-border: $text-color !default;
+$nvd3-tooltip-color: $text-color !default;
+$nvd3-tooltip-x-y-tooltip-padding: $unit-small !default;
+$nvd3-tooltip-xy-tooltip-background: $nvd3-tooltip-background !default;
+$nvd3-tooltip-h3-background: $body-bg !default;
+$nvd3-tooltip-h3-color: $text-color !default;
+$nvd3-tooltip-h3-border-bottom-color: $nvd3-tooltip-h3-background !default;
+$nvd3-tooltip-table-percent: $color-gray-35 !default;
+$nvd3-tooltip-table-legend-color-guide-border: $color-gray-40 !default;
+$nvd3-guideline-stroke: $color-gray-40 !default;
+
+$nvd3-color-1: #00FF7F !default;
+$nvd3-color-2: #00E0E0 !default;
+$nvd3-color-3: #FF00FF !default;
+$nvd3-color-4: #B2CCE5 !default;
+$nvd3-color-5: #F1F227 !default;
+$nvd3-color-6: #FDE3A7 !default;
+$nvd3-color-7: #F64747 !default;
+$nvd3-color-8: #8BB82D !default;
+$nvd3-color-9: #1E90FF !default;
+$nvd3-color-10: #D2527F !default;
+$nvd3-color-11: #91A6BA !default;

@@ -1,0 +1,36 @@
+@import "./variables";
+
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+@mixin ids-crumbs-core-styles {
+
+  .c-crumb {
+    padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
+    margin-bottom: 0;
+    margin-left: 0;
+    list-style: none;
+    background-color: $breadcrumb-bg;
+    background-color: var(--ids-theme-breadcrumb-bg, $breadcrumb-bg);
+    border-radius: 0;
+  }
+
+  .c-crumb__item {
+    display: inline-block;
+
+    + .c-crumb__item:before {
+      $nbsp: "\00a0";
+      content: "#{$breadcrumb-separator}";
+      padding: 0 5px;
+      color: $breadcrumb-color;
+      color: var(--ids-theme-breadcrumb-color, $breadcrumb-color);
+    }
+  }
+
+  .is-crumb__item_active {
+    color: $breadcrumb-active-color;
+    color: var(--ids-theme-breadcrumb-active-color, $breadcrumb-active-color);
+  }
+
+}

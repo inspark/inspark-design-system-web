@@ -1,0 +1,66 @@
+/* Bullet */
+
+.nvd3.nv-bullet {
+  //font: 10px $nvd3-font-family;
+
+  //.nv-measure {
+  //  fill-opacity: 0.8;
+  //}
+  //
+  //.nv-measure:hover {
+  //  fill-opacity: 1;
+  //}
+
+  .nv-marker {
+    stroke: $nvd3-bullet-marker-stroke;
+    //stroke-width: 2px;
+  }
+
+  .nv-markerTriangle {
+    stroke: $nvd3-bullet-marker-triangle-stroke;
+    fill: $nvd3-bullet-marker-triangle-fill;
+    //stroke-width: 1.5px;
+  }
+
+  .nv-markerLine {
+    stroke: $nvd3-bullet-marker-line-stroke;
+    //stroke-width: 1.5px;
+  }
+
+  .nv-tick line {
+    stroke: $nvd3-bullet-tick-line-stroke;
+    //stroke-width: 0.5px;
+  }
+
+  .nv-range.nv-s0 {
+    fill: $nvd3-bullet-range-s0-fill;
+  }
+
+  .nv-range.nv-s1 {
+    fill: $nvd3-bullet-range-s1-fill;
+  }
+
+  .nv-range.nv-s2 {
+    fill: $nvd3-bullet-range-s2-fill;
+  }
+
+  .nv-title {
+    font-size: $nvd3-font-size-base;
+    //font-weight: bold;
+  }
+
+  .nv-subtitle {
+    fill: $nvd3-bullet-subtitle-fill;
+  }
+
+  .nv-range {
+    fill: $nvd3-bullet-range-fill;
+    //fill-opacity: 0.4;
+  }
+
+  //.nv-range:hover {
+  //  fill-opacity: 0.7;
+  //}
+}
+
+

@@ -1,0 +1,377 @@
+@import "../base/variables";
+@import "../theme/variables";
+@import "../typography/variables";
+@import "../form/variables";
+@import "./variables";
+
+// todo: отрефакторить структуру миксинов в core и названия переменных
+
+@mixin ids-label-core-styles {
+  .c-label {
+    @include c-label;
+  }
+
+  .c-label__content_contrast {
+    @include c-label__content_contrast;
+  }
+
+  .c-label_line-height_base {
+    @include c-label_line-height_base;
+  }
+
+  .c-label__content {
+    @include c-label__content;
+  }
+
+  .c-label_cursor_default {
+    @include c-label_cursor_default;
+  }
+
+  .c-label__sub {
+    @include c-label__sub;
+  }
+
+  .c-label__sub_is-success {
+    @include c-label__sub_is-success;
+  }
+
+  .c-label__sub_is-warning {
+    @include c-label__sub_is-warning;
+  }
+
+  .c-label__sub_is-error {
+    @include c-label__sub_is-error;
+  }
+
+  .c-label_disabled {
+    @include c-label_disabled;
+  }
+
+  .c-label_is-success {
+    @include c-label_is-success;
+  }
+
+  .c-label_is-warning {
+    @include c-label_is-warning;
+  }
+
+  .c-label_is-error {
+    @include c-label_is-error;
+  }
+
+  .c-label__req {
+    @include c-label__req;
+  }
+
+  .c-label__content_inline {
+    @include c-label__content_inline;
+  }
+}
+
+/*
+Label for input
+
+Label styling is based on .c-label class and it`s modifiers and elements.
+
+There are two possible ways to combine label and input into form field.
+
+markup:
+<form class="c-form">
+  <h4>Variant 1 - Stacked input and label. Use of `id` on input and `for` attribut on label is recommended.
+  This variant is usefull when using grid based form (see below).</h4>
+  <div class="c-form-group">
+    <div class="c-form-field">
+      <label class="c-label" for="input2">Input Label</label>
+      <input id="input2" placeholder="Type something..." class="c-input c-input_small" type="text">
+    </div>
+  </div>
+</form>
+<form class="c-form">
+  <h4>Variant 2 - Input wrapped into label. `id` and `for` attributs may be omitted.</h4>
+  <p>Keep in mind, that this is much less accessible input.</p>
+  <div class="c-form-group">
+    <label class="c-label" for="input222">
+      <span class="c-label__content">Input Label</span>
+      <input class="c-input c-input_small" type="text" id="input222" placeholder="Type something...">
+    </label>
+  </div>
+</form>
+
+*/
+
+@mixin c-label {
+  display: block;
+  margin-bottom: 0;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: $label-color;
+  color: var(--ids-theme-label-color, $label-color);
+  cursor: pointer;
+}
+
+@mixin c-label__content_contrast {
+  color: $text-color;
+  color: var(--ids-theme-text-color, $text-color);
+}
+
+@mixin c-label_line-height_base {
+  line-height: $line-height-computed;
+}
+
+@mixin c-label_cursor_default {
+  cursor: default;
+}
+
+@mixin c-label__content {
+  display: block;
+}
+
+/*
+Sub-label
+
+Use it for secondary description.
+
+markup:
+<label class="c-label" for="numberInput11">
+    Input label
+    <span class="c-label__sub">input sub-label</span>
+</label>
+<input class="c-input" type="text" id="numberInput11" placeholder="Type something">
+
+*/
+
+@mixin c-label__sub {
+  margin-left: $unit-small;
+  color: $label-sub-color;
+  color: var(--ids-theme-label-sub-color, $label-sub-color);
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+/*
+Sub-label validation statuses
+
+c-label__sub_is-success - Success input style
+c-label__sub_is-warning - Warning input style
+c-label__sub_is-error - Error input style
+
+markup:
+<label class="c-label" for="numberInput1">
+    Input label
+    <span class="c-label__sub {$modifiers}">input sub-label</span>
+</label>
+<div class="c-form-field">
+  <input class="c-input" type="text" id="numberInput1" placeholder="Type something">
+  <label class="c-label">
+    <div class="c-label__content">
+    Input Label
+    <span class="c-label__sub {$modifiers}">input sub-label</span>
+    </div>
+    <input placeholder="Type something..." class="c-input c-input_small" type="text">
+  </label>
+</div>
+
+*/
+
+@mixin c-label__sub_is-success {
+  color: $ids-theme-status-success;
+  color: var(--ids-theme-status-success, $ids-theme-status-success);
+}
+
+@mixin c-label__sub_is-warning {
+  color: $ids-theme-status-warning;
+  color: var(--ids-theme-status-warning, $ids-theme-status-warning);
+}
+
+@mixin c-label__sub_is-error {
+  color: $ids-theme-status-error;
+  color: var(--ids-theme-status-error, $ids-theme-status-error);
+}
+
+/*
+Disabled label
+
+markup:
+<label class="c-label c-label_disabled" for="numberInput2">
+    <div class="c-label__content">
+      Input label disabled
+      <span class="c-label__sub">input sub-label</span>
+    </div>
+</label>
+<div class="c-form-field">
+  <input class="c-input" type="text" id="numberInput2" placeholder="Type something">
+  <label class="c-label c-label_disabled">
+    <div class="c-label__content">
+    Input label disabled (v2)
+    <span class="c-label__sub">input sub-label</span>
+    </div>
+    <input placeholder="Type something..." class="c-input c-input_small" type="text">
+  </label>
+</div>
+
+*/
+
+@mixin c-label_disabled {
+  color: $label-disabled-color;
+  color: var(--ids-theme-label-disabled-color, $label-disabled-color);
+}
+
+/*
+Label validation statuses
+
+c-label_is-success - success state
+c-label_is-warning - warning state
+c-label_is-error - error state
+
+markup:
+<label class="c-label {$modifiers}" for="numberInput3">
+  <div class="c-label__content">
+    Input label with status
+    <span class="c-label__sub">input sub-label</span>
+  </div>
+</label>
+<div class="c-form-field">
+  <input class="c-input" type="text" id="numberInput3" placeholder="Type something">
+  <label class="c-label {$modifiers}">
+    <div class="c-label__content">
+    Input label with status (v2)
+    <span class="c-label__sub">input sub-label</span>
+    </div>
+    <input placeholder="Type something..." class="c-input c-input_small" type="text">
+  </label>
+</div>
+
+*/
+
+// For use with font icons
+// todo(turchaninov): add examples with icons on label validation states
+
+@mixin c-label_is-success {
+  .c-label__content {
+    &::before {
+      content: "\f05d";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      color: $ids-theme-status-success;
+      color: var(--ids-theme-status-success, $ids-theme-status-success);
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}
+
+@mixin c-label_is-warning {
+  .c-label__content {
+    &::before {
+      content: "\f12a";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: $ids-theme-status-warning;
+      color: var(--ids-theme-status-warning, $ids-theme-status-warning);
+    }
+  }
+}
+
+@mixin c-label_is-error {
+  .c-label__content {
+    &::before {
+      content: "\f12a";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: $ids-theme-status-error;
+      color: var(--ids-theme-status-error, $ids-theme-status-error);
+    }
+  }
+}
+
+/*
+Required label
+
+Along with making a field actually required, you can add a visual clue for the users using a
+`<span class="c-label__req">*</span>` inside c-label__content element.
+
+markup:
+<form class="c-form">
+  <div class="c-form-group">
+    <div class="c-form-field">
+      <label class="c-label" for="input2123">
+        <span class="c-label_content c-label__content_required">Input Label</span>
+        <span class="c-label__req">*</span>
+        <span class="c-label__sub">input sub-label</span>
+      </label>
+      <input class="c-input c-input_small" type="text" id="input2123" placeholder="Type something...">
+    </div>
+  </div>
+</form>
+<form class="c-form">
+  <div class="c-form-group">
+    <label class="c-label">
+      <span class="c-label__content">
+        Input Label
+        <span class="c-label__req">*</span>
+        <span class="c-label__sub">input sub-label</span>
+      </span>
+      <input class="c-input c-input_small" type="text" placeholder="Type something...">
+    </label>
+  </div>
+</form>
+
+*/
+
+@mixin c-label__req {
+  display: inline-block;
+  font-size: $font-size-sm;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $ids-theme-status-warning;
+  color: var(--ids-theme-status-warning, $ids-theme-status-warning);
+}
+
+/*
+Inline label content
+
+For use in inline form-groups.
+
+markup:
+<form class="c-form">
+  <div class="c-form-group">
+    <div class="c-form-field">
+      <label class="c-label" for="input2123">
+        <span class="c-label__content c-label__content_inline">Inline Input Label</span>
+      </label>
+      <input class="c-input c-input_small" type="text" id="input2123" placeholder="Type something...">
+    </div>
+  </div>
+</form>
+<form class="c-form">
+  <div class="c-form-group">
+    <label class="c-label">
+      <span class="c-label__content c-label__content_inline">
+        Input Label
+      </span>
+      <input class="c-input c-input_small" type="text" placeholder="Type something...">
+    </label>
+  </div>
+</form>
+
+*/
+
+@mixin c-label__content_inline {
+  padding: $unit-tiny $unit-small;
+  border: 1px solid transparent;
+}
+
+

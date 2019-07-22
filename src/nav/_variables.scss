@@ -1,0 +1,11 @@
+// Nav
+
+$nav-link-padding: $unit-tiny;
+$nav-link-hover-bg: rgba($ids-theme-primary, 0.2);
+$nav-disabled-link-color: $ids-theme-primary;
+$nav-disabled-link-hover-color: $color-gray-40;
+
+$ids-nav-theme-property-values: (
+  nav-link-hover-bg: $nav-link-hover-bg,
+  nav-disabled-link-hover-color: $nav-disabled-link-hover-color,
+);

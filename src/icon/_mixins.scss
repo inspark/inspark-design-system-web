@@ -1,0 +1,388 @@
+@import "../base/variables";
+@import "../typography/variables";
+@import "./variables";
+
+@mixin ids-icon-core-styles {
+  @include ids-icon;
+}
+
+@mixin ids-icon {
+  .c-icon {
+    &_flag {
+      position: relative;
+      display: inline-block;
+      width: (4 / 3) * 1em;
+      padding: 0;
+      border-radius: 0;
+      line-height: $line-height-base;
+      background-size: contain;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      &:before {
+        content: '\00a0';
+      }
+    }
+
+    &_flag-squared {
+      width: 1em;
+    }
+
+    &_map {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &_map-marker {
+      position: absolute;
+      left: -16px;
+      top: -41px;
+    }
+
+    &_map-marker-selected {
+      width: 76px;
+      height: 76px;
+      left: -33px;
+      top: -74px;
+      path {
+        fill-opacity: 1;
+      }
+
+      circle {
+        display: none;
+      }
+
+      path:nth-child(3) {
+        fill: $text-color;
+        fill: var(--ids-theme-text-color, $text-color);
+      }
+    }
+
+    // SVG base styles.
+    &_svg {
+      > svg {
+        /* Lets the icon inherit the text color. */
+        fill: currentColor;
+
+        /* Inherit the text’s size too. Also allows sizing
+                 the icon by changing its font-size. */
+        width: 1em;
+        height: 1em;
+
+        /* Nice visual alignment for icons alongside text.
+                 (I got a few questions about this and: with most
+                 fonts and styles, this works better than just
+                 vertical-align:middle. Try it and see what you
+                 like best. */
+        vertical-align: -0.15em;
+
+        /* Paths and strokes that overflow the viewBox can
+                 show in IE. If you use normalize.css, it already
+                 sets this. */
+        overflow: hidden;
+      }
+
+      // Align SVG icons in text
+
+      &-align-with-text > svg {
+        display: inline-flex;
+        align-self: center;
+        position: relative;
+        height: 1em;
+        width: 1em;
+      }
+
+      &-baseline > svg {
+        bottom: -0.125em;
+        position: absolute;
+      }
+
+      // Sizes
+      &-tiny > svg {
+        width: $unit-tiny;
+        height: $unit-tiny;
+      }
+
+      &-small > svg {
+        width: $unit-small;
+        height: $unit-small;
+      }
+
+      &-middle-small > svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      &-middle > svg {
+        width: $unit;
+        height: $unit;
+      }
+
+      &-24 > svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      &-large > svg {
+        width: $unit-large;
+        height: $unit-large;
+
+      }
+
+      &-huge > svg {
+        width: $unit-huge;
+        height: $unit-huge;
+      }
+    }
+
+    &_point-disabled {
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: currentColor;
+      cursor: pointer;
+      box-shadow: 0 0 0 rgba($ids-theme-status-disabled, 0.4);
+      box-shadow: 0 0 0 rgba(var(--ids-theme-ids-theme-status-disabled, $ids-theme-status-disabled), 0.4);
+
+      &:hover {
+        animation: none;
+      }
+    }
+
+    &_point-outofcontrol {
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: currentColor;
+      cursor: pointer;
+      box-shadow: 0 0 0 rgba($icon-point-outofcontrol-box-shadow, 0.4); // todo: проверить необходимость стиля
+      box-shadow: 0 0 0 rgba(var(--ids-theme-icon-point-outofcontrol-box-shadow, $icon-point-outofcontrol-box-shadow), 0.4);
+
+      &:hover {
+        animation: none;
+      }
+    }
+
+    &_point-success {
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: currentColor;
+      cursor: pointer;
+      box-shadow: 0 0 0 rgba($ids-theme-status-disabled, 0.4);
+      box-shadow: 0 0 0 rgba(var(--ids-theme-status-disabled, $ids-theme-status-disabled), 0.4);
+
+      &:hover {
+        animation: none;
+      }
+    }
+
+    &_point-warning {
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: currentColor;
+      cursor: pointer;
+      box-shadow: 0 0 0 rgba($ids-theme-status-warning, 0.4);
+      box-shadow: 0 0 0 rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0.4);
+      animation: pulse-warning 2s infinite;
+
+      &:hover {
+        animation: none;
+      }
+    }
+
+    &_point-critical {
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: currentColor;
+      cursor: pointer;
+      box-shadow: 0 0 0 rgba($ids-theme-status-error, 0.4);
+      box-shadow: 0 0 0 rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0.4);
+      animation: pulse-critical 2s infinite;
+
+      &:hover {
+        animation: none;
+      }
+    }
+
+    &_svg-thumbnail {
+      font-size: 0;
+
+      &:after {
+        content: 'Incorrect icon format';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 63px;
+        font-size: $font-size-sm;
+      }
+
+      > * {
+        display: none;
+      }
+
+      svg {
+        display: inline;
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &_status-success {
+      color: $ids-theme-status-success;
+      color: var(--ids-theme-status-success, $ids-theme-status-success);
+    }
+
+    &_status-warning {
+      color: $ids-theme-status-warning;
+      color: var(--ids-theme-status-warning, $ids-theme-status-warning);
+    }
+
+    &_status-error {
+      color: $ids-theme-status-error;
+      color: var(--ids-theme-status-error, $ids-theme-status-error);
+    }
+
+    &_status-critical {
+      color: $ids-theme-status-error;
+      color: var(--ids-theme-status-error, $ids-theme-status-error);
+    }
+
+    &_status-disabled {
+      color: $ids-theme-status-disabled;
+      color: var(--ids-theme-status-disabled, $ids-theme-status-disabled);
+    }
+
+    &-map {
+      &_status-success {
+        color: $ids-theme-status-success;
+        color: var(--ids-theme-status-success, $ids-theme-status-success);
+      }
+
+      &_status-warning {
+        color: $ids-theme-status-warning;
+        color: var(--ids-theme-status-warning, $ids-theme-status-warning);
+      }
+
+      &_status-error {
+        color: $ids-theme-status-error;
+        color: var(--ids-theme-status-error, $ids-theme-status-error);
+      }
+
+      &_status-critical {
+        color: $ids-theme-status-error;
+        color: var(--ids-theme-status-error, $ids-theme-status-error);
+      }
+
+      &_status-disabled {
+        color: $ids-theme-status-disabled;
+        color: var(--ids-theme-status-disabled, $ids-theme-status-disabled);
+      }
+
+      &_status-outofcontrol {
+        color: $ids-theme-status-falsevalue;
+        color: var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue);
+      }
+    }
+
+
+    &_pos-1 {
+      margin-left: 18px;
+      margin-top: -1px;
+    }
+
+    &_pos-2 {
+      margin-left: 18px;
+      margin-top: -7px;
+    }
+
+    &_pos-3 {
+      margin-left: 18px;
+    }
+
+    &_pos-4 {
+      margin-left: 18px;
+      margin-top: 10px;
+    }
+  }
+
+
+  @-webkit-keyframes pulse-warning {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba($ids-theme-status-warning, 0.4);
+      -webkit-box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0.4);
+    }
+    70% {
+      -webkit-box-shadow: 0 0 0 10px rgba($ids-theme-status-warning, 0);
+      -webkit-box-shadow: 0 0 0 10px rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 0 rgba($ids-theme-status-warning, 0);
+      -webkit-box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0);
+    }
+  }
+  @keyframes pulse-warning {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba($ids-theme-status-warning, 0.4);
+      -moz-box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0.4);
+      box-shadow: 0 0 0 0 rgba($ids-theme-status-warning, 0.4);
+      box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0.4);
+    }
+    70% {
+      -moz-box-shadow: 0 0 0 10px rgba($ids-theme-status-warning, 0);
+      -moz-box-shadow: 0 0 0 10px rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0);
+      box-shadow: 0 0 0 10px rgba($ids-theme-status-warning, 0);
+      box-shadow: 0 0 0 10px rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0);
+    }
+    100% {
+      -moz-box-shadow: 0 0 0 0 rgba($ids-theme-status-warning, 0);
+      -moz-box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0);
+      box-shadow: 0 0 0 0 rgba($ids-theme-status-warning, 0);
+      box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0);
+    }
+  }
+
+
+  @-webkit-keyframes pulse-critical {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba($ids-theme-status-error, 0.4);
+      -webkit-box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0.4);
+    }
+    70% {
+      -webkit-box-shadow: 0 0 0 20px rgba($ids-theme-status-error, 0);
+      -webkit-box-shadow: 0 0 0 20px rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 0 rgba($ids-theme-status-error, 0);
+      -webkit-box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0);
+    }
+  }
+  @keyframes pulse-critical {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba($ids-theme-status-error, 0.4);
+      -moz-box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0.4);
+      box-shadow: 0 0 0 0 rgba($ids-theme-status-error, 0.4);
+      box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0.4);
+    }
+    70% {
+      -moz-box-shadow: 0 0 0 20px rgba($ids-theme-status-error, 0);
+      -moz-box-shadow: 0 0 0 20px rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0);
+      box-shadow: 0 0 0 20px rgba($ids-theme-status-error, 0);
+      box-shadow: 0 0 0 20px rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0);
+    }
+    100% {
+      -moz-box-shadow: 0 0 0 0 rgba($ids-theme-status-error, 0);
+      -moz-box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0);
+      box-shadow: 0 0 0 0 rgba($ids-theme-status-error, 0);
+      box-shadow: 0 0 0 0 rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0);
+    }
+  }
+}
+

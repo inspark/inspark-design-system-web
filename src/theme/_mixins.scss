@@ -1,0 +1,13 @@
+@import "./color-palette";
+@import "./variables";
+@import "./functions";
+
+@mixin ids-theme-core-styles($theme-class: "theme-dark", $theme-map: $ids-theme-property-values) {
+  .#{$theme-class} {
+    @each $style in map-keys($theme-map) {
+      --ids-theme-#{$style}: #{map-get($theme-map, $style)};
+    }
+  }
+}
+
+

@@ -1,0 +1,285 @@
+@import "./variables";
+@import "../base/variables";
+
+
+/*
+Lists
+
+Non-styled list example
+
+markup:
+<p>Defaul list</p>
+<ul>
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+</ul>
+
+*/
+
+/*
+Default List
+
+`.o-list` class
+
+markup:
+<p>Default List</p>
+<ul class="o-list">
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+</ul>
+
+*/
+
+@mixin ids-list {
+  .o-list {
+    list-style: none;
+    margin-left: $unit-tiny;
+  }
+}
+
+
+/*
+List-bare
+
+Strip list-like appearance from lists by removing their bullets, and any indentation.
+
+markup:
+<p>List-bare</p>
+<ul class="o-list-bare">
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+</ul>
+
+*/
+
+@mixin ids-list-bare {
+  .o-list-bare {
+    list-style: none;
+    margin-left: 0;
+  }
+}
+
+
+/*
+List-inline
+
+The list-inline object simply displays a list of items in one line.
+
+markup:
+<p>List-inline</p>
+<ul class="o-list-inline">
+  <li class="o-list-inline o-list-inline__item">list item 1</li>
+  <li class="o-list-inline o-list-inline__item">list item 2</li>
+  <li class="o-list-inline o-list-inline__item">list item 3</li>
+</ul>
+
+*/
+
+@mixin ids-list-inline {
+  .o-list-inline {
+    margin-left: 0;
+    list-style: none;
+  }
+
+  .o-list-inline__item {
+    display: inline-block;
+  }
+}
+
+
+/*
+Delimited list
+
+By default, applying this class will comma separate your list items. You can change the delimiter by predefining the
+following variable:
+
+$list-inline-delimiter
+
+markup:
+<p>List-delimited</p>
+<ul class="o-list-inline o-list-inline_delimited">
+  <li class="o-list-inline o-list-inline__item">list item 1</li>
+  <li class="o-list-inline o-list-inline__item">list item 2</li>
+  <li class="o-list-inline o-list-inline__item">list item 3</li>
+</ul>
+
+*/
+
+
+
+/**
+ * 1. Fallback for old IEs not supporting `rem` values.
+ */
+
+@mixin ids-list-inline_delimited {
+
+  .o-list-inline_delimited {
+    font-size: 0;
+
+    > .o-list-inline__item {
+      font-size: $inuit-global-font-size; /* [1] */
+      font-size: 1rem;
+    }
+
+    > .o-list-inline__item + .o-list-inline__item {
+
+      &:before {
+        content: "#{$list-inline-delimiter}";
+      }
+    }
+  }
+}
+
+
+/*
+Ordered list
+
+markup:
+<p>Ordered and unordered lists</p>
+<ul class="o-list o-list_ordered">
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+</ul>
+<ul class="o-list o-list_unordered">
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+</ul>
+
+*/
+
+@mixin ids-list_ordering {
+
+  .o-list_ordered {
+    padding-left: $unit-tiny;
+    list-style-type: decimal;
+  }
+
+  .o-list_unordered {
+    padding-left: $unit-tiny;
+    list-style-type: disc;
+  }
+}
+
+
+/*
+Scrollable list
+
+markup:
+<p>Scrollable list</p>
+<ul class="c-list c-list_is-scrollable">
+  <li>list item 1</li>
+  <li>list item 2</li>
+  <li>list item 3</li>
+  <li>list item 4</li>
+  <li>list item 5</li>
+  <li>list item 6</li>
+  <li>list item 7</li>
+  <li>list item 8</li>
+  <li>list item 9</li>
+  <li>list item 10</li>
+  <li>list item 11</li>
+  <li>list item 12</li>
+  <li>list item 13</li>
+  <li>list item 14</li>
+  <li>list item 15</li>
+  <li>list item 16</li>
+  <li>list item 17</li>
+  <li>list item 18</li>
+</ul>
+*/
+
+@mixin ids-list-scrollable {
+  .c-list_is-scrollable {
+    height: 21.6rem;
+    border: 1px solid $list-scrollable-border-color;
+    border: 1px solid var(--ids-theme-list-scrollable-border-color, $list-scrollable-border-color);
+    border-radius: $global-radius;
+    border-radius: var(--ids-theme-global-radius, $global-radius);
+    background: $list-scrollable-background;
+    background: var(--ids-theme-list-scrollable-background, $list-scrollable-background);
+    overflow-y: auto;
+  }
+
+  .c-list_is-scrollable-h80pc {
+    height: 80%;
+  }
+}
+
+
+/*
+Interactive list-items
+
+Adding .c-list__item_is-interactive to the list-item makes it highlighted on focus.
+
+markup:
+<p>Scrollable list</p>
+<ul class="c-list">
+  <li class="c-list__item c-list__item_is-interactive">list item 1</li>
+  <li class="c-list__item c-list__item_is-interactive">list item 2</li>
+  <li class="c-list__item c-list__item_is-interactive">list item 3</li>
+  <li class="c-list__item c-list__item_is-interactive">list item 4</li>
+  <li class="c-list__item c-list__item_is-interactive">list item 5</li>
+  <li class="c-list__item c-list__item_is-interactive">list item 6</li>
+  <li class="c-list__item c-list__item_is-interactive">list item 7</li>
+  <li class="c-list__item c-list__item_is-interactive">list item 8</li>
+</ul>
+
+*/
+
+@mixin ids-list-item {
+  .c-list__item_is-interactive {
+    &:hover {
+      border-top-color: rgba($list-item-background-hover, 0.4);
+      border-top-color: rgba(var(--ids-theme-list-item-background-hover, $list-item-background-hover), 0.4);
+      border-bottom-color: rgba($list-item-background-hover, 0.4);
+      border-bottom-color: rgba(var(--ids-theme-list-item-background-hover, $list-item-background-hover), 0.4);
+      background: rgba($list-item-background-hover, 0.8);
+      background: rgba(var(--ids-theme-list-item-background-hover, $list-item-background-hover), 0.8);
+      cursor: pointer;
+
+      + .c-list__item_is-interactive {
+        border-top-color: rgba($list-item-background-hover, 0.8);
+        border-top-color: rgba(var(--ids-theme-list-item-background-hover, $list-item-background-hover), 0.8);
+      }
+    }
+  }
+
+  .is-list__item_active {
+    border-top-color: rgba($list-item-background-active, 0.4);
+    border-top-color: rgba(var(--ids-theme-list-item-background-active, $list-item-background-active), 0.4);
+    border-bottom-color: rgba($list-item-background-active, 0.4);
+    border-bottom-color: rgba(var(--ids-theme-list-item-background-active, $list-item-background-active), 0.4);
+    background: rgba($list-item-background-active, 0.3);
+    background: rgba(var(--ids-theme-list-item-background-active, $list-item-background-active), 0.3);
+    cursor: pointer;
+  }
+
+  .c-list__item-element {}
+
+  .c-list__item-element_hidden {
+    visibility: hidden;
+  }
+
+  .c-list__item_show-element-on-hover {
+    &:hover {
+      .c-list__item-element {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@mixin ids-list-core-styles {
+  @include ids-list;
+  @include ids-list-bare;
+  @include ids-list-inline;
+  @include ids-list-inline_delimited;
+  @include ids-list_ordering;
+  @include ids-list-scrollable;
+  @include ids-list-item;
+}

@@ -1,0 +1,186 @@
+/* NVD3 Tooltip */
+.nvtooltip {
+  position: absolute;
+  display: block;
+  padding: 1px;
+  z-index: $nvd3-tooltip-zindex;
+  user-select: none;
+  font-family: $nvd3-font-family;
+  font-size: $nvd3-tooltip-font-size;
+  text-align: left;
+  white-space: nowrap;
+  pointer-events: none;
+  background-color: rgba($nvd3-tooltip-background, 0.8);
+  border: 1px solid rgba($nvd3-tooltip-border, 0.2);
+  border-radius: $nvd3-border-radius;
+  color: rgba($nvd3-tooltip-color, 1);
+
+  > div {
+    padding: $unit-tiny;
+    background: rgba($body-bg, 0.7) !important;
+    color: $body-color;
+  }
+
+  /* Give tooltips that old fade in transition by
+      putting a "with-transitions" class on the container div.
+  */
+  &.with-transitions,
+  .with-transitions .nvtooltip {
+    transition: opacity $nvd3-transition-duration-short $nvd3-transition-function-default;
+    transition-delay: $nvd3-transition-delay-default;
+  }
+
+  &.x-nvtooltip,
+  &.y-nvtooltip {
+    padding: $nvd3-tooltip-x-y-tooltip-padding;
+  }
+
+  &.xy-tooltip {
+    background-color: rgba($nvd3-tooltip-xy-tooltip-background, 0.5);
+  }
+
+  & h3 {
+    margin: 0;
+    padding: $unit-tiny $unit-small;
+    line-height: $line-height-computed;
+    font-weight: normal;
+    background-color: rgba($nvd3-tooltip-h3-background, 0.75);
+    color: rgba($nvd3-tooltip-h3-color, 1);
+    text-align: center;
+    border-bottom: 1px solid $nvd3-tooltip-h3-border-bottom-color;
+    border-radius: $nvd3-border-radius $nvd3-border-radius 0 0;
+  }
+
+  p {
+    margin: 0;
+    padding: $unit-tiny $unit-small;
+    text-align: center;
+  }
+
+  span {
+    display: inline-block;
+    margin: 2px 0;
+  }
+
+  table {
+    margin: 6px;
+    border-spacing: 0;
+
+    td {
+      padding: 2px 9px 2px 0;
+      vertical-align: middle;
+
+      &.key {
+        font-weight: normal;
+      }
+
+      &.key.total {
+        font-weight: bold;
+      }
+
+      &.value {
+        text-align: right;
+        font-weight: bold;
+      }
+
+      &.percent {
+        color: $nvd3-tooltip-table-percent;
+      }
+
+      &.legend-color-guide div {
+        width: 8px;
+        height: 8px;
+        vertical-align: middle;
+      }
+
+      &.legend-color-guide {
+        div {
+          width: 12px;
+          height: 12px;
+          border: 1px solid $nvd3-tooltip-table-legend-color-guide-border;
+        }
+      }
+    }
+
+    //tr {
+    //  &:nth-child(1) .legend-color-guide div {
+    //    background-color: $nvd3-color-1 !important;
+    //  }
+    //
+    //  &:nth-child(2) .legend-color-guide div {
+    //    background-color: $nvd3-color-2 !important;
+    //  }
+    //
+    //  &:nth-child(3) .legend-color-guide div {
+    //    background-color: $nvd3-color-3 !important;
+    //  }
+    //
+    //  &:nth-child(4) .legend-color-guide div {
+    //    background-color: $nvd3-color-4 !important;
+    //  }
+    //
+    //  &:nth-child(5) .legend-color-guide div {
+    //    background-color: $nvd3-color-5 !important;
+    //  }
+    //
+    //  &:nth-child(6) .legend-color-guide div {
+    //    background-color: $nvd3-color-6 !important;
+    //  }
+    //
+    //  &:nth-child(7) .legend-color-guide div {
+    //    background-color: $nvd3-color-7 !important;
+    //  }
+    //
+    //  &:nth-child(8) .legend-color-guide div {
+    //    background-color: $nvd3-color-8 !important;
+    //  }
+    //
+    //  &:nth-child(9) .legend-color-guide div {
+    //    background-color: $nvd3-color-9 !important;
+    //  }
+    //
+    //  &:nth-child(10) .legend-color-guide div {
+    //    background-color: $nvd3-color-10 !important;
+    //  }
+    //
+    //  &:nth-child(11) .legend-color-guide div {
+    //    background-color: $nvd3-color-11 !important;
+    //  }
+    //
+    //  &:last-child .legend-color-guide div {
+    //    background-color: transparent !important;
+    //  }
+    //}
+
+    tr.highlight td {
+      padding: 1px 9px 1px 0;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-top-style: solid;
+      border-top-width: 1px;
+    }
+  }
+
+  .footer {
+    padding: 3px;
+    text-align: center;
+  }
+
+  &-pending-removal {
+    pointer-events: none;
+    display: none;
+  }
+}
+
+/****
+Interactive Layer
+*/
+.nvd3 {
+  .nv-interactiveGuideLine {
+    pointer-events: none;
+  }
+
+  line.nv-guideline {
+    stroke: $nvd3-guideline-stroke;
+  }
+}

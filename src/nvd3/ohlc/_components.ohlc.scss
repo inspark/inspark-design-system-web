@@ -1,0 +1,18 @@
+/* OHLC */
+
+.nvd3.nv-ohlcBar .nv-ticks .nv-tick {
+  stroke-width: 1px;
+
+  &.hover {
+    stroke-width: 2px;
+  }
+
+  &.positive {
+    stroke: $nvd3-ohlcbar-tick-positive-stroke;
+  }
+
+  &.negative {
+    stroke: $nvd3-ohlcbar-tick-negative-stroke;
+  }
+}
+

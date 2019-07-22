@@ -1,0 +1,407 @@
+@import "../base/variables";
+@import "../theme/variables";
+@import "../form/variables";
+@import "./variables";
+
+// todo: отрефакторить структуру миксинов в core и названия переменных
+
+@mixin ids-input-core-styles {
+  .c-input {
+    @include c-input;
+  }
+
+  .c-input_block {
+    @include c-input_block;
+  }
+
+  .c-input_text-right {
+    @include c-input_text-right;
+  }
+
+  .c-input_xxtiny {
+    @include c-input_xxtiny;
+  }
+
+  .c-input_xtiny {
+    @include c-input_xtiny;
+  }
+
+  .c-input_tiny {
+    @include c-input_tiny;
+  }
+
+  .c-input_small {
+    @include c-input_small;
+  }
+
+  .c-input_regular {
+    @include c-input_regular;
+  }
+
+  .c-input_large {
+    @include c-input_large;
+  }
+
+  .c-input_huge {
+    @include c-input_huge;
+  }
+
+  .c-input_bare {
+    @include c-input_bare;
+  }
+
+  .c-input_min-small {
+    @include c-input_min-small;
+  }
+
+  .c-input_verticaly-small {
+    @include c-input_verticaly-small;
+  }
+
+  .c-input_is-warning {
+    @include c-input_is-warning;
+  }
+
+  .c-input_is-error {
+    @include c-input_is-error;
+  }
+
+  .c-input_is-success {
+    @include c-input_is-success;
+  }
+}
+
+/*
+Input
+
+Input styling based on `.c-input` block class and it`s modifiers.
+
+*/
+
+/*
+Input
+
+markup:
+<input class="c-input" id="input1" placeholder="Text Input" type="text">
+<input class="c-input" id="input2" placeholder="Readonly Input" type="text" readonly value="Unchangeble info">
+<input class="c-input" id="input3" placeholder="Disabled Input" type="text" disabled>
+<input class="c-input" id="input4" placeholder="Input type='email'" type="email">
+<input class="c-input" id="input5" placeholder="Input type='tel'" type="tel">
+<input class="c-input" id="input6" placeholder="Input type='search'" type="search">
+<input class="c-input" id="input7" placeholder="Input type='number'" type="number">
+<input class="c-input" id="input8" placeholder="Input type='date'" type="date">
+
+*/
+
+@mixin _c-input {
+  padding: $unit-tiny $unit-small;
+  line-height: $line-height-computed;
+  transition: all, $global-transition;
+  border: $form-border_outer;
+  border: var(--ids-theme-inuit-forms-border_outer, $form-border_outer);
+  border-radius: $global-radius;
+  font-family: inherit;
+  font-size: $font-size-base;
+  outline: 0;
+  box-shadow: $form-border_inner;
+  box-shadow: var(--ids-theme-inuit-forms-border_inner, $form-border_inner);
+  box-sizing: border-box;
+  background-color: $form-background;
+  background-color: var(--ids-theme-inuit-forms-background, $form-background);
+  color: $form-color;
+  color: var(--ids-theme-inuit-forms-color, $form-color);
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba($input-tap-highlight-color, 0);
+  -webkit-tap-highlight-color: rgba(var(--ids-theme-input-tap-highlight-color, $input-tap-highlight-color), 0);
+  -moz-appearance: none;
+
+  &::placeholder {
+    color: rgba($form-color, 0.6);
+    color: rgba(var(--ids-theme-inuit-forms-color, $form-color), 0.6);
+  }
+
+  &:hover {
+    border-color: $ids-theme-primary;
+    border-color: var(--ids-theme-primary, $ids-theme-primary);
+  }
+
+  &:focus {
+    border-color: $form-border_outer_focused;
+    border-color: var(--ids-theme-inuit-forms-border_outer_focused, $form-border_outer_focused);
+    box-shadow: $form-border_inner_focused;
+    box-shadow: var(--ids-theme-inuit-forms-border_inner_focused, $form-border_inner_focused);
+    outline: 0;
+  }
+
+  &[readonly],
+  &[disabled] {
+    box-shadow: none;
+  }
+
+  &[readonly] {
+    border: $form-border_readonly;
+    border: var(--ids-theme-inuit-forms-border_readonly, $form-border_readonly);
+    color: $form-color_readonly;
+    color: var(--ids-theme-inuit-forms-color_readonly, $form-color_readonly);
+
+    &:focus {
+      border-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  &[disabled] {
+    border: $form-border_disabled;
+    border: var(--ids-theme-inuit-forms-border_disabled, $form-border_disabled);
+    box-shadow: none;
+    background-color: $form-background_disabled;
+    background-color: var(--ids-theme-inuit-forms-background_disabled, $form-background_disabled);
+    color: $form-color_disabled;
+    color: var(--ids-theme-inuit-forms-color_disabled, $form-color_disabled);
+    cursor: not-allowed;
+
+    // scss-lint:disable VendorPrefix
+    &::-webkit-input-placeholder {
+      color: $form-color_placeholder;
+      color: var(--ids-theme-inuit-forms-color_placeholder, $form-color_placeholder);
+      font-weight: $font-weight-normal;
+    }
+
+    &:-moz-placeholder {
+      color: $form-color_placeholder;
+      color: var(--ids-theme-inuit-forms-color_placeholder, $form-color_placeholder);
+      font-weight: $font-weight-normal;
+    }
+
+    &::-moz-placeholder {
+      color: $form-color_placeholder;
+      color: var(--ids-theme-inuit-forms-color_placeholder, $form-color_placeholder);
+      font-weight: $font-weight-normal;
+    }
+
+    &:-ms-input-placeholder {
+      color: $form-color_placeholder;
+      color: var(--ids-theme-inuit-forms-color_placeholder, $form-color_placeholder);
+      font-weight: $font-weight-normal;
+    }
+    // scss-lint:enable VendorPrefix
+  }
+}
+
+// todo: сократить количество миксинов
+@mixin c-input {
+  @include _c-input;
+}
+
+%c-input {
+  @include c-input;
+}
+
+// Input Variations
+
+/*
+Input Block
+
+Input on full width of it`s parent.
+
+markup:
+<input id="input1" placeholder="Full width of parent container" class="c-input c-input_block" type="text">
+
+*/
+
+@mixin c-input_block {
+  display: inline-block;
+  width: 100%;
+}
+
+/*
+Input Text Right
+
+Text right aligning inside input.
+
+markup:
+<input class="c-input c-input_text-right" placeholder="Type something..." type="text">
+
+*/
+
+@mixin c-input_text-right {
+  .c-input_text-right {
+    text-align: right;
+
+    // scss-lint:disable VendorPrefix
+    &::-webkit-input-placeholder {
+      text-align: right;
+    }
+
+    &:-moz-placeholder {
+      text-align: right;
+    }
+
+    &::-moz-placeholder {
+      text-align: right;
+    }
+
+    &:-ms-input-placeholder {
+      text-align: right;
+    }
+    // scss-lint:enable VendorPrefix
+  }
+}
+
+/*
+Input Length
+
+c-input_xtiny - xtiny length (88px)
+c-input_tiny - tiny length (106px)
+c-input_small - small  length
+c-input_regular - regular length
+c-input_large - large length
+c-input_huge - huge length
+
+markup:
+<input class="c-input {$modifiers}" placeholder="Input length {$modifiers}" type="text">
+
+*/
+
+@mixin c-input_xxtiny {
+  width: 100%;
+  max-width: inuit-rem(50px);
+
+  &[type=search] {
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  }
+}
+
+@mixin c-input_xtiny {
+  width: 100%;
+  max-width: inuit-rem(88px);
+
+  &[type=search] {
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  }
+}
+
+@mixin c-input_tiny {
+  width: 100%;
+  max-width: inuit-rem(106px);
+
+  &[type=search] {
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  }
+}
+
+@mixin c-input_small {
+  width: auto;
+  max-width: inuit-rem(212px);
+
+  &[type=search] {
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  }
+}
+
+@mixin c-input_regular {
+  width: 100%;
+  max-width: inuit-rem(318px);
+
+  &[type=search] {
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  }
+}
+
+@mixin c-input_large {
+  width: 100%;
+  max-width: inuit-rem(424px);
+}
+
+@mixin c-input_huge {
+  width: 100%;
+  max-width: inuit-rem(530px);
+}
+
+@mixin c-input_min-small {
+  width: auto;
+  min-width: inuit-rem(212px);
+
+  &[type=search] {
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  }
+}
+
+@mixin c-input_verticaly-small {
+  padding: 4px $inuit-global-spacing-unit-small;
+}
+
+/*
+Bare Input
+
+markup:
+<input class="c-input c-input_bare" placeholder="Type something..." type="text">
+
+*/
+
+/**
+ * Text inputs with no styles.
+ */
+
+@mixin c-input_bare {
+  border: 1px solid transparent !important;
+  background: transparent;
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+    outline: 0;
+  }
+}
+
+/*
+Input Validation
+
+c-input_is-success - Success input style
+c-input_is-warning - Warning input style
+c-input_is-error - Error input style
+
+markup:
+<input class="c-input {$modifiers}" placeholder="Validation class .{$modifiers}" type="text">
+
+*/
+
+/**
+ * Styles for validation states
+ */
+
+@mixin c-input_is-warning {
+  border-color: $form-validation-warning;
+  border-color: var(--ids-theme-inuit-forms-validation-warning, $form-validation-warning);
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 7px 0 $ids-theme-status-warning;
+    box-shadow: inset 0 0 7px 0 var(--ids-theme-ids-theme-status-warning, $ids-theme-status-warning);
+  }
+}
+
+@mixin c-input_is-error {
+  border-color: $form-validation-error;
+  border-color: var(--ids-theme-inuit-forms-validation-error, $form-validation-error);
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 7px 0 $ids-theme-status-error;
+    box-shadow: inset 0 0 7px 0 var(--ids-theme-status-error, $ids-theme-status-error);
+  }
+}
+
+@mixin c-input_is-success {
+  border-color: $form-validation-success;
+  border-color: var(--ids-theme-inuit-forms-validation-success);
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 0 7px 0 $ids-theme-status-success;
+    box-shadow: inset 0 0 7px 0 var(--ids-theme-status-success, $ids-theme-status-success);
+  }
+}

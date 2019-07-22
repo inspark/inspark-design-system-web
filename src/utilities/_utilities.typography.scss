@@ -1,0 +1,176 @@
+@import "../theme/variables";
+@import "../typography/variables";
+@import "../mediaqueries/variables";
+
+/* ==========================================================================
+   #Typography
+   ========================================================================== */
+
+/**
+ * Font weights
+ */
+
+.u-weight_light {
+  font-weight: 300 !important;
+}
+
+.u-weight_normal {
+  font-weight: 400 !important;
+}
+
+.u-weight_semibold {
+  font-weight: 600 !important;
+}
+
+/**
+ * Alignment
+ */
+
+.u-text_left {
+  text-align: left!important;
+}
+
+.u-text_right {
+  text-align: right!important;
+}
+
+.u-text_center {
+  text-align: center!important;
+}
+
+.u-text_justify {
+  text-align: justify!important;
+}
+
+.u-text_nowrap {
+  white-space: nowrap;
+}
+
+.u-text_white-space_pre-line {
+  white-space: pre-line;
+}
+
+.u-text_white-space_normal {
+  white-space: normal;
+}
+
+.u-text_word-wrap_break-word {
+  word-wrap: break-word;
+}
+
+.u-text-decoration-none {
+  &,
+  &:hover {
+    text-decoration: none!important;
+  }
+}
+
+.u-text-overflow_ellipsis {
+  text-overflow: ellipsis;
+}
+
+/**
+ * Transformation
+ */
+.u-text_lowercase {
+  text-transform: lowercase;
+}
+
+.u-text_uppercase {
+  text-transform: uppercase;
+}
+
+.u-text_capitalize {
+  text-transform: capitalize;
+}
+
+/**
+ * Sizes
+ */
+
+.u-lead {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+}
+
+.u-caption {
+  @include inuit-font-size($inuit-font-size-caption);
+}
+
+.u-small {
+  @include inuit-font-size($inuit-font-size-small);
+}
+
+.u-small\@xlarge {
+  @media (min-width: #{map-get($screen-limits, xlarge)}) {
+    @include inuit-font-size($inuit-font-size-small);
+  }
+}
+
+.u-tiny {
+  @include inuit-font-size($inuit-font-size-small);
+}
+
+/**
+ * Color
+ */
+
+.u-text_primary {
+  color: $ids-theme-primary;
+  color: var(--ids-theme-primary, $ids-theme-primary);
+}
+
+.u-text_white {
+  color: $color-base-white;
+}
+
+.u-text_base {
+  color: $text-color;
+  color: var(--ids-theme-text-color, $text-color);
+}
+
+.u-text_gray-dark {
+  color: $color-gray-90;
+}
+
+.u-text_gray-light {
+  color: $color-gray-10;
+}
+
+.u-text_bordered-white {
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+.u-text_muted {
+  color: $text-color !important;
+  color: var(--ids-theme-text-color, $text-color) !important;
+  opacity: 0.5;
+}
+
+.u-noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.u-fs-21 {
+  font-size: 21px;
+}
+
+.u-text-white {
+  color: $color-base-white;
+}
+
+.u-text-black {
+  color: $color-base-black;
+}
+
+.u-text-highlight {
+  background-color: rgba($text-highlight-background, 1);
+  background-color: rgba(var(--text-highlight-background, $text-highlight-background), 1);
+  color: $color-base-black;
+  color: var(--text-highlight-color, $text-highlight-color);
+}

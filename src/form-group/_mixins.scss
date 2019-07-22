@@ -1,0 +1,55 @@
+@import "../base/variables";
+
+//  = FORM-GROUP
+//
+
+/*
+Form-group
+
+The .c-form-group class is the easiest way to add some structure to forms. Its only purpose is to provide margin-bottom
+around a label and control pairing. As a bonus, since it’s a class you can use it with <fieldset>s, <div>s, or nearly
+any other element.
+
+The recommendation is for .c-form-group classnames to be placed on div elements.
+
+markup:
+<div class="c-form-group">
+  <label class="c-label for="inputfg1" >Text Input</label>
+  <input class="c-input" id="inputfg1" placeholder="Type something..." type="text">
+</div>
+<div class="c-form-group">
+  <label class="c-label" for="inputfg2" >Readonly Input</label>
+  <input class="c-input" id="inputfg2" placeholder="Type something..." type="text" readonly value="Unchangeble info">
+</div>
+<div class="c-form-group">
+  <label class="c-checkbox">
+    <input class="c-checkbox__input" type="checkbox">
+    <i class="c-checkbox__icon"></i>
+    Checkbox
+  </label>
+  <label class="c-checkbox">
+    <input class="c-checkbox__input" type="checkbox">
+    <i class="c-checkbox__icon"></i>
+    Checkbox
+  </label>
+</div>
+
+*/
+
+@mixin ids-form-group-core-styles {
+  .c-form-group {
+    margin-bottom: $unit-small;
+    clear: both;
+
+    > .c-input,
+    > .c-input-group,
+    > .c-select,
+    > .c-static,
+    > .c-textarea,
+    > .c-checkbox,
+    > .c-radio {
+      margin-right: $unit-small;
+    }
+
+  }
+}

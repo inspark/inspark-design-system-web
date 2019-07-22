@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #DISPLAY
+   ========================================================================== */
+
+/**
+ * Change display property
+ */
+
+@mixin u-float-right {
+  float: right !important;
+}
+
+@mixin u-float-left {
+  float: left !important;
+}
+
+@mixin c-select-selectors {
+  .u-float-right {
+    @include u-float-right;
+  }
+
+  .u-float-left {
+    @include u-float-left;
+  }
+}
+
+@include c-select-selectors;

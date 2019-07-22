@@ -1,0 +1,53 @@
+@import "../base/variables";
+@import "./variables";
+@import "../mediaqueries/variables";
+
+@mixin ids-sidebar-core-styles {
+  .c-sidebar {
+    max-width: $sidebar-open-width;
+    position: fixed;
+    padding-top: 110px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: $sidebar-bg;
+    background: var(--ids-theme-sidebar-bg, $sidebar-bg);
+    z-index: $zindex-sidebar;
+
+    @media (min-width: 438px) {
+      padding-top: 53px;
+    }
+  }
+
+  .t-sidebar {
+    background: $sidebar-bg;
+    background: var(--ids-theme-sidebar-bg, $sidebar-bg);
+  }
+
+  .c-sidebar__container {
+    position: relative;
+    overflow-y: auto;
+    height: calc(100vh - 50px);
+  }
+
+  .c-sidebar__toggler {
+    text-align: center;
+  }
+
+  .c-sidebar__btn {
+    margin: 0 auto;
+    float: right;
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  .is-sidebar_collapsed {
+    @media (max-width: #{map-get($screen-limits, large)}) {
+      position: absolute;
+      left: -30000px;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
+

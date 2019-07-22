@@ -1,0 +1,126 @@
+@import "../theme/variables";
+@import "../base/variables";
+
+// Forms
+
+/// Sets the forms Font color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-color: $color-base-white !default;
+
+/// Sets the forms Placeholder font color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default] -
+$form-color_placeholder: $color-black-disabled !default;
+
+/// Sets the forms Background color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default] - Background color
+$form-background: rgba($color-base-white, .05) !default;
+
+/// Sets the forms Inner border string
+///
+/// @group px-forms-design:variables:style
+/// @type Color | String [default]
+$form-border_inner: $component-active-box-shadow !default;
+
+/// Sets the forms Outer border string
+///
+/// @group px-forms-design:variables:style
+/// @type Color | String [default]
+$form-border_outer: 1px solid transparent !default;
+
+/// Sets the forms Focused inner border string
+///
+/// @group px-forms-design:variables:style
+/// @type Color | String [default] - Focused inner border string
+$form-border_inner_focused: 0 0 7px 0px $ids-theme-primary !default; //inset 0 0 0 1px $form-background !default;
+
+/// Sets the forms Focused outer border color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-border_outer_focused: $ids-theme-primary !default;
+
+/// Sets the forms Disable font color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-color_disabled: $color-black-disabled !default;
+
+/// Sets the forms Disabled backgroundn color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-background_disabled: $color-gray-35 !default;
+
+/// Sets the forms Disabled border string
+///
+/// @group px-forms-design:variables:style
+/// @type Color | String [default]
+$form-border_disabled: $color-gray-35 !default;
+
+/// Sets the forms Readonly font color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-color_readonly: $color-gray-5 !default;
+
+/// Sets the forms Readonnly background color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-background_readonly: transparent !default;
+
+/// Sets the forms Readonly border string
+///
+/// @group px-forms-design:variables:style
+/// @type Color | String [default]
+$form-border_readonly: none !default;
+
+/// Sets the forms Help font color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-color_help: $ids-theme-primary !default;
+
+/// Sets the forms Validation warning color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-validation-warning: $ids-theme-status-warning !default;
+
+/// Sets the forms Validation error color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-validation-error: $ids-theme-status-error !default;
+
+/// Sets the forms Validation success color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$form-validation-success: $ids-theme-status-success !default;
+
+$ids-form-theme-property-values: (
+  form-color: $form-color,
+  form-color_placeholder: $form-color_placeholder,
+  form-background: $form-background,
+  form-border_inner: $form-border_inner,
+  form-border_outer: $form-border_outer,
+  form-border_inner_focused: $form-border_inner_focused,
+  form-border_outer_focused: $form-border_outer_focused,
+  form-color_disabled: $form-color_disabled,
+  form-background_disabled: $form-background_disabled,
+  form-border_disabled: $form-border_disabled,
+  form-color_readonly: $form-color_readonly,
+  form-background_readonly: $form-background_readonly,
+  form-border_readonly: $form-border_readonly,
+  form-color_help: $form-color_help,
+  form-validation-warning: $form-validation-warning,
+  form-validation-error: $form-validation-error,
+  form-validation-success: $form-validation-success,
+);

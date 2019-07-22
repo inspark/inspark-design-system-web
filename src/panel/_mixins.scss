@@ -1,0 +1,746 @@
+@import "../theme/variables";
+@import "../base/variables";
+@import "../mediaqueries/mixins";
+@import "./variables";
+@import "../tools/tools.border-radius";
+@import "../tools/tools.clearfix";
+@import "../table/variables";
+
+/* ==========================================================================
+   #Panels
+   ========================================================================== */
+
+/*
+Panels
+
+A panel can be a very useful piece of layout, it provides a manageable scrollable space within the existing structure of
+your page.
+
+markup:
+<div class="o-panel-container" style="height: 350px">
+  <div class="o-panel">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget neque mollis, sodales nulla ut, porta
+    urna.
+  </div>
+</div>
+
+*/
+
+@mixin ids-panel-container {
+  .o-panel-container {
+    position: relative;
+  }
+}
+
+
+/*
+Panels container heights
+
+`.o-panel-container_height-small` - 250px
+`.o-panel-container_height-middle` - 350px
+`.o-panel-container_height-large` - 450px
+
+markup:
+<h5>Small Panel Container</h5>
+<div class="o-panel-container o-panel-container_height-small">
+  <div class="o-panel">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget neque mollis, sodales nulla ut, porta
+    urna.
+  </div>
+</div>
+<h5>Middle Panel Container</h5>
+<div class="o-panel-container o-panel-container_height-middle">
+  <div class="o-panel">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget neque mollis, sodales nulla ut, porta
+    urna.
+  </div>
+</div>
+<h5>Large Panel Container</h5>
+<div class="o-panel-container o-panel-container_height-large">
+  <div class="o-panel">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget neque mollis, sodales nulla ut, porta
+    urna. Vivamus gravida placerat metus ac malesuada. Donec convallis dolor in ex tristique, luctus tempus dui
+    sollicitudin.
+  </div>
+</div>
+
+*/
+
+@mixin ids-panel-container-size {
+  .o-panel-container {
+    &_height-small {
+      height: 250px;
+    }
+
+    &_height-middle {
+      height: 350px;
+    }
+
+    &_height-large {
+      height: 450px;
+    }
+
+    &_height-100pc {
+      height: 100%;
+    }
+  }
+}
+
+// todo(turchaninov): remove all themed styles from objects
+
+@mixin ids-panel-container-sidepanel {
+  .o-panel-container_sidepanel {
+    max-height: calc(50vh - 26px);
+    min-height: calc(50vh - 26px);
+    //background: $color-gray-90;
+    border-top: 1px solid $panel-border-color;
+    border-top: 1px solid var(--ids-theme-panel-border-color, $panel-border-color);
+    border-bottom: 1px solid $color-gray-40;
+    border-bottom: 1px solid var(--ids-theme-panel-border-color, $panel-border-color);
+  }
+}
+
+@mixin ids-panel-object {
+  .o-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/*
+Panels
+
+Panels are the basic building blocks of a page. Usually all content should be inside one or more card. For example,
+in this demo, every section or element is inside a card. We don't recommend nesting cards, such as in this example,
+but it's technically possible.
+
+markup:
+<div class="c-panel">
+  <div class="c-panel__heading">Header</div>
+  <div class="c-panel__body">Body with content</div>
+  <div class="c-panel__footer">Footer</div>
+</div>
+
+*/
+
+@mixin ids-panel-component {
+
+  .c-panel {
+    margin-bottom: $line-height-computed;
+    background-color: $panel-bg;
+    background-color: var(--ids-theme-panel-bg, $panel-bg);
+    border: 1px solid transparent;
+    border-radius: $panel-border-radius;
+    border-radius: var(--ids-theme-panel-border-radius, $panel-border-radius);
+    box-shadow: none;
+  }
+
+  .c-panel_lighter {
+    background-color: $panel-lighter-background;
+    background-color: var(--ids-theme-panel-lighter-background, $panel-lighter-background);
+    box-shadow: none;
+  }
+
+  .c-panel_dashed {
+    border: 4px dashed $panel-dashed-border-color;
+    border: 4px dashed var(--ids-theme-panel-dashed-border-color, $panel-dashed-border-color);
+  }
+
+  .c-panel_min-height_100 {
+    min-height: 100%;
+  }
+
+  .c-panel_overflow {
+    overflow: hidden;
+  }
+
+  .c-panel_height-100pc {
+     height: 100%;
+   }
+
+  .c-panel_semitransparent {
+    background: rgba($panel-bg, 0.8);
+    background: rgba(var(--ids-theme-panel-bg, $panel-bg), 0.8);
+  }
+
+  .c-panel__body_bg-semitransparent {
+    background: rgba(var(--ids-theme-panel-bg, $panel-bg), 0.8);
+  }
+
+  // Panel contents
+  .c-panel__body {
+    position: relative;
+    padding: $panel-body-padding;
+    @include clearfix;
+    overflow: auto;
+    //height: calc(100vh - 232px + 54px);
+    @media screen and (min-width: $screen-md-min) {
+      max-height: calc(100% - 50px);
+      height: calc(100% - 50px);
+    }
+  }
+
+  .c-panel__body_overflow-x_auto {
+    overflow-x: auto;
+  }
+
+  // Optional heading
+  .c-panel__heading {
+    position: relative;
+    z-index: 1;
+    padding: $panel-heading-padding;
+    border-bottom: 1px solid transparent;
+    @include border-top-radius(($panel-border-radius - 1));
+    @include border-top-radius((var(--ids-theme-panel-border-radius, $panel-border-radius) - 1));
+
+    > .dropdown .dropdown-toggle {
+      color: inherit;
+    }
+  }
+
+  .c-panel__heading_divided {
+    display: table;
+    width: 100%;
+    padding: 0;
+  }
+
+  .c-panel__heading-btn-block {
+    display: table-cell;
+    width: 20px;
+  }
+
+  .c-panel__heading-btn {
+    font-size: $inuit-font-size-h4;
+  }
+
+  .c-panel__title-block {
+    display: table-cell;
+  }
+
+  .c-panel__body_dashboard {
+    background-color: $panel-body-dashboard-bg;
+    background-color: var(--ids-theme-panel-body-dashboard-bg, $panel-body-dashboard-bg);
+  }
+
+  // Within heading, strip any `h*` tag of its default margins for spacing.
+  .c-panel__heading-title {
+    display: inline-block;
+    padding: $panel-heading-title-padding;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-size: $inuit-font-size-h4;
+    font-weight: bold;
+    color: inherit;
+
+    > a,
+    > small,
+    > .small,
+    > small > a,
+    > .small > a {
+      color: inherit;
+    }
+  }
+
+  .c-panel__heading_overflow_auto {
+     //overflow: auto;
+   }
+
+  .c-panel__heading_absolute-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $zindex-panel-image-content;
+  }
+
+  // todo: refactor intercomponent dependancy
+  ._c-panel__body_height-full {
+    height: calc(100vh - 233px);
+  }
+
+  // Optional footer (stays gray in every modifier class)
+  .c-panel__footer {
+    padding: $panel-footer-padding;
+    background-color: $panel-footer-bg;
+    border-top: 1px solid $panel-inner-border;
+
+    @include border-bottom-radius(($panel-border-radius - 1));
+    @include border-bottom-radius((var(--ids-theme-panel-border-radius, $panel-border-radius) - 1));
+  }
+}
+
+
+// List groups in panels
+//
+// By default, space out list group content from panel headings to account for
+// any kind of custom content between the two.
+
+@mixin ids-panel-list-groups {
+
+  .c-panel {
+    > .c-list-group,
+    > .c-panel-collapse > .c-list-group {
+      margin-bottom: 0;
+
+      .c-list-group__item {
+        border-width: 1px 0;
+        border-radius: 0;
+      }
+
+      // Add border top radius for first one
+      &:first-child {
+        .c-list-group__item:first-child {
+          border-top: 0;
+          @include border-top-radius(($panel-border-radius - 1));
+          @include border-top-radius((var(--ids-theme-panel-border-radius, $panel-border-radius) - 1));
+        }
+      }
+
+      // Add border bottom radius for last one
+      &:last-child {
+        .c-list-group__item:last-child {
+          border-bottom: 0;
+          @include border-bottom-radius(($panel-border-radius - 1));
+          @include border-bottom-radius((var(--ids-theme-panel-border-radius, $panel-border-radius) - 1));
+        }
+      }
+    }
+
+    > .c-panel_heading + .c-panel__collapse > .c-list-group {
+      .c-list-group__item:first-child {
+        @include border-top-radius(0);
+      }
+    }
+  }
+
+  // Collapse space between when there's no additional content.
+  .c-panel-heading + .c-list-group {
+    .c-list-group__item:first-child {
+      border-top-width: 0;
+    }
+  }
+
+  .c-list-group + .c-panel__footer {
+    border-top-width: 0;
+  }
+}
+
+// Tables in panels
+//
+// Place a non-bordered `.c-table` within a panel (not within a `.c-panel-body`) and
+// watch it go full width.
+
+@mixin ids-panel-tables {
+
+  .c-panel {
+    > .c-table,
+    > .c-table-responsive > .c-table,
+    > .c-panel__collapse > .c-table {
+      margin-bottom: 0;
+
+      caption {
+        padding-left: $panel-body-padding;
+        padding-right: $panel-body-padding;
+      }
+    }
+
+    // Add border top radius for first one
+    > .c-table:first-child,
+    > .c-table-responsive:first-child > .c-table:first-child {
+      @include border-top-radius(($panel-border-radius - 1));
+      @include border-top-radius((var(--ids-theme-panel-border-radius, $panel-border-radius) - 1));
+
+      > thead:first-child,
+      > tbody:first-child {
+        > tr:first-child {
+          border-top-left-radius: ($panel-border-radius - 1);
+          border-top-left-radius: (var(--ids-theme-panel-border-radius, $panel-border-radius) - 1);
+          border-top-right-radius: ($panel-border-radius - 1);
+          border-top-right-radius: (var(--ids-theme-panel-border-radius, $panel-border-radius) - 1);
+
+          td:first-child,
+          th:first-child {
+            border-top-left-radius: ($panel-border-radius - 1);
+            border-top-left-radius: (var(--ids-theme-panel-border-radius, $panel-border-radius) - 1);
+          }
+
+          td:last-child,
+          th:last-child {
+            border-top-right-radius: ($panel-border-radius - 1);
+            border-top-right-radius: (var(--ids-theme-panel-border-radius, $panel-border-radius) - 1);
+          }
+        }
+      }
+    }
+
+    // Add border bottom radius for last one
+    > .c-table:last-child,
+    > .c-table_responsive:last-child > .c-table:last-child {
+      @include border-bottom-radius(($panel-border-radius - 1));
+      @include border-bottom-radius((var(--ids-theme-panel-border-radius, $panel-border-radius) - 1));
+
+      > tbody:last-child,
+      > tfoot:last-child {
+        > tr:last-child {
+          border-bottom-left-radius: ($panel-border-radius - 1);
+          border-bottom-left-radius: (var(--ids-theme-panel-border-radius, $panel-border-radius) - 1);
+          border-bottom-right-radius: ($panel-border-radius - 1);
+          border-bottom-right-radius: (var(--ids-theme-panel-border-radius, $panel-border-radius) - 1);
+
+          td:first-child,
+          th:first-child {
+            border-bottom-left-radius: ($panel-border-radius - 1);
+            border-bottom-left-radius: (var(--ids-theme-panel-border-radius, $panel-border-radius) - 1);
+          }
+
+          td:last-child,
+          th:last-child {
+            border-bottom-right-radius: ($panel-border-radius - 1);
+            border-bottom-right-radius: (var(--ids-theme-panel-border-radius, $panel-border-radius) - 1);
+          }
+        }
+      }
+    }
+
+    > .c-panel__body + .c-table,
+    > .c-panel__body + .c-table_responsive,
+    > .c-table + .c-panel__body,
+    > .c-table_responsive + .c-panel__body {
+      border-top: 1px solid $table-border-color;
+
+      // todo: подумать, возможно не стоит связывать напрямую с table
+      border-top: 1px solid var(--ids-theme-table-border-color, $table-border-color);
+    }
+
+    > .c-table > tbody:first-child > tr:first-child th,
+    > .c-table > tbody:first-child > tr:first-child td {
+      border-top: 0;
+    }
+
+    > .c-table_bordered,
+    > .c-table_responsive > .c-table_bordered {
+      border: 0;
+
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      > thead,
+      > tbody {
+        > tr:first-child {
+          > td,
+          > th {
+            border-bottom: 0;
+          }
+        }
+      }
+
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > td,
+          > th {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+
+    > .c-table-responsive {
+      border: 0;
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+// Collapsible panels (aka, accordion)
+//
+// Wrap a series of panels in `.c-panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+@mixin ids-panel-collapsible {
+
+  .c-panel-group {
+    margin-bottom: $line-height-computed;
+
+    // Tighten up margin so it's only between panels
+    .c-panel {
+      margin-bottom: 0;
+      border-radius: $panel-border-radius;
+      border-radius: var(--ids-theme-panel-border-radius, $panel-border-radius);
+
+      + .c-panel {
+        margin-top: 5px;
+      }
+    }
+
+    .c-panel__heading {
+      border-bottom: 0;
+
+      + .c-panel__collapse > .c-panel__body,
+      + .c-panel__collapse > .c-list-group {
+        border-top: 1px solid $panel-inner-border;
+        border-top: 1px solid var(--ids-theme-panel-inner-border, $panel-inner-border);
+      }
+    }
+
+    .c-panel__footer {
+      border-top: 0;
+
+      + .c-panel__collapse .c-panel__body {
+        border-bottom: 1px solid var(--ids-theme-panel-inner-border, $panel-inner-border);
+      }
+    }
+  }
+}
+
+@mixin ids-panel-state {
+
+  .c-panel_success {
+    background: rgba($ids-theme-status-success, 0.23);
+    background: rgba(var(--ids-theme-status-success, $ids-theme-status-success), 0.23);
+  }
+
+  .c-panel_warning {
+    background: rgba($ids-theme-status-warning, 0.25);
+    background: rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0.25);
+  }
+
+  .c-panel_critical {
+    background: rgba($ids-theme-status-critical, 0.33);
+    background: rgba(var(--ids-theme-status-critical, $ids-theme-status-critical), 0.33);
+  }
+
+  .c-panel_error {
+    background: rgba($ids-theme-status-error, 0.33);
+    background: rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0.33);
+  }
+
+  .c-panel_falsevalue {
+    background: rgba($ids-theme-status-falsevalue, 0.33);
+    background: rgba(var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue), 0.33);
+  }
+
+}
+
+@mixin ids-panel-box-shadow {
+  .c-panel_box-shadow {
+    box-shadow: $component-active-box-shadow;
+  }
+}
+
+@mixin ids-panel-absolute {
+  .c-panel_absolute-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $zindex-panel-absolute;
+  }
+
+  .c-panel_absolute-search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 300px;
+    z-index: $zindex-panel-absolute;
+  }
+
+  .c-panel_absolute-dashboard-tree {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    height: calc(100vh - 106px);
+    min-width: 300px;
+    z-index: $zindex-panel-absolute;
+  }
+}
+
+@mixin ids-panel-dashboard {
+  .c-panel_dashboard {
+    overflow: unset;
+  }
+
+  ._c-panel_dashboard_overlay {
+    position: absolute;
+    left: -7px;
+    top: 0;
+    bottom: 0;
+    width: 490px;
+    z-index: $zindex-1;
+  }
+
+  ._c-panel_dashboard_overlay\@large {
+    @media screen and (min-width: $screen-md-min) {
+      position: absolute;
+      left: -7px;
+      top: 0;
+      bottom: 0;
+      width: 490px;
+      max-width: unset;
+      max-width: fit-content;
+      z-index: $zindex-panel-absolute;
+    }
+  }
+}
+
+@mixin ids-panel-image {
+  .c-panel__image-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 200px;
+    overflow: hidden;
+    //position: relative;
+    //min-height: 165px;
+    //@include clearfix;
+    //overflow: hidden;
+  }
+
+  .c-panel__image-overlay {
+    position: absolute;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  .c-panel__image-block_grad-top-bottom {
+    &:before {
+      content: '';
+      position: absolute;
+      height: 80px;
+      width: 101%;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: $zindex-1;
+      background: linear-gradient(
+          to bottom,
+          rgba($panel-lighter-background, 1) 40%,
+          rgba($panel-lighter-background, 0) 100%);
+      background: linear-gradient(
+          to bottom,
+          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 1) 40%,
+          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 0) 100%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 56px;
+      width: 101%;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: $zindex-1;
+      background: linear-gradient(
+          to top,
+          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 1) 0%,
+          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 0) 100%);
+      background: linear-gradient(
+          to top,
+          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 1) 0%,
+          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 0) 100%);
+    }
+  }
+
+  .c-panel__image-block_grad-top {
+    &:before {
+      content: '';
+      position: absolute;
+      height: 80px;
+      width: 101%;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: $zindex-1;
+      background: linear-gradient(
+          to bottom,
+          rgba($panel-lighter-background, 1) 40%,
+          rgba($panel-lighter-background, 0) 100%);
+      background: linear-gradient(
+          to bottom,
+          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 1) 40%,
+          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 0) 100%);
+    }
+  }
+
+  .c-panel__image-block-content {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: $panel-body-padding;
+    padding-bottom: 0;
+    justify-content: center;
+    align-content: flex-start;
+    z-index: $zindex-1;
+  }
+}
+
+@mixin ids-panel-comment {
+  .c-panel__comment {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .c-panel__comment-content {
+    padding: $panel-body-padding;
+    padding-bottom: 0;
+    justify-content: center;
+    align-content: flex-start;
+    z-index: $zindex-1;
+    background: rgba($panel-comment-bg, 0.75);
+    background: rgba(var(--ids-theme-panel-comment-bg, $panel-comment-bg), 0.75);
+  }
+
+}
+
+@mixin ids-panel-core-styles {
+  @include ids-panel-container;
+  @include ids-panel-container-size;
+  @include ids-panel-container-sidepanel;
+  @include ids-panel-object;
+  @include ids-panel-container;
+  @include ids-panel-container-size;
+  @include ids-panel-container-sidepanel;
+  @include ids-panel-object;
+  @include ids-panel-component;
+  @include ids-panel-list-groups;
+  @include ids-panel-tables;
+  @include ids-panel-collapsible;
+  @include ids-panel-state;
+  @include ids-panel-box-shadow;
+  @include ids-panel-absolute;
+  @include ids-panel-dashboard;
+  @include ids-panel-image;
+  @include ids-panel-comment;
+}

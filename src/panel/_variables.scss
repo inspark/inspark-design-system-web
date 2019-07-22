@@ -1,0 +1,63 @@
+@import "../base/variables";
+
+//== Panels
+//
+//##
+// todo(turchaninov): merge with Card component
+
+$panel-bg: $color-gray-80 !default;
+$panel-body-padding: $unit-small !default;
+$panel-heading-padding: $unit-small $unit-small !default;
+$panel-heading-title-padding: 0 $unit-small !default;
+$panel-footer-padding: $panel-heading-padding !default;
+$panel-border-radius: $global-radius !default;
+$panel-border-color: $color-gray-40 !default;
+$panel-dashed-border-color: $color-gray-40 !default;
+
+$panel-body-dashboard-bg: $panel-bg !default;
+
+//** Border color for elements within panels
+$panel-inner-border: transparent !default;
+$panel-footer-bg: $panel-bg !default;
+
+$panel-default-text: $text-color !default;
+$panel-default-border: transparent !default;
+$panel-default-heading-bg: $panel-bg !default;
+
+$panel-primary-text: #fff !default;
+$panel-primary-border: $ids-theme-primary !default;
+$panel-primary-heading-bg: $ids-theme-secondary !default;
+
+$panel-success-text: $text-color !default;
+$panel-success-border: $ids-theme-status-success !default;
+$panel-success-heading-bg: $panel-bg !default;
+
+$panel-info-text: $text-color !default;
+$panel-info-border: $ids-theme-status-highlight !default;
+$panel-info-heading-bg: $panel-bg !default;
+
+$panel-warning-text: $text-color !default;
+$panel-warning-border: $ids-theme-status-warning !default;
+$panel-warning-heading-bg: $panel-bg !default;
+
+$panel-danger-text: $text-color !default;
+$panel-danger-border: $ids-theme-status-error !default;
+$panel-danger-heading-bg: $panel-bg !default;
+
+$panel-lighter-background: $color-gray-40 !default;
+
+$panel-nav-top: ($panel-body-padding * 2) + ($line-height-computed);
+$panel-nav-bottom: $panel-nav-top !default;
+
+$panel-comment-bg: $color-base-black !default;
+
+$ids-panel-theme-property-values: (
+  panel-bg: $panel-bg,
+  panel-border-radius: $panel-border-radius,
+  panel-border-color: $panel-border-color,
+  panel-lighter-background: $panel-lighter-background,
+  panel-dashed-border-color: $panel-dashed-border-color,
+  panel-body-dashboard-bg: $panel-body-dashboard-bg,
+  panel-inner-border: $panel-inner-border,
+  panel-comment-bg: $panel-comment-bg,
+);

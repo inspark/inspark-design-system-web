@@ -1,0 +1,45 @@
+@import "../theme/variables";
+@import "../typography/variables";
+
+$badge-default-bg: $color-gray-40 !default;
+$badge-default-bg-hover: #31333a !default;
+$badge-primary-bg: $ids-theme-primary !default;
+$badge-success-bg: $state-success-bg !default;
+$badge-pending-bg: $state-pending-bg !default;
+$badge-warning-bg: $state-warning-bg !default;
+$badge-error-bg: $state-error-bg !default;
+$badge-critical-bg: $state-critical-bg !default;
+$badge-falsevalue-bg: $state-falsevalue-bg !default;
+$badge-text-on-light: $color-base-black !default;
+$badge-text-on-dark: $color-base-white !default;
+$badge-text-falsevalue: $state-falsevalue-text !default;
+
+$badge-color: $color-base-white !default;
+$badge-link-hover-color: $color-base-white !default;
+$badge-font-size: 75% !default;
+$badge-font-weight: $font-weight-bold !default;
+$badge-padding-x: .4em !default;
+$badge-padding-y: .25em !default;
+$badge-font-size-large: $font-size-base !default;
+
+$badge-pill-padding-x: .6em !default;
+
+// Use a higher than normal value to ensure completely rounded edges when
+// customizing padding or font-size on labels.
+$badge-pill-border-radius: 10rem !default;
+
+$ids-badge-theme-property-values: (
+  badge-primary-bg: $ids-theme-primary,
+  badge-success-bg: $state-success-bg,
+  badge-pending-bg: $state-pending-bg,
+  badge-warning-bg: $state-warning-bg,
+  badge-error-bg: $state-error-bg,
+  badge-critical-bg: $state-critical-bg,
+  badge-falsevalue-bg: $state-falsevalue-bg,
+  badge-color: $badge-color,
+  badge-link-hover-color: $badge-link-hover-color,
+  badge-default-bg: $badge-default-bg,
+  badge-text-on-light: $badge-text-on-light,
+  badge-text-on-dark: $badge-text-on-dark,
+  badge-text-falsevalue: $badge-text-falsevalue,
+);

@@ -1,0 +1,99 @@
+@import "./variables";
+@import "../mediaqueries/mixins";
+
+@mixin ids-containers-responsive($screen-width) {
+  @each $size, $width in $screen-limits {
+    &_#{$size}\@#{$screen-width} {
+      max-width: $width;
+    }
+  }
+}
+
+
+@mixin ids-container-core-styles {
+  /* ==========================================================================
+   #CONTAINERS
+   ========================================================================== */
+  /*
+  Containers
+
+  Containers provide media query screen width restrictions on your content.
+
+  markup:
+  <div class="o-container">
+      <p class="c-paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+  </div>
+  */
+  /*
+  Container sizes
+
+  Containers work off the screen size variables:
+
+  * $screen-width-xsmall
+  * $screen-width-small
+  * $screen-width-medium
+  * $screen-width-large
+  * $screen-width-xlarge
+  * $screen-width-super
+
+  xsmall     - 20em screen wide and more
+  small      - 30em screen wide and more
+  medium     - 48em screen wide and more
+  large      - 64em screen wide and more
+  xlarge     - 78em screen wide and more
+  super      - 116em screen wide and more
+  full       - 100% wide
+
+  markup:
+  <div class="o-container o-container_{$modifiers}">
+      <p class="c-paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+  </div>
+  */
+  .o-container {
+    @include screen_xsmall-and-up {
+      @include ids-containers-responsive(xsmall);
+    }
+    @include screen_small-and-up {
+      @include ids-containers-responsive(small);
+    }
+    @include screen_medium-and-up {
+      @include ids-containers-responsive(medium);
+    }
+    @include screen_large-and-up {
+      @include ids-containers-responsive(large);
+    }
+    @include screen_xlarge-and-up {
+      @include ids-containers-responsive(xlarge);
+    }
+    @include screen_super-and-up {
+      @include ids-containers-responsive(super);
+    }
+
+
+
+    margin: auto;
+    @each $size, $width in $screen-limits {
+      &_#{$size} {
+        max-width: $width;
+      }
+    }
+  }
+
+  .o-container_full {
+    width: 100%;
+  }
+
+  .o-container_height-full {
+    height: 100%;
+  }
+}

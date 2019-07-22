@@ -1,0 +1,100 @@
+$btn-border-radius: $global-radius !default;
+$btn-default-border: none !default;
+$btn-default-background: $color-gray-40 !default;
+$btn-default-color: $text-color !default;
+$btn-default-background--hover: darken($btn-default-background, 20%) !default;
+$btn-default-background--pressed: darken($btn-default-background, 40%) !default;
+
+$btn-shadow: none !default;
+
+$btn-bare-color--visited: $color-gray-10 !default;
+$btn-bare-color--hover: $color-blue-light-200 !default;
+$btn-bare-color--pressed: $ids-theme-secondary !default;
+
+$btn-disabled-background: $color-gray-5 !default;
+$btn-disabled-color: rgba($color-base-white, 0.4) !default;
+
+$btn-primary-color: $color-gray-80 !default;
+$btn-primary-border-color: transparent !default;
+$btn-primary-background: $ids-theme-primary !default;
+$btn-primary-background--hover: darken($btn-primary-background, 20%) !default;
+$btn-primary-background--pressed: darken($btn-primary-background, 40%) !default;
+$btn-primary-background--disabled: $btn-disabled-background !default;
+$btn-primary-color--disabled: rgba($color-base-black, 0.4) !default;
+
+$btn-secondary-color: $color-base-white !default;
+$btn-secondary-border-color: transparent !default;
+$btn-secondary-background: $ids-theme-secondary !default;
+$btn-secondary-background--hover: darken($btn-secondary-background, 20%) !default;
+$btn-secondary-background--pressed: darken($btn-secondary-background, 40%) !default;
+
+$btn-tertiary-color: $color-base-white !default;
+$btn-tertiary-border-color: transparent !default;
+$btn-tertiary-background: $color-gray-40 !default;
+$btn-tertiary-background--hover: darken($btn-tertiary-background, 20%) !default;
+$btn-tertiary-background--pressed: darken($btn-tertiary-background, 40%) !default;
+
+$btn-disabled-border-color: transparent !default;
+$btn-disabled-background: $color-gray-35 !default;
+$btn-disabled-color: $color-gray-20 !default;
+
+$btn-menu-toggle: $text-color !default;
+
+$btn-destroy-border-color: $ids-theme-status-error !default;
+$btn-destroy-background: $ids-theme-status-error !default;
+$btn-destroy-color: $color-base-white !default;
+
+$btn-ghost-border-width: 2px;
+
+$btn-rounded-border-radius: $global-radius-rounded !default;
+
+$btn-datepicker-current-color: $ids-theme-primary !default;
+$btn-datepicker-current-background: none !default;
+
+$btn-datepicker-selected-color: $color-base-black !default;
+$btn-datepicker-selected-color--hover: $color-base-white !default;
+$btn-datepicker-selected-color-current: $color-base-black !default;
+$btn-datepicker-selected-color-current--hover: $color-base-white !default;
+
+$btn-grouped-border-color: $color-gray-80 !default;
+
+$ids-button-theme-property-values: (
+  btn-default-background: $btn-default-background,
+  btn-default-color: $btn-default-color,
+  btn-default-background--hover: $btn-default-background--hover,
+  btn-default-background--pressed: $btn-default-background--pressed,
+  btn-disabled-color: $btn-disabled-color,
+  btn-disabled-border-color: $btn-disabled-border-color,
+  btn-disabled-background: $btn-disabled-background,
+  btn-bare-color--visited: $btn-bare-color--visited,
+  btn-bare-color--hover: $btn-bare-color--hover,
+  btn-bare-color--pressed: $btn-bare-color--pressed,
+  btn-primary-border-color: $btn-primary-border-color,
+  btn-primary-background: $btn-primary-background,
+  btn-primary-color: $btn-primary-color,
+  btn-primary-background--hover: $btn-primary-background--hover,
+  btn-primary-background--pressed: $btn-primary-background--pressed,
+  btn-primary-background--disabled: $btn-primary-background--disabled,
+  btn-primary-color--disabled: $btn-primary-color--disabled,
+  btn-secondary-border-color: $btn-secondary-border-color,
+  btn-secondary-background: $btn-secondary-background,
+  btn-secondary-color: $btn-secondary-color,
+  btn-secondary-background--hover: $btn-secondary-background--hover,
+  btn-secondary-background--pressed: $btn-secondary-background--pressed,
+  btn-tertiary-border-color: $btn-tertiary-border-color,
+  btn-tertiary-background: $btn-tertiary-background,
+  btn-tertiary-color: $btn-tertiary-color,
+  btn-tertiary-background--hover: $btn-tertiary-background--hover,
+  btn-tertiary-background--pressed: $btn-tertiary-background--pressed,
+  btn-destroy-border-color: $btn-destroy-border-color,
+  btn-destroy-background: $btn-destroy-background,
+  btn-destroy-color: $btn-destroy-color,
+  btn-datepicker-current-background: $btn-datepicker-current-background,
+  btn-datepicker-current-color: $btn-datepicker-current-color,
+  btn-datepicker-selected-color: $btn-datepicker-selected-color,
+  btn-datepicker-selected-color-current: $btn-datepicker-selected-color-current,
+  btn-datepicker-selected-color--hover: $btn-datepicker-selected-color--hover,
+  btn-datepicker-selected-color-current--hover: $btn-datepicker-selected-color-current--hover,
+  btn-menu-toggle: $btn-menu-toggle,
+  btn-grouped-border-color: $btn-grouped-border-color,
+);

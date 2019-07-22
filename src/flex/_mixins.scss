@@ -1,0 +1,397 @@
+@mixin ids-flex-core-styles {
+  /* ==========================================================================
+   #FLEXBOX GRID
+   ========================================================================== */
+
+  /*
+  Flexbox grid
+
+  Compatible in IE10+.
+
+  Flexbox creates layout classes to give elements sizes and dynamically put elements in the right place. The flexbox
+  module a wrapper around all of CSS flexbox's non-unit-based properties.
+
+  The flexbox module exposes many features available in flexbox layouts with simple, easy-to-use classes.
+
+  Using flexbox, you can change the way a container's children lay themselves out, or style inidividual items directly to
+  change how they flow in the document. See the demos above for examples of applying flexbox classes.
+
+  * For a good introduction to flexbox, see the
+   * CSS Tricks Complete Guide to Flexbox https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+   * Полное руководство по Flexbox https://frontender.info/a-guide-to-flexbox/.
+
+  Follow along below to learn about how
+  the flexbox patterns can be applied to your project with simple classes.
+
+  Flexbox allows you to apply rules to how a container's children should lay themselves out. This is helpful for setting
+  up content grids, creating an application with primary and sidebar content areas, and more.
+
+  To begin with, let's create a simple container with the `.o-flex` class applied, and add child blocks to it.
+
+  flex - Sets a container to use flex for layout. Required to use any of the modifier classes below
+  inline_flex - Makes the flex container display inline. Children's behaviour is similar to `.o-flex`
+
+  markup:
+  <div class="o-{$modifiers}">
+    <div class="child">
+      Child
+    </div>
+    <div class="child">
+      Child
+    </div>
+    <div class="child">
+      Child
+    </div>
+  </div>
+  <span>Position of this text block show difference between flex and inline-flex containers.</span>
+
+  */
+
+  .o-flex,
+  %o-flex {
+    display: flex;
+  }
+
+  .o-inline_flex,
+  %o-inline_flex {
+    display: inline-flex;
+  }
+
+  /*
+  Flex-direction
+
+  Compatible in IE10+.
+
+  By default, just applying the `.o-flex` class to a container will cause its children to lay themselves out in a horizontal
+  row. But we can specify the direction we want children to flow by adding the `.o-flex_row` or `.o-flex_col` classes to the
+  container:
+
+  `.o-flex_row` Lays children out horizontally from right-to-left
+
+  `.o-flex_row_rev` Lays children out horizontally in the reverse direction (from left-to-right). [must be applied with
+  class `.o-flex_row`]
+
+  `.o-flex_col` Lays children out vertically from top-to-bottom
+
+  `.o-flex_col_rev` Lays children out vertically in the reverse direction (from bottom-to-top) [must be applied with class
+   `.o-flex_col`]
+
+  row - Lays children's horizontal flow direction
+  row_rev - Lays children`s horizontal flow direction from left-to-right
+  col - Lays children`s vertical flow direction
+  col_rev - Lays children out vertically in the reverse direction (from bottom-to-top)
+
+  markup:
+  <div class="o-flex o-flex_{$modifiers}">
+    <div class="child">
+      Child 1
+    </div>
+    <div class="child">
+      Child 2
+    </div>
+    <div class="child">
+      Child 3
+    </div>
+  </div>
+
+  */
+
+  .o-flex_row,
+  %o-flex_row {
+    flex-direction: row;
+  }
+
+  .o-flex_row_rev,
+  %o-flex_row_rev {
+    flex-direction: row-reverse;
+  }
+
+  .o-flex_col,
+  %o-flex_col {
+    flex-direction: column;
+  }
+
+  .o-flex_col_rev,
+  %o-flex_col_rev {
+    flex-direction: column-reverse;
+  }
+
+  /*
+  Flex-wrap
+
+  Compatible in IE10+.
+
+  By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with
+   this property.
+
+  nowrap - (default) all flex items will be on one line
+  wrap - flex items will wrap onto multiple lines, from top to bottom
+  wrap-reverse - flex items will wrap onto multiple lines from bottom to top
+
+  markup:
+  <div class="o-flex o-flex_{$modifiers}">
+    <div class="child child_w_40">
+      Child 1
+    </div>
+    <div class="child child_w_40">
+      Child 2
+    </div>
+    <div class="child child_w_40">
+      Child 3
+    </div>
+  </div>
+
+  */
+
+
+
+  .o-flex_nowrap,
+  %o-flex_nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .o-flex_wrap,
+  %o-flex_wrap {
+    flex-wrap: wrap;
+  }
+
+  .o-flex_wrap_rev,
+  %o-flex_wrap_rev {
+    flex-wrap: wrap-reverse;
+  }
+
+  /*
+  Justify-content
+
+  Compatible in IE10+.
+
+  Classes to change how children position themsleves within the container's available space. Children will position
+  themselves along the axis you specify with flex-direction.
+
+  `.o-flex_left` Children are packed at the start of the container. [sets justify-content: flex-start]
+
+  `.o-flex_center` Children are packed in the middle the container. [sets justify-content: center]
+
+  `.o-flex_right` Children are packed at the end of the container. [sets justify-content: flex-end]
+
+  `.o-flex_justify` Children are distributed throughout the container. [sets justify-content: space-between]
+
+  `.o-flex_spaced` Children are equally distributed by space around them. [sets justify-content: space-around]
+
+  left - Children are packed at the start of the container
+  center - Children are packed in the middle the container
+  right - Children are packed at the end of the container
+  justify - Children are distributed throughout the container
+  spaced - Children are equally distributed by space around them
+
+  markup:
+  <div class="o-flex o-flex_{$modifiers}">
+    <div class="child">
+      Child 1
+    </div>
+    <div class="child">
+      Child 2
+    </div>
+    <div class="child">
+      Child 3
+    </div>
+  </div>
+
+  */
+
+  .o-flex_left,
+  %o-flex_left {
+    justify-content: flex-start;
+  }
+
+  .o-flex_center,
+  %o-flex_center {
+    justify-content: center;
+  }
+
+  .o-flex_right,
+  %o-flex_right {
+    justify-content: flex-end;
+  }
+
+  .o-flex_justify,
+  %o-flex_justify {
+    justify-content: space-between;
+  }
+
+  .o-flex_spaced,
+  %o-flex_spaced {
+    justify-content: space-around;
+  }
+
+  /*
+  Align-content
+
+  Compatible in IE10+.
+
+  Classes to align children when there is extra space across (not along) the axis you specify with flex-direction. Useful
+  when you have multiple rows or columns of children.
+
+  top_multi - Children align themselves at the beginning of the container. [sets align-content: flex-start]
+  middle_multi - Children align themselves in the center in the container. [sets align-content: center]
+  bottom_multi - Children align themselves at the end of the container. [sets align-content: flex-end]
+  stretch_multi - Children stretch themselves to fill the container. [sets align-content: stretch]
+  justify_multi - Children distribute themselves throughout the container. [sets align-content: space-between]
+  spaced_multi - Children distribute themselves equally throughout the container. [sets align-content: space-around]
+
+  markup:
+  <div class="o-flex o-flex_row o-flex_{$modifiers} sg-container_h_300">
+    <div class="o-flex_row">
+      <div class="o-flex o-flex_col child">
+        Child 1
+      </div>
+      <div class="o-flex o-flex_col child">
+        Child 2
+      </div>
+      <div class="o-flex o-flex_col child">
+        Child 3
+      </div>
+    </div>
+    <div class="o-flex_row">
+      <div class="o-flex o-flex_col child">
+        Child 1
+      </div>
+      <div class="o-flex o-flex_col child">
+        Child 2
+      </div>
+      <div class="o-flex o-flex_col child">
+        Child 3
+      </div>
+    </div>
+    <div class="o-flex_row">
+      <div class="o-flex o-flex_col child">
+        Child 1
+      </div>
+      <div class="o-flex o-flex_col child">
+        Child 2
+      </div>
+      <div class="o-flex o-flex_col child">
+        Child 3
+      </div>
+    </div>
+  </div>
+
+  */
+
+  .o-flex_top,
+  %o-flex_top {
+    align-items: flex-start;
+  }
+
+  .o-flex_middle,
+  %o-flex_middle {
+    align-items: center;
+  }
+
+  .o-flex_bottom,
+  %o-flex_bottom {
+    align-items: flex-end;
+  }
+
+  .o-flex_stretch,
+  %o-flex_stretch {
+    align-items: stretch;
+  }
+
+  .o-flex_baseline,
+  %o-flex_baseline {
+    align-items: baseline;
+  }
+
+  .o-flex_top_multi,
+  %o-flex_top_multi {
+    align-content: flex-start;
+  }
+
+  .o-flex_middle_multi,
+  %o-flex_middle_multi {
+    align-content: center;
+  }
+
+  .o-flex_bottom_multi,
+  %o-flex_bottom_multi {
+    align-content: flex-end;
+  }
+
+  .o-flex_stretch_multi,
+  %o-flex_stretch_multi {
+    align-content: stretch;
+  }
+
+  .o-flex_justify_multi,
+  %o-flex_justify_multi {
+    align-content: space-between;
+  }
+
+  .o-flex_spaced_multi,
+  %o-flex_spaced_multi {
+    align-content: space-around;
+  }
+
+  /*
+  Styling children (items)
+
+  Compatible in IE10+.
+
+  Most of the classes available to style containers full of children can be applied individually to children to create
+  more complex layouts.
+
+  `.o-flex__item` Class to set a container to use flexbox. Required to use any of the modifier classes below.
+
+  msfix - IE interprets 'flex: 1' to be 'flex: 1 1 0px', where 0px is referring to flex basis. This causes containers in some situations to collapse even when they have content. Other browsers interpret 'flex: 1' to be 'flex: 1 1 0%'. This class forces IE to have the correct style by explicitly setting it. It should be used alongside `.o-flex__item` [sets flex: 1 1 auto]
+  top - Set item to start at the beginning of the container. [sets align-self: flex-start]
+  middle - Set item to center in the container. [sets align-self: center]
+  bottom - Set item to end at the end of the container. [sets align-self: flex-end]
+  baseline - Set item to align along their baseline. [sets align-self: baseline]
+
+  markup:
+  <div class="o-flex">
+    <div class="o-flex__item o-flex__item_{$modifiers} child">
+      Child 1
+    </div>
+    <div class="child">
+      Child 2
+    </div>
+    <div class="o-flex__item o-flex__item_{$modifiers} child">
+      Child 3
+    </div>
+  </div>
+
+  */
+
+  .o-flex__item,
+  %o-flex__item {
+    flex: 1;
+  }
+
+  .o-flex__item_msfix,
+  %o-flex__item_msfix {
+    flex: 1 1 auto;
+  }
+
+  .o-flex__item_top,
+  %o-flex__item_top {
+    align-self: flex-start;
+  }
+
+  .o-flex__item_middle,
+  %o-flex__item_middle {
+    align-self: center;
+  }
+
+  .o-flex__item_bottom,
+  %o-flex__item_bottom {
+    align-self: flex-end;
+  }
+
+  .o-flex__item_baseline,
+  %o-flex__item_baseline {
+    align-self: baseline;
+  }
+
+}

@@ -1,0 +1,54 @@
+/* Sparkline */
+
+.nvd3 {
+  &.nv-sparkline path {
+    fill: $nvd3-sparkline-path-fill;
+  }
+
+  &.nv-sparklineplus {
+    g.nv-hoverValue {
+      pointer-events: none;
+    }
+
+    .nv-hoverValue line {
+      stroke: $nvd3-sparklineplus-hovervalue-stroke;
+      stroke-width: 1.5px;
+    }
+
+    &,
+    g {
+      pointer-events: all;
+    }
+
+    .nv-xValue,
+    .nv-yValue {
+      stroke-width: 0;
+      font-size: 0.9em;
+      font-weight: normal;
+    }
+
+    .nv-yValue {
+      stroke: $nvd3-sparklineplus-yvalue-stroke;
+    }
+
+    .nv-maxValue {
+      stroke: $nvd3-sparklineplus-maxvalue-stroke;
+      fill: $nvd3-sparklineplus-maxvalue-fill;
+    }
+
+    .nv-minValue {
+      stroke: $nvd3-sparklineplus-minvalue-stroke;
+      fill: $nvd3-sparklineplus-minvalue-fill;
+    }
+
+    .nv-currentValue {
+      font-weight: bold;
+      font-size: $nvd3-sparklineplus-currentvalue-font-size;
+    }
+  }
+
+  .nv-hoverArea {
+    fill-opacity: 0;
+    stroke-opacity: 0;
+  }
+}

@@ -1,0 +1,67 @@
+/* ==========================================================================
+   #DISPLAY
+   ========================================================================== */
+
+/**
+ * Change display property
+ */
+
+@mixin u-display-inline-block {
+  display: inline-block;
+}
+
+@mixin u-display-inline {
+  display: inline;
+}
+
+@mixin u-display-block {
+  display: block;
+}
+
+@mixin u-display-flex {
+  display: flex;
+}
+
+@mixin u-display-table {
+  display: table;
+}
+
+@mixin u-display-table-row {
+  display: table-row;
+}
+
+@mixin u-display-inline-flex {
+  display: inline-flex!important;
+}
+
+@mixin c-select-selectors {
+  .u-display-inline-block {
+    @include u-display-inline-block;
+  }
+
+  .u-display-inline {
+    @include u-display-inline;
+  }
+
+  .u-display-block {
+    @include u-display-block;
+  }
+
+  .u-display-flex {
+    @include u-display-flex;
+  }
+
+  .u-display-inline-flex {
+    @include u-display-inline-flex;
+  }
+
+  .u-display-table {
+    @include u-display-table;
+  }
+
+  .u-display-table-row {
+    @include u-display-table-row;
+  }
+}
+
+@include c-select-selectors;

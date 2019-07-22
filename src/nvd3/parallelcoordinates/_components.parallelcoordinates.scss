@@ -1,0 +1,35 @@
+/* Parallel Coordinates */
+
+.nvd3 {
+  .background path {
+    fill: $nvd3-background-path-fill;
+    stroke: $nvd3-background-path-stroke;
+    stroke-opacity: 0.4;
+    shape-rendering: crispEdges;
+  }
+
+  .foreground path {
+    fill: $nvd3-foreground-path-fill;
+    stroke-opacity: 0.7;
+  }
+
+  .nv-parallelCoordinates-brush .extent {
+    fill: $nvd3-parallelcoordinates-brush-extent-fill;
+    fill-opacity: 0.6;
+    stroke: $nvd3-parallelcoordinates-brush-extent-stroke;
+    shape-rendering: crispEdges;
+  }
+
+  .nv-parallelCoordinates .hover {
+    fill-opacity: 1;
+    stroke-width: 3px;
+  }
+
+  .missingValuesline line {
+    fill: $nvd3-missingvaluesline-line-fill;
+    stroke: $nvd3-missingvaluesline-line-stroke;
+    stroke-width: 1;
+    stroke-opacity: 1;
+    stroke-dasharray: 5, 5;
+  }
+}

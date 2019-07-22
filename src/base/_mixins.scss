@@ -1,0 +1,1065 @@
+@import "./variables";
+@import "./functions";
+@import "../typography/variables";
+@import "../tools/tools.rem";
+@import "../mediaqueries/mixins";
+@import "../table/variables";
+
+@mixin ids-box-sizing {
+  /* ==========================================================================
+   #BOX-SIZING
+   ========================================================================== */
+
+  /**
+   * More sensible default box-sizing:
+   * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+   */
+
+  html {
+    box-sizing: border-box;
+  }
+
+  * {
+
+    &,
+    &:before,
+    &:after {
+      box-sizing: border-box;
+    }
+
+  }
+}
+
+@mixin ids-normalize {
+  /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+
+  /**
+   * 1. Change the default font family in all browsers (opinionated).
+   * 2. Correct the line height in all browsers.
+   * 3. Prevent adjustments of font size after orientation changes in
+   *    IE on Windows Phone and in iOS.
+   */
+
+  /* Document
+     ========================================================================== */
+
+  html {
+    font-family: $text-font-family; /* 1 */
+    line-height: 1.15; /* 2 */
+    -ms-text-size-adjust: 100%; /* 3 */
+    -webkit-text-size-adjust: 100%; /* 3 */
+  }
+
+  /* Sections
+     ========================================================================== */
+
+  /**
+   * Remove the margin in all browsers (opinionated).
+   */
+
+  body {
+    margin: 0;
+  }
+
+  /**
+   * Add the correct display in IE 9-.
+   */
+
+  article,
+  aside,
+  footer,
+  header,
+  nav,
+  section {
+    display: block;
+  }
+
+  /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+
+  /* Grouping content
+     ========================================================================== */
+
+  /**
+   * Add the correct display in IE 9-.
+   * 1. Add the correct display in IE.
+   */
+
+  figcaption,
+  figure,
+  main { /* 1 */
+    display: block;
+  }
+
+  /**
+   * Add the correct margin in IE 8.
+   */
+
+  figure {
+    margin: 1em 40px;
+  }
+
+  /**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+
+  /* Text-level semantics
+     ========================================================================== */
+
+  /**
+   * 1. Remove the gray background on active links in IE 10.
+   * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+   */
+
+  a {
+    background-color: transparent; /* 1 */
+    -webkit-text-decoration-skip: objects; /* 2 */
+  }
+
+  /**
+   * Remove the outline on focused links when they are also active or hovered
+   * in all browsers (opinionated).
+   */
+
+  a:active,
+  a:hover {
+    outline-width: 0;
+  }
+
+  /**
+   * 1. Remove the bottom border in Firefox 39-.
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+
+  /**
+   * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+   */
+
+  b,
+  strong {
+    font-weight: inherit;
+  }
+
+  /**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+
+  b,
+  strong {
+    font-weight: bolder;
+  }
+
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+
+  /**
+   * Add the correct font style in Android 4.3-.
+   */
+
+  dfn {
+    font-style: italic;
+  }
+
+  /**
+   * Add the correct background and color in IE 9-.
+   */
+
+  mark {
+    background-color: #ff0;
+    color: #000;
+  }
+
+  /**
+   * Add the correct font size in all browsers.
+   */
+
+  small {
+    font-size: 80%;
+  }
+
+  /**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  /* Embedded content
+     ========================================================================== */
+
+  /**
+   * Add the correct display in IE 9-.
+   */
+
+  audio,
+  video {
+    display: inline-block;
+  }
+
+  /**
+   * Add the correct display in iOS 4-7.
+   */
+
+  audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
+
+  /**
+   * Remove the border on images inside links in IE 10-.
+   */
+
+  img {
+    border-style: none;
+  }
+
+  /**
+   * Hide the overflow in IE.
+   */
+
+  svg:not(:root) {
+    overflow: hidden;
+  }
+
+  /* Forms
+     ========================================================================== */
+
+  /**
+   * 1. Change the font styles in all browsers (opinionated).
+   * 2. Remove the margin in Firefox and Safari.
+   */
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: sans-serif; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+
+  /**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+
+  button,
+  input { /* 1 */
+    overflow: visible;
+  }
+
+  /**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+
+  button,
+  select { /* 1 */
+    text-transform: none;
+  }
+
+  /**
+   * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+   *    controls in Android 4.
+   * 2. Correct the inability to style clickable types in iOS and Safari.
+   */
+
+
+  /**
+   * Remove the inner border and padding in Firefox.
+   */
+
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  /**
+   * Restore the focus styles unset by the previous rule.
+   */
+
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+
+  /**
+   * Change the border, margin, and padding in all browsers (opinionated).
+   */
+
+  fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+  }
+
+  /**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+
+  legend {
+    box-sizing: border-box; /* 1 */
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    padding: 0; /* 3 */
+    white-space: normal; /* 1 */
+  }
+
+  /**
+   * 1. Add the correct display in IE 9-.
+   * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+
+  progress {
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
+  }
+
+  /**
+   * Remove the default vertical scrollbar in IE.
+   */
+
+  textarea {
+    overflow: auto;
+  }
+
+  /**
+   * 1. Add the correct box sizing in IE 10-.
+   * 2. Remove the padding in IE 10-.
+   */
+
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+
+  /**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  /**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+
+  [type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+
+  /**
+   * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+   */
+
+  [type="search"]::-webkit-search-cancel-button,
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  /**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+
+  /* Interactive
+     ========================================================================== */
+
+  /*
+   * Add the correct display in IE 9-.
+   * 1. Add the correct display in Edge, IE, and Firefox.
+   */
+
+  details, /* 1 */
+  menu {
+    display: block;
+  }
+
+  /*
+   * Add the correct display in all browsers.
+   */
+
+  summary {
+    display: list-item;
+  }
+
+  /* Scripting
+     ========================================================================== */
+
+  /**
+   * Add the correct display in IE 9-.
+   */
+
+  canvas {
+    display: inline-block;
+  }
+
+  /**
+   * Add the correct display in IE.
+   */
+
+  template {
+    display: none;
+  }
+
+  /* Hidden
+     ========================================================================== */
+
+  /**
+   * Add the correct display in IE 10-.
+   */
+
+  [hidden] {
+    display: none;
+  }
+
+}
+
+@mixin ids-reset {
+  /* ==========================================================================
+   #RESET
+   ========================================================================== */
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+  }
+
+  /**
+   * A very simple reset that sits on top of Normalize.css.
+   */
+
+  body,
+  h1, h2, h3, h4, h5, h6,
+  blockquote, p, pre,
+  dl, dd, ol, ul,
+  figure,
+  hr,
+  fieldset, legend {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  /**
+   * Remove trailing margins from nested lists.
+   */
+
+  li > {
+
+    ol,
+    ul {
+      margin-bottom: 0;
+    }
+
+  }
+
+
+  /**
+   * Remove default table spacing.
+   */
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+
+  /**
+   * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
+   *    on fieldsets.
+   */
+
+  fieldset {
+    min-width: 0; /* [1] */
+    border: 0;
+  }
+}
+
+@mixin ids-shared {
+  /* ==========================================================================
+   #SHARED
+   ========================================================================== */
+
+  /**
+   * Shared declarations for certain elements.
+   */
+
+  /**
+   * Always declare margins in the same direction:
+   * csswizardry.com/2012/06/single-direction-margin-declarations
+   */
+
+  /* stylelint-disable selector-list-comma-newline-after */
+
+  address,
+  h1, h2, h3, h4, h5, h6,
+  blockquote, p, pre,
+  dl, ol, ul,
+  figure,
+  hr,
+  table,
+  fieldset {
+    @include inuit-rem(margin-bottom, $inuit-global-spacing-unit);
+
+    color: $text-color;
+    color: var(--ids-theme-text-color, $text-color);
+  }
+
+
+  /**
+   * Consistent indentation for lists.
+   */
+
+  dd, ol, ul {
+    @include inuit-rem(margin-left, $inuit-global-spacing-unit);
+  }
+
+  /* stylelint-enable selector-list-comma-newline-after */
+
+}
+
+@mixin ids-base-font-faces {
+
+  // Connect all necessary font-families
+
+  $FontPathOpenSans: "./assets/fonts/open-sans" !default;
+  $FontPathPrimeicons: "./assets/fonts/primeicons" !default;
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('#{$FontPathOpenSans}/Light/OpenSans-Light.eot');
+    src: local('Open Sans Light'), local('OpenSans-Light'),
+    url('#{$FontPathOpenSans}/Light/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+    url('#{$FontPathOpenSans}/Light/OpenSans-Light.woff2') format('woff2'),
+    url('#{$FontPathOpenSans}/Light/OpenSans-Light.woff') format('woff'),
+    url('#{$FontPathOpenSans}/Light/OpenSans-Light.ttf') format('truetype'),
+    url('#{$FontPathOpenSans}/Light/OpenSans-Light.svg#OpenSans-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.eot');
+    src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'),
+    url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.eot?#iefix') format('embedded-opentype'),
+    url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.woff2') format('woff2'),
+    url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.woff') format('woff'),
+    url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.ttf') format('truetype'),
+    url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.svg#OpenSans-Extrabold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.eot');
+    src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'),
+    url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.eot?#iefix') format('embedded-opentype'),
+    url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.woff2') format('woff2'),
+    url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.woff') format('woff'),
+    url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.ttf') format('truetype'),
+    url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.svg#OpenSansLight-Italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('#{$FontPathOpenSans}/Regular/OpenSans.eot');
+    src: local('Open Sans'), local('OpenSans'),
+    url('#{$FontPathOpenSans}/Regular/OpenSans.eot?#iefix') format('embedded-opentype'),
+    url('#{$FontPathOpenSans}/Regular/OpenSans.woff2') format('woff2'),
+    url('#{$FontPathOpenSans}/Regular/OpenSans.woff') format('woff'),
+    url('#{$FontPathOpenSans}/Regular/OpenSans.ttf') format('truetype'),
+    url('#{$FontPathOpenSans}/Regular/OpenSans.svg#OpenSans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.eot');
+    src: local('Open Sans Bold'), local('OpenSans-Bold'),
+    url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.woff2') format('woff2'),
+    url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.woff') format('woff'),
+    url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.ttf') format('truetype'),
+    url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.svg#OpenSans-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.eot');
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'),
+    url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.woff2') format('woff2'),
+    url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.woff') format('woff'),
+    url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.ttf') format('truetype'),
+    url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.svg#OpenSans-Semibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.eot');
+    src: local('Open Sans Italic'), local('OpenSans-Italic'),
+    url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
+    url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.woff2') format('woff2'),
+    url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.woff') format('woff'),
+    url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.ttf') format('truetype'),
+    url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.svg#OpenSans-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'PrimeIcons';
+    src: url('#{$FontPathPrimeicons}/primeicons.eot');
+    src: url('#{$FontPathPrimeicons}/primeicons.eot?#iefix') format('embedded-opentype'),
+    url('#{$FontPathPrimeicons}/primeicons.ttf') format('truetype'),
+    url('#{$FontPathPrimeicons}/primeicons.woff') format('woff'),
+    url('#{$FontPathPrimeicons}/primeicons.svg?#primeicons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+}
+
+@mixin ids-page {
+  /* ==========================================================================
+   #PAGE
+   ========================================================================== */
+
+  /*
+  Page
+
+  * SIMPLE PAGE-LEVEL SETUP
+   * 1. Set the default `font-size` and `line-height` for the entire project, sourced from our default variables.
+   The `font-size` is calculated to exist in ems, the `line-height` is calculated to exist unitlessly.
+   * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when navigating between pages that do/do not have
+    enough content to produce scrollbars naturally.
+   * 3. Ensure the page always fills at least the entire height of the viewport.
+   * 4. Create common class for emulating html and body styles in styleguide.
+
+  Styleguide 4.1
+  */
+
+  html,
+  %html {
+    font-size: (12px / 16px) * 1em; /* [1] */
+    line-height: $inuit-global-line-height / $inuit-global-font-size; /* [1] */
+    //overflow-y: scroll; /* [2] */
+    //min-height: 100%; /* [3] */
+    overflow-y: auto;
+    height: 100%;
+    max-height: 100%;
+    font-family: $text-font-family;
+    font-family: var(--ids-theme-text-font-family, $text-font-family);
+
+    // We assume no initial pixel `font-size` for accessibility reasons. This
+    // allows web visitors to customize their browser default font-size, making
+    // your project more inclusive and accessible to everyone.
+
+    // As a side-effect of setting the @viewport above,
+    // IE11 & Edge make the scrollbar overlap the content and automatically hide itself when not in use.
+    // Unfortunately, the auto-showing of the scrollbar is sometimes too sensitive,
+    // thus making it hard to click on stuff near the right edge of the page.
+    // So we add this style to force IE11 & Edge to use a "normal", non-overlapping, non-auto-hiding scrollbar.
+    // See https://github.com/twbs/bootstrap/issues/18543
+    // and https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7165383/
+    -ms-overflow-style: scrollbar;
+
+    // Changes the default tap highlight to be completely transparent in iOS.
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    @include screen_large-and-up {
+      font-size: ($inuit-global-font-size / 16px) * 1em;
+    }
+  }
+
+  /**
+   * the html and :host declarations cannot be adjacent to one other
+   * or cssmin will combine them into a single rule, breaking in
+   * Safari and Firefox.
+   */
+
+  :host {
+    font-family: $text-font-family;
+    font-family: var(--ids-theme-text-font-family, $text-font-family);
+  }
+
+  body,
+  %body {
+    display: block;
+    position: relative;
+    height: auto;
+    min-height: 100%;
+    overflow: visible;
+    //font-smoothing: antialiased;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: $text-color;
+    color: var(--ids-theme-text-color, $text-color);
+    background-color: $body-bg;
+    background-color: var(--ids-theme-body-bg, $body-bg);
+  }
+
+  // Suppress the focus outline on elements that cannot be accessed via keyboard.
+  // This prevents an unwanted focus outline from appearing around elements that
+  // might still respond to pointer events.
+  //
+  // Credit: https://github.com/suitcss/base
+  [tabindex="-1"]:focus {
+    outline: none !important;
+  }
+
+  // Reset fonts for relevant elements
+  input,
+  button,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+
+  // Custom scroll for webkit
+
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 16px;
+    background: $webkit-scrollbar-track-bg;
+    background: var(--webkit-scrollbar-track-bg, $webkit-scrollbar-track-bg);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background: $webkit-scrollbar-thumb-bg;
+    background: var(--ids-theme-webkit-scrollbar-track-bg, $webkit-scrollbar-track-bg);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: $webkit-scrollbar-corner-bg;
+    background: var(--ids-theme-webkit-scrollbar-corner-bg, $webkit-scrollbar-corner-bg);
+  }
+
+  // For link, used in body to fix bug when link create margin
+
+  link {
+    display: none;
+    position: absolute;
+  }
+}
+
+@mixin ids-images {
+  // Images
+  /*
+  Images
+
+  * IMAGES BASE SETTINGS
+   * 1. Fluid images for responsive purposes.
+   * 2. Offset `alt` text from surrounding copy.
+   * 3. Setting `vertical-align` removes the whitespace that appears under `img`elements when they are dropped into a page
+    as-is. Safer alternative to using `display: block;`.
+  */
+
+  img {
+    max-width: 100%; /* [1] */
+    font-style: italic; /* [2] */
+    vertical-align: middle; /* [3] */
+  }
+
+
+  /**
+   * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
+   *    not make the image fluid.
+   */
+
+  img[width], /* [1] */
+  img[height] { /* [1] */
+    max-width: none;
+  }
+}
+
+@mixin ids-tables {
+
+  // Tables
+
+  table {
+    width: 100%; /* [1] */
+  }
+
+  table {
+    // No longer part of Normalize since v4
+    border-collapse: collapse;
+    // Reset for nesting within parents with `background-color`.
+    background-color: $table-bg;
+  }
+
+  caption {
+    padding-top: $table-cell-padding;
+    padding-bottom: $table-cell-padding;
+    color: $text-muted;
+    text-align: left;
+    caption-side: bottom;
+  }
+
+  th {
+    // Centered by default, but left-align-ed to match the `td`s below.
+    text-align: left;
+  }
+}
+
+@mixin ids-forms {
+  /*
+  Forms
+
+  Base form elements resets
+  */
+
+  // iOS "clickable elements" fix for role="button"
+  //
+  // Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+  // for traditionally non-focusable elements with role="button"
+  // see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  // Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+  //
+  // In particular, unlike most other browsers, IE11+Edge on Windows 10 on touch devices and IE Mobile 10-11
+  // DON'T remove the click delay when `<meta name="viewport" content="width=device-width">` is present.
+  // However, they DO support removing the click delay via `touch-action: manipulation`.
+  // See:
+  // * https://v4-alpha.getbootstrap.com/content/reboot/#click-delay-optimization-for-touch
+  // * http://caniuse.com/#feat=css-touch-action
+  // * https://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+
+  a,
+  area,
+  button,
+  [role="button"],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  label {
+    // Allow labels to use `margin` for spacing.
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+
+  // Work around a Firefox/IE bug where the transparent `button` background
+  // results in a loss of the default `button` focus styles.
+  //
+  // Credit: https://github.com/suitcss/base/
+  button:focus {
+    outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    // Normalize includes `font: inherit;`, so `font-family`. `font-size`, etc are
+    // properly inherited. However, `line-height` isn't inherited there.
+    line-height: inherit;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    // Apply a disabled cursor for radios and checkboxes.
+    //
+    // Note: Neither radios nor checkboxes can be readonly.
+    &:disabled {
+      cursor: $cursor-disabled;
+    }
+  }
+
+
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    // Remove the default appearance of temporal inputs to avoid a Mobile Safari
+    // bug where setting a custom line-height prevents text from being vertically
+    // centered within the input.
+    // See https://bugs.webkit.org/show_bug.cgi?id=139848
+    // and https://github.com/twbs/bootstrap/issues/11266
+    -webkit-appearance: listbox;
+  }
+
+  textarea {
+    // Textareas should really only resize vertically so they don't break their (horizontal) containers.
+    resize: vertical;
+  }
+
+  fieldset {
+    // Browsers set a default `min-width: min-content;` on fieldsets,
+    // unlike e.g. `<div>`s, which have `min-width: 0;` by default.
+    // So we reset that to ensure fieldsets behave more like a standard block element.
+    // See https://github.com/twbs/bootstrap/issues/12359
+    // and https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+    min-width: 0;
+    // Reset the default outline behavior of fieldsets so they don't affect page layout.
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  legend {
+    // Reset the entire legend element to match the `fieldset`
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+    line-height: inherit;
+  }
+
+  fieldset {
+    margin: 0;
+    &, legend {
+      border: 0;
+      padding: 0;
+    }
+  }
+
+  legend {
+    margin-bottom: $inuit-global-spacing-unit-small;
+    font-weight: bold;
+  }
+
+  input[type="search"] {
+    // This overrides the extra rounded corners on search inputs in iOS so that our
+    // `.form-control` class can properly style them. Note that this cannot simply
+    // be added to `.form-control` as it's not specific enough. For details, see
+    // https://github.com/twbs/bootstrap/issues/11586.
+    -webkit-appearance: none;
+  }
+
+  // Always hide an element with the `hidden` HTML attribute (from PureCSS).
+  [hidden] {
+    display: none !important;
+  }
+
+}
+
+@mixin ids-base-core-styles {
+
+  @include ids-box-sizing;
+
+  @include ids-normalize;
+
+  @include ids-reset;
+
+  @include ids-shared;
+
+  @include ids-page;
+
+  @include ids-images;
+
+  @include ids-tables;
+
+  @include ids-forms;
+
+}

@@ -1,0 +1,10 @@
+@import "../theme/variables";
+@import "../base/variables";
+
+$sidebar-open-width: 260px !default;
+$sidebar-collapsed-width: 47px !default;
+$sidebar-bg: $color-gray-90 !default;
+
+$ids-sidebar-theme-property-values: (
+  sidebar-bg: $sidebar-bg
+);

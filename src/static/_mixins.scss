@@ -1,0 +1,52 @@
+@import "../base/variables";
+
+// todo: отрефакторить структуру миксинов в core и названия переменных
+
+@mixin ids-static-core-styles {
+  .c-static {
+    @include c-static;
+  }
+
+  .c-static_input-aligned {
+    @include c-static_input-aligned;
+  }
+}
+
+/*
+Static control
+
+When you need to place plain text next to a form label within a form, use the .form-control-static class on an element
+of your choice.
+
+markup:
+<form class="c-form">
+  <div class="c-form-group">
+    <label class="c-label">E-mail</label>
+    <p class="c-static">email@example.com</p>
+  </div>
+  <div class="c-form-group">
+    <label class="c-label">
+      <div class="c-label__content">layout variant</div>
+      <p class="c-static">2</p>
+    </label>
+  </div>
+  <div class="c-form-group">
+    <label class="c-label" for="inputfls2" >Readonly Input</label>
+    <input class="c-input" id="inputfls2" placeholder="Type something..." type="text" readonly value="Unchangeble info">
+  </div>
+</form>
+
+Styleguide 6.1.3.7
+*/
+
+@mixin c-static {
+  padding: 0;
+  margin-bottom: 0;
+  line-height: $line-height-computed;
+  border: solid transparent;
+  border-width: 1px 0;
+}
+
+@mixin c-static_input-aligned {
+  padding: $unit-tiny $unit-small;
+}

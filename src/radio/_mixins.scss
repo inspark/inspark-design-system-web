@@ -1,0 +1,212 @@
+@import "../base/variables";
+@import "../theme/variables";
+@import "../form/variables";
+@import "../checkbox/variables";
+@import "./variables";
+
+// todo: отрефакторить структуру миксинов в core и названия переменных
+
+@mixin ids-radio-core-styles {
+  .c-radio {
+    @include c-radio;
+  }
+
+  .c-radio__input {
+    @include c-radio__input;
+  }
+
+  .c-radio_inline {
+    @include c-radio_inline;
+  }
+}
+
+/*
+Radio button
+
+markup:
+<label class="c-radio">
+  <input type="radio" class="c-radio__input" name="r1">
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label">Check this</span>
+</label>
+<label class="c-radio">
+  <input type="radio" class="c-radio__input" name="r1" checked>
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label">Check that</span>
+</label>
+<label class="c-radio">
+  <input type="radio" class="c-radio__input" name="r2" disabled >
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label">Check Disabled</span>
+</label>
+<label class="c-radio">
+  <input type="radio" class="c-radio__input" name="r2" checked disabled >
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label">Check Disabled</span>
+</label>
+
+*/
+
+@mixin c-radio {
+  display: block;
+  margin-right: $unit-small;
+  margin-top: $unit-tiny;
+  margin-bottom: $unit-tiny;
+  cursor: pointer;
+}
+
+@mixin c-radio__input($sibling-icon-selector : ".c-radio__icon") {
+  display: none;
+
+  + #{$sibling-icon-selector} {
+    display: inline-block;
+    position: relative;
+    height: 15px;
+    margin-bottom: 0;
+    padding-left: 28px;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-computed;
+    text-transform: none;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      width: $checkbox-size - 4px;
+      height: $checkbox-size - 4px;
+      border: 2px solid $checkbox-border-color;
+      border: 2px solid var(--ids-theme-checkbox-border-color, $checkbox-border-color);
+      border-radius: $global-radius-rounded;
+      // scss-lint:disable ColorVariable
+      background: transparent;
+      // scss-lint:enable ColorVariable
+      content: " ";
+    }
+
+    &::after {
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      transition: transform 0.1s ease-in-out, opacity 0.2s linear;
+      opacity: 0;
+    }
+  }
+
+  &:checked + #{$sibling-icon-selector}::after {
+    //transform: scale3d(1, 1, 1);
+    background: $ids-theme-primary;
+    background: var(--ids-theme-primary, $ids-theme-primary);
+    opacity: 1;
+  }
+
+  &[disabled] + #{$sibling-icon-selector} {
+    color: $form-color_disabled;
+    color: var(--ids-theme-form-color_disabled, $form-color_disabled);
+    cursor: not-allowed;
+
+    &::before,
+    &::after {
+      border-color: $checkbox-disabled-border-color;
+      border-color: var(--ids-theme-checkbox-disabled-border-color, $checkbox-disabled-border-color);
+      opacity: 0.5;
+    }
+
+    &::after {
+      // scss-lint:disable ImportantRule
+      background: transparent !important;
+      // scss-lint:enable ImportantRule
+      opacity: 0.5;
+      border: none;
+    }
+  }
+
+  &[disabled]:checked + #{$sibling-icon-selector} {
+    color: $form-color_disabled;
+    color: var(--ids-theme-form-color_disabled, $form-color_disabled);
+    cursor: not-allowed;
+
+    &::before,
+    &::after {
+      border-color: $checkbox-disabled-border-color;
+      border-color: var(--ids-theme-checkbox-disabled-border-color, $checkbox-disabled-border-color);
+      opacity: 0.5;
+    }
+
+    &::after {
+      // scss-lint:disable ImportantRule
+      background: $radio-disabled-background !important;
+      background: var(--ids-theme-radio-disabled-background, $radio-disabled-background) !important;
+      // scss-lint:enable ImportantRule
+      opacity: 0.5;
+      //border: none;
+    }
+  }
+
+  + #{$sibling-icon-selector}::before,
+  + #{$sibling-icon-selector}::after {
+    border-radius: 50%;
+  }
+
+  + #{$sibling-icon-selector}::after {
+    border-color: darken($ids-theme-primary, 5%);
+    filter: brightness(85%);
+  }
+}
+
+/*
+Inline Radio
+
+Group radiobuttons on the same horizontal row by adding `.c-radio_inline` to any `.c-radio`.
+
+markup:
+<label class="c-radio c-radio_inline">
+  <input type="radio" class="c-radio__input" name="rig1">
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label">Check this</span>
+</label>
+<label class="c-radio c-radio_inline">
+  <input type="radio" class="c-radio__input" disabled name="rig1">
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label">Check Disabled</span>
+</label>
+<label class="c-radio c-radio_switch c-radio_inline">
+  <input type="radio" class="c-radio__input" checked name="rig1">
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label">Check that</span>
+</label>
+<label class="c-radio c-radio_switch c-radio_inline">
+  <input type="radio" class="c-radio__input" checked name="rig1">
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label">Check that</span>
+</label>
+
+*/
+
+@mixin c-radio_inline {
+  display: inline-block;
+}
+
+/*
+Radio with custom label
+
+You can customize label view and even hide label. Just wrap it with `.c-radio__label` span.
+
+To hide label use `sr-only` class on `.c-radio__label` element. Do not remove label from html.
+
+markup:
+<label class="c-radio">
+  <input class="c-radio__input" type="radio">
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label">Radio with custom label</span>
+</label>
+<label class="c-radio">
+  <input class="c-radio__input" type="radio">
+  <i class="c-radio__icon"></i>
+  <span class="c-radio__label sr-only">Radio with custom label</span>
+</label>
+
+*/
+

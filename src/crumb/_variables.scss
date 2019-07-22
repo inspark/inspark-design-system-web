@@ -1,0 +1,11 @@
+// Breadcrumbs
+$breadcrumb-padding-vertical: 8.5px !default;
+$breadcrumb-padding-horizontal: 15px !default;
+//** Breadcrumb background color
+$breadcrumb-bg: $color-gray-40 !default;
+//** Breadcrumb text color
+$breadcrumb-color: $color-base-white !default;
+//** Text color of current page in the breadcrumb
+$breadcrumb-active-color: $color-gray-10 !default;
+//** Textual separator for between breadcrumb elements
+$breadcrumb-separator: "/" !default;

@@ -1,0 +1,28 @@
+/* ==========================================================================
+   #VISIBILITY
+   ========================================================================== */
+
+/**
+ * Change display property
+ */
+
+@mixin u-visibility-vis {
+  visibility: visible;
+}
+
+@mixin u-visibility-hid {
+  visibility: hidden;
+}
+
+@mixin c-select-selectors {
+  .u-visibility-vis {
+    @include u-visibility-vis;
+  }
+
+  .u-visibility-hid {
+    @include u-visibility-hid;
+  }
+}
+
+@include c-select-selectors;
+

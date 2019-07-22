@@ -1,0 +1,277 @@
+@import "../base/variables";
+@import "./variables";
+
+
+/* ==========================================================================
+   #LIST-GROUPS
+   ========================================================================== */
+
+/*
+List-groups
+*/
+
+/*
+List-groups base class
+
+Easily usable on `<ul>`, `<ol>`, or `<div>`.
+
+markup:
+<p>Base list-group</p>
+<ul class="c-list-group">
+  <li class="c-list-group__item">1</li>
+  <li class="c-list-group__item">2</li>
+  <li class="c-list-group__item">3</li>
+  <li class="c-list-group__item">4</li>
+</ul>
+
+*/
+
+@mixin ids-list-group {
+  .c-list-group {
+    display: flex;
+    flex-direction: column;
+
+    // No need to set list-style: none; since .list-group-item is block level
+    padding-left: 0; // reset padding because ul and ol
+    margin-bottom: 0;
+  }
+}
+
+
+/*
+Interactive list items
+
+Use anchor or button elements instead of `li`s or `div`s to create interactive
+ list items. Includes an extra `.active` modifier class for selected items.
+
+markup:
+<p>Base list-group</p>
+<ul class="c-list-group">
+  <li class="c-list-group__item c-list-group__item_is-interactive">123</li>
+  <li class="c-list-group__item c-list-group__item_is-interactive">123</li>
+  <li class="c-list-group__item c-list-group__item_is-interactive">123</li>
+  <li class="c-list-group__item c-list-group__item_is-interactive">123</li>
+</ul>
+
+*/
+
+@mixin ids-list-group-item-interactive {
+  .c-list-group__item_is-interactive {
+    width: 100%; // For `<button>`s (anchors become 100% by default though)
+    color: $list-group-link-color;
+    color: var(--ids-theme-list-group-link-color, $list-group-link-color);
+    text-align: inherit; // For `<button>`s (anchors inherit)
+
+    .c-list-group__item-heading {
+      color: $list-group-link-heading-color;
+      color: var(--ids-theme-list-group-link-heading-color, $list-group-link-heading-color);
+    }
+
+    // Hover state
+    @include hover-focus {
+      color: $list-group-link-hover-color;
+      color: var(--ids-theme-list-group-link-hover-color, $list-group-link-hover-color);
+      text-decoration: none;
+      background-color: $list-group-hover-bg;
+      background-color: var(--ids-theme-list-group-hover-bg, $list-group-hover-bg);
+    }
+
+    &:active {
+      color: $list-group-link-active-color;
+      color: var(--ids-theme-list-group-link-active-color, $list-group-link-active-color);
+      background-color: $list-group-link-active-bg;
+      background-color: var(--ids-theme-list-group-link-active-bg, $list-group-link-active-bg);
+    }
+  }
+}
+
+
+/*
+Individual list items
+
+Use on `li`s or `div`s within the `.list-group` parent.
+
+markup:
+<p>Base list-group</p>
+<ul class="c-list-group">
+  <li class="c-list-group__item">123</li>
+  <li class="c-list-group__item">123</li>
+  <li class="c-list-group__item">123</li>
+  <li class="c-list-group__item">123</li>
+</ul>
+
+*/
+
+@mixin ids-list-group-item {
+  .c-list-group__item {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: $list-group-item-padding-y $list-group-item-padding-x;
+    // Place the border on the list items and negative margin up for better styling
+    margin-bottom: -$list-group-border-width;
+    background-color: $list-group-bg;
+    background-color: var(--ids-theme-list-group-bg, $list-group-bg);
+    border: $list-group-border-width solid $list-group-border-color;
+    border: $list-group-border-width solid var(--ids-theme-list-group-border-color, $list-group-border-color);
+
+    &:first-child {
+      @include border-bottom-radius($global-radius);
+      @include border-bottom-radius(var(--ids-theme-global-radius, $global-radius));
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      @include border-bottom-radius($global-radius);
+      @include border-bottom-radius(var(--ids-theme-global-radius, $global-radius));
+    }
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+
+    &_disabled,
+    &:disabled {
+      color: $list-group-disabled-color;
+      color: var(--ids-theme-list-group-disabled-color, $list-group-disabled-color);
+      cursor: $cursor-disabled;
+      background-color: $list-group-disabled-bg;
+      background-color: var(--ids-theme-list-group-disabled-bg, $list-group-disabled-bg);
+
+      // Force color to inherit for custom content
+      .c-list-group__item-heading {
+        color: inherit;
+      }
+      .c-list-group__item-text {
+        color: $list-group-disabled-text-color;
+        color: var(--ids-theme-list-group-disabled-text-color, $list-group-disabled-text-color);
+      }
+    }
+
+    // Include both here for `<a>`s and `<button>`s
+    &_active {
+      z-index: 2; // Place active items above their siblings for proper border styling
+      color: $list-group-active-color;
+      color: var(--ids-theme-list-group-active-color, $list-group-active-color);
+      background-color: $list-group-active-bg;
+      background-color: var(--ids-theme-list-group-active-bg, $list-group-active-bg);
+      border-color: $list-group-active-border;
+      border-color: var(--ids-theme-list-group-active-border, $list-group-active-border);
+
+      // Force color to inherit for custom content
+      .c-list-group__item-heading,
+      .c-list-group__item-heading > small,
+      .c-list-group__item-heading > .small {
+        color: inherit;
+      }
+
+      .c-list-group__item-text {
+        color: $list-group-active-text-color;
+        color: var(--ids-theme-list-group-active-text-color, $list-group-active-text-color);
+      }
+    }
+  }
+}
+
+
+/*
+Flush list items
+
+Remove borders and border-radius to keep list group items edge-to-edge. Most useful within other components (e.g., cards,
+panels).
+
+markup:
+<p>Flush list-group</p>
+<ul class="c-list-group c-list-group_flush">
+  <li class="c-list-group__item">123</li>
+  <li class="c-list-group__item">123</li>
+  <li class="c-list-group__item">123</li>
+  <li class="c-list-group__item">123</li>
+</ul>
+
+*/
+
+@mixin ids-list-group-flush {
+  .c-list-group_flush {
+    .c-list-group__item {
+      border-right: 0;
+      border-left: 0;
+      border-radius: 0;
+    }
+
+    &:first-child {
+      .c-list-group__item:first-child {
+        border-top: 0;
+      }
+    }
+
+    &:last-child {
+      .c-list-group__item:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+/*
+Contextual variants
+
+Add modifier classes to change text and background color on individual items.
+Organizationally, this must come after the `:hover` states.
+
+markup:
+<p>Flush list-group</p>
+<ul class="c-list-group">
+  <li class="c-list-group__item c-list-group__item_success">success</li>
+  <li class="c-list-group__item c-list-group__item_info">info</li>
+  <li class="c-list-group__item c-list-group__item_warning">warning</li>
+  <li class="c-list-group__item c-list-group__item_error">error</li>
+  <li class="c-list-group__item c-list-group__item_critical">critical</li>
+</ul>
+
+*/
+
+// todo(turchaninov): test and refactor this mixins
+
+@mixin ids-list-group__item_variant($state, $background, $color) {
+  .c-list-group__item_#{$state} {
+    color: $color;
+    background-color: $background;
+  }
+
+  a.c-list-group__item_#{$state},
+  button.list-group__item_#{$state} {
+    color: $color;
+
+    .list-group__item-heading {
+      color: inherit;
+    }
+
+    @include hover-focus {
+      color: $color;
+      background-color: darken($background, 5%);
+    }
+
+    &.active {
+      color: #fff;
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+}
+
+@mixin ids-list-group__item_variants {
+  @include ids-list-group__item_variant(success, $state-success-bg, $state-success-text);
+  @include ids-list-group__item_variant(info, $state-pending-bg, $state-pending-text);
+  @include ids-list-group__item_variant(warning, $state-warning-bg, $state-warning-text);
+  @include ids-list-group__item_variant(critical, $state-critical-bg, $state-critical-text);
+  @include ids-list-group__item_variant(error, $state-error-bg, $state-error-text);
+}
+
+@mixin ids-list-group-core-styles {
+  @include ids-list-group;
+  @include ids-list-group-item-interactive;
+  @include ids-list-group-item;
+  @include ids-list-group-flush;
+}

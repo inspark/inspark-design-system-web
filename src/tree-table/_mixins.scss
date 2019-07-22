@@ -1,0 +1,324 @@
+@import "../base/variables";
+@import "./variables";
+@import "../mediaqueries/mixins";
+
+/*
+
+Tree-table
+
+Advanced table-like component.
+
+*/
+
+@mixin ids-tree-table-core-styles {
+  .c-tree-table {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    position: relative;
+    align-content: flex-start;
+
+    @media (min-width: #{map-get($screen-limits, large)}) {
+      overflow: hidden;
+      height: calc(100% - 50px);
+      //height: calc(100vh - 306px);
+      //max-height: calc(100vh - 306px);
+    }
+  }
+
+  .c-tree-table__header {
+    flex: 0 0 100%;
+
+    .c-tree-table__cell {
+      background: $tree-table-cell;
+    }
+  }
+
+  .c-tree-table__body {
+    flex: 1;
+  }
+
+  .c-tree-table__level-content {
+    display: block;
+  }
+
+  .c-tree-table__level {
+    flex: 1;
+
+    &:nth-child(even) {
+      .c-tree-table__cell {
+        background: rgba($text-color, 0.1);
+        background: rgba(var(--ids-theme-text-color, $text-color), 0.1);
+      }
+    }
+
+    &:focus {
+      .c-tree-table__cell {
+        background: rgba($ids-theme-secondary, 0.2);
+        background: rgba(var(--ids-theme-secondary, $ids-theme-secondary), 0.2);
+      }
+
+      .is-tree-table__row_success .c-tree-table__cell {
+        background: rgba($ids-theme-status-success, 0.2);
+        background: rgba(var(--ids-theme-status-success, $ids-theme-status-success), 0.2);
+      }
+
+      .is-tree-table__row_warning .c-tree-table__cell {
+        background: rgba($ids-theme-status-warning, 0.2);
+        background: rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0.2);
+      }
+
+      .is-tree-table__row_error .c-tree-table__cell {
+        background: rgba($ids-theme-status-error, 0.2);
+        background: rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0.2);
+      }
+
+      .is-tree-table__row_critical .c-tree-table__cell {
+        background: rgba($ids-theme-status-critical, 0.2);
+        background: rgba(var(--ids-theme-status-critical, $ids-theme-status-critical), 0.2);
+      }
+
+      .is-tree-table__row_disabled .c-tree-table__cell {
+        background: rgba($ids-theme-status-disabled, 0.2);
+        background: rgba(var(--ids-theme-status-disabled, $ids-theme-status-disabled), 0.2);
+      }
+    }
+  }
+
+  .c-tree-table__row {
+    @include grid;
+
+    &:hover {
+      .c-tree-table__cell-content_hover {
+        color: $ids-theme-primary;
+        color: var(--ids-theme-primary, $ids-theme-primary);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .is-tree-table__row_success {
+    > .c-tree-table__cell:first-child {
+      padding-left: 19px;
+      border-left: 4px solid $ids-theme-status-success;
+      border-left: 4px solid var(--ids-theme-status-success, $ids-theme-status-success);
+    }
+  }
+
+  .is-tree-table__row_warning {
+    > .c-tree-table__cell:first-child {
+      padding-left: 19px;
+      border-left: 4px solid $ids-theme-status-warning;
+      border-left: 4px solid var(--ids-theme-status-warning, $ids-theme-status-warning);
+    }
+  }
+
+  .is-tree-table__row_error {
+    > .c-tree-table__cell:first-child {
+      padding-left: 19px;
+      border-left: 4px solid $ids-theme-status-error;
+      border-left: 4px solid var(--ids-theme-status-error, $ids-theme-status-error);
+    }
+  }
+
+  .is-tree-table__row_critical {
+    > .c-tree-table__cell:first-child {
+      padding-left: 19px;
+      border-left: 4px solid $ids-theme-status-critical;
+      border-left: 4px solid var(--ids-theme-status-critical, $ids-theme-status-critical);
+    }
+  }
+
+  .is-tree-table__row_disabled {
+    > .c-tree-table__cell:first-child {
+      padding-left: 19px;
+      border-left: 4px solid $ids-theme-status-disabled;
+      border-left: 4px solid var(--ids-theme-status-disabled, $ids-theme-status-disabled);
+    }
+  }
+
+  .c-tree-table_controller {
+    color: $ids-theme-primary;
+    color: var(--ids-theme-primary, $ids-theme-primary);
+  }
+
+  .c-tree-table_controller_selected {
+    color: lighten($ids-theme-primary, 10%);
+    filter: brightness(110%);
+  }
+
+  .c-tree-table_device {
+    color: $ids-theme-primary;
+    color: var(--ids-theme-primary, $ids-theme-primary);
+  }
+
+  .c-tree-table_device_selected {
+    color: lighten($ids-theme-primary, 10%);
+    filter: brightness(110%);
+  }
+
+  .c-tree-table__toolbar-content {
+    float: left;
+  }
+
+  .c-tree-table__toolbar-content_right {
+    float: right;
+  }
+
+  .c-tree-table__cell {
+    @include grid__cell;
+    @include grid__cells;
+    width: 0;
+    padding: $unit-small $unit;
+    position: relative;
+    border-bottom: none;
+    overflow-wrap: break-word;
+    text-align: left;
+
+    &_width-fixed {
+      @include grid__cell_width-fixed;
+    }
+  }
+
+  .c-tree-table__cell:not(.c-tree-table__cell_checkbox) {
+    min-width: 150px;
+  }
+
+  .c-tree-table__cell_checkbox {
+    flex: 0;
+    padding: 8px $unit;
+  }
+
+  .c-tree-table__cell_width-fixed {
+    @include grid__cell_width-fixed;
+  }
+
+  .c-tree-table__cell_width_100px {
+    width: 100px;
+  }
+
+  .c-tree-table__cell_width_200px {
+    width: 200px;
+  }
+
+  .c-tree-table__cell_width_8 {
+    width: 8%;
+  }
+
+  .c-tree-table__cell_width_16 {
+    width: 16%;
+  }
+
+  .c-tree-table__cell_width_25 {
+    width: 25%;
+  }
+
+  .c-tree-table__cell_width_100 {
+    width: 100%;
+  }
+
+  .c-tree-table__cell_header {
+    background: $tree-table-cell-header-background;
+  }
+
+  .c-tree-table__cell-sort {
+    position: absolute;
+    right: 3px;
+    top: 0;
+  }
+
+  .c-tree-table__cell_status {
+    &-success {
+      background: rgba($ids-theme-status-success, 1) !important;
+      background: rgba(var(--ids-theme-status-success, $ids-theme-status-success), 1) !important;
+      color: $text-color;
+      color: var(--ids-theme-text-color, $text-color);
+    }
+
+    &-warning {
+      background: rgba($ids-theme-status-warning, 1) !important;;
+      background: rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 1) !important;;
+      color: $text-color;
+      color: var(--ids-theme-text-color, $text-color);
+    }
+
+    &-critical {
+      background: rgba($ids-theme-status-critical, 1) !important;;
+      background: rgba(var(--ids-theme-status-critical, $ids-theme-status-critical), 1) !important;;
+      color: $text-color;
+      color: var(--ids-theme-text-color, $text-color);
+    }
+
+    &-error {
+      background: rgba($ids-theme-status-error, 1) !important;;
+      background: rgba(var(--ids-theme-status-error, $ids-theme-status-error), 1) !important;;
+      color: $text-color;
+      color: var(--ids-theme-text-color, $text-color);
+    }
+
+    &-falsevalue {
+      background-image: linear-gradient(45deg, transparent 19.05%, $ids-theme-status-falsevalue 19.05%, $ids-theme-status-falsevalue 50%, transparent 50%, transparent 69.05%, $ids-theme-status-falsevalue 69.05%, $ids-theme-status-falsevalue 100%);
+      background-image: linear-gradient(
+          45deg,
+          transparent 19.05%,
+          var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue) 19.05%,
+          var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue) 50%,
+          transparent 50%,
+          transparent 69.05%,
+          var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue) 69.05%,
+          var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue) 100%
+      );
+      background-size: 29.70px 29.70px;
+    }
+
+    &-none {
+      background: $tree-table-cell-status-none-background;
+      color: $text-color;
+      color: var(--ids-theme-text-color, $text-color);
+    }
+  }
+
+  .c-tree-table__cell-content {
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+  }
+
+  .c-tree-table__cell-sort {
+    height: 100%;
+  }
+
+  .c-tree-table__cell-content_header {
+    padding-right: 15px;
+    color: $tree-table__cell-content_header;
+    color: var(--ids-theme-tree-table__cell-content_header, $tree-table__cell-content_header);
+    word-wrap: normal;
+    word-break: normal;
+    white-space: nowrap;
+  }
+
+  .c-tree-table__secondary-cell {
+    min-width: $tree-table-cell-width;
+  }
+
+  .c-tree-table__first-cell {
+    position: relative;
+  }
+
+  .c-tree-table__toggle {
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+
+
+}
+

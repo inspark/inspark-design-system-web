@@ -1,0 +1,39 @@
+@import "../base/variables";
+@import "../input/mixins";
+
+// todo: отрефакторить структуру миксинов в core и названия переменных
+
+@mixin ids-textarea-core-styles {
+  .c-textarea {
+    @include c-textarea;
+  }
+}
+
+/*
+Textarea
+
+markup:
+<label class="c-label" for="textArea">Text area</label>
+<textarea class="c-textarea" name="textArea" id="" cols="30" rows="5"></textarea>
+<label class="c-label" for="textAreaV2">
+  <div class="c-label__content">Text area (v2)</div>
+  <textarea class="c-textarea" name="textAreaV2" id="" cols="30" rows="5"></textarea>
+</label>
+<label class="c-label" for="textAreaDisabled">Disabled text area</label>
+<textarea class="c-textarea" name="textAreaDisabled" id="" cols="30" rows="5" disabled></textarea>
+
+*/
+
+@mixin c-textarea {
+  @include _c-input;
+
+  width: 100%;
+  overflow: auto;
+  min-height: calc(#{$line-height-computed * 6} + #{$inuit-global-spacing-unit-tiny * 2});
+  padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  resize: vertical;
+
+  &[disabled] {
+    resize: none;
+  }
+}

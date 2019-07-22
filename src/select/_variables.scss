@@ -1,0 +1,95 @@
+/// Sets the forms Select dropdown background color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-background: $form-background !default;
+
+/// Sets the forms Select dropdown font color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-color: $color-base-white !default;
+
+/// Sets the forms Select dropdown chevron font color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-arrow: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20viewBox%3D%220%200%20658%201024%22%3E%3Cpath%20fill%3D%22%23EEEEEE%22%20d%3D%22M614.286%20420.571q0%207.429-5.714%2013.143l-266.286%20266.286q-5.714%205.714-13.143%205.714t-13.143-5.714l-266.286-266.286q-5.714-5.714-5.714-13.143t5.714-13.143l28.571-28.571q5.714-5.714%2013.143-5.714t13.143%205.714l224.571%20224.571%20224.571-224.571q5.714-5.714%2013.143-5.714t13.143%205.714l28.571%2028.571q5.714%205.714%205.714%2013.143z%22%2F%3E%3C%2Fsvg%3E') !default;
+
+/// Sets the forms Select dropdown dark shadow
+///
+/// @group px-forms-design:variables:style
+/// @type Color | String [default]
+$select-shadow_dark: 0 1px 0 rgba($color-base-black, .1) !default;
+
+/// Sets the forms Select dropdown light shadow
+///
+/// @group px-forms-design:variables:style
+/// @type Color | String [default]
+$select-shadow_light: 0 1px 0 rgba($color-base-black, .1) !default;
+
+/// Sets the forms Select dropdown disabled font color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-color_disabled: $color-gray-5 !default;
+
+/// Sets the forms Select dropdown disabled chevron font color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-arrow-disabled: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20viewBox%3D%220%200%20658%201024%22%3E%3Cpath%20fill%3D%22%23EEEEEE%22%20d%3D%22M614.286%20420.571q0%207.429-5.714%2013.143l-266.286%20266.286q-5.714%205.714-13.143%205.714t-13.143-5.714l-266.286-266.286q-5.714-5.714-5.714-13.143t5.714-13.143l28.571-28.571q5.714-5.714%2013.143-5.714t13.143%205.714l224.571%20224.571%20224.571-224.571q5.714-5.714%2013.143-5.714t13.143%205.714l28.571%2028.571q5.714%205.714%205.714%2013.143z%22%2F%3E%3C%2Fsvg%3E') !default;
+
+/// Sets the forms Select dropdown disabled background color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-background_disabled: $color-gray-35 !default;
+
+/// Sets the forms Select dropdown hover background color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-background_hover: $color-gray-40 !default;
+
+/// Sets the forms Select dropdown hover border color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-border_hover: $ids-theme-primary !default;
+
+/// Sets the forms Select dropdown pressed background color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-background_pressed: $color-gray-20 !default;
+
+/// Sets the forms Select dropdown pressed border color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-border_pressed: $ids-theme-primary !default;
+
+/// Sets the forms Multiple select background color
+///
+/// @group px-forms-design:variables:style
+/// @type Color [default]
+$select-multiple-background: $color-gray-35 !default;
+
+$ids-select-theme-property-values: (
+  select-background: $select-background,
+  select-arrow: $select-arrow,
+  select-color: $select-color,
+  select-border_hover: $select-border_hover,
+  select-shadow_dark: $select-shadow_dark,
+  select-background_hover: $select-background_hover,
+  select-border_pressed: $select-border_pressed,
+  select-background_pressed: $select-background_pressed,
+  select-background_disabled: $select-background_disabled,
+  select-arrow-disabled: $select-arrow-disabled,
+  select-color_disabled: $select-color_disabled,
+  select-multiple-background: $select-multiple-background,
+  status-success: $ids-theme-status-success,
+  status-warning: $ids-theme-status-warning,
+  status-error: $ids-theme-status-error,
+);

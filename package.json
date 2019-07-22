@@ -1,0 +1,40 @@
+{
+  "name": "components-web",
+  "version": "0.1.0",
+  "description": "Web components for Inspark products",
+  "main": "index.css",
+  "scripts": {
+    "build": "sh build.sh",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm publish dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inspark/inspark-design-system-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inspark/inspark-design-system-web/issues"
+  },
+  "homepage": "https://github.com/inspark/inspark-design-system-web#readme",
+  "devDependencies": {
+    "@csstools/postcss-sass": "^4.0.0",
+    "autoprefixer": "^9.6.1",
+    "css-loader": "^3.1.0",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^4.1.0",
+    "node-sass": "^4.12.0",
+    "postcss-font-magician": "^2.2.2",
+    "postcss-loader": "^3.0.0",
+    "precss": "^4.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "postcss-clean": "^1.1.0",
+    "postcss-scss": "^2.0.0"
+  }
+}

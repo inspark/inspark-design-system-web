@@ -1,0 +1,835 @@
+@import "./variables";
+@import "../mediaqueries/mixins";
+@import "../mediaqueries/mixins";
+
+@mixin grid {
+  display: flex;
+}
+
+@mixin grid_wrap {
+  flex-wrap: wrap;
+}
+
+@mixin grid_nowrap {
+  flex-wrap: nowrap;
+}
+
+@mixin grid_top {
+  align-items: flex-start;
+}
+
+@mixin grid_center {
+  align-items: center;
+}
+
+@mixin grid_bottom {
+  align-items: flex-end;
+}
+
+@mixin grid__cell {
+  flex: 1;
+  padding-right: $grid-gutter;
+  padding-left: $grid-gutter;
+}
+
+@mixin grid__cell_no-gutter {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+@mixin grid__cell_yes-gutter {
+  padding-right: $grid-gutter;
+  padding-left: $grid-gutter;
+}
+
+@mixin grid__cell_top {
+  align-self: flex-start;
+}
+
+@mixin grid__cell_center {
+  align-self: center;
+}
+
+@mixin grid__cell_bottom {
+  align-self: flex-end;
+}
+
+@mixin grid__cell_width-fixed {
+  flex: 0 1 auto;
+}
+
+@mixin grid__cell_width-auto {
+  flex: 1 1 auto;
+}
+
+@mixin grid__cell_fit {
+  flex: 1;
+}
+
+@mixin grid_full {
+  flex-wrap: wrap;
+}
+
+@mixin grid__responsive($screen-width) {
+  &_wrap\@#{$screen-width} {
+    @include grid_wrap;
+  }
+
+  &_nowrap\@#{$screen-width} {
+    @include grid_nowrap;
+  }
+
+  &__cell_yes-gutter\@#{$screen-width} {
+    @include grid__cell_yes-gutter;
+  }
+
+  &__cell_no-gutter\@#{$screen-width} {
+    @include grid__cell_no-gutter;
+  }
+}
+
+@mixin grid__cell_full {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-left: 0;
+}
+
+@mixin grid__cell_hidden {
+  display: none;
+}
+
+@mixin grid__cell_visible {
+  display: initial;
+}
+
+@mixin grid__cell_width($width) {
+  flex: 0 0 $width;
+  max-width: $width;
+}
+
+@mixin grid__cells {
+  @each $width, $fraction in $grid-widths {
+    &_width-#{$width} {
+      @include grid__cell_width($fraction * 100%);
+    }
+
+    &_offset-#{$width} {
+      margin-left: $fraction * 100%;
+    }
+  }
+}
+
+@mixin grid__responsive-cells($screen-width) {
+  @each $width, $fraction in $grid-widths {
+    &_hidden\@#{$screen-width} {
+      @include grid__cell_hidden;
+    }
+
+    &_visible\@#{$screen-width} {
+      @include grid__cell_visible;
+    }
+
+    &_width-#{$width}\@#{$screen-width} {
+      flex: 0 0 $fraction * 100%;
+      max-width: $fraction * 100%;
+    }
+
+    &_offset-#{$width}\@#{$screen-width} {
+      margin-left: $fraction * 100%;
+    }
+
+    &_width-fixed\@#{$screen-width} {
+      @include grid__cell_width-fixed;
+    }
+
+    &_width-auto\@#{$screen-width} {
+      @include grid__cell_width-auto;
+    }
+  }
+}
+
+// todo(turchaninov):
+//  - объединить flex и grid
+//  - переименовать и объединить grid object и component
+
+/* ==========================================================================
+   #GRID
+   ========================================================================== */
+
+/*
+Grid (also flexbox)
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+The grid is the easiest way to produce a fluid responsive layout. Its easy to use and very flexible.
+
+* Color key:
+ * grids are pink
+ * cells are blue
+ * padding is green
+
+markup:
+<div class="o-grid o-grid_demo">
+  <div class="o-grid__cell">
+    <div class="o-grid-text">
+      first
+    </div>
+  </div>
+  <div class="o-grid__cell">
+    <div class="o-grid-text">
+      second
+    </div>
+  </div>
+  <div class="o-grid__cell">
+    <div class="o-grid-text">
+      third
+    </div>
+  </div>
+</div>
+
+*/
+
+/*
+Width
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+Use the `.o-grid__cell_width-xx` class to apply widths to your cells. If you add a width to one cell the other cells will
+automatically take up the rest of the space equally.
+
+markup:
+<div class="o-grid o-grid_demo">
+    <div class="o-grid__cell o-grid__cell_width-50">
+        <div class="o-grid-text">first</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">second</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">third</div>
+    </div>
+</div>
+
+*/
+
+/*
+Offsets
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+To "push" a cell horizontally across the grid use the `.o-grid__cell_offset-xx` class. Use in conjunction with widths to
+perfectly align your cells.
+
+markup:
+<div class="o-grid o-grid_demo">
+    <div class="o-grid__cell o-grid__cell_width-20">
+        <div class="o-grid-text">first</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell_width-20 o-grid__cell_offset-60">
+        <div class="o-grid-text">second</div>
+    </div>
+</div>
+
+*/
+
+/*
+Wrapping
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+A grid is essentially a row of cells. However cells can wrap onto the next line within the grid.
+
+Here we have 2 cells, 50% and 66.6666% wide, but the grid is only 100% wide...eek!
+
+markup:
+<div class="o-grid o-grid_demo">
+    <div class="o-grid__cell o-grid__cell_width-50">
+        <div class="o-grid-text">first</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell_width-66">
+        <div class="o-grid-text">second</div>
+    </div>
+</div>
+
+*/
+
+/*
+Nesting
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+You can nest grids inside cells with relative ease...with nesting you're into advanced territory!
+
+markup:
+<div class="o-grid o-grid_demo">
+    <div class="o-grid__cell">
+        <div class="o-grid">
+            <div class="o-grid__cell">
+                <div class="o-grid-text">first</div>
+            </div>
+            <div class="o-grid__cell">
+                <div class="o-grid-text">second</div>
+            </div>
+        </div>
+        <div class="o-grid">
+            <div class="o-grid__cell">
+                <div class="o-grid-text">third</div>
+            </div>
+            <div class="o-grid__cell">
+                <div class="o-grid-text">fourth</div>
+            </div>
+        </div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">fifth</div>
+    </div>
+</div>
+
+*/
+
+/*
+Vertical Alignment
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+Per `.o-grid`
+
+If one of your cells is tall you can apply a vertical alignment modifier class to the grid.
+`.o-grid_top`, `.o-grid_center` and `.o-grid_bottom` are supported.
+
+Per `.o-grid__cell`
+
+You can override the vertical alignment of all the cells in the grid by specifying per cell.
+`.o-grid__cell_top`, `.o-grid__cell_center` and `.o-grid__cell_bottom` are supported.
+
+markup:
+<div>Per .o-grid</div>
+<div class="o-grid o-grid_bottom o-grid_demo">
+    <div class="o-grid__cell">
+        <div class="o-grid-text">first</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">second</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">third</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">fourth
+            <br>fourth
+            <br>fourth
+            <br>fourth
+            <br>fourth
+            <br>
+        </div>
+    </div>
+    <div class="o-grid-text"></div>
+</div>
+<div>Per .o-grid</div>
+<div class="o-grid o-grid_bottom o-grid_demo">
+    <div class="o-grid__cell o-grid__cell_top">
+        <div class="o-grid-text">first</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell_center">
+        <div class="o-grid-text">second</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">third</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">fourth
+            <br>fourth
+            <br>fourth
+            <br>fourth
+            <br>fourth
+            <br>
+        </div>
+    </div>
+</div>
+
+*/
+
+/*
+Gutters
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+Grid comes with a gutter around each grid cell; some padding either side.
+Sometimes you want your cells to be flush with each other. To turn off all gutters use `.o-grid_no-gutter`
+or cell specific `.o-grid__cell_no-gutter`
+
+markup:
+<div>to whole o-grid</div>
+<div class="o-grid o-grid_no-gutter o-grid_demo">
+    <div class="o-grid__cell">
+        <div class="o-grid-text">first</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">second</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">third</div>
+    </div>
+</div>
+<div>cell-specific</div>
+<div class="o-grid o-grid_demo">
+    <div class="o-grid__cell">
+        <div class="o-grid-text">first</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">second</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell_no-gutter">
+        <div class="o-grid-text">third</div>
+    </div>
+</div>
+
+*/
+
+/*
+Fixed widths
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+Usually cells in a grid will be fluid and responsive. If however you want to set a cell to a fixed width add the
+`.o-grid__cell_width-fixed` modifier and give it a specific width.
+
+markup:
+<div class="o-grid o-grid_demo">
+    <div class="o-grid__cell">
+        <div class="o-grid-text">first</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell_width-fixed" style="width: 250px">
+        <div class="o-grid-text">static width of 250px</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">third</div>
+    </div>
+</div>
+
+*/
+
+@mixin ids-grid-object {
+
+  .o-grid {
+    @include grid;
+
+    &_wrap {
+      @include grid_wrap;
+    }
+
+    &_top {
+      @include grid_top;
+    }
+
+    &_center {
+      @include grid_center;
+    }
+
+    &_bottom {
+      @include grid_bottom;
+    }
+
+    &_no-padding {
+      padding: 0;
+    }
+
+    &_no-gutter {
+      > .o-grid__cell {
+        @include grid__cell_no-gutter;
+      }
+    }
+
+    &_height-full {
+      min-height: 100%;
+    }
+
+    &_height-100pc {
+      height: 100%;
+    }
+
+    &__cell {
+      @include grid__cell;
+
+      @include grid__cells;
+
+      width: 1%;
+      min-width: 1px;
+
+      &_top {
+        @include grid__cell_top;
+      }
+
+      &_center {
+        @include grid__cell_center;
+      }
+
+      &_bottom {
+        @include grid__cell_bottom;
+      }
+
+      &_no-gutter {
+        @include grid__cell_no-gutter;
+      }
+
+      &_width-fixed {
+        @include grid__cell_width-fixed;
+      }
+
+      &_width-auto {
+        @include grid__cell_width-auto;
+      }
+
+      &_hidden {
+        @include grid__cell_hidden;
+      }
+
+      &_visible {
+        @include grid__cell_visible;
+      }
+
+      &_order-3 {
+        order: 3;
+      }
+    }
+  }
+}
+
+  /*
+  Flex-direction
+
+  Compatible in IE10+.
+
+  By default, just applying the `.o-grid` class to a container will cause its children to lay themselves out in a horizontal
+  row. But we can specify the direction we want children to flow by adding the `.o-grid_row` or `.o-grid_col` classes to the
+  container:
+
+  `.o-grid_row` Lays children out horizontally from right-to-left
+
+  `.o-grid_row_rev` Lays children out horizontally in the reverse direction (from left-to-right). [must be applied with
+  class `.o-grid_row`]
+
+  `.o-grid_col` Lays children out vertically from top-to-bottom
+
+  `.o-grid_col_rev` Lays children out vertically in the reverse direction (from bottom-to-top) [must be applied with class
+   `.o-grid_col`]
+
+  row - Lays children's horizontal flow direction
+  row_rev - Lays children`s horizontal flow direction from left-to-right
+  col - Lays children`s vertical flow direction
+  col_rev - Lays children out vertically in the reverse direction (from bottom-to-top)
+
+  markup:
+  <div class="o-grid o-grid_{$modifiers}">
+    <div class="child">
+      Child 1
+    </div>
+    <div class="child">
+      Child 2
+    </div>
+    <div class="child">
+      Child 3
+    </div>
+  </div>
+
+  */
+
+
+
+@mixin ids-grid-object-flex-direction {
+
+  .o-grid_row,
+  %o-flex_row {
+    flex-direction: row;
+  }
+
+  .o-grid_row_rev,
+  %o-flex_row_rev {
+    flex-direction: row-reverse;
+  }
+
+  .o-grid_col,
+  %o-flex_col {
+    flex-direction: column;
+  }
+
+  .o-grid_col_rev,
+  %o-flex_col_rev {
+    flex-direction: column-reverse;
+  }
+
+  .o-grid_row\@small {
+    @include screen_small-and-up {
+      flex-direction: row;
+    }
+  }
+
+  .o-grid_col\@small {
+    @include screen_small-and-up {
+      flex-direction: column;
+    }
+  }
+}
+
+/* ==========================================================================
+   #GRID RESPONSIVENESS
+   ========================================================================== */
+
+/*
+Responsiveness
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+The grid can be instructed to go full width at certain break points to maximise the screen space and help produce great user experiences on all sorts of devices.
+
+The grid has a fit or full class modifier that is used at different screen sizes.
+
+`.o-grid_{ small | medium | large }-{ fit | full }`
+
+The below example will display the cells full width for small and large size screens. For medium screens the cells will
+ adjust to fit the available space. Try it out, either resize your browser or rotate your phone into landscape.
+
+markup:
+<div class="o-grid o-grid_small-full o-grid_medium-fit o-grid_large-full o-grid_demo">
+    <div class="o-grid__cell">
+        <div class="o-grid-text">first</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">second</div>
+    </div>
+    <div class="o-grid__cell">
+        <div class="o-grid-text">third</div>
+    </div>
+</div>
+
+*/
+
+/*
+Responsive Suffixes
+
+Deprecated: For flexbox grid use Flexbox object. It has much more options and better integration to SEM NEXT UI.
+We’ll drop support for these wikis on April 20, 2017.
+
+As well as grid level responsiveness you also have control over the cells within a grid.
+Individual cells can change width at specific break points by using responsive suffixes .
+
+As the viewport increases in size the cells go from 100% wide to 33% wide one after another, rather than all at once.
+
+The suffixes apply to the screen sizes and up, in a mobile first manner. In other words:
+
+Set cell width to 33% when screen width is greater than or equal to `xsmall | small | medium | large | xlarge | super`
+
+markup:
+<div class="o-grid o-grid_wrap o-grid_demo">
+    <div class="o-grid__cell o-grid__cell_width-100 o-grid__cell_width-33@small">
+        <div class="o-grid-text">small</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell_width-100 o-grid__cell_width-33@medium">
+        <div class="o-grid-text">medium</div>
+    </div>
+    <div class="o-grid__cell o-grid__cell_width-100 o-grid__cell_width-33@large">
+        <div class="o-grid-text">large</div>
+    </div>
+</div>
+
+*/
+
+@mixin ids-grid-responsiveness {
+
+  .o-grid {
+    @include screen_xsmall-only {
+      &.o-grid_xsmall-fit > .o-grid__cell:not([class*="o-grid__cell_width"]) {
+        @include grid__cell_fit;
+      }
+
+      &.o-grid_xsmall-full {
+        @include grid_full;
+      }
+
+      &.o-grid_xsmall-full > .o-grid__cell {
+        @include grid__cell_full;
+      }
+    }
+
+    @include screen_small-only {
+      &.o-grid_small-fit > .o-grid__cell:not([class*="o-grid__cell_width"]) {
+        @include grid__cell_fit;
+      }
+
+      &.o-grid_small-full {
+        @include grid_full;
+      }
+
+      &.o-grid_small-full > .o-grid__cell {
+        @include grid__cell_full;
+      }
+    }
+
+    @include screen_medium-only {
+      &.o-grid_medium-fit > .o-grid__cell:not([class*="o-grid__cell_width"]) {
+        @include grid__cell_fit;
+      }
+
+      &.o-grid_medium-full {
+        @include grid_full;
+      }
+
+      &.o-grid_medium-full > .o-grid__cell {
+        @include grid__cell_full;
+      }
+    }
+
+    @include screen_large-only {
+      &.o-grid_large-fit > .o-grid__cell:not([class*="o-grid__cell_width"]) {
+        @include grid__cell_fit;
+      }
+
+      &.o-grid_large-full {
+        @include grid_full;
+      }
+
+      &.o-grid_large-full > .o-grid__cell {
+        @include grid__cell_full;
+      }
+    }
+
+    @include screen_xlarge-only {
+      &.o-grid_xlarge-fit > .o-grid__cell:not([class*="o-grid__cell_width"]) {
+        @include grid__cell_fit;
+      }
+
+      &.o-grid_xlarge-full {
+        @include grid_full;
+      }
+
+      &.o-grid_xlarge-full > .o-grid__cell {
+        @include grid__cell_full;
+      }
+    }
+
+    @include screen_super-only {
+      &.o-grid_super-fit > .o-grid__cell:not([class*="o-grid__cell_width"]) {
+        @include grid__cell_fit;
+      }
+
+      &.o-grid_super-full {
+        @include grid_full;
+      }
+
+      &.o-grid_super-full > .o-grid__cell {
+        @include grid__cell_full;
+      }
+    }
+
+    @include screen_xsmall-and-up {
+      & {
+        @include grid__responsive(xsmall);
+      }
+
+      &__cell {
+        @include grid__responsive-cells(xsmall);
+      }
+    }
+
+    @include screen_small-and-up {
+      & {
+        @include grid__responsive(small);
+      }
+
+      &__cell {
+        @include grid__responsive-cells(small);
+      }
+    }
+
+    @include screen_medium-and-up {
+      & {
+        @include grid__responsive(medium);
+      }
+
+      &__cell {
+        @include grid__responsive-cells(medium);
+      }
+    }
+
+    @include screen_large-and-up {
+      & {
+        @include grid__responsive(large);
+      }
+
+      &__cell {
+        @include grid__responsive-cells(large);
+      }
+    }
+
+    @include screen_larger-and-up {
+      & {
+        @include grid__responsive(larger);
+      }
+
+      &__cell {
+        @include grid__responsive-cells(larger);
+      }
+    }
+
+    @include screen_xlarge-and-up {
+      & {
+        @include grid__responsive(xlarge);
+      }
+
+      &__cell {
+        @include grid__responsive-cells(xlarge);
+      }
+    }
+
+    @include screen_super-and-up {
+      & {
+        @include grid__responsive(super);
+      }
+
+      &__cell {
+        @include grid__responsive-cells(super);
+      }
+    }
+  }
+}
+
+@mixin ids-grid-component {
+
+  .c-grid {}
+
+  .c-grid__cell {
+    min-height: calc(100vh - 189px);
+    //hrader+footer+padding*2+crumb
+  }
+
+  .c-grid__cell_min-width_200px {
+    min-width: 200px;
+  }
+
+  .c-grid__cell_min-width_150px {
+    min-width: 150px;
+  }
+
+}
+
+
+@mixin ids-grid-core-styles {
+
+  @include ids-grid-object;
+
+  @include ids-grid-object-flex-direction;
+
+  @include ids-grid-responsiveness;
+
+  @include ids-grid-component;
+
+}

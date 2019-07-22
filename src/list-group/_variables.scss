@@ -1,0 +1,45 @@
+// List group
+
+$list-group-color: $body-color !default;
+$list-group-bg: $color-gray-40 !default;
+$list-group-border-color: rgba($color-gray-80, .125) !default;
+$list-group-border-width: $border-width !default;
+
+$list-group-item-padding-x: $unit-small !default;
+$list-group-item-padding-y: $unit-tiny !default;
+
+$list-group-hover-bg: $color-gray-40 !default;
+$list-group-active-color: $component-active-color !default;
+$list-group-active-bg: $component-active-bg !default;
+$list-group-active-border: $list-group-active-bg !default;
+$list-group-active-text-color: lighten($list-group-active-bg, 50%) !default;
+
+$list-group-disabled-color: $color-gray-20 !default;
+$list-group-disabled-bg: $color-gray-40 !default;
+$list-group-disabled-text-color: $list-group-disabled-color !default;
+
+$list-group-link-color: $color-gray-5 !default;
+$list-group-link-heading-color: $color-gray-5 !default;
+$list-group-link-hover-color: $color-base-white !default;
+
+$list-group-link-active-color: $list-group-color !default;
+$list-group-link-active-bg: rgba($ids-theme-secondary, 0.5) !default;
+
+$ids-list-group-theme-property-values: (
+  list-group-color: $body-color,
+  list-group-bg: $color-gray-40,
+  list-group-border-color: rgba($color-gray-80, .125),
+  list-group-hover-bg: $color-gray-40,
+  list-group-active-color: $component-active-color,
+  list-group-active-bg: $component-active-bg,
+  list-group-active-border: $list-group-active-bg,
+  list-group-active-text-color: lighten($list-group-active-bg, 50%),
+  list-group-disabled-color: $color-gray-20,
+  list-group-disabled-bg: $color-gray-40,
+  list-group-disabled-text-color: $list-group-disabled-color,
+  list-group-link-color: $color-gray-5,
+  list-group-link-heading-color: $color-gray-5,
+  list-group-link-hover-color: $color-base-white,
+  list-group-link-active-color: $list-group-color,
+  list-group-link-active-bg: rgba($ids-theme-secondary, 0.5),
+);

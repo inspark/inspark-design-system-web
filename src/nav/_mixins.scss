@@ -1,0 +1,89 @@
+@import "../base/variables";
+@import "./variables";
+
+@mixin c-nav {
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+  @include clearfix;
+}
+@mixin c-nav__item-li {
+  position: relative;
+  display: block;
+}
+@mixin c-nav__item-a {
+  position: relative;
+  display: block;
+  padding: $nav-link-padding;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: $nav-link-hover-bg;
+    background-color: var(--ids-theme-nav-link-hover-bg, $nav-link-hover-bg);
+  }
+}
+@mixin c-nav__item-a_disabled {
+  color: $nav-disabled-link-color;
+
+  &:hover,
+  &:focus {
+    color: $nav-disabled-link-hover-color;
+    color: var(--ids-theme-nav-disabled-link-hover-color, $nav-disabled-link-hover-color);
+    text-decoration: none;
+    background-color: transparent;
+    cursor: $cursor-disabled;
+  }
+}
+
+// Horizontal dividers
+//
+// Dividers (basically an hr) within dropdowns and nav lists
+
+@mixin nav-divider($color: #e5e5e5) {
+  height: 1px;
+  margin: (($line-height-computed / 2) - 1) 0;
+  overflow: hidden;
+  background-color: $color;
+}
+
+
+//
+// Navs
+// --------------------------------------------------
+
+// Base class
+// --------------------------------------------------
+
+@mixin ids-nav-core-styles {
+
+
+  .c-nav {
+    @include c-nav;
+  }
+
+  .c-nav__item-li {
+    @include c-nav__item-li;
+  }
+
+  .c-nav__item-a {
+    @include c-nav__item-a;
+  }
+
+  // Disabled state sets text to gray and nukes hover/tab effects
+  .c-nav__item-a_disabled {
+    @include c-nav__item-a_disabled;
+  }
+
+  // Open dropdowns
+  .is-nav__dropdown_open {
+    &,
+    &:hover,
+    &:focus {
+      background-color: $nav-link-hover-bg;
+      background-color: var(--ids-theme-nav-link-hover-bg, $nav-link-hover-bg);
+      border-color: $link-color;
+      border-color: var(--ids-theme-link-color, $link-color);
+    }
+  }
+
+}

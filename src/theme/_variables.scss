@@ -1,0 +1,83 @@
+//@import "../base/variables";
+@import "color-palette";
+//@import "../typography/variables";
+
+/**
+ * Primary
+ */
+$ids-theme-primary: $color-blue-light;
+
+/**
+ * Secondary
+ */
+$ids-theme-secondary: $color-blue-dark;
+
+/*
+Status colors
+*/
+$ids-theme-status-active: $color-blue-light !default;
+$ids-theme-status-highlight: $color-blue-light !default;
+$ids-theme-status-success: #31AC51 !default;
+$ids-theme-status-warning: #EE9946 !default; //$color-orange
+$ids-theme-status-error: #F95C5D !default;
+$ids-theme-status-pending: $color-blue !default;
+$ids-theme-status-critical: #F95C5D !default;
+$ids-theme-status-disabled: #848484 !default;
+$ids-theme-status-falsevalue: #85B3CB !default;
+
+/*
+Functional colors
+*/
+$component-active-color: $color-base-white !default;
+$component-active-bg: rgba($ids-theme-primary, 0.4) !default;
+$state-success-bg: rgba($ids-theme-status-success, 0.4) !default;
+$state-success-text: $color-base-white !default;
+$state-warning-bg: rgba($ids-theme-status-warning, 0.4) !default;
+$state-warning-text: $color-base-white !default;
+$state-error-bg: rgba($ids-theme-status-error, 0.4) !default;
+$state-error-text: $color-base-white !default;
+$state-pending-bg: rgba($ids-theme-status-pending, 0.4) !default;
+$state-pending-text: $color-base-white !default;
+$state-critical-bg: rgba($ids-theme-status-critical, 0.4) !default;
+$state-critical-text: $color-base-white !default;
+$state-falsevalue-bg: rgba($ids-theme-status-falsevalue, 0.4) !default;
+$state-falsevalue-text: $color-black-secondary !default;
+
+//
+// Primary text colors for each of the theme colors.
+//
+
+$ids-theme-property-values: (
+  // Primary
+  primary: $ids-theme-primary,
+
+  // Secondary
+  secondary: $ids-theme-secondary,
+
+  // Statuses
+  status-active: $ids-theme-status-active,
+  status-highlight: $ids-theme-status-highlight,
+  status-success: $ids-theme-status-success,
+  status-warning: $ids-theme-status-warning,
+  status-error: $ids-theme-status-error,
+  status-pending: $ids-theme-status-pending,
+  status-critical: $ids-theme-status-critical,
+  status-disabled: $ids-theme-status-disabled,
+  status-falsevalue: $ids-theme-status-falsevalue,
+
+  // Functional colors
+  component-active-color: $component-active-color,
+  component-active-bg: $component-active-bg,
+  state-success-bg: $state-success-bg,
+  state-success-text: $state-success-text,
+  state-warning-bg: $state-warning-bg,
+  state-warning-text: $state-warning-text,
+  state-error-bg: $state-error-bg,
+  state-error-text: $state-error-text,
+  state-pending-bg: $state-pending-bg,
+  state-pending-text: $state-pending-text,
+  state-critical-bg: $state-critical-bg,
+  state-critical-text: $state-critical-text,
+  state-falsevalue-bg: $state-falsevalue-bg,
+  state-falsevalue-text: $state-falsevalue-text
+) !default;

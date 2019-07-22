@@ -1,0 +1,19 @@
+<div>
+    <ul class="c-crumb">
+<!--        <li style="display: inline-block">
+            <spinner-component></spinner-component>
+        </li>
+        <li style="display: inline-block">
+            |
+        </li>-->
+        <li class="c-crumb__item">
+            <a href="#/home" translate>Home</a>
+        </li>
+        <!--is-crumb__item_active-->
+        <li ng-repeat="step in steps" ng-switch="$last || !!step.abstract" ng-class="{'is-crumb__item_active': $last}" class="c-crumb__item ">
+            <a ng-switch-when="false" href="{{step.ncyBreadcrumbLink}}"> {{step.ncyBreadcrumbLabel}}</a>
+            <span ng-switch-when="true">{{step.ncyBreadcrumbLabel}}</span>
+        </li>
+
+    </ul>
+</div>

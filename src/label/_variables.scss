@@ -1,0 +1,9 @@
+$label-color: $color-gray-10 !default;
+$label-sub-color: $color-gray-20 !default;
+$label-disabled-color: $color-gray-40 !default;
+
+$ids-label-theme-property-values: (
+  label-color: $label-color,
+  label-sub-color: $label-sub-color,
+  label-disabled-color: $label-disabled-color,
+);

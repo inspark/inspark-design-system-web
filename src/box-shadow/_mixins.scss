@@ -1,0 +1,10 @@
+@import "./variables";
+
+@mixin ids-box-shadow-core-styles($size: 'default') {
+  @if $size == 'tiny' { box-shadow: $box-shadow-tiny; }
+  @else if $size == 'small' { box-shadow: $box-shadow-small; }
+  @else if $size == 'default' { box-shadow: $box-shadow-default; }
+  @else if $size == 'large' { box-shadow: $box-shadow-large; }
+  @else if $size == 'huge' { box-shadow: $box-shadow-huge; }
+  @else { box-shadow: $box-shadow-default; }
+}

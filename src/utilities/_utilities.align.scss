@@ -1,0 +1,54 @@
+.u-vertical-align-top {
+  vertical-align: top;
+}
+
+.u-vertical-align-middle {
+  vertical-align: middle !important;
+}
+
+.u-vertical-align-bottom {
+  vertical-align: bottom;
+}
+
+.u-vertical-align-text-bottom {
+  vertical-align: text-bottom;
+}
+
+.u-vertical-align-text-top {
+  vertical-align: text-top;
+}
+
+.u-vertical-align-baseline {
+  vertical-align: baseline;
+}
+
+.u-centring-ver-hor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.u-centring-ver {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.u-position-absolute-top-right-bottom {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+}
+
+.u-align-content-flex-start {
+  align-content: flex-start;
+}
+
+.u-align-self-flex-start {
+  align-self: flex-start;
+}
+
+.u-align-self-center {
+  align-self: center;
+}

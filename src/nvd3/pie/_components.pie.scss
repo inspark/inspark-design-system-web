@@ -1,0 +1,99 @@
+/* Pie */
+.nvd3.nv-pie {
+  path {
+    //stroke-opacity: 0;
+    transition: fill-opacity $nvd3-transition-default, stroke-width $nvd3-transition-default, stroke-opacity $nvd3-transition-default;
+  }
+
+  .nv-pie-title {
+    font-size: $nvd3-pie-title-font-size;
+    fill: $nvd3-pie-title-fill;
+  }
+
+  .nv-slice text {
+    stroke: $nvd3-pie-slice-text-stroke;
+    //stroke-width: 0;
+  }
+
+  path {
+    stroke: $nvd3-pie-path;
+    //stroke-width: 1px;
+    //stroke-opacity: 1;
+  }
+
+  //path {
+  //  fill-opacity: 0.7;
+  //}
+
+  //.hover path {
+  //  fill-opacity: 1;
+  //}
+  //
+  //.nv-label {
+  //  pointer-events: none;
+  //}
+  //
+  //.nv-label rect {
+  //  fill-opacity: 0;
+  //  stroke-opacity: 0;
+  //}
+
+  // set fill and stroke through css
+
+    //.nv-slice {
+    //  &:nth-child(1) {
+    //    fill: $nvd3-color-1 !important;
+    //    stroke: $nvd3-color-1 !important;
+    //  }
+    //
+    //  &:nth-child(2) {
+    //    fill: $nvd3-color-2 !important;
+    //    stroke: $nvd3-color-2 !important;
+    //  }
+    //
+    //  &:nth-child(3) {
+    //    fill: $nvd3-color-3 !important;
+    //    stroke: $nvd3-color-3 !important;
+    //  }
+    //
+    //  &:nth-child(4) {
+    //    fill: $nvd3-color-4 !important;
+    //    stroke: $nvd3-color-4 !important;
+    //  }
+    //
+    //  &:nth-child(5) {
+    //    fill: $nvd3-color-5 !important;
+    //    stroke: $nvd3-color-5 !important;
+    //  }
+    //
+    //  &:nth-child(6) {
+    //    fill: $nvd3-color-6 !important;
+    //    stroke: $nvd3-color-6 !important;
+    //  }
+    //
+    //  &:nth-child(7) {
+    //    fill: $nvd3-color-7 !important;
+    //    stroke: $nvd3-color-7 !important;
+    //  }
+    //
+    //  &:nth-child(8) {
+    //    fill: $nvd3-color-8 !important;
+    //    stroke: $nvd3-color-8 !important;
+    //  }
+    //
+    //  &:nth-child(9) {
+    //    fill: $nvd3-color-9 !important;
+    //    stroke: $nvd3-color-9 !important;
+    //  }
+    //
+    //  &:nth-child(10) {
+    //    fill: $nvd3-color-10 !important;
+    //    stroke: $nvd3-color-10 !important;
+    //  }
+    //
+    //  &:nth-child(11) {
+    //    fill: $nvd3-color-11 !important;
+    //    stroke: $nvd3-color-11 !important;
+    //  }
+    //}
+}

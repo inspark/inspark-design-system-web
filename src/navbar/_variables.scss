@@ -1,0 +1,84 @@
+@import "../theme/variables";
+@import "../base/variables";
+
+// Navbar
+
+// Basics of a navbar
+$navbar-height: $inuit-global-spacing-unit-tiny * 9 !default;
+$navbar-margin-bottom: 0 !default; //$line-height-computed
+$navbar-border-radius: 0 !default;
+$navbar-padding-horizontal: floor(($grid-gutter-width / 2)) !default;
+$navbar-line-height: $navbar-height !default;
+$navbar-padding-vertical: (($navbar-height - $navbar-line-height) / 2) !default;
+$navbar-collapse-max-height: 340px !default;
+
+$navbar-default-color: $color-base-white !default;
+$navbar-default-bg: $color-gray-80 !default;
+$navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-default-link-color: $color-base-white !default;
+$navbar-default-link-hover-color: $ids-theme-secondary !default;
+$navbar-default-link-hover-bg: transparent !default;
+$navbar-default-link-active-color: $ids-theme-primary !default;
+$navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-disabled-color: #ccc !default;
+$navbar-default-link-disabled-bg: transparent !default;
+
+// Navbar brand label
+$navbar-default-brand-color: $navbar-default-link-color !default;
+$navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-bg: transparent !default;
+
+// Navbar toggle
+//$navbar-default-toggle-hover-bg:           #ddd !default;
+$navbar-default-toggle-hover-color: $ids-theme-primary !default;
+$navbar-default-toggle-icon-bar-bg: #888 !default;
+$navbar-default-toggle-border-color: #ddd !default;
+$navbar-default-toggle-color: $color-base-white !default;
+
+//=== Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color: lighten($color-gray-35, 15%) !default;
+$navbar-inverse-bg: #222 !default;
+$navbar-inverse-border: darken($navbar-inverse-bg, 10%) !default;
+
+// Inverted navbar links
+$navbar-inverse-link-color: lighten($color-gray-35, 15%) !default;
+$navbar-inverse-link-hover-color: #fff !default;
+$navbar-inverse-link-hover-bg: transparent !default;
+$navbar-inverse-link-active-color: $navbar-inverse-link-hover-color !default;
+$navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 10%) !default;
+$navbar-inverse-link-disabled-color: #444 !default;
+$navbar-inverse-link-disabled-bg: transparent !default;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color: $navbar-inverse-link-color !default;
+$navbar-inverse-brand-hover-color: #fff !default;
+$navbar-inverse-brand-hover-bg: transparent !default;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg: #333 !default;
+$navbar-inverse-toggle-icon-bar-bg: #fff !default;
+$navbar-inverse-toggle-border-color: #333 !default;
+
+
+$ids-navbar-theme-property-values: (
+  navbar-default-color: $navbar-default-color,
+  navbar-default-bg: $navbar-default-bg,
+  navbar-default-border: $navbar-default-border,
+  navbar-default-link-color: $navbar-default-link-color,
+  navbar-default-link-hover-color: $navbar-default-link-hover-color,
+  navbar-default-link-hover-bg: $navbar-default-link-hover-bg,
+  navbar-default-link-active-color: $navbar-default-link-active-color,
+  navbar-default-link-active-bg: $navbar-default-link-active-bg,
+  navbar-default-link-disabled-color: $navbar-default-link-disabled-color,
+  navbar-default-link-disabled-bg: $navbar-default-link-disabled-bg,
+  navbar-default-brand-color: $navbar-default-brand-color,
+  navbar-default-brand-hover-color: $navbar-default-brand-hover-color,
+  navbar-default-brand-hover-bg: $navbar-default-brand-hover-bg,
+  navbar-default-toggle-hover-color: $navbar-default-toggle-hover-color,
+  navbar-default-toggle-icon-bar-bg: $navbar-default-toggle-icon-bar-bg,
+  navbar-default-toggle-border-color: $navbar-default-toggle-border-color,
+  navbar-default-toggle-color: $navbar-default-toggle-color
+);

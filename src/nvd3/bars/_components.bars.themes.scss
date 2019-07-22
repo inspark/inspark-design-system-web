@@ -1,0 +1,47 @@
+/* Bars */
+
+.nvd3 {
+  .nv-bars {
+    rect {
+      fill-opacity: 0.75;
+      transition: fill-opacity $nvd3-transition-duration-default $nvd3-transition-function-default;
+    }
+
+    rect.hover {
+      fill-opacity: 1;
+    }
+
+    .hover rect {
+      fill: $nvd3-bars-react-hover;
+    }
+
+    text {
+      fill: rgba($nvd3-text-color, 0);
+    }
+
+    .hover text {
+      fill: rgba($nvd3-text-color, 1);
+    }
+  }
+
+  .nv-multibar .nv-groups rect,
+  .nv-multibarHorizontal .nv-groups rect,
+  .nv-discretebar .nv-groups rect {
+    //stroke-opacity: 0;
+    transition: fill-opacity $nvd3-transition-duration-default $nvd3-transition-function-default;
+  }
+
+  .nv-multibar .nv-groups rect:hover,
+  .nv-multibarHorizontal .nv-groups rect:hover,
+  .nv-candlestickBar .nv-ticks rect:hover,
+  .nv-discretebar .nv-groups rect:hover {
+    //fill-opacity: 1;
+  }
+
+  .nv-discretebar .nv-groups text,
+  .nv-multibarHorizontal .nv-groups text {
+    //font-weight: bold;
+    fill: rgba($nvd3-text-color-fill, 1);
+    stroke: rgba($nvd3-text-color-stroke, 0);
+  }
+}

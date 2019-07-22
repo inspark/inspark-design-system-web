@@ -1,0 +1,122 @@
+@import "../theme/variables";
+@import "../base/variables";
+@import "../typography/variables";
+
+// NVD3 Charts
+$nvd3-box-shadow: $component-active-box-shadow;
+$nvd3-border-radius: $global-radius;
+$nvd3-font-family: $font-family-base;
+$nvd3-font-size-base: $font-size-base;
+$nvd3-text-color: $text-color;
+$nvd3-text-color-fill: $nvd3-text-color;
+$nvd3-text-color-stroke: $nvd3-text-color;
+
+$nvd3-background-fill: $body-bg;
+$nvd3-background-fill-opacity: 0;
+$nvd3-nv-brush-resize-fill: $color-gray-5;
+$nvd3-nv-brush-resize-stroke: $color-gray-40;
+$nvd3-nv-brush-background-stroke: $color-base-black;
+$nvd3-nv-brush-background-fill: $color-base-white;
+$nvd3-axis-path-stroke: $color-base-black;
+$nvd3-axis-line: rgba($color-gray-10, 0.6);
+
+// NVD3 Controls
+$nvd3-controls-fill: $color-base-black;
+
+// NVD3 Transitions
+$nvd3-transition-duration-default: 250ms;
+$nvd3-transition-duration-short: 50ms;
+$nvd3-transition-function-default: linear;
+$nvd3-transition-delay-default: 200ms;
+$nvd3-transition-default: $nvd3-transition-duration-default $nvd3-transition-function-default;
+
+// Bars
+$nvd3-bars-react-hover: $ids-theme-primary;
+
+// Boxplot
+$nvd3-boxplot-median-stroke: $color-base-black;
+
+// Bullet
+$nvd3-bullet-marker-stroke: $color-base-black;
+$nvd3-bullet-marker-triangle-stroke: $nvd3-bullet-marker-stroke;
+$nvd3-bullet-marker-triangle-fill: $color-base-white;
+$nvd3-bullet-marker-line-stroke: $nvd3-bullet-marker-stroke;
+$nvd3-bullet-tick-line-stroke: $color-gray-40;
+$nvd3-bullet-range-s0-fill: $color-gray-5;
+$nvd3-bullet-range-s1-fill: $color-gray-10;
+$nvd3-bullet-range-s2-fill: $color-gray-20;
+$nvd3-bullet-subtitle-fill: $color-gray-10;
+$nvd3-bullet-range-fill: $color-gray-5;
+
+// Candlestick Bar
+$nvd3-candlestickbar-tick-positive-rect-stroke: $ids-theme-status-success;
+$nvd3-candlestickbar-tick-positive-rect-fill: $nvd3-candlestickbar-tick-positive-rect-stroke;
+$nvd3-candlestickbar-tick-negative-rect-stroke: $ids-theme-status-error;
+$nvd3-candlestickbar-tick-negative-rect-fill: $nvd3-candlestickbar-tick-negative-rect-stroke;
+$nvd3-candlestickbar-ticks-line-stroke: $color-gray-40;
+
+// Force Directed Graph
+$nvd3-force-node-stroke: $color-base-white;
+$nvd3-force-link-stroke: $color-gray-20;
+
+// Lines
+$nvd3-lines-groups-line-fill: none;
+$nvd3-lines-groups-area-stroke: none;
+$nvd3-lines-point-paths-stroke: $color-gray-10;
+$nvd3-lines-point-paths-fill: $color-gray-5;
+
+// OHLC
+$nvd3-ohlcbar-tick-positive-stroke: $ids-theme-status-success;
+$nvd3-ohlcbar-tick-negative-stroke: $ids-theme-status-error;
+
+// Parallel Coordinates
+$nvd3-background-path-fill: none;
+$nvd3-background-path-stroke: $color-gray-5;
+$nvd3-foreground-path-fill: none;
+$nvd3-parallelcoordinates-brush-extent-fill: $color-base-white;
+$nvd3-parallelcoordinates-brush-extent-stroke: $color-gray-40;
+$nvd3-missingvaluesline-line-fill: none;
+$nvd3-missingvaluesline-line-stroke: $color-base-black;
+
+// Pie
+$nvd3-pie-title-font-size: $inuit-font-size-h3;
+$nvd3-pie-title-fill: $ids-theme-primary;
+$nvd3-pie-slice-text-stroke: $color-base-black;
+$nvd3-pie-path: $color-base-white;
+
+// Sparkline
+$nvd3-sparkline-path-fill: none;
+$nvd3-sparklineplus-hovervalue-stroke: $color-gray-80;
+$nvd3-sparklineplus-yvalue-stroke: lighten($ids-theme-status-error, 20%);
+$nvd3-sparklineplus-maxvalue-stroke: $ids-theme-status-success;
+$nvd3-sparklineplus-maxvalue-fill: $ids-theme-status-success;
+$nvd3-sparklineplus-minvalue-stroke: $ids-theme-status-error;
+$nvd3-sparklineplus-minvalue-fill: $ids-theme-status-error;
+$nvd3-sparklineplus-currentvalue-font-size: $inuit-font-size-large;
+
+// NVD3 Tooltip
+$nvd3-tooltip-zindex: $zindex-tooltip;
+$nvd3-tooltip-font-size: $inuit-font-size-small;
+$nvd3-tooltip-background: $body-bg;
+$nvd3-tooltip-border: $text-color;
+$nvd3-tooltip-color: $text-color;
+$nvd3-tooltip-x-y-tooltip-padding: $unit-small;
+$nvd3-tooltip-xy-tooltip-background: $nvd3-tooltip-background;
+$nvd3-tooltip-h3-background: $body-bg;
+$nvd3-tooltip-h3-color: $text-color;
+$nvd3-tooltip-h3-border-bottom-color: $nvd3-tooltip-h3-background;
+$nvd3-tooltip-table-percent: $color-gray-35;
+$nvd3-tooltip-table-legend-color-guide-border: $color-gray-40;
+$nvd3-guideline-stroke: $color-gray-40;
+
+$nvd3-color-1: #007A4B;
+$nvd3-color-2: #3477DB;
+$nvd3-color-3: #D252B2;
+$nvd3-color-4: #708090;
+$nvd3-color-5: #AF851A;
+$nvd3-color-6: #BB671C;
+$nvd3-color-7: #E00000;
+$nvd3-color-8: #005031;
+$nvd3-color-9: #34415E;
+$nvd3-color-10: #58007E;
+$nvd3-color-11: #2E343B;

@@ -1,0 +1,66 @@
+<div class="c-panel c-panel_default c-panel_min-height_100 {{$ctrl.panelClass}}">
+  <div class="c-panel__heading c-panel__heading_divided">
+    <div class="c-panel__heading-btn-block" ng-if="$ctrl.buttons.leftLt">
+      <button class="c-panel__heading-btn c-btn c-btn_small c-btn_border-free"
+              ng-click="$ctrl.toggleLeft({state: 'close'})">
+        <i class="fa fa-angle-left"></i>
+      </button>
+    </div>
+    <div class="c-panel__heading-btn-block" ng-if="$ctrl.buttons.leftGt">
+      <button class="c-panel__heading-btn c-btn c-btn_small c-btn_border-free"
+              ng-click="$ctrl.toggleLeft({state: 'open'})">
+        <i class="fa fa-angle-right"></i>
+      </button>
+    </div>
+    <div class="c-panel__heading-title h4"
+         ng-cloak><!--Заголовок центральной части -->{{$ctrl.header | translate}}
+    </div>
+    <div class="c-panel__heading-btn-block" ng-if="$ctrl.buttons.twoArrows">
+      <button class="c-panel__heading-btn c-btn c-btn_small c-btn_border-free"
+              ng-click="$ctrl.toggleLeft({state: 'close'}); $ctrl.toggleRight({state: 'close'})">
+        <i class="fa fa-arrows-h"></i>
+      </button>
+    </div>
+    <div  class="c-panel__heading-btn-block" ng-if="$ctrl.showLock && $ctrl.isLocked">
+      <button class="c-panel__heading-btn c-btn c-btn_small c-btn_border-free"
+              ng-click="$ctrl.toggleLock2({state: 'close'});">
+        <i class="fa fa-lock"></i>
+      </button>
+    </div>
+    <div class="c-panel__heading-btn-block" ng-if="$ctrl.showLock && !$ctrl.isLocked">
+      <button class="c-panel__heading-btn c-btn c-btn_small c-btn_border-free"
+              ng-click="$ctrl.toggleLock2({state: 'close'});">
+        <i class="fa fa-unlock"></i>
+      </button>
+    </div>
+
+    <div class="c-panel__heading-btn-block" ng-if="$ctrl.buttons.rightLt">
+      <button class="c-panel__heading-btn c-btn c-btn_small c-btn_border-free"
+              ng-click="$ctrl.toggleRight({state: 'open'})">
+        <i class="fa fa-angle-left"></i>
+      </button>
+    </div>
+    <div class="c-panel__heading-btn-block" ng-if="$ctrl.buttons.rightGt">
+      <button class="c-panel__heading-btn c-btn c-btn_small c-btn_border-free"
+              ng-click="$ctrl.toggleRight({state: 'close'})">
+        <i class="fa fa-angle-right"></i>
+      </button>
+    </div>
+    <div class="c-panel__heading-btn-block" ng-if="$ctrl.buttons.switchBtn.enable">
+      <button class="c-panel__heading-btn c-btn c-btn_small c-btn_border-free"
+              ng-click="$ctrl.toggleRight({state: $ctrl.buttons.switchBtn.state})">
+        <i class="fa "
+           ng-class="($ctrl.buttons.switchBtn.state == 'open')? 'fa-angle-right': 'fa-angle-left'"></i>
+      </button>
+    </div>
+    <div class="c-panel__heading-btn-block" ng-if="$ctrl.buttons.minimize">
+      <button class="c-panel__heading-btn c-btn c-btn_small c-btn_border-free"
+              ng-click="$ctrl.toggleMinimize()">
+        <i class="fa fa-window-minimize"></i>
+      </button>
+    </div>
+  </div>
+  <div class="c-panel__body {{$ctrl.panelBodyClass}}">
+    <ng-transclude></ng-transclude>
+  </div>
+</div>

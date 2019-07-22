@@ -1,0 +1,53 @@
+// Headings
+
+.u-h1,
+.u-h2,
+.u-h3,
+.u-h4,
+.u-h5,
+.u-h6 {
+  color: $headings-color;
+
+  .u-small {
+    color: $headings-small-color;
+  }
+}
+
+/**
+ * Color
+ */
+
+.u-text_primary {
+  color: $ids-theme-primary;
+}
+
+.u-text_white {
+  color: $color-base-white;
+}
+
+.u-text_base {
+  color: $text-color;
+}
+
+.u-text_gray-dark {
+  color: $color-gray-90;
+}
+
+.u-text_gray-light {
+  @include theme-light {
+    color: $color-gray-20;
+  }
+}
+
+.u-text_bordered-white {
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+.u-text_muted {
+  color: $text-color !important;
+}
+
+.u-text-highlight {
+  background-color: rgba($color-yellow-dark-250, 1);
+  color: $color-base-black;
+}

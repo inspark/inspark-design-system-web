@@ -1,0 +1,40 @@
+@import "./variables";
+
+/* ==========================================================================
+   #Image
+   ========================================================================== */
+/*
+Image
+
+Object for easy image placement
+
+markup:
+<div class="o-block">
+  <div class="o-block__img">
+    <img src="http://cdn2.bigcommerce.com/n-biq04i/eir5k/products/229/images/570/Oriental_Sweetlips__95753.1392679931.220.145.jpg?c=2" class="o-image" alt="thmthg" />
+  </div>
+  <div class="o-block__body">
+    This product hasn't received any reviews yet. Be the first to review this product!
+  </div>
+</div>
+
+*/
+
+@mixin ids-image-core-styles {
+
+  .o-image {
+    max-width: 100%;
+  }
+
+  .o-image_abs {
+    position: absolute;
+  }
+
+  .o-image_expended {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+}

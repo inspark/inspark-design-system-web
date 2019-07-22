@@ -1,0 +1,261 @@
+@import "../base/variables";
+@import "../typography/variables";
+@import "../theme/variables";
+@import "../form/variables";
+@import "./variables";
+@import "../input/mixins";
+
+// todo: отрефакторить структуру миксинов в core и названия переменных
+
+@mixin ids-select-core-styles {
+  .c-select {
+    @include c-select;
+  }
+
+  .c-select_small {
+    @include c-select_small;
+  }
+
+  .c-select_is-success {
+    @include c-select_is-success;
+  }
+
+  .c-select_is-warning {
+    @include c-select_is-warning;
+  }
+
+  .c-select_is-error {
+    @include c-select_is-error;
+  }
+
+  .c-select_block {
+    @include c-select_block;
+  }
+}
+
+//  = SELECT
+//
+
+/*
+Select
+
+markup:
+<select class="c-select" name="" id="">
+	<option value="">Enabled</option>
+	<option value="">Option 2</option>
+	<option value="">Option 3</option>
+	<option value="">Option 4</option>
+	<option value="">Option 5</option>
+</select>
+<select class="c-select" disabled="" name="" id="">
+	<option value="">Disabled</option>
+	<option value="">Option 2</option>
+	<option value="">Option 3</option>
+	<option value="">Option 4</option>
+	<option value="">Option 5</option>
+</select>
+
+*/
+
+@mixin c-select {
+  height: 37px;
+  padding: 6px $unit-large 6px $unit-tiny;
+  transition: box-shadow 0.2s linear, border-color 0.2s linear;
+  border: $form-border_outer;
+  border: var(--ids-theme-form-border_outer, $form-border_outer);
+  border-radius: $global-radius;
+  background-color: $select-background;
+  background-color: var(--ids-theme-select-background, $select-background);
+  background-image: $select-arrow;
+  background-image: var(--ids-theme-select-arrow, $select-arrow);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 8px);
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: 1.3;
+  cursor: pointer;
+  color: $select-color;
+  color: var(--ids-theme-select-color, $select-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:hover {
+    border: 1px solid $select-border_hover;
+    border: 1px solid var(--ids-theme-select-border_hover, $select-border_hover);
+    box-shadow: $select-shadow_dark;
+    box-shadow: var(--ids-theme-select-shadow_dark, $select-shadow_dark);
+    background-color: $select-background_hover;
+    background-color: var(--ids-theme-select-background_hover, $select-background_hover);
+  }
+
+  &:focus,
+  &:active {
+    border: 1px solid $select-border_hover;
+    border: 1px solid var(--ids-theme-select-border_hover, $select-border_hover);
+    box-shadow: $select-shadow_dark;
+    box-shadow: var(--ids-theme-select-shadow_dark, $select-shadow_dark);
+    background-color: $select-background_hover;
+    background-color: var(--ids-theme-select-background_hover, $select-background_hover);
+    outline: 0;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:active {
+    border: 1px solid $select-border_pressed;
+    border: 1px solid var(--ids-theme-select-border_pressed, $select-border_pressed);
+    box-shadow: $select-shadow_dark;
+    box-shadow: var(--ids-theme-select-shadow_dark, $select-shadow_dark);
+    background-color: $select-background_pressed;
+    background-color: var(--ids-theme-select-background_pressed, $select-background_pressed);
+  }
+
+  &[disabled] {
+    border: 1px solid transparent;
+    box-shadow: none;
+    background-color: $select-background_disabled;
+    background-color: var(--ids-theme-select-background_disabled, $select-background_disabled);
+    background-image: $select-arrow-disabled;
+    background-image: var(--ids-theme-select-arrow-disabled, $select-arrow-disabled);
+    color: $select-color_disabled;
+    color: var(--ids-theme-select-color_disabled, $select-color_disabled);
+    cursor: not-allowed;
+  }
+
+  &[multiple] {
+    border: $form-border_outer;
+    border: var(--ids-theme-form-border_outer, $form-border_outer);
+    padding: $inuit-global-spacing-unit-tiny;
+    cursor: pointer;
+    background: $select-multiple-background;
+    background: var(--ids-theme-select-multiple-background, $select-multiple-background);
+  }
+}
+
+/*
+Select small
+
+To match radio & checkbox.
+
+markup:
+<select class="c-select c-select_small" name="" id="">
+	<option value="">Enabled</option>
+	<option value="">Option 2</option>
+	<option value="">Option 3</option>
+	<option value="">Option 4</option>
+	<option value="">Option 5</option>
+</select>
+
+*/
+
+@mixin c-select_small {
+  height: 22px; // 22px to match radio & checkbox
+  font-size: $font-size-sm;
+  text-transform: uppercase;
+}
+
+/*
+Select statuses
+
+Select with validation status.
+
+markup:
+<select class="c-select c-select_is-success" name="" id="">
+	<option value="">Enabled</option>
+	<option value="">Option 2</option>
+	<option value="">Option 3</option>
+	<option value="">Option 4</option>
+	<option value="">Option 5</option>
+</select>
+<select class="c-select c-select_is-warning" name="" id="">
+	<option value="">Enabled</option>
+	<option value="">Option 2</option>
+	<option value="">Option 3</option>
+	<option value="">Option 4</option>
+	<option value="">Option 5</option>
+</select>
+<select class="c-select c-select_is-error" name="" id="">
+	<option value="">Enabled</option>
+	<option value="">Option 2</option>
+	<option value="">Option 3</option>
+	<option value="">Option 4</option>
+	<option value="">Option 5</option>
+</select>
+
+*/
+
+@mixin c-select_is-success {
+  border-color: $ids-theme-status-success;
+  border-color: var(--ids-theme-status-success, $ids-theme-status-success);
+
+  &:hover,
+  &:focus {
+    border-color: $ids-theme-status-success;
+    border-color: var(--ids-theme-status-success, $ids-theme-status-success);
+  }
+}
+
+@mixin c-select_is-warning {
+  border-color: $ids-theme-status-warning;
+  border-color: var(--ids-theme-status-warning, $ids-theme-status-warning);
+
+  &:hover,
+  &:focus {
+    border-color: $ids-theme-status-warning;
+    border-color: var(--ids-theme-status-warning, $ids-theme-status-warning);
+  }
+}
+
+@mixin c-select_is-error {
+  border-color: $ids-theme-status-error;
+  border-color: var(--ids-theme-status-error, $ids-theme-status-error);
+
+  &:hover,
+  &:focus {
+    border-color: $ids-theme-status-error;
+    border-color: var(--ids-theme-status-error, $ids-theme-status-error);
+  }
+}
+
+/*
+Select full width
+
+Select with validation status.
+
+markup:
+<select class="c-select c-select_block">
+	<option value="">Enabled</option>
+	<option value="">Option 2</option>
+	<option value="">Option 3</option>
+	<option value="">Option 4</option>
+	<option value="">Option 5</option>
+</select>
+
+*/
+
+@mixin c-select_block {
+  @include c-input_block;
+}
+
+/*
+Divider for select
+
+Divider may be created as option. See below:
+`<option value="" disabled="disabled" role="separator">─────────────────────────</option>`
+
+markup:
+<select class="c-select">
+	<option value="">Enabled</option>
+	<option value="" disabled="disabled" role="separator">─────────────────────────</option>
+	<option value="">Option 3</option>
+	<option value="">Option 4</option>
+	<option value="">Option 5</option>
+</select>
+
+*/
+
+@mixin c-select_block {
+  @include c-input_block;
+}

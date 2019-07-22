@@ -1,0 +1,407 @@
+@import "../base/variables";
+@import "../theme/variables";
+@import "./variables";
+@import "../form/variables";
+
+//  = Checkbox
+//
+
+/*
+Checkbox
+
+markup:
+<label class="c-checkbox">
+  <input class="c-checkbox__input" type="checkbox">
+  <i class="c-checkbox__icon"></i>
+  Checkbox
+</label>
+<label class="c-checkbox">
+  <input class="c-checkbox__input" type="checkbox">
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Checkbox with custom label</span>
+</label>
+<label class="c-checkbox">
+  <input type="checkbox" class="c-checkbox__input" disabled >
+  <i class="c-checkbox__icon"></i>
+  Check Disabled
+</label>
+<label class="c-checkbox">
+  <input type="checkbox" class="c-checkbox__input" checked>
+  <i class="c-checkbox__icon"></i>
+  Check that
+</label>
+<label class="c-checkbox">
+  <input type="checkbox" class="c-checkbox__input" checked disabled >
+  <i class="c-checkbox__icon"></i>
+  Check Disabled
+</label>
+<label class="c-checkbox" for="input_indeterminate">
+  <input type="checkbox" class="c-checkbox__input" id="input_indeterminate" onclick="(function(){document.getElementById('input_indeterminate').indeterminate = true;}).call(this)">
+  <i class="c-checkbox__icon"></i>
+  Click to make me indeterminate!
+</label>
+<label class="c-checkbox" for="input_indeterminate_disabled">
+  <input type="checkbox" class="c-checkbox__input" id="input_indeterminate_disabled" onclick="(function(){document.getElementById('input_indeterminate_disabled').indeterminate = true; document.getElementById('input_indeterminate_disabled').disabled = true;}).call(this)">
+  <i class="c-checkbox__icon"></i>
+  Click to make me indeterminate and disabled!
+</label>
+
+*/
+
+@mixin ids-checkbox-core-styles {
+  @include c-checkbox;
+  @include c-checkbox__input;
+  @include c-checkbox__label;
+  @include c-checkbox__label_inline;
+  @include c-checkbox_switch;
+  @include c-checkbox_switch-two-values;
+  @include c-checkbox_switch-on-off;
+  @include c-checkbox_inline;
+  @include c-checkbox_compact;
+}
+
+@mixin c-checkbox {
+  .c-checkbox {
+    display: block;
+    margin-right: $unit-small;
+    margin-top: $unit-tiny;
+    margin-bottom: $unit-tiny;
+    cursor: pointer;
+  }
+}
+
+@mixin c-checkbox__input($sibling-icon-selector : ".c-checkbox__icon") {
+  .c-checkbox__input {
+    display: none;
+
+    + #{$sibling-icon-selector} {
+      display: inline-block;
+      position: relative;
+      height: 20px;
+      top: 4px;
+      margin-bottom: 0;
+      padding-left: 28px;
+      font-size: $font-size-base;
+      font-weight: $font-weight-normal;
+      line-height: $line-height-base;
+      text-transform: none;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        width: $checkbox-size - 4px;
+        height: $checkbox-size - 4px;
+        border-radius: $global-radius - 1px;
+        background: transparent;
+        border: 2px solid $checkbox-border-color;
+        border: 2px solid var(--ids-theme-checkbox-border-color, $checkbox-border-color);
+      }
+
+      &::after {
+        top: -2px;
+        left: -2px;
+        width: $checkbox-size;
+        height: $checkbox-size;
+        transition: transform 0.1s ease-in-out, opacity 0.2s linear;
+        opacity: 0;
+        border: 0 none;
+        background: $checkbox-img-checked;
+        background: var(--ids-theme-checkbox-img-checked, $checkbox-img-checked);
+      }
+    }
+
+    &:checked + #{$sibling-icon-selector}::after {
+      opacity: 1;
+    }
+
+    &[disabled] + #{$sibling-icon-selector} {
+      color: $form-color_disabled;
+      color: var(--ids-theme-inuit-forms-color_disabled, $form-color_disabled);
+      cursor: not-allowed;
+
+      &::before,
+      &::after {
+        border-color: $checkbox-disabled-border-color;
+        border-color: var(--ids-theme-checkbox-disabled-border-color, $checkbox-disabled-border-color);
+      }
+
+      &::after {
+        // scss-lint:disable ImportantRule
+        background: transparent !important;
+        // scss-lint:enable ImportantRule
+      }
+    }
+
+    &[disabled] + #{$sibling-icon-selector} {
+      color: $form-color_disabled;
+      color: var(--ids-theme-inuit-forms-color_disabled, $form-color_disabled);
+
+      &::before,
+      &::after {
+        border-color: $form-border_disabled;
+        border-color: var(--ids-theme-inuit-forms-border_disabled, $form-border_disabled);
+      }
+
+      &::after {
+        // scss-lint:disable ImportantRule
+        background: $checkbox-img-disabled !important;
+        background: var(--ids-theme-checkbox-img-disabled, $checkbox-img-disabled) !important;
+        // scss-lint:enable ImportantRule
+      }
+    }
+
+    &:indeterminate + #{$sibling-icon-selector} {
+      &::before {
+        border: 0;
+      }
+
+      &::after {
+        // scss-lint:disable ImportantRule
+        background: $checkbox-img-indeterminate !important;
+        background: var(--ids-theme-checkbox-img-indeterminate, $checkbox-img-indeterminate) !important;
+        // scss-lint:enable ImportantRule
+        opacity: 1;
+      }
+    }
+
+    &:indeterminate:disabled + #{$sibling-icon-selector} {
+      &::before {
+        border: 0;
+      }
+
+      &::after {
+        // scss-lint:disable ImportantRule
+        background: $checkbox-img-indeterminate-disabled !important;
+        background: var(--ids-theme-checkbox-img-indeterminate-disabled, $checkbox-img-indeterminate-disabled) !important;
+        // scss-lint:enable ImportantRule
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/*
+Checkbox with custom label
+
+You can customize label view and even hide label. Just wrap it with `c-checkbox__label` span.
+
+To hide label use `sr-only` class on `.c-checkbox__label` element. Do not remove label from html.
+
+markup:
+<label class="c-checkbox">
+  <input class="c-checkbox__input" type="checkbox">
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Checkbox with custom label</span>
+</label>
+<label class="c-checkbox">
+  <input class="c-checkbox__input" type="checkbox">
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label sr-only">Checkbox with custom label</span>
+</label>
+
+*/
+
+@mixin c-checkbox__label {
+  .c-checkbox__label {
+    display: inline-block;
+  }
+}
+
+@mixin c-checkbox__label_inline {
+  .c-checkbox__label_inline {
+    display: inline;
+  }
+}
+
+/*
+Checkbox Switch
+
+markup:
+<label class="c-checkbox c-checkbox_switch">
+  <input type="checkbox" class="c-checkbox__input">
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Switch control</span>
+</label>
+<label class="c-checkbox c-checkbox_switch">
+  <input type="checkbox" class="c-checkbox__input" disabled >
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Check Disabled</span>
+</label>
+<label class="c-checkbox c-checkbox_switch">
+  <input type="checkbox" class="c-checkbox__input" checked>
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Check that</span>
+</label>
+<label class="c-checkbox c-checkbox_switch">
+  <input type="checkbox" class="c-checkbox__input" checked disabled >
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Check Disabled</span>
+</label>
+
+*/
+
+@mixin c-checkbox_switch($child-icon-selector: ".c-checkbox__icon", $child-input-selector: ".c-checkbox__input") {
+  .c-checkbox_switch {
+    #{$child-icon-selector} {
+      display: inline-block;
+      height: 21px;
+      top: 0;
+      padding-left: 46px;
+      line-height: $line-height-base;
+
+      &::before,
+      &::after {
+        width: 39px;
+        height: 21px;
+        top: 4px;
+        margin-top: 0;
+        transition: background-color 0.3s linear, transform 0.1s cubic-bezier(0.105, 0.42, 0.425, 1);
+        border-radius: 30px;
+      }
+
+      &::after {
+        width: 15px;
+        height: 15px;
+        transform: scale3d(1, 1, 1);
+        background: $checkbox-switch-background;
+        background: var(--ids-theme-checkbox-switch-background, $checkbox-switch-background);
+        opacity: 1;
+        top: 7px;
+        border-radius: 30px;
+        left: 3px;
+      }
+    }
+
+    #{$child-input-selector} {
+      &:checked + #{$child-icon-selector} {
+        &::after {
+          transform: translateX(1.3rem);
+          transition: background-color 0.1s linear, transform 0.1s cubic-bezier(0.105, 0.42, 0.425, 1);
+          background: none;
+          background-color: $ids-theme-primary;
+          background-color: var(--ids-theme-primary, $ids-theme-primary);
+        }
+      }
+
+      &[disabled] + #{$child-icon-selector} {
+        &::after {
+          // scss-lint:disable ImportantRule
+          background: none !important;
+          background-color: $checkbox-switch-disabled-background !important;
+          background-color: var(--ids-theme-checkbox-switch-disabled-background, $checkbox-switch-disabled-background) !important;
+          // scss-lint:enable ImportantRule
+        }
+      }
+    }
+  }
+}
+
+/*
+Two values Switch
+
+markup:
+<label class="c-checkbox c-checkbox_switch c-checkbox_switch-two-values">
+  <span class="c-checkbox__label u-margin-right-tiny">Value 1</span>
+  <input type="checkbox" class="c-checkbox__input">
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Value 2</span>
+</label>
+
+*/
+
+@mixin c-checkbox_switch-two-values($child-icon-selector: ".c-checkbox__icon", $child-input-selector: ".c-checkbox__input") {
+  .c-checkbox_switch-two-values {
+    #{$child-icon-selector} {
+      &::after {
+        background: $ids-theme-primary;
+        background: var(--ids-theme-ids-theme-primary, $ids-theme-primary);
+      }
+    }
+  }
+}
+
+
+/*
+Two values Switch with on and off states
+
+markup:
+<label class="c-checkbox c-checkbox_switch c-checkbox_switch-two-values c-checkbox_switch-on-off">
+  <span class="c-checkbox__label u-margin-right-tiny">Value 1</span>
+  <input type="checkbox" class="c-checkbox__input">
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Value 2</span>
+</label>
+
+*/
+
+@mixin c-checkbox_switch-on-off($child-icon-selector: ".c-checkbox__icon", $child-input-selector: ".c-checkbox__input") {
+  .c-checkbox_switch-on-off {
+    #{$child-icon-selector} {
+      &::after {
+        background: $checkbox-swith-color-off;
+        background: var(--ids-theme-checkbox-swith-color-off, $checkbox-swith-color-off);
+      }
+    }
+  }
+}
+
+/*
+Inline Checkbox
+
+Group checkboxes on the same horizontal row by adding `.c-checkbox_inline` to any `.c-checkbox`.
+
+markup:
+<label class="c-checkbox c-checkbox_inline">
+  <input type="checkbox" class="c-checkbox__input" id="ci1">
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Check this</span>
+</label>
+<label class="c-checkbox c-checkbox_inline">
+  <input type="checkbox" class="c-checkbox__input" id="ci3" disabled >
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Check Disabled</span>
+</label>
+<label class="c-checkbox c-checkbox_switch c-checkbox_inline">
+  <input type="checkbox" class="c-checkbox__input" id="ci22" checked>
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Check that</span>
+</label>
+<label class="c-checkbox c-checkbox_switch c-checkbox_inline">
+  <input type="checkbox" class="c-checkbox__input" id="ci22" checked>
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Check that</span>
+</label>
+
+*/
+
+@mixin c-checkbox_inline {
+  .c-checkbox_inline {
+    display: inline-block;
+    margin-right: 16px;
+  }
+}
+
+/*
+Compact Checkbox
+
+Remove vertical margin from checkboxes using class `c-checkbox_compact`.
+
+markup:
+<label class="c-checkbox c-checkbox_compact">
+  <input type="checkbox" class="c-checkbox__input">
+  <i class="c-checkbox__icon"></i>
+  <span class="c-checkbox__label">Check this</span>
+</label>
+
+*/
+
+@mixin c-checkbox_compact {
+  .c-checkbox_compact {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+

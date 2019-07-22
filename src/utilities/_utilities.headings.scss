@@ -1,0 +1,94 @@
+/* ==========================================================================
+   #HEADINGS
+   ========================================================================== */
+
+/**
+ * Redefine all of our basic heading styles against utility classes so as to
+ * allow for double stranded heading hierarchy, e.g. we semantically need an H2,
+ * but we want it to be sized like an H1:
+ *
+ *   <h2 class="u-h1"></h2>
+ *
+ */
+
+.u-h1,
+.u-h2,
+.u-h3,
+.u-h4,
+.u-h5,
+.u-h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+
+  .u-small {
+    font-weight: normal;
+    line-height: 1;
+    color: $headings-small-color;
+  }
+}
+
+.u-h1, .u-h2, .u-h3 {
+  margin: 0;
+
+  .u-small {
+    font-size: 65%;
+  }
+}
+
+.u-h4, .u-h5, .u-h6 {
+  margin: 0;
+
+  .u-small {
+    font-size: 75%;
+  }
+}
+
+.u-h1 {
+  @include inuit-font-size($inuit-font-size-h1, $important: true);
+}
+
+.u-h2 {
+  @include inuit-font-size($inuit-font-size-h2, $important: true);
+}
+
+.u-h3 {
+  @include inuit-font-size($inuit-font-size-h3, $important: true);
+}
+
+.u-h4 {
+  @include inuit-font-size($inuit-font-size-h4, $important: true);
+}
+
+.u-h5 {
+  @include inuit-font-size($inuit-font-size-h5, $important: true);
+}
+
+.u-h6 {
+  @include inuit-font-size($inuit-font-size-h6, $important: true);
+}
+
+.u-h1-size {
+  @include inuit-font-size($inuit-font-size-h1, $important: true);
+}
+
+.u-h2-size {
+  @include inuit-font-size($inuit-font-size-h2, $important: true);
+}
+
+.u-h3-size {
+  @include inuit-font-size($inuit-font-size-h3, $important: true);
+}
+
+.u-h4-size {
+  @include inuit-font-size($inuit-font-size-h4, $important: true);
+}
+
+.u-h5-size {
+  @include inuit-font-size($inuit-font-size-h5, $important: true);
+}
+
+.u-h6-size {
+  @include inuit-font-size($inuit-font-size-h6, $important: true);
+}

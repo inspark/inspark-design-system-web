@@ -1,0 +1,207 @@
+@import "../theme/variables";
+
+///* ========================================================================
+//   #CONFIG
+//   ======================================================================== */
+
+/*
+Config
+
+ A map of global config settings. Define any project-level configuration, feature switches, etc. in here.
+
+Styleguide 2.1
+*/
+
+$inuit-config: (
+  env: dev,
+  healthcheck: false,
+  debug: true,
+);
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-rounded: true !default;
+
+///* ========================================================================
+//   #CORE
+//   ======================================================================== */
+
+// This core file sets up inuitcss’ most important setup variables. They
+// underpin a lot of how the framework functions and should be modified and
+// preconfigured with caution.
+
+
+// Base typographical styles and baseline grid. You need to define these values
+// in pixels: inuitcss will convert them to more appropriate units.
+
+$inuit-global-font-size:    14px !default;
+$inuit-global-line-height:  23px !default;
+
+// Spacing values are determined based on your project’s global line height (i.e
+// your baseline grid). It is not recommended that you modify these following
+// variables (it can break your vertical rhythm), but if you need to, you can.
+
+$inuit-global-spacing-unit: round($inuit-global-line-height) !default;
+
+
+// How many times larger/smaller than the default should our spacing unit
+// variants be?
+
+$inuit-global-spacing-unit-factor-tiny:   0.25 !default;
+$inuit-global-spacing-unit-factor-small:  0.5  !default;
+$inuit-global-spacing-unit-factor-large:  2    !default;
+$inuit-global-spacing-unit-factor-huge:   4    !default;
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            //
+//                               W A R N I N G                                //
+//                                                                            //
+//                  DO NOT MODIFY ANYTHING BEYOND THIS POINT                  //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+
+
+// Check that the chosen font rules are pixel numbers.
+
+@each $_inuit-font-globals in
+  $inuit-global-font-size
+  $inuit-global-line-height {
+
+  @if (type-of($_inuit-font-globals) == number) {
+
+    @if (unit($_inuit-font-globals) != "px") {
+      @error "`#{$_inuit-font-globals}` needs to be a pixel value.";
+    }
+
+  } @else {
+    @error "`#{$_inuit-font-globals}` needs to be a number.";
+  }
+
+}
+
+
+// Check that the chosen size factors are unitless numbers.
+
+@each $_inuit-spacing-unit in
+  $inuit-global-spacing-unit-factor-tiny
+  $inuit-global-spacing-unit-factor-small
+  $inuit-global-spacing-unit-factor-large
+  $inuit-global-spacing-unit-factor-huge {
+
+  @if (type-of($_inuit-spacing-unit) == number) {
+
+    @if (unitless($_inuit-spacing-unit) == false) {
+      @error "`#{$_inuit-spacing-unit}` needs to be unitless.";
+    }
+
+  } @else {
+    @error "`#{$_inuit-spacing-unit}` needs to be a number.";
+  }
+
+}
+
+
+// Private/framework-only reassignment. Do not alter anything below.
+$inuit-global-spacing-unit-tiny:  round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-tiny);
+$inuit-global-spacing-unit-small: round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-small);
+$inuit-global-spacing-unit-large: round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-large);
+$inuit-global-spacing-unit-huge:  round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-huge);
+
+
+// Standardise some UI treatments.
+
+$global-radius: 3px !default;
+$global-radius-rounded: 30em !default;
+$global-transition: (1/3) + s !default;
+
+$line-height-computed: $inuit-global-line-height / $inuit-global-font-size;
+
+
+// Reassign `$inuit-global-spacing-unit` to `$unit`.
+
+$unit: $inuit-global-spacing-unit !default;
+$unit-tiny: $inuit-global-spacing-unit-tiny !default;
+$unit-small: $inuit-global-spacing-unit-small !default;
+$unit-large: $inuit-global-spacing-unit-large !default;
+$unit-huge: $inuit-global-spacing-unit-huge !default;
+
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $color-base-black !default;
+$body-color: $color-base-white !default;
+$border-width: 1px !default;
+
+
+// Scroll customization
+
+$webkit-scrollbar-track-bg: $color-base-black !default;
+$webkit-scrollbar-thumb-bg: $color-gray-20 !default;
+$webkit-scrollbar-corner-bg: $color-gray-80 !default;
+
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color: $color-base-black !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg: $ids-theme-primary !default;
+
+$component-active-box-shadow: inset 0 0 0 1px transparent;
+
+
+// Carets
+
+// Width of the `border` for generating carets that indicate dropdowns.
+
+$caret-width-base: 4px !default;
+$caret-width: 0.3em !default;
+
+
+// Carets increase slightly in size for larger components.
+
+$caret-width-large: 5px !default;
+
+
+// Transitions
+
+$transition-base: all 0.2s ease-in-out !default;
+$transition-fade: opacity 0.15s linear !default;
+$transition-collapse: height 0.35s ease !default;
+$transition-transform: all 1s ease;
+
+// Cursor
+$cursor-disabled: not-allowed !default;
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+// todo: выделить zindex в отдельный компонент elevation
+
+$zindex-navbar: 1001 !default;
+$zindex-footer: 1000 !default;
+$zindex-login: 1000 !default;
+$zindex-sidebar: $zindex-footer !default;
+$zindex-dropdown: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+$zindex-charts-tooltip: 1000 !default;
+$zindex-navbar-fixed: 1030 !default;
+$zindex-modal-background: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-panel-absolute: 999 !default;
+$zindex-1: 1 !default;
+$zindex-panel-image-content: 2 !default;
+$zindex-login-form: $zindex-1 !default;
+
+$ids-base-theme-property-values: (
+  body-bg: $body-bg,
+  global-radius: $global-radius,
+);

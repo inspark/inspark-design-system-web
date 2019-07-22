@@ -1,0 +1,72 @@
+/*
+Achromatic colors
+*/
+$color-base-white: #FFFFFF;
+$color-base-black: #202127;
+$color-base-white-5: rgba(255, 255, 255, 5);
+$color-gray-5: #EBEBEB;
+$color-gray-10: #B3B3B3;
+$color-gray-20: #7E8087;
+$color-gray-35: #53555C;
+$color-gray-40: #494C55;
+$color-gray-80: #30333C;
+$color-gray-90: #282A31;
+$color-gray-100: $color-base-black;
+
+$color-white-normal: $color-base-white;
+$color-white-secondary: #BFBFBF;
+$color-white-disabled: #686868;
+
+$color-black-normal: $color-base-black;
+$color-black-secondary: #989A9E;
+$color-black-tertiary: #343741;
+$color-black-disabled: #CDCED0;
+
+/*
+Chromatic colors (base)
+*/
+$color-blue-light: #78f4ff;
+$color-blue-dark: #387382;
+$color-blue: #1f85ff;
+$color-yellow-light: #fbffdd;
+$color-yellow: #ffd452;
+$color-orange: #fe6a3e;
+$color-orange-dark: #c95e46;
+$color-green: #00e4c8;
+$color-green-dark: #419D59;
+$color-red: #f71800;
+$color-red-dark: #D26357;
+
+/*
+Color tints
+*/
+$color-blue-light-200: #C0FAFF;
+$color-blue-light-300: #A6F8FF;
+$color-blue-light-500: $color-blue-light;
+$color-blue-light-600: #60F1FF;
+$color-blue-light-800: #30EDFF;
+
+$color-blue-dark-200: #BAD7E7;
+$color-blue-dark-300: #85B3CB;
+$color-blue-dark-500: $color-blue-dark;
+$color-blue-dark-600: #397291;
+$color-blue-dark-800: #1F5F81;
+
+$color-yellow-light-100: #FEFFF8;
+$color-yellow-light-250: #FDFFEE;
+$color-yellow-light-500: $color-yellow-light;
+$color-yellow-light-800: #F8FFC8;
+$color-yellow-light-1000: #F7FFBB;
+
+$color-yellow-dark-100: #FFE7A0;
+$color-yellow-dark-250: #FFDC75;
+$color-yellow-dark-500: #FFD452;
+$color-yellow-dark-800: #ECBB2A;
+$color-yellow-dark-1000: #BE9210;
+
+$color-orange-200: #FEA963;
+$color-orange-325: #FE8E53;
+$color-orange-500: $color-orange;
+$color-orange-650: #FD492B;
+$color-orange-900: #FD150C;
+$color-orange-dark-500: #c95e46;

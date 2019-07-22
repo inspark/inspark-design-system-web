@@ -1,0 +1,31 @@
+/* Candlestick */
+
+.nvd3.nv-candlestickBar {
+  .nv-ticks {
+    .nv-tick {
+      stroke-width: 1px;
+    }
+
+    .nv-tick.hover {
+      stroke-width: 2px;
+    }
+
+    .nv-tick.positive rect {
+      stroke: $nvd3-candlestickbar-tick-positive-rect-stroke;
+      fill: $nvd3-candlestickbar-tick-positive-rect-fill;
+    }
+
+    .nv-tick.negative rect {
+      stroke: $nvd3-candlestickbar-tick-negative-rect-stroke;
+      fill: $nvd3-candlestickbar-tick-negative-rect-fill;
+    }
+
+    line {
+      stroke: $nvd3-candlestickbar-ticks-line-stroke;
+    }
+  }
+}
+
+.with-transitions .nv-candlestickBar .nv-ticks .nv-tick {
+  transition: stroke-width $nvd3-transition-duration-default $nvd3-transition-function-default, stroke-opacity $nvd3-transition-duration-default $nvd3-transition-function-default;
+}

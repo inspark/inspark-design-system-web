@@ -1,0 +1,769 @@
+@import "../base/variables";
+@import "./variables";
+
+/*
+
+Buttons
+
+markup:
+<button class="c-btn">
+  Button
+</button>
+
+*/
+
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ */
+
+@mixin c-btn {
+  .c-btn {
+    display: inline-block; /* [1] */
+    vertical-align: middle; /* [2] */
+    font: inherit; /* [3] */
+    text-align: center; /* [4] */
+    margin: 0; /* [4] */
+    margin-right: $unit-tiny;
+    cursor: pointer; /* [5] */
+    overflow: visible;
+    border: $btn-default-border;
+    border-radius: $btn-border-radius;
+    padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
+    transition: $global-transition;
+    box-shadow: none;
+    line-height: inherit;
+    //-webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    text-transform: none;
+    white-space: nowrap;
+    background-color: $btn-default-background;
+    background-color: var(--ids-theme-btn-default-background, $btn-default-background);
+    //-webkit-appearance: button;
+
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $btn-default-color;
+      color: var(--ids-theme-btn-default-color, $btn-default-color);
+    }
+
+    &:hover {
+      border-color: transparent;
+      box-shadow: none;
+      background-color: $btn-default-background--hover;
+      background-color: var(--ids-theme-btn-default-background--hover, $btn-default-background--hover);
+      outline: 0;
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      border-color: transparent;
+      box-shadow: none;
+      background-color: $btn-default-background--pressed;
+      background-color: var(--ids-theme-btn-default-background--pressed, $btn-default-background--pressed);
+      outline: none;
+    }
+
+    &:disabled {
+      color: $btn-disabled-color;
+      color: var(--ids-theme-btn-disabled-color, $btn-disabled-color);
+      cursor: not-allowed;
+    }
+
+    @content;
+  }
+}
+
+/*
+Style variants
+
+bare - Buttons with no styles (good a11y practice to use <button></button> for actions rather than <a></a>)
+link - Link buttons
+primary - The primary action of the page it is placed on. Place only one primary button on each page/dialog.
+secondary - Secondary buttons
+tertiary - Tertiary buttons
+disabled - Action is disabled. Buttons using this modifier should not be clickable.
+active - Active or toggled. Buttons using this modifier should not be clickable.
+destroy - A destructive action which can't be undone and might involve loss of data.
+
+markup:
+<button class="c-btn c-btn_{$modifiers}" type="button">
+  Button
+</button>
+
+*/
+@mixin c-btn_bare {
+  .c-btn_bare {
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    line-height: inherit;
+    box-shadow: none;
+    background: none;
+    outline: none;
+
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: none;
+      background: none;
+      outline: none;
+    }
+
+    &,
+    &:link,
+    &:visited {
+      color: $btn-bare-color--visited;
+      color: var(--ids-theme-btn-bare-color--visited, $btn-bare-color--visited);
+    }
+
+    &:hover {
+      color: $btn-bare-color--hover;
+      color: var(--ids-theme-btn-bare-color--hover, $btn-bare-color--hover);
+    }
+
+    &:active,
+    &:focus {
+      color: var(--ids-theme-btn-bare-color--pressed, $btn-bare-color--pressed);
+    }
+  }
+}
+
+//  = LINK BUTTON
+//
+@mixin _c-btn_link-reset {
+  ._c-btn_link-reset {
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+@mixin c-btn_link {
+  .c-btn_link {
+    @include _c-btn_link-reset;
+
+    transition: color 0.1s linear;
+    color: $link-color;
+    color: var(--ids-theme-link-color, $link-color);
+
+    &:hover {
+      @include _c-btn_link-reset;
+
+      color: $link-hover-color;
+      color: var(--ids-theme-link-hover-color, $link-hover-color);
+    }
+  }
+}
+
+@mixin c-btn_link-disabled {
+  .c-btn_link-disabled,
+  .c-btn_link.c-btn_disabled {
+    @include _c-btn_link-reset;
+
+    color: $link-disabled-color;
+    color: var(--ids-theme-link-disabled-color, $link-disabled-color);
+
+    &:hover,
+    &:active {
+      border: 1px solid transparent;
+    }
+  }
+}
+
+@mixin c-btn_primary {
+  .c-btn_primary {
+    border-color: $btn-primary-border-color;
+    border-color: var(--ids-theme-btn-primary-border-color, $btn-primary-border-color);
+    box-shadow: $btn-shadow;
+    background-color: $btn-primary-background;
+    background-color: var(--ids-theme-btn-primary-background, $btn-primary-background);
+
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $btn-primary-color;
+      color: var(--ids-theme-btn-primary-color, $btn-primary-color);
+    }
+
+    &:hover {
+      border-color: transparent;
+      background-color: $btn-primary-background--hover;
+      background-color: var(--ids-theme-btn-primary-background--hover, $btn-primary-background--hover);
+    }
+
+    &:active {
+      border-color: transparent;
+      background-color: var(--ids-theme-btn-primary-background--pressed, $btn-primary-background--pressed);
+    }
+
+    &:disabled {
+      background-color: $btn-primary-background--disabled;
+      background-color: var(--ids-theme-btn-primary-background--disabled, $btn-primary-background--disabled);
+      color: $btn-primary-color--disabled;
+      color: var(--ids-theme-btn-primary-color--disabled, $btn-primary-color--disabled);
+    }
+  }
+}
+
+@mixin c-btn_secondary {
+  .c-btn_secondary {
+    border-color: $btn-secondary-border-color;
+    border-color: var(--ids-theme-btn-secondary-border-color, $btn-secondary-border-color);
+    box-shadow: $btn-shadow;
+    background-color: $btn-secondary-background;
+    background-color: var(--ids-theme-btn-secondary-background, $btn-secondary-background);
+
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $btn-secondary-color;
+      color: var(--ids-theme-btn-secondary-color, $btn-secondary-color);
+    }
+
+    &:hover {
+      border-color: transparent;
+      background-color: $btn-secondary-background--hover;
+      background-color: var(--ids-theme-btn-secondary-background--hover, $btn-secondary-background--hover);
+    }
+
+    &:active {
+      border-color: transparent;
+      background-color: $btn-secondary-background--pressed;
+      background-color: var(--ids-theme-btn-secondary-background--pressed, $btn-secondary-background--pressed);
+    }
+  }
+}
+
+@mixin c-btn_tertiary {
+  .c-btn_tertiary {
+    border-color: $btn-tertiary-border-color;
+    border-color: var(--ids-theme-btn-tertiary-border-color, $btn-tertiary-border-color);
+    box-shadow: $btn-shadow;
+    background-color: $btn-tertiary-background;
+    background-color: var(--ids-theme-btn-tertiary-background, $btn-tertiary-background);
+
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $btn-tertiary-color;
+      color: var(--ids-theme-btn-tertiary-color, $btn-tertiary-color);
+    }
+
+    &:hover {
+      border-color: transparent;
+      background-color: $btn-tertiary-background--hover;
+      background-color: var(--ids-theme-btn-tertiary-background--hover, $btn-tertiary-background--hover);
+    }
+
+    &:active {
+      border-color: transparent;
+      background-color: $btn-tertiary-background--pressed;
+      background-color: var(--ids-theme-btn-tertiary-background--pressed, $btn-tertiary-background--pressed);
+    }
+  }
+}
+
+@mixin c-btn_destroy {
+  .c-btn_destroy {
+    &:active,
+    &:hover {
+      border-color: $btn-destroy-border-color;
+      border-color: var(--ids-theme-btn-destroy-border-color, $btn-destroy-border-color);
+      background: $btn-destroy-background;
+      background: var(--ids-theme-btn-destroy-background, $btn-destroy-background);
+      color: $btn-destroy-color;
+      color: var(--ids-theme-btn-destroy-color, $btn-destroy-color);
+    }
+  }
+}
+
+@mixin c-btn_disabled {
+  .c-btn_disabled {
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      border-color: $btn-disabled-border-color;
+      border-color: var(--ids-theme-btn-disabled-border-color, $btn-disabled-border-color);
+      box-shadow: none;
+      cursor: not-allowed;
+      background-color: $btn-disabled-background;
+      background-color: var(--ids-theme-btn-disabled-background, $btn-disabled-background);
+      color: $btn-disabled-color;
+      color: var(--ids-theme-btn-disabled-color, $btn-disabled-color);
+    }
+  }
+}
+
+@mixin c-btn_inactive {
+  .c-btn_inactive {
+    background: $btn-default-background;
+    background: var(--ids-theme-btn-default-background, $btn-default-background);
+  }
+}
+
+@mixin c-btn_active {
+  .c-btn_active {
+    background: $ids-theme-secondary;
+    background: var(--ids-theme-ids-theme-secondary, $ids-theme-secondary);
+  }
+}
+
+/*
+Ghost buttons
+
+Ghost buttons have see-through backgrounds and are bordered.
+
+small - small button with small horizontal spacing and tiny vertical spacing.
+large - large button with large horizontal spacing and default vertical spacing.
+full - Use this modifier to force a button to fill its parent's width.
+primary - primary colored button. Use to make accent to action.
+secondary - secondary button.
+tertiary - tertiary button.
+
+markup:
+<button class="c-btn c-btn_ghost c-btn_{$modifiers}" type="button">
+  Button
+</button>
+
+*/
+
+@mixin c-btn_ghost {
+
+  border: $btn-ghost-border-width solid currentColor;
+  padding: ($inuit-global-spacing-unit-small - $btn-ghost-border-width) ($inuit-global-spacing-unit - $btn-ghost-border-width);
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: none;
+  }
+
+  &.c-btn_tiny {
+    padding: (($inuit-global-spacing-unit-tiny - $btn-ghost-border-width) / 2) ($inuit-global-spacing-unit-tiny - $btn-ghost-border-width);
+  }
+
+  &.c-btn_small {
+    padding: ($inuit-global-spacing-unit-tiny - $btn-ghost-border-width) ($inuit-global-spacing-unit-small - $btn-ghost-border-width);
+  }
+
+  &.c-btn_large {
+    padding: ($inuit-global-spacing-unit - $btn-ghost-border-width) ($inuit-global-spacing-unit-large - $btn-ghost-border-width);
+  }
+
+  &.c-btn_primary {
+    color: $ids-theme-primary;
+    color: var(--ids-theme-ids-theme-primary, $ids-theme-primary);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 9px 0px $ids-theme-secondary;
+      box-shadow: 0 0 9px 0px var(--ids-theme-ids-theme-secondary, $ids-theme-secondary);
+    }
+  }
+
+  &.c-btn_secondary {
+    color: $ids-theme-secondary;
+    color: var(--ids-theme-ids-theme-secondary, $ids-theme-secondary);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 9px 0px $ids-theme-secondary;
+      box-shadow: 0 0 9px 0px var(--ids-theme-ids-theme-secondary, $ids-theme-secondary);
+    }
+  }
+
+  &.c-btn_tertiary {
+    color: $text-color;
+    color: var(--ids-theme-text-color, $text-color);
+
+    &:hover,
+    &:focus {
+      color: $text-color;
+      color: var(--ids-theme-text-color, $text-color);
+    }
+  }
+
+
+}
+
+@mixin ids-btn_ghost {
+  .c-btn_ghost {
+    @include c-btn_ghost;
+  }
+}
+
+/*
+Size variants
+
+small - small button with small horizontal spacing and tiny vertical spacing.
+large - large button with large horizontal spacing and default vertical spacing.
+full - Use this modifier to force a button to fill its parent's width.
+
+markup:
+<button type="button" class="c-btn c-btn_{$modifiers}">
+  Button
+</button>
+
+*/
+@mixin ids-btn-size-variants {
+  .c-btn_tiny {
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny;
+    font-size: $font-size-sm;
+  }
+
+  .c-btn_small {
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+    font-size: $font-size-sm;
+  }
+
+  .c-btn_input-height {
+    padding: 7px $inuit-global-spacing-unit-small;
+    font-size: $font-size-base;
+  }
+
+  .c-btn_large {
+    padding: inuit-rem($inuit-global-spacing-unit) inuit-rem($inuit-global-spacing-unit-large);
+  }
+
+  .c-btn_full {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+/*
+Round iconic buttons
+
+markup:
+<button class="c-btn c-btn_icon" type="button">
+  <span class="fa fa-user"></span>
+</button>
+
+*/
+@mixin c-btn_icon {
+  .c-btn_icon {
+    display: inline;
+    margin-right: $unit-tiny;
+    min-width: $inuit-global-spacing-unit-small;
+    border-radius: $btn-rounded-border-radius;
+    //padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+    border: none;
+    box-shadow: none;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+    text-transform: none;
+    white-space: nowrap;
+    background-color: transparent;
+    -webkit-appearance: none;
+  }
+}
+
+@mixin c-btn_rounded {
+  .c-btn_rounded {
+    border-radius: $btn-rounded-border-radius;
+  }
+}
+
+/*
+Datepicker button
+
+For use in datepicker as datepicker button in calendar.
+
+markup:
+<button class="c-btn _c-btn_datepicker" type="button">
+  24
+</button>
+
+*/
+
+@mixin ids-btn-datepicker {
+  .c-btn_daypicker {
+    padding: 8px 12px;
+    background-color: transparent;
+    margin: 0;
+  }
+
+  .c-btn_daypicker-current {
+    background: $btn-datepicker-current-background;
+    background: var(--ids-theme-btn-datepicker-current-background, $btn-datepicker-current-background);
+    color: $btn-datepicker-current-color;
+    color: var(--ids-theme-btn-datepicker-current-color, $btn-datepicker-current-color);
+  }
+
+  .c-btn_daypicker-selected {
+    background: $ids-theme-primary;
+    background: var(--ids-theme-ids-theme-primary, $ids-theme-primary);
+    border-radius: 100%;
+    color: $btn-datepicker-selected-color;
+    color: var(--ids-theme-btn-datepicker-selected-color, $btn-datepicker-selected-color);
+
+    // If selected date is current date
+    > .c-btn_daypicker-current { // todo(turchaninov): убрать зависимость компонента от утилиты
+      color: $btn-datepicker-selected-color-current;
+      color: var(--ids-theme-btn-datepicker-selected-color-current, $btn-datepicker-selected-color-current);
+    }
+
+    &:hover {
+      color: $btn-datepicker-selected-color--hover;
+      color: var(--ids-theme-btn-datepicker-selected-color--hover, $btn-datepicker-selected-color--hover);
+
+      > .c-btn_daypicker-selected-current {
+        color: $btn-datepicker-selected-color-current--hover;
+        color: var(--ids-theme-btn-datepicker-selected-color-current--hover, $btn-datepicker-selected-color-current--hover);
+      }
+    }
+  }
+}
+
+
+/*
+Round iconic buttons
+
+markup:
+<button class="c-btn c-btn_menu-toggle" type="button">
+  <span class="fa fa-user"></span>
+</button>
+
+<button class="c-btn c-btn_border-free" type="button">
+  <span class="fa fa-user"></span>
+</button>
+
+Styleguide 6.1.1.5
+*/
+
+@mixin ids-btn-round-iconic {
+  .c-btn_menu-toggle {
+    height: auto;
+    padding: 0 $unit-tiny !important;
+    border: 0;
+    border-radius: 0;
+    line-height: inherit;
+    box-shadow: none;
+    background: none;
+    outline: none;
+    color: $btn-menu-toggle;
+    color: var(--ids-theme-btn-menu-toggle, $btn-menu-toggle);
+
+    &,
+    &:link,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: none;
+      background: none;
+      outline: none;
+    }
+  }
+
+  .c-btn_border-free {
+    @include c-btn_ghost;
+
+    border: none;
+  }
+}
+
+@mixin c-btn_svg-24 {
+  .c-btn_svg-24 {
+    padding: 4px 6px;
+    font-size: 0;
+  }
+}
+
+@mixin ids-btn-floating {
+  .c-btn_floating-bottom-left {
+    position: absolute;
+    bottom: 50px;
+    right: 120px;
+    width: 60px;
+    height: 60px;
+    z-index: $zindex-1;
+  }
+
+  .c-btn_floating-bottom-right {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    z-index: $zindex-1;
+  }
+}
+
+
+/*
+Inline buttons
+
+markup:
+<button class="c-btn c-btn_inline" type="button">
+  <span class="fa fa-user"></span>
+</button>
+<button class="c-btn c-btn_inline" type="button">
+  <span class="fa fa-calendar"></span>
+</button>
+
+*/
+
+@mixin ids-btn-inline($sibling-selector: ".c-btn_inline") {
+  .c-btn_inline {
+    margin-bottom: 0;
+
+    + #{$sibling-selector} {
+      margin-left: 0.2rem; // Account for 4px inline margin
+    }
+  }
+}
+
+/*
+Grouped buttons
+
+For use in Button group components
+
+markup:
+<button class="c-btn _c-btn_grouped" type="button">
+  <span class="fa fa-user"></span>
+</button>
+
+*/
+
+@mixin _c-btn_grouped {
+  margin-right: 0;
+  margin-bottom: 0;
+  border-left-width: 0;
+  border-radius: 0;
+  border-right: 1px solid $btn-grouped-border-color;
+  border-right: 1px solid var(--ids-theme-btn-grouped-border-color, $btn-grouped-border-color);
+
+  &:first-child {
+    border-left-width: 1px;
+    border-top-left-radius: $btn-border-radius;
+    border-bottom-left-radius: $btn-border-radius;
+  }
+
+  &:last-child:not(.c-dropdown-menu),
+  .c-dropdown__toggle {
+    border-top-right-radius: $btn-border-radius;
+    border-bottom-right-radius: $btn-border-radius;
+    border-right-color: transparent;
+  }
+}
+
+@mixin ids-btn-grouped {
+  ._c-btn_grouped {
+    @include _c-btn_grouped;
+  }
+}
+
+/*
+Underlined buttons
+
+For use in Tabs as tab labels. To prevent jumping use c-btn_underlined-transparent
+
+markup:
+<button class="c-btn c-btn_underlined" type="button">
+  <span class="fa fa-user"></span>
+</button>
+
+Styleguide 6.1.1.9
+*/
+
+@mixin ids-btn-underlined {
+  .c-btn_underlined-transparent {
+    margin-right: 0;
+    margin-bottom: 0;
+    border-left-width: 0;
+    border-radius: 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .c-btn_underlined-primary {
+    margin-right: 0;
+    margin-bottom: 0;
+    border-left-width: 0;
+    border-radius: 0;
+    border-bottom: 1px solid $ids-theme-primary;
+    border-bottom: 1px solid var(--ids-theme-primary, $ids-theme-primary);
+  }
+}
+
+
+@mixin ids-btn-map-filter {
+  .c-btn_map-filter {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 40px;
+    top: 40px;
+    padding: 0;
+    border-radius: 50%;
+    z-index: $zindex-dropdown - 1;
+    @include ids-box-shadow-core-styles;
+  }
+
+  .c-btn_map-filter2 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 100px;
+    top: 40px;
+    padding: 0;
+    border-radius: 50%;
+    z-index: $zindex-dropdown - 1;
+  }
+}
+
+@mixin ids-button-core-styles {
+  @include c-btn;
+  @include c-btn_bare;
+  @include _c-btn_link-reset;
+  @include c-btn_link;
+  @include c-btn_link-disabled;
+  @include c-btn_primary;
+  @include c-btn_secondary;
+  @include c-btn_tertiary;
+  @include c-btn_destroy;
+  @include c-btn_disabled;
+  @include c-btn_inactive;
+  @include c-btn_active;
+  @include ids-btn_ghost;
+  @include ids-btn-size-variants;
+  @include c-btn_icon;
+  @include c-btn_rounded;
+  @include ids-btn-datepicker;
+  @include ids-btn-round-iconic;
+  @include c-btn_svg-24;
+  @include ids-btn-floating;
+  @include ids-btn-inline;
+  @include ids-btn-grouped;
+  @include ids-btn-underlined;
+  @include ids-btn-map-filter;
+}

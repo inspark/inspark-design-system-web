@@ -1,0 +1,73 @@
+@import "../tools/tools.clearfix";
+@import "../button/mixins";
+
+/* ==========================================================================
+   #BUTTON GROUPS
+   ========================================================================== */
+
+/*
+Button groups
+
+Actions that logically belong together might be grouped by wrapping them in a container with .c-btn-group.
+
+Each action button must have the modifier class .c-btn_grouped.
+
+Wrap several groups in a .c-btn-group-row to keep them in one line. Each one must have the modifier class  .c-btn-group_in-row.
+
+Please do not use the button group as tabs.
+
+markup:
+<div class="c-btn-group">
+	<button class="c-btn c-btn_in-btn-group c-btn_large">1</button>
+	<button class="c-btn c-btn_in-btn-group c-btn_large">
+        <i class="c-icon c-icon_check c-icon_btn c-icon_btn-large"></i>
+    </button>
+	<button class="c-btn c-btn_in-btn-group c-btn_large">2</button>
+	<button class="c-btn c-btn_in-btn-group c-btn_large c-btn_destroy">
+        <i class="c-icon c-icon_trash c-icon_btn c-icon_btn-large"></i>
+    </button>
+</div>
+
+*/
+
+@mixin c-btn-group {
+  .c-btn-group {
+    display: inline-flex;
+    vertical-align: middle;
+
+    @content;
+  }
+}
+
+@mixin c-btn-group-row {
+  .c-btn-group-row {
+    @include clearfix;
+
+    clear: both;
+  }
+}
+
+@mixin c-btn-group_in-row {
+  .c-btn-group_in-row {
+    margin-right: 1.6rem;
+    float: left;
+  }
+}
+
+@mixin c-btn_in-btn-group {
+  .c-btn_in-btn-group {
+    @include _c-btn_grouped;
+  }
+}
+
+@mixin ids-button-group-core-styles {
+
+  @include c-btn-group;
+
+  @include c-btn-group-row;
+
+  @include c-btn-group_in-row;
+
+  @include c-btn_in-btn-group;
+
+}

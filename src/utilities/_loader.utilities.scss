@@ -1,0 +1,36 @@
+/*
+Utilities
+
+High-specificity, very explicit selectors. Overrides and helper classes (e.g. .u-hidden {}).
+* UTILITIES
+ * Clearfix.............Bind our clearfix onto a utility class.
+ * Widths...............Simple width helper classes.
+ * Headings.............Reassigning our heading styles to helper classes.
+ * Spacing..............Nudge bits of the DOM around with these spacing classes.
+ * Print................Reset-like styles taken from the HTML5 Boilerplate.
+ * Typography...........Typography reassigning classes.
+ * Hide.................Helper classes to hide content
+
+Styleguide 7.0
+ */
+@import "utilities.clearfix";
+
+$inuit-offsets: true;
+
+@import "utilities.widths";
+@import "utilities.heights";
+@import "utilities.position";
+@import "utilities.headings";
+@import "utilities.typography";
+@import "utilities.spacing";
+@import "utilities.lineheight";
+@import "utilities.align";
+@import "utilities.float";
+@import "utilities.print";
+@import "utilities.hide";
+@import "utilities.border";
+@import "utilities.display";
+@import "utilities.overflow";
+@import "utilities.animation";
+@import "utilities.visibility";
+

@@ -1,0 +1,104 @@
+@import "../base/variables";
+@import "./variables";
+@import "../button-group/mixins";
+
+@mixin ids-input-group-core-styles {
+  .c-input-group {
+    @include c-input-group;
+  }
+
+  .c-input-addon {
+    @include c-input-addon;
+  }
+
+  .c-input_in-input-group {
+    @include c-input_in-input-group;
+  }
+
+  .c-btn_in-input-group {
+    @include c-btn_in-input-group;
+  }
+}
+
+/*
+Input groups
+
+Create input groups by using .c-input-group to wrap inputs with the class `.c-input_in-input-group`, addons with the
+class `.c-input-addon` and buttons with the class `c-btn_grouped`.
+
+markup:
+<label class="c-label" for="priceInput">Addon - Appended</label>
+<div class="c-input-group">
+	<input class="c-input c-input_in-input-group c-input_text-right" type="text" id="priceInput" placeholder="e. g. 100" />
+	<div class="c-input-addon">&euro;</div>
+</div>
+<label class="c-label" for="urlInput1">Addon - Prepended</label>
+<div class="c-input-group">
+	<span class="c-input-addon">http://</span>
+	<input class="c-input c-input_in-input-group" type="text" id="urlInput1" placeholder="e. g. brands.zalando.com" />
+</div>
+<label class="c-label" for="urlInput2">Button - Appended</label>
+<div class="c-input-group">
+	<input class="c-input c-input_in-input-group" type="text" id="urlInput2" placeholder="e. g. brands.zalando.com" />
+	<button class="c-btn c-btn_in-input-group c-btn_primary">
+      <i class="c-icon c-icon_search c-icon_btn fa fa-search"></i>
+  </button>
+</div>
+<label class="c-label" for="userInput">Addon - Prepended & Button - Appended</label>
+<div class="c-input-group">
+	<span class="c-input-addon">User 1</span>
+	<input class="c-input c-input_in-input-group" type="text" id="userInput" placeholder="Full name" />
+	<button class="c-btn c-btn_in-input-group c-btn_primary">Add</button>
+</div>
+
+*/
+
+@mixin c-input-group {
+  display: flex;
+}
+
+@mixin c-input-addon {
+  display: inline-block;
+  padding: $unit-tiny $unit-small;
+  border: 1px solid $input-group-addon-border;
+  border: 1px solid var(--ids-theme-input-group-addon-border, $input-group-addon-border);
+  background-color: $input-group-addon-background;
+  background-color: var(--ids-theme-input-group-addon-background, $input-group-addon-background);
+  color: $input-group-addon-color;
+  color: var(--ids-theme-input-group-addon-color, $input-group-addon-color);
+  line-height: inherit;
+
+  &:first-child {
+    border-right-width: 0;
+    border-top-left-radius: $btn-border-radius;
+    border-bottom-left-radius: $btn-border-radius;
+  }
+
+  &:last-child {
+    border-left-width: 0;
+    border-top-right-radius: $btn-border-radius;
+    border-bottom-left-radius: $btn-border-radius;
+  }
+}
+
+@mixin c-input_in-input-group {
+  min-width: 0; // for Firefox
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  border-radius: 0;
+
+  &:first-child {
+    border-top-left-radius: $btn-border-radius;
+    border-bottom-left-radius: $btn-border-radius;
+  }
+
+  &:last-child {
+    border-top-right-radius: $btn-border-radius;
+    border-bottom-left-radius: $btn-border-radius;
+  }
+}
+
+@mixin c-btn_in-input-group {
+  @include _c-btn_grouped;
+}
