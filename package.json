@@ -1,8 +1,10 @@
 {
-  "name": "components-web",
+  "name": "@inspark/components-web",
   "version": "0.1.0",
   "description": "Web components for Inspark products",
   "main": "index.css",
+  "author": "Inspark",
+  "private": false,
   "scripts": {
     "build": "sh build.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +14,6 @@
     "type": "git",
     "url": "git+https://github.com/inspark/inspark-design-system-web.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/inspark/inspark-design-system-web/issues"

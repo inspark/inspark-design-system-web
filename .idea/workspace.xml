@@ -1,260 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6fc9d5f8-31be-4ee2-bb5a-d31a18976465" name="Default Changelist" comment="Added styles">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="6fc9d5f8-31be-4ee2-bb5a-d31a18976465" name="Default Changelist" comment="Updated version">
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_loader.components.common.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/fontawesome/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/fontawesome/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/fontawesome/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/fontawesome/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/fontawesome/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/fontawesome/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Bold/OpenSans-Bold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Bold/OpenSans-Bold.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Bold/OpenSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Bold/OpenSans-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Bold/OpenSans-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/BoldItalic/OpenSans-BoldItalic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/BoldItalic/OpenSans-BoldItalic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/BoldItalic/OpenSans-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/BoldItalic/OpenSans-BoldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/BoldItalic/OpenSans-BoldItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBold/OpenSans-Extrabold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBold/OpenSans-Extrabold.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBold/OpenSans-Extrabold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBold/OpenSans-Extrabold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBold/OpenSans-Extrabold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBoldItalic/OpenSans-ExtraboldItalic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBoldItalic/OpenSans-ExtraboldItalic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBoldItalic/OpenSans-ExtraboldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBoldItalic/OpenSans-ExtraboldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/ExtraBoldItalic/OpenSans-ExtraboldItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Italic/OpenSans-Italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Italic/OpenSans-Italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Italic/OpenSans-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Italic/OpenSans-Italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Italic/OpenSans-Italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Light/OpenSans-Light.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Light/OpenSans-Light.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Light/OpenSans-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Light/OpenSans-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Light/OpenSans-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/LightItalic/OpenSansLight-Italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/LightItalic/OpenSansLight-Italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/LightItalic/OpenSansLight-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/LightItalic/OpenSansLight-Italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/LightItalic/OpenSansLight-Italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Regular/OpenSans.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Regular/OpenSans.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Regular/OpenSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Regular/OpenSans.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Regular/OpenSans.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Semibold/OpenSans-Semibold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Semibold/OpenSans-Semibold.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Semibold/OpenSans-Semibold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Semibold/OpenSans-Semibold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/Semibold/OpenSans-Semibold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/SemiboldItalic/OpenSans-SemiboldItalic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/SemiboldItalic/OpenSans-SemiboldItalic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/SemiboldItalic/OpenSans-SemiboldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/SemiboldItalic/OpenSans-SemiboldItalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/open-sans/SemiboldItalic/OpenSans-SemiboldItalic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/primeicons/primeicons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/primeicons/primeicons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/primeicons/primeicons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/primeicons/primeicons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/content/moscow-city-1575456_1920.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/badge/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/badge/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/badge/ids-badge.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/_functions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/base/ids-base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/box-shadow/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/box-shadow/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/box-shadow/ids-box-shadow.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/button-group/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/button-group/ids-button-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/button/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/button/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/button/ids-button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checkbox/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checkbox/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checkbox/ids-checkbox.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/ids-container.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crop/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crop/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crop/ids-crop.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crumb/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crumb/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crumb/angular-breadcrumb.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crumb/ids-crumb.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/flex/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/flex/ids-flex.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/form-group/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/form-group/ids-form-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/form/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/form/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/form/ids-form.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grid/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grid/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grid/ids-grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icon/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icon/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icon/ids-icon.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/ids-image.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input-group/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input-group/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input-group/ids-input-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/input/ids-input.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/label/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/label/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/label/ids-label.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/list-group/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/list-group/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/list-group/ids-list-group.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/list/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/list/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/list/ids-list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mediaqueries/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mediaqueries/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mediaqueries/ids-mediaqueries.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nav/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nav/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nav/ids-nav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/navbar/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/navbar/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/navbar/ids-navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/new-component-template/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/new-component-template/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/new-component-template/ids-new-component-template.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/_components.charts-nvd3.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/_components.charts-nvd3.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/_variables-theme-contrast.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/_variables-theme-light.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/angular-nvd3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/bars/_components.bars.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/bars/_components.bars.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/boxplot/_components.boxplot.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/boxplot/_components.boxplot.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/bullet/_components.bullet.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/bullet/_components.bullet.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/candlestick/_components.candlestick.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/candlestick/_components.candlestick.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/force-directed-graph/_components.force-directed-graph.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/force-directed-graph/_components.force-directed-graph.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/furious-legend/_components.furious-legend.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/furious-legend/_components.furious-legend.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/lineplusbar/_components.lineplusbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/lineplusbar/_components.lineplusbar.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/lines/_components.lines.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/lines/_components.lines.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/ohlc/_components.ohlc.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/ohlc/_components.ohlc.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/parallelcoordinates/_components.parallelcoordinates.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/parallelcoordinates/_components.parallelcoordinates.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/pie/_components.pie.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/pie/_components.pie.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/scatter/_components.scatter.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/scatter/_components.scatter.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/sparkline/_components.sparkline.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/sparkline/_components.sparkline.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/stackedarea/_components.stackedarea.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/stackedarea/_components.stackedarea.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/tooltip/_components.tooltip.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/nvd3/tooltip/_components.tooltip.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overlay/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/overlay/ids-overlay.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/panel/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/panel/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/panel/ids-panel.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/panel/panel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/panel/panelComponent.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/particles/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/particles/ids-particles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/radio/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/radio/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/radio/ids-radio.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ratio/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ratio/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ratio/ids-ratio.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass-mq/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass-mq/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass-mq/ids-sass-mq.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/select/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/select/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/select/ids-select.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sidebar/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sidebar/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sidebar/ids-sidebar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/ids-static.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/table/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/table/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/table/ids-table.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/textarea/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/textarea/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/textarea/ids-textarea.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/_color-palette.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/_functions.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/contrast.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/ids-theme.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme/light.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.border-radius.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.clearfix.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.hidden.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.hover.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.opacity.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.rem.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.reset-filter.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.text-truncate.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/_tools.vendor-prefixes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tooltip/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tooltip/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tooltip/ids-tooltip.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tree-table/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tree-table/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tree-table/ids-tree-table.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/typography/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/typography/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/typography/ids-typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_loader.utilities.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.align.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.animation.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.border.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.clearfix.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.display.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.float.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.headings.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.heights.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.hide.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.lineheight.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.overflow.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.position.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.print.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.spacing.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.visibility.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utilities/_utilities.widths.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -294,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            <state relative-caret-position="375">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -314,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -332,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/index.css">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -365,11 +115,11 @@
         <option value="$PROJECT_DIR$/build.js" />
         <option value="$PROJECT_DIR$/sass.js" />
         <option value="$PROJECT_DIR$/webpack.config.json" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build.sh" />
         <option value="$PROJECT_DIR$/dist/package.json" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -454,7 +204,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -465,8 +215,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="publish" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="publish" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.publish" />
         <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
@@ -508,6 +269,12 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/theme-light.scss" />
@@ -630,13 +397,6 @@
     <entry file="file://$PROJECT_DIR$/dist/main.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/contrast.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -662,13 +422,6 @@
         <state relative-caret-position="-2688" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -678,6 +431,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.css">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
