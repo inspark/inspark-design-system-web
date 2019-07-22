@@ -1,37 +1,34 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = {
   target: 'web',
   entry: {
-    'index': './src/index.scss',
-    'theme-contrast': './src/theme/contrast.scss',
-    'theme-light': './src/theme/light.scss',
+    'index': './src/index.js',
+    // 'main': './src/main.scss',
+    // 'theme-contrast': './src/theme/contrast.scss',
+    // 'theme-light': './src/theme/light.scss',
   },
   output: {
     path: path.join(__dirname, './dist/'),
     filename: '[name].js' // output js file name is identical to css file name
   },
   module: {
-    rules: [{
-      test: /\.scss$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[name].css',
-          }
-        },
-        {
-          loader: 'extract-loader'
-        },
-        {
-          loader: 'css-loader?-url'
-        },
-        {
-          loader: 'sass-loader'
-        }
-      ]
-    },
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          'css-loader',
+          'sass-loader',
+        ],
+      },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
@@ -44,5 +41,14 @@ module.exports = {
           }
         ]
       }]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // all options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+      ignoreOrder: false, // Enable to remove warnings about conflicting order
+    }),
+  ],
 };

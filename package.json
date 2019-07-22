@@ -2,7 +2,7 @@
   "name": "@inspark/components-web",
   "version": "0.1.0",
   "description": "Web components for Inspark products",
-  "main": "index.css",
+  "main": "main.css",
   "author": "Inspark",
   "private": false,
   "scripts": {
@@ -25,6 +25,7 @@
     "css-loader": "^3.1.0",
     "extract-loader": "^3.1.0",
     "file-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "postcss-font-magician": "^2.2.2",
     "postcss-loader": "^3.0.0",
