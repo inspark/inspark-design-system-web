@@ -1,0 +1,40 @@
+// Widget status
+
+.c-widget-status_vertical-line-left {
+  border-left: 2px solid $ids-theme-primary;
+}
+
+.c-widget-status_vertical-line-left-status-success {
+  border-left-color: $ids-theme-status-success;
+}
+
+.c-widget-status_vertical-line-left-status-warning {
+  border-left-color: $ids-theme-status-warning;
+}
+
+.c-widget-status_vertical-line-left-status-error {
+  border-left-color: $ids-theme-status-error;
+}
+
+.c-widget-status_vertical-line-left-status-critical {
+  border-left-color: $ids-theme-status-critical;
+}
+
+.c-widget-status_icon-font-status-success {
+  color: $ids-theme-status-success;
+}
+
+.c-widget-status_icon-font-status-warning {
+  color: $ids-theme-status-warning;
+}
+
+.c-widget-status_icon-font-status-error {
+  color: $ids-theme-status-error;
+}
+
+.c-widget-status_icon-font-status-critical {
+  color: $ids-theme-status-critical;
+}
+
+// Widget styles
+

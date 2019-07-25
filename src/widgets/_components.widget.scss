@@ -1,0 +1,86 @@
+.c-widget {
+
+}
+
+.c-widget_status-success
+{
+  background: rgba($ids-theme-status-success, 1);
+  color: $color-base-white;
+}
+
+.c-widget_status-warning {
+  background: rgba($ids-theme-status-warning, 1);
+  color: $color-base-white;
+}
+
+.c-widget_status-critical {
+  background: rgba($ids-theme-status-critical, 1);
+  color: $color-base-white;
+}
+
+.c-widget_status-error {
+  background: rgba($ids-theme-status-error, 1);
+  color: $color-base-white;
+}
+
+.c-widget_status-falsevalue {
+  background-image: linear-gradient(45deg, transparent 19.05%, $ids-theme-status-falsevalue 19.05%, $ids-theme-status-falsevalue 50%, transparent 50%, transparent 69.05%, $ids-theme-status-falsevalue 69.05%, $ids-theme-status-falsevalue 100%);
+  background-size: 29.70px 29.70px;
+}
+
+.c-widget__block {
+
+}
+
+.c-widget__block_status-success
+{
+  background: rgba($ids-theme-status-success, 1);
+  color: $color-base-white;
+}
+
+.c-widget__block_status-warning {
+  background: rgba($ids-theme-status-warning, 1);
+  color: $color-base-white;
+}
+
+.c-widget__block_status-critical {
+  background: rgba($ids-theme-status-critical, 1);
+  color: $color-base-white;
+}
+
+.c-widget__block_status-error {
+  background: rgba($ids-theme-status-error, 1);
+  color: $color-base-white;
+}
+
+.c-widget__block_status-falsevalue {
+  background-image: linear-gradient(45deg, transparent 19.05%, $ids-theme-status-falsevalue 19.05%, $ids-theme-status-falsevalue 50%, transparent 50%, transparent 69.05%, $ids-theme-status-falsevalue 69.05%, $ids-theme-status-falsevalue 100%);
+  background-size: 29.70px 29.70px;
+}
+
+.c-widget__block_status-none {
+  background: $color-gray-20;
+  color: $color-base-white;
+}
+
+.c-widget-parameter-icon {
+  filter: brightness(3);
+  opacity: 0.7;
+}
+
+//.c-widget-parameter-icon_status-success {
+//  filter: invert(100%);
+//  opacity: 0.7;
+//}
+
+.c-widget__block_dashname-on-hover {
+  .c-widget__block-dashname {
+    visibility: hidden;
+  }
+
+  &:hover {
+    .c-widget__block-dashname {
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.c-widget-value {
+  position: relative;
+  padding: $unit-small $unit;
+}
+
+.c-widget-value_large {
+  padding: $unit $unit-large;
+}
+
+.c-widget-value_small {
+  padding: $unit-tiny $unit-small;
+}
+
+.c-widget-value__lable_display-1 {
+  position: absolute;
+  left: 48px;
+  top: 12px;
+}
+
+.c-widget-value__valueBlock {
+  white-space: nowrap;
+}
+

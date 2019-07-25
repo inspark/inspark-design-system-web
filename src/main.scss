@@ -1,4 +1,7 @@
 @import "base/ids-base";
+@import "tools/ids-tools";
+@import "typography/ids-typography";
+@import "input/ids-input";
 @import "badge/ids-badge";
 @import "box-shadow/ids-box-shadow";
 @import "button/ids-button";
@@ -13,7 +16,6 @@
 @import "grid/ids-grid";
 @import "icon/ids-icon";
 @import "image/ids-image";
-@import "input/ids-input";
 @import "input-group/ids-input-group";
 @import "label/ids-label";
 @import "list/ids-list";
@@ -35,6 +37,7 @@
 @import "theme/ids-theme";
 @import "tooltip/ids-tooltip";
 @import "tree-table/ids-tree-table";
-@import "typography/ids-typography";
 @import "sass-mq/ids-sass-mq";
 @import "utilities/loader.utilities";
+@import "widgets/ids-widgets";
+

@@ -22,3 +22,6 @@
 
 @import "./mixins";
 @include ids-theme-core-styles;
+
+@import "./contrast";
+@import "./light";
