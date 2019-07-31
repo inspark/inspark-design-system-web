@@ -11,7 +11,7 @@ module.exports = {
     // 'theme-light': './src/theme/light.scss',
   },
   output: {
-    path: path.join(__dirname, './dist/'),
+    path: path.join(__dirname, './dist/components-web'),
     filename: '[name].js' // output js file name is identical to css file name
   },
   module: {
