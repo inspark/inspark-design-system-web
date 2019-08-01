@@ -597,11 +597,6 @@
 
 @mixin ids-base-font-faces {
 
-  // Connect all necessary font-families
-
-  $FontPathOpenSans: "./assets/fonts/open-sans" !default;
-  $FontPathPrimeicons: "./assets/fonts/primeicons" !default;
-
   @font-face {
     font-family: 'Open Sans';
     src: url('#{$FontPathOpenSans}/Light/OpenSans-Light.eot');

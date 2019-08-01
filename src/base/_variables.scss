@@ -111,6 +111,11 @@ $inuit-global-spacing-unit-large: round($inuit-global-spacing-unit * $inuit-glob
 $inuit-global-spacing-unit-huge:  round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-huge);
 
 
+// Connect all necessary font-families
+
+$FontPathOpenSans: "./assets/fonts/open-sans" !default;
+$FontPathPrimeicons: "./assets/fonts/primeicons" !default;
+
 // Standardise some UI treatments.
 
 $global-radius: 3px !default;
