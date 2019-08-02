@@ -822,7 +822,7 @@
     -webkit-border-radius: 0;
     border-radius: 0;
     background: $webkit-scrollbar-thumb-bg;
-    background: var(--ids-theme-webkit-scrollbar-track-bg, $webkit-scrollbar-track-bg);
+    background: var(--ids-theme-webkit-scrollbar-track-bg, $webkit-scrollbar-thumb-bg);
   }
 
   ::-webkit-scrollbar-corner {
