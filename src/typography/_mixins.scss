@@ -163,6 +163,7 @@
     font-weight: $headings-font-weight;
     line-height: $headings-line-height;
     color: $headings-color;
+    color: var(--ids-theme-headings-color, $headings-color);
   }
 
   h1,
@@ -214,10 +215,12 @@
 
   a {
     color: $link-color;
+    color: var(--ids-theme-link-color, $link-color);
     text-decoration: $link-decoration;
 
     @include hover-focus {
       color: $link-hover-color;
+      color: var(--ids-theme-link-hover-color, $link-hover-color);
       text-decoration: $link-hover-decoration;
     }
   }

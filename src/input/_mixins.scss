@@ -103,8 +103,8 @@ markup:
   font-family: inherit;
   font-size: $font-size-base;
   outline: 0;
-  box-shadow: $form-border_inner;
-  box-shadow: var(--ids-theme-inuit-forms-border_inner, $form-border_inner);
+  box-shadow: $form-border-inner;
+  box-shadow: var(--ids-theme-inuit-forms-border-inner, $form-border-inner);
   box-sizing: border-box;
   background-color: $form-background;
   background-color: var(--ids-theme-inuit-forms-background, $form-background);

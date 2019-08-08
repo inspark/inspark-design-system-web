@@ -30,7 +30,8 @@ Advanced table-like component.
     flex: 0 0 100%;
 
     .c-tree-table__cell {
-      background: $tree-table-cell;
+      background: $tree-table-cell-background;
+      background: var(--ids-theme-tree-table-cell-background, $tree-table-cell-background);
     }
   }
 
@@ -144,6 +145,7 @@ Advanced table-like component.
 
   .c-tree-table_controller_selected {
     color: lighten($ids-theme-primary, 10%);
+    color: var(--ids-theme-primary, $ids-theme-primary);
     filter: brightness(110%);
   }
 
@@ -154,6 +156,7 @@ Advanced table-like component.
 
   .c-tree-table_device_selected {
     color: lighten($ids-theme-primary, 10%);
+    color: var(--ids-theme-primary, $ids-theme-primary);
     filter: brightness(110%);
   }
 
@@ -219,6 +222,7 @@ Advanced table-like component.
 
   .c-tree-table__cell_header {
     background: $tree-table-cell-header-background;
+    background: var(--ids-theme-tree-table-cell-header-background, $tree-table-cell-header-background);
   }
 
   .c-tree-table__cell-sort {
@@ -273,6 +277,7 @@ Advanced table-like component.
 
     &-none {
       background: $tree-table-cell-status-none-background;
+      background: var(--ids-theme-tree-table-cell-status-none-background, $tree-table-cell-status-none-background);
       color: $text-color;
       color: var(--ids-theme-text-color, $text-color);
     }

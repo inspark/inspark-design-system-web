@@ -2,14 +2,14 @@
 @import "../base/variables";
 
 $tree-table-cell-width: 150px;
-$tree-table-cell: $color-gray-90 !default;
+$tree-table-cell-background: $color-gray-90 !default;
 $tree-table__cell-content_header: $color-gray-10 !default;
 $tree-table-cell-header-background: $color-base-black !default;
 $tree-table-cell-status-none-background: $color-gray-20 !default;
 
 $ids-tree-table-theme-property-values: (
-  tree-table-cell: $tree-table-cell,
+  tree-table-cell-background: $tree-table-cell-background,
   tree-table__cell-content_header: $tree-table__cell-content_header,
   tree-table-cell-header-background: $tree-table-cell-header-background,
-  tree-table-cell-status-none-background: $tree-table-cell-status-none-background
+  tree-table-cell-status-none-background: $tree-table-cell-status-none-background,
 );

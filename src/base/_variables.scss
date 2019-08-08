@@ -209,4 +209,7 @@ $zindex-login-form: $zindex-1 !default;
 $ids-base-theme-property-values: (
   body-bg: $body-bg,
   global-radius: $global-radius,
+  webkit-scrollbar-track-bg: $webkit-scrollbar-track-bg,
+  webkit-scrollbar-thumb-bg: $webkit-scrollbar-thumb-bg,
+  webkit-scrollbar-corner-bg: $webkit-scrollbar-corner-bg
 );

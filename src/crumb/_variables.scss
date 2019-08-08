@@ -9,3 +9,9 @@ $breadcrumb-color: $color-base-white !default;
 $breadcrumb-active-color: $color-gray-10 !default;
 //** Textual separator for between breadcrumb elements
 $breadcrumb-separator: "/" !default;
+
+$ids-crumb-theme-property-values: (
+  breadcrumb-bg: $breadcrumb-bg,
+  breadcrumb-color: $breadcrumb-color,
+  breadcrumb-active-color: $breadcrumb-active-color
+);

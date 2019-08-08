@@ -25,7 +25,7 @@ $form-background: rgba($color-base-white, .05) !default;
 ///
 /// @group px-forms-design:variables:style
 /// @type Color | String [default]
-$form-border_inner: $component-active-box-shadow !default;
+$form-border-inner: $component-active-box-shadow !default;
 
 /// Sets the forms Outer border string
 ///
@@ -109,7 +109,7 @@ $ids-form-theme-property-values: (
   form-color: $form-color,
   form-color_placeholder: $form-color_placeholder,
   form-background: $form-background,
-  form-border_inner: $form-border_inner,
+  form-border-inner: $form-border-inner,
   form-border_outer: $form-border_outer,
   form-border_inner_focused: $form-border_inner_focused,
   form-border_outer_focused: $form-border_outer_focused,

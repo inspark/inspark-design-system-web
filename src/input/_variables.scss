@@ -1,3 +1,5 @@
+@import "../form/variables";
+
 $input-tap-highlight-color: $color-base-black !default;
 
 // Default `.form-control` height
@@ -13,5 +15,20 @@ $input-height-small: (floor($font-size-sm * $line-height-computed) + ($unit-smal
 $input-height-tiny: (floor($font-size-xs * $line-height-computed) + ($unit-tiny * 2) + 2) !default;
 
 $ids-input-theme-property-values: (
-  input-tap-highlight-color: $input-tap-highlight-color
+  input-tap-highlight-color: $input-tap-highlight-color,
+  inuit-forms-border_inner: $form-border-inner,
+  inuit-forms-border_outer: $form-border_outer,
+  inuit-forms-background: $form-background,
+  inuit-forms-color: $form-color,
+  inuit-forms-border_outer_focused: $form-border_outer_focused,
+  inuit-forms-border_inner_focused: $form-border_inner_focused,
+  inuit-forms-border_readonly: $form-border_readonly,
+  inuit-forms-color_readonly: $form-color_readonly,
+  inuit-forms-border_disabled: $form-border_disabled,
+  inuit-forms-background_disabled: $form-background_disabled,
+  inuit-forms-color_disabled: $form-color_disabled,
+  inuit-forms-color_placeholder: $form-color_placeholder,
+  inuit-forms-validation-warning: $form-validation-warning,
+  inuit-forms-validation-error: $form-validation-error,
+  inuit-forms-validation-success: $form-validation-success
 );

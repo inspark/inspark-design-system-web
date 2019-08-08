@@ -69,6 +69,15 @@ $ids-theme-property-values: map-merge($ids-theme-property-values, (
 
 $ids-base-theme-property-values: map-merge($ids-base-theme-property-values, (
   body-bg: $color-gray-5,
+  webkit-scrollbar-track-bg: #f1f1f1,
+  webkit-scrollbar-thumb-bg: $color-gray-10,
+  webkit-scrollbar-corner-bg: $color-gray-5
+));
+
+$ids-crumb-theme-property-values: map-merge($ids-base-theme-property-values, (
+  breadcrumb-bg: #e6eef1,
+  breadcrumb-color: $color-base-black,
+  breadcrumb-active-color: $color-gray-90
 ));
 
 $ids-badge-theme-property-values: map-merge($ids-badge-theme-property-values, (
@@ -162,7 +171,22 @@ $ids-icon-theme-property-values: map-merge($ids-icon-theme-property-values, (
 ));
 
 $ids-input-theme-property-values: map-merge($ids-input-theme-property-values, (
-  input-tap-highlight-color: $color-base-white
+  input-tap-highlight-color: $color-base-white,
+  inuit-forms-border_inner: inset 0 0 0 1px transparent,
+  inuit-forms-border_outer: $form-border_outer,
+  inuit-forms-background: rgba($color-base-black, 0.1),
+  inuit-forms-color: $color-base-black,
+  inuit-forms-border_outer_focused: rgba(var(--ids-theme-primary, $ids-theme-primary), 0.4),
+  inuit-forms-border_inner_focused: 0 0 7px 0 rgba(var(--ids-theme-primary, $ids-theme-primary), 0.4),
+  inuit-forms-border_readonly: none,
+  inuit-forms-color_readonly: $color-gray-90,
+  inuit-forms-border_disabled: $color-gray-5,
+  inuit-forms-background_disabled: rgba($color-gray-10, 0.8),
+  inuit-forms-color_disabled: $color-gray-80,
+  inuit-forms-color_placeholder: rgba($color-gray-80, 0.7),
+  inuit-forms-validation-warning: var(--ids-theme-status-warning, $ids-theme-status-warning),
+  inuit-forms-validation-error: var(--ids-theme-status-error, $ids-theme-status-error),
+  inuit-forms-validation-success: var(--ids-theme-status-success, $ids-theme-status-success)
 ));
 
 $ids-input-group-theme-property-values: map-merge($ids-input-group-theme-property-values, (
@@ -282,10 +306,10 @@ $ids-tooltip-theme-property-values: map-merge($ids-tooltip-theme-property-values
 ));
 
 $ids-tree-table-theme-property-values: map-merge($ids-tree-table-theme-property-values, (
-  tree-table-cell: $color-gray-5,
+  tree-table-cell-background: $color-gray-5,
   tree-table__cell-content_header: $color-gray-80,
   tree-table-cell-header-background: $color-base-white,
-  tree-table-cell-status-none-background: $color-gray-80
+  tree-table-cell-status-none-background: $color-gray-20
 ));
 
 $ids-typography-theme-property-values: map-merge($ids-typography-theme-property-values, (
@@ -315,6 +339,7 @@ $ids-theme-property-values: map-collect(
     $ids-theme-property-values,
     $ids-base-theme-property-values,
     $ids-typography-theme-property-values,
+    $ids-crumb-theme-property-values,
     $ids-badge-theme-property-values,
     $ids-button-theme-property-values,
     $ids-checkbox-theme-property-values,
@@ -340,5 +365,8 @@ $ids-theme-property-values: map-collect(
 @include ids-theme-core-styles("theme-contrast", $ids-theme-property-values);
 
 // todo: отрефакторить nvd3 и вынести в отдельный репозиторий и npm-пакет
-@import "../nvd3/variables-theme-contrast";
-@import "../nvd3/components.charts-nvd3.themes";
+.theme-contrast {
+  @import "../utilities/utilities.themes";
+  @import "../nvd3/variables-theme-contrast";
+  @import "../nvd3/components.charts-nvd3.themes";
+}

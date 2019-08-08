@@ -7,9 +7,11 @@
 .u-h5,
 .u-h6 {
   color: $headings-color;
+  color: var(--ids-theme-headings-color, $headings-color);
 
   .u-small {
     color: $headings-small-color;
+    color: var(--ids-theme-headings-small-color, $headings-small-color);
   }
 }
 
@@ -34,9 +36,7 @@
 }
 
 .u-text_gray-light {
-  @include theme-light {
-    color: $color-gray-20;
-  }
+  color: $color-gray-20;
 }
 
 .u-text_bordered-white {
