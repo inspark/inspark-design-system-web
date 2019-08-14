@@ -189,6 +189,12 @@ markup:
     overflow-x: auto;
   }
 
+  .c-panel__body_background-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   // Optional heading
   .c-panel__heading {
     position: relative;

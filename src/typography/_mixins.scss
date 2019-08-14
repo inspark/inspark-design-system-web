@@ -132,6 +132,7 @@
 
   p {
     color: $paragraph-color;
+    color: var(--ids-theme-paragraph-color, $paragraph-color);
   }
 
 
