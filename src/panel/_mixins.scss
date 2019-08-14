@@ -146,6 +146,11 @@ markup:
     box-shadow: none;
   }
 
+  .c-panel_widget-block .c-panel__body {
+    height: 100%;
+    max-height: 100%;
+  }
+
   .c-panel_dashed {
     border: 4px dashed $panel-dashed-border-color;
     border: 4px dashed var(--ids-theme-panel-dashed-border-color, $panel-dashed-border-color);
