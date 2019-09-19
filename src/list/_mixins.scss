@@ -109,7 +109,6 @@ markup:
 */
 
 
-
 /**
  * 1. Fallback for old IEs not supporting `rem` values.
  */
@@ -232,6 +231,8 @@ markup:
 */
 
 @mixin ids-list-item {
+  .c-list__item {}
+
   .c-list__item_is-interactive {
     &:hover {
       border-top-color: rgba($list-item-background-hover, 0.4);
@@ -239,27 +240,28 @@ markup:
       border-bottom-color: rgba($list-item-background-hover, 0.4);
       border-bottom-color: rgba(var(--ids-theme-list-item-background-hover, $list-item-background-hover), 0.4);
       background: rgba($list-item-background-hover, 0.8);
-      background: rgba(var(--ids-theme-list-item-background-hover, $list-item-background-hover), 0.8);
+      background: rgba(var(--ids-theme-list-item-background-hover-rgb, $list-item-background-hover), 0.4);
       cursor: pointer;
 
       + .c-list__item_is-interactive {
         border-top-color: rgba($list-item-background-hover, 0.8);
-        border-top-color: rgba(var(--ids-theme-list-item-background-hover, $list-item-background-hover), 0.8);
+        border-top-color: rgba(var(--ids-theme-list-item-background-hover-rgb, $list-item-background-hover), 0.4);
       }
     }
   }
 
   .is-list__item_active {
-    border-top-color: rgba($list-item-background-active, 0.4);
-    border-top-color: rgba(var(--ids-theme-list-item-background-active, $list-item-background-active), 0.4);
-    border-bottom-color: rgba($list-item-background-active, 0.4);
-    border-bottom-color: rgba(var(--ids-theme-list-item-background-active, $list-item-background-active), 0.4);
-    background: rgba($list-item-background-active, 0.3);
-    background: rgba(var(--ids-theme-list-item-background-active, $list-item-background-active), 0.3);
+    border-top-color: $list-item-background-active;
+    border-top-color: var(--ids-theme-list-item-background-active, $list-item-background-active);
+    border-bottom-color: $list-item-background-active;
+    border-bottom-color: var(--ids-theme-list-item-background-active, $list-item-background-active);
+    background: $list-item-background-active;
+    background: var(--ids-theme-list-item-background-active, $list-item-background-active);
     cursor: pointer;
   }
 
-  .c-list__item-element {}
+  .c-list__item-element {
+  }
 
   .c-list__item-element_hidden {
     visibility: hidden;
