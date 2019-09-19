@@ -21,6 +21,7 @@
 @import "../navbar/variables";
 //@import "../nvd3/components.charts-nvd3"; // заимпортить после рефакторинга
 @import "../panel/variables";
+@import "../card/variables";
 @import "../radio/variables";
 @import "../ratio/variables";
 @import "../select/variables";
@@ -262,6 +263,12 @@ $ids-panel-theme-property-values: map-merge($ids-panel-theme-property-values, (
   panel-comment-bg: $color-base-white,
 ));
 
+$ids-card-theme-property-values: map-merge($ids-card-theme-property-values, (
+  card-border-color: rgba($color-base-white, .125),
+  card-cap-bg: rgba($color-base-white, .03),
+  card-bg: $color-gray-5
+));
+
 $ids-radio-theme-property-values: map-merge($ids-radio-theme-property-values, (
   radio-disabled-background: $color-gray-90
 ));
@@ -354,6 +361,7 @@ $ids-theme-property-values: map-collect(
     $ids-navbar-theme-property-values,
     // $ids-nvd3-theme-property-values,
     $ids-panel-theme-property-values,
+    $ids-card-theme-property-values,
     $ids-radio-theme-property-values,
     $ids-select-theme-property-values,
     $ids-sidebar-theme-property-values,

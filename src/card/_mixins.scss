@@ -1,0 +1,376 @@
+@import "./variables";
+
+//
+// Base styles
+//
+
+@mixin ids-card {
+  .c-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: $card-bg;
+    background-color: var(--ids-theme-card-bg, $card-bg);
+    background-clip: border-box;
+    border: $card-border-width solid $card-border-color;
+    @include border-radius($card-border-radius);
+
+    > hr {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    > .c-list-group:first-child {
+      .c-list-group-item:first-child {
+        @include border-top-radius($card-border-radius);
+      }
+    }
+
+    > .c-list-group:last-child {
+      .c-list-group-item:last-child {
+        @include border-bottom-radius($card-border-radius);
+      }
+    }
+  }
+
+  .c-card_outline-primary {
+    border: 1px solid $ids-theme-primary;
+    border: 1px solid var(--ids-theme-primary, $ids-theme-primary);
+
+  }
+
+  .c-card_outline-hover-primary {
+    &:hover,
+    &:active:focus,
+    &:active {
+      border: 1px solid $ids-theme-primary;
+      border: 1px solid var(--ids-theme-primary, $ids-theme-primary);
+    }
+  }
+
+  .c-card_control-state {
+    text-align: center;
+    margin-bottom: $unit-tiny;
+  }
+}
+
+// Statuses
+@mixin ids-card-statuses {
+  .c-card {
+    &_status-success {
+      background-color: $ids-theme-status-success;
+      background-color: var(--ids-theme-status-success, $ids-theme-status-success);
+    }
+
+    &_status-warning {
+      background-color: $ids-theme-status-warning;
+      background-color: var(--ids-theme-status-warning, $ids-theme-status-warning);
+    }
+
+    &_status-error {
+      background-color: $ids-theme-status-error;
+      background-color: var(--ids-theme-status-error, $ids-theme-status-error);
+    }
+
+    &_status-disabled {
+      background-color: $ids-theme-status-disabled;
+      background-color: var(--ids-theme-status-disabled, $ids-theme-status-disabled);
+    }
+
+    &_status-falsevalue {
+      background-color: $ids-theme-status-falsevalue;
+      background-color: var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue);
+    }
+
+  }
+}
+
+@mixin ids-card-body {
+  .c-card__body {
+    // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+    // as much space as possible, ensuring footers are aligned to the bottom.
+    flex: 1 1 auto;
+    padding: $card-spacer-x;
+  }
+
+  .c-card__body_padding-tiny {
+    padding: $unit-tiny;
+  }
+
+  .c-card__body_vertical-padding-tiny {
+    padding-top: $unit-tiny;
+    padding-bottom: $unit-tiny;
+  }
+
+  .c-card__body_padding-none {
+    padding: 0;
+  }
+}
+
+@mixin ids-card-typography {
+  .c-card-title {
+    margin-bottom: $card-spacer-y;
+  }
+
+  .c-card-subtitle {
+    margin-top: -($card-spacer-y / 2);
+    margin-bottom: 0;
+  }
+
+  .c-card-text:last-child {
+    margin-bottom: 0;
+  }
+
+  .c-card-link {
+    @include hover {
+      text-decoration: none;
+    }
+
+    + .c-card-link {
+      margin-left: $card-spacer-x;
+    }
+  }
+}
+
+//
+// Optional textual caps
+//
+
+@mixin ids-card-header {
+  .c-card__header {
+    padding: $card-spacer-y $card-spacer-x;
+    margin-bottom: 0; // Removes the default margin-bottom of <hN>
+    background-color: $card-cap-bg;
+    border-bottom: $card-border-width solid $card-border-color;
+
+    &:first-child {
+      @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
+    }
+
+    + .c-list-group {
+      .c-list-group-item:first-child {
+        border-top: 0;
+      }
+    }
+  }
+
+  //
+  // Header navs
+  //
+
+  .c-card__header-tabs {
+    margin-right: -($card-spacer-x / 2);
+    margin-bottom: -$card-spacer-y;
+    margin-left: -($card-spacer-x / 2);
+    border-bottom: 0;
+  }
+
+  .c-card__header-pills {
+    margin-right: -($card-spacer-x / 2);
+    margin-left: -($card-spacer-x / 2);
+  }
+}
+
+@mixin ids-card-footer {
+  .c-card__footer {
+    padding: $card-spacer-y $card-spacer-x;
+    background-color: $card-cap-bg;
+    border-top: $card-border-width solid $card-border-color;
+
+    &:last-child {
+      @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
+    }
+  }
+
+  .c-card__footer_padding-tiny {
+    padding: $unit-tiny;
+  }
+
+  .c-card__footer__vertical-padding-tiny {
+    padding-top: $unit-tiny;
+    padding-bottom: $unit-tiny;
+  }
+}
+
+// Card image
+@mixin ids-card-img {
+  .c-card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: $card-img-overlay-padding;
+  }
+
+  .c-card-img {
+    width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+    @include border-radius($card-inner-border-radius);
+  }
+
+  // Card image caps
+  .c-card-img-top {
+    width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+    @include border-top-radius($card-inner-border-radius);
+  }
+
+  .c-card-img-bottom {
+    width: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+    @include border-bottom-radius($card-inner-border-radius);
+  }
+}
+
+// Card deck
+
+@mixin ids-card-deck {
+  .c-card-deck {
+    display: flex;
+    flex-direction: column;
+
+    .c-card {
+      margin-bottom: $card-deck-margin;
+    }
+
+    @include screen_xsmall-and-up {
+      flex-flow: row wrap;
+      margin-right: -$card-deck-margin;
+      margin-left: -$card-deck-margin;
+
+      .c-card {
+        display: flex;
+        // Flexbugs #4: https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored
+        flex: 1 0 0%;
+        flex-direction: column;
+        margin-right: $card-deck-margin;
+        margin-bottom: 0; // Override the default
+        margin-left: $card-deck-margin;
+      }
+    }
+  }
+}
+
+//
+// Card groups
+//
+
+@mixin ids-card-group {
+  .c-card-group {
+    display: flex;
+    flex-direction: column;
+
+    // The child selector allows nested `.c-card` within `.c-card-group`
+    // to display properly.
+    > .c-card {
+      margin-bottom: $card-group-margin;
+    }
+
+    @include screen_xsmall-and-up {
+      flex-flow: row wrap;
+      // The child selector allows nested `.c-card` within `.c-card-group`
+      // to display properly.
+      > .c-card {
+        // Flexbugs #4: https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored
+        flex: 1 0 0%;
+        margin-bottom: 0;
+
+        + .c-card {
+          margin-left: 0;
+          border-left: 0;
+        }
+
+        // Handle rounded corners
+        @if $enable-rounded {
+          &:first-child {
+            @include border-right-radius(0);
+
+            .c-card-img-top,
+            .c-card__header {
+              border-top-right-radius: 0;
+            }
+
+            .c-card-img-bottom,
+            .c-card__footer {
+              border-bottom-right-radius: 0;
+            }
+          }
+
+          &:last-child {
+            @include border-left-radius(0);
+
+            .c-card-img-top,
+            .c-card__header {
+              border-top-left-radius: 0;
+            }
+
+            .c-card-img-bottom,
+            .c-card__footer {
+              border-bottom-left-radius: 0;
+            }
+          }
+
+          &:only-child {
+            @include border-radius($card-border-radius);
+
+            .c-card-img-top,
+            .c-card__header {
+              @include border-top-radius($card-border-radius);
+            }
+
+            .c-card-img-bottom,
+            .c-card__footer {
+              @include border-bottom-radius($card-border-radius);
+            }
+          }
+
+          &:not(:first-child):not(:last-child):not(:only-child) {
+            @include border-radius(0);
+
+            .c-card-img-top,
+            .c-card-img-bottom,
+            .c-card__header,
+            .c-card__footer {
+              @include border-radius(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+// Columns
+//
+
+@mixin ids-card-columns {
+  .c-card-columns {
+    .c-card {
+      margin-bottom: $card-columns-margin;
+    }
+
+    @include screen_xsmall-and-up {
+      column-count: $card-columns-count;
+      column-gap: $card-columns-gap;
+
+      .c-card {
+        display: inline-block; // Don't let them vertically span multiple columns
+        width: 100%; // Don't let their width change
+      }
+    }
+  }
+}
+
+@mixin ids-card-core-styles {
+  @include ids-card;
+  @include ids-card-statuses;
+  @include ids-card-body;
+  @include ids-card-typography;
+  @include ids-card-header;
+  @include ids-card-footer;
+  @include ids-card-img;
+  @include ids-card-deck;
+  @include ids-card-group;
+  @include ids-card-columns;
+}
