@@ -3,7 +3,7 @@
 $list-inline-delimiter:   ",\00A0" !default;
 $list-item-background: $color-base-black !default;
 $list-item-border: transparent !default;
-$list-item-background-active: $ids-theme-primary !default;
+$list-item-background-active: rgba($ids-theme-primary, 0.3) !default;
 $list-item-background-hover: $color-gray-40 !default;
 $list-scrollable-border-color: $color-gray-20 !default;
 $list-scrollable-background: $color-gray-90 !default;
@@ -12,5 +12,6 @@ $ids-list-theme-property-values: (
   list-scrollable-border-color: $list-scrollable-border-color,
   list-scrollable-background: $list-scrollable-background,
   list-item-background-hover: $list-item-background-hover,
+  list-item-background-hover-rgb: '73, 76, 85',
   list-item-background-active: $list-item-background-active,
 );
