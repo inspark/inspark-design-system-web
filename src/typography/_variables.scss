@@ -27,6 +27,7 @@ $text-font-family-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Conso
 $font-family-base: $text-font-family !default;
 
 $text-color: $color-base-white !default;
+$text-color-rgb: hex-to-rgb-numbers($color-base-white) !default;
 $text-color-gray: $color-gray-10 !default;
 $text-color-success: $ids-theme-status-success !default;
 $text-color-warning: $ids-theme-status-warning !default;

@@ -45,17 +45,25 @@ $ids-theme-property-values: map-merge($ids-theme-property-values, (
   // Statuses
   status-active: var(--ids-theme-primary, $ids-theme-primary),
   status-highlight: $color-blue-dark,
+  status-highlight-rgb: hex-to-rgb-numbers($color-blue-dark),
   status-success: #31AC51,
+  status-success-rgb: hex-to-rgb-numbers(#31AC51),
   status-warning: #EE9946,
+  status-warning-rgb: hex-to-rgb-numbers(#EE9946),
   status-error: #F95C5D,
+  status-error-rgb: hex-to-rgb-numbers(#F95C5D),
   status-pending: $color-blue,
+  status-pending-rgb: hex-to-rgb-numbers($color-blue),
   status-critical: var(--ids-theme-status-error, $ids-theme-status-error),
+  status-critical-rgb: var(--ids-theme-status-error-rgb, $ids-theme-status-error),
   status-disabled: #848484,
+  status-disabled-rgb: hex-to-rgb-numbers(#848484),
   status-falsevalue: #85B3CB,
+  status-falsevalue-rgb: hex-to-rgb-numbers(#85B3CB),
 
   // Functional colors
   component-active-color: $color-base-white,
-  component-active-bg: rgba(var(--ids-theme-primary-rgb, $ids-theme-primary), 0.4),
+  component-active-bg: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
   state-success-bg: var(--ids-theme-status-success, $ids-theme-status-success),
   state-success-text: $color-base-white,
   state-warning-bg: var(--ids-theme-status-warning, $ids-theme-status-warning),
@@ -156,8 +164,8 @@ $ids-form-theme-property-values: map-merge($ids-form-theme-property-values, (
   form-background: rgba($color-base-black, 0.1),
   form-border_inner: $component-active-box-shadow,
   form-border_outer: 1px solid transparent,
-  form-border_inner_focused: 0 0 7px 0 rgba(var(--ids-theme-primary-rgb, $ids-theme-primary), 0.4),
-  form-border_outer_focused: rgba(var(--ids-theme-primary-rgb, $ids-theme-primary), 0.4),
+  form-border_inner_focused: 0 0 7px 0 rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
+  form-border_outer_focused: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
   form-color_disabled: $color-gray-80,
   form-background_disabled: rgba($color-gray-10, 0.8),
   form-border_disabled: $color-gray-5,
@@ -175,12 +183,13 @@ $ids-icon-theme-property-values: map-merge($ids-icon-theme-property-values, (
 
 $ids-input-theme-property-values: map-merge($ids-input-theme-property-values, (
   input-tap-highlight-color: $color-base-white,
+  input-tap-highlight-color-rgb: hex-to-rgb-numbers($color-base-white),
   inuit-forms-border_inner: inset 0 0 0 1px transparent,
   inuit-forms-border_outer: $form-border_outer,
   inuit-forms-background: rgba($color-base-black, 0.1),
   inuit-forms-color: $color-base-black,
-  inuit-forms-border_outer_focused: rgba(var(--ids-theme-primary-rgb, $ids-theme-primary), 0.4),
-  inuit-forms-border_inner_focused: 0 0 7px 0 rgba(var(--ids-theme-primary-rgb, $ids-theme-primary), 0.4),
+  inuit-forms-border_outer_focused: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
+  inuit-forms-border_inner_focused: 0 0 7px 0 rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
   inuit-forms-border_readonly: none,
   inuit-forms-color_readonly: $color-gray-90,
   inuit-forms-border_disabled: $color-gray-5,
@@ -208,7 +217,7 @@ $ids-list-theme-property-values: map-merge($ids-list-theme-property-values, (
   list-scrollable-background: $color-base-white,
   list-item-background-hover: $color-gray-5,
   list-item-background-hover-rgb: '73, 76, 85',
-  list-item-background-active: rgba(var(--ids-theme-primary-rgb), 0.3)
+  list-item-background-active: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.3)
 ));
 
 $ids-list-group-theme-property-values: map-merge($ids-list-group-theme-property-values, (
@@ -261,9 +270,12 @@ $ids-navbar-theme-property-values: map-merge($ids-navbar-theme-property-values, 
 
 $ids-panel-theme-property-values: map-merge($ids-panel-theme-property-values, (
   panel-bg: $color-base-white,
+  panel-bg-rgb: hex-to-rgb-numbers($color-base-white),
   panel-lighter-background: $color-base-white,
+  panel-lighter-background-rgb: hex-to-rgb-numbers($color-base-white),
   panel-body-dashboard-bg: $color-gray-5,
   panel-comment-bg: $color-base-white,
+  panel-comment-bg-rgb: hex-to-rgb-numbers($color-base-white),
 ));
 
 $ids-card-theme-property-values: map-merge($ids-card-theme-property-values, (
@@ -282,7 +294,7 @@ $ids-select-theme-property-values: map-merge($ids-select-theme-property-values, 
   select-color: $color-base-black,
   select-shadow_dark: 0 1px 0 rgba($color-base-white, 0.1),
   select-background_hover: rgba($color-base-black, 0.1),
-  select-border_hover: rgba(var(--ids-theme-primary-rgb, $ids-theme-primary), 0.75),
+  select-border_hover: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.75),
   select-border_pressed: rgba($ids-theme-primary, 0.4),
   select-background_pressed: rgba($color-base-black, 0.1),
   select-background_disabled: rgba($color-gray-10, 0.8),

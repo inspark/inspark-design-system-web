@@ -112,24 +112,24 @@ markup:
   color: var(--ids-theme-inuit-forms-color, $form-color);
   -webkit-appearance: none;
   -webkit-tap-highlight-color: rgba($input-tap-highlight-color, 0);
-  -webkit-tap-highlight-color: rgba(var(--ids-theme-input-tap-highlight-color, $input-tap-highlight-color), 0);
+  -webkit-tap-highlight-color: rgba(var(--ids-theme-input-tap-highlight-color-rgb, #{$input-tap-highlight-color-rgb}), 0);
   -moz-appearance: none;
 
   &::placeholder {
     color: rgba($form-color, 0.6);
-    color: rgba(var(--ids-theme-inuit-forms-color, $form-color), 0.6);
+    color: rgba(var(--ids-theme-inuit-forms-color-rgb, #{$form-color-rgb}), 0.6);
   }
 
   &:hover {
     border-color: $ids-theme-primary;
-    border-color: var(--ids-theme-primary, $ids-theme-primary);
+    border-color: var(--ids-theme-primary-rgb, $ids-theme-primary);
   }
 
   &:focus {
     border-color: $form-border_outer_focused;
-    border-color: var(--ids-theme-inuit-forms-border_outer_focused, $form-border_outer_focused);
+    border-color: var(--ids-theme-inuit-forms-border_outer_focused-rgb, $form-border_outer_focused);
     box-shadow: $form-border_inner_focused;
-    box-shadow: var(--ids-theme-inuit-forms-border_inner_focused, $form-border_inner_focused);
+    box-shadow: var(--ids-theme-inuit-forms-border_inner_focused-rgb, $form-border_inner_focused);
     outline: 0;
   }
 
@@ -140,9 +140,9 @@ markup:
 
   &[readonly] {
     border: $form-border_readonly;
-    border: var(--ids-theme-inuit-forms-border_readonly, $form-border_readonly);
+    border: var(--ids-theme-inuit-forms-border_readonly-rgb, $form-border_readonly);
     color: $form-color_readonly;
-    color: var(--ids-theme-inuit-forms-color_readonly, $form-color_readonly);
+    color: var(--ids-theme-inuit-forms-color_readonly-rgb, $form-color_readonly);
 
     &:focus {
       border-color: transparent;

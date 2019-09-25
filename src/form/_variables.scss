@@ -8,6 +8,7 @@
 /// @group px-forms-design:variables:style
 /// @type Color [default]
 $form-color: $color-base-white !default;
+$form-color-rgb: hex-to-rgb-numbers($color-base-white) !default;
 
 /// Sets the forms Placeholder font color
 ///

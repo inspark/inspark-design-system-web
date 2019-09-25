@@ -9,3 +9,7 @@
 @function inuit-config($key) {
   @return map-get($inuit-config, $key);
 }
+
+@function hex-to-rgb-numbers($color) {
+  @return red($color) + ',' + green($color) + ',' + blue($color)
+}
