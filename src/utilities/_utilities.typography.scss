@@ -170,7 +170,7 @@
 
 .u-text-highlight {
   background-color: rgba($text-highlight-background, 1);
-  background-color: rgba(var(--text-highlight-background, $text-highlight-background), 1);
+  background-color: rgba(var(--ids-theme-text-highlight-background-rgb, #{hex-to-rgb-numbers($text-highlight-background)}), 1);
   color: $color-base-black;
-  color: var(--text-highlight-color, $text-highlight-color);
+  color: var(--ids-theme-text-highlight-color, $text-highlight-color);
 }

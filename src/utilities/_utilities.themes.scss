@@ -52,6 +52,6 @@
 
 .u-text-highlight {
   background-color: rgba($color-yellow-dark-250, 1);
-  background-color: rgba(var(--ids-theme-text-highlight-background, $color-yellow-dark-250), 1);
+  background-color: rgba(var(--ids-theme-text-highlight-background-rgb, #{hex-to-rgb-numbers($color-yellow-dark-250)}), 1);
   color: $color-base-black;
 }

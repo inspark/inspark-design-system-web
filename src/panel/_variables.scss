@@ -7,7 +7,6 @@
 
 $panel-bg: $color-gray-80 !default;
 $panel-bg-rgb: hex-to-rgb-numbers($color-gray-80) !default;
-@debug $panel-bg-rgb;
 $panel-body-padding: $unit-small !default;
 $panel-heading-padding: $unit-small $unit-small !default;
 $panel-heading-title-padding: 0 $unit-small !default;
