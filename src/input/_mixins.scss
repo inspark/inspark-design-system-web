@@ -127,9 +127,9 @@ markup:
 
   &:focus {
     border-color: $form-border_outer_focused;
-    border-color: var(--ids-theme-inuit-forms-border_outer_focused-rgb, $form-border_outer_focused);
+    border-color: var(--ids-theme-inuit-forms-border_outer_focused, $form-border_outer_focused);
     box-shadow: $form-border_inner_focused;
-    box-shadow: var(--ids-theme-inuit-forms-border_inner_focused-rgb, $form-border_inner_focused);
+    box-shadow: var(--ids-theme-inuit-forms-border_inner_focused, $form-border_inner_focused);
     outline: 0;
   }
 
