@@ -188,6 +188,7 @@ $ids-input-theme-property-values: map-merge($ids-input-theme-property-values, (
   inuit-forms-border_outer: $form-border_outer,
   inuit-forms-background: rgba($color-base-black, 0.1),
   inuit-forms-color: $color-base-black,
+  inuit-forms-color-rgb: $color-gray-40,
   inuit-forms-border_outer_focused: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
   inuit-forms-border_inner_focused: 0 0 7px 0 rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
   inuit-forms-border_readonly: none,

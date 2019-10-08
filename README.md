@@ -20,7 +20,7 @@
       - "node_modules/@inspark/components-web/src" angular.json заменить на: "<относительный путь к inspark-design-system-web>/src"
       - "node_modules/@inspark/components-web/index.css" заменить на: "<относительный путь к inspark-design-system-web>/dist/components-web/index.css"
     - package.json 
-      - для "@inspark/components-web" номер версии пакета заменить на: "<относительный путь к inspark-design-system-web>/dist"
+      - для "@inspark/components-web" номер версии пакета заменить на: "<относительный путь к inspark-design-system-web>/dist/components-web"
   - в приложении web-widget-container
     - angular.json
       - "node_modules/@inspark/components-web/index.css" заменить на: "<относительный путь к inspark-design-system-web>/dist/components-web/index.css"
