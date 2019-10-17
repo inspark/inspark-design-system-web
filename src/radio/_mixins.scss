@@ -141,7 +141,6 @@ markup:
       background: var(--ids-theme-radio-disabled-background, $radio-disabled-background) !important;
       // scss-lint:enable ImportantRule
       opacity: 0.5;
-      //border: none;
     }
   }
 
@@ -151,8 +150,7 @@ markup:
   }
 
   + #{$sibling-icon-selector}::after {
-    border-color: darken($ids-theme-primary, 5%);
-    filter: brightness(85%);
+    border-color: var(--ids-theme-primary, $ids-theme-primary);
   }
 }
 

@@ -1,11 +1,12 @@
 @import "../base/variables";
-
+@import "../base/functions";
 //== Panels
 //
 //##
 // todo(turchaninov): merge with Card component
 
 $panel-bg: $color-gray-80 !default;
+$panel-bg-rgb: hex-to-rgb-numbers($color-gray-80) !default;
 $panel-body-padding: $unit-small !default;
 $panel-heading-padding: $unit-small $unit-small !default;
 $panel-heading-title-padding: 0 $unit-small !default;
@@ -53,6 +54,7 @@ $panel-comment-bg: $color-base-black !default;
 
 $ids-panel-theme-property-values: (
   panel-bg: $panel-bg,
+  panel-bg-rgb: hex-to-rgb-numbers($panel-bg),
   panel-border-radius: $panel-border-radius,
   panel-border-color: $panel-border-color,
   panel-lighter-background: $panel-lighter-background,
@@ -60,4 +62,5 @@ $ids-panel-theme-property-values: (
   panel-body-dashboard-bg: $panel-body-dashboard-bg,
   panel-inner-border: $panel-inner-border,
   panel-comment-bg: $panel-comment-bg,
+  panel-comment-bg-rgb: hex-to-rgb-numbers($panel-comment-bg)
 );

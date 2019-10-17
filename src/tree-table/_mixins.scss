@@ -49,39 +49,39 @@ Advanced table-like component.
     &:nth-child(even) {
       .c-tree-table__cell {
         background: rgba($text-color, 0.1);
-        background: rgba(var(--ids-theme-text-color, $text-color), 0.1);
+        background: rgba(var(--ids-theme-text-color-rgb, #{$text-color-rgb}), 0.1);
       }
     }
 
     &:focus {
       .c-tree-table__cell {
         background: rgba($ids-theme-secondary, 0.2);
-        background: rgba(var(--ids-theme-secondary, $ids-theme-secondary), 0.2);
+        background: rgba(var(--ids-theme-secondary-rgb, #{$ids-theme-secondary-rgb}), 0.2);
       }
 
       .is-tree-table__row_success .c-tree-table__cell {
         background: rgba($ids-theme-status-success, 0.2);
-        background: rgba(var(--ids-theme-status-success, $ids-theme-status-success), 0.2);
+        background: rgba(var(--ids-theme-status-success-rgb, #{$ids-theme-status-success-rgb}), 0.2);
       }
 
       .is-tree-table__row_warning .c-tree-table__cell {
         background: rgba($ids-theme-status-warning, 0.2);
-        background: rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0.2);
+        background: rgba(var(--ids-theme-status-warning-rgb, #{$ids-theme-status-warning-rgb}), 0.2);
       }
 
       .is-tree-table__row_error .c-tree-table__cell {
         background: rgba($ids-theme-status-error, 0.2);
-        background: rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0.2);
+        background: rgba(var(--ids-theme-status-error-rgb, #{$ids-theme-status-error-rgb}), 0.2);
       }
 
       .is-tree-table__row_critical .c-tree-table__cell {
         background: rgba($ids-theme-status-critical, 0.2);
-        background: rgba(var(--ids-theme-status-critical, $ids-theme-status-critical), 0.2);
+        background: rgba(var(--ids-theme-status-critical-rgb, #{$ids-theme-status-critical-rgb}), 0.2);
       }
 
       .is-tree-table__row_disabled .c-tree-table__cell {
         background: rgba($ids-theme-status-disabled, 0.2);
-        background: rgba(var(--ids-theme-status-disabled, $ids-theme-status-disabled), 0.2);
+        background: rgba(var(--ids-theme-status-disabled-rgb, #{$ids-theme-status-disabled-rgb}), 0.2);
       }
     }
   }
@@ -234,28 +234,28 @@ Advanced table-like component.
   .c-tree-table__cell_status {
     &-success {
       background: rgba($ids-theme-status-success, 1) !important;
-      background: rgba(var(--ids-theme-status-success, $ids-theme-status-success), 1) !important;
+      background: rgba(var(--ids-theme-status-success-rgb, #{$ids-theme-status-success-rgb}), 1) !important;
       color: $text-color;
       color: var(--ids-theme-text-color, $text-color);
     }
 
     &-warning {
       background: rgba($ids-theme-status-warning, 1) !important;;
-      background: rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 1) !important;;
+      background: rgba(var(--ids-theme-status-warning-rgb, #{$ids-theme-status-warning-rgb}), 1) !important;;
       color: $text-color;
       color: var(--ids-theme-text-color, $text-color);
     }
 
     &-critical {
       background: rgba($ids-theme-status-critical, 1) !important;;
-      background: rgba(var(--ids-theme-status-critical, $ids-theme-status-critical), 1) !important;;
+      background: rgba(var(--ids-theme-status-critical-rgb, #{$ids-theme-status-critical-rgb}), 1) !important;;
       color: $text-color;
       color: var(--ids-theme-text-color, $text-color);
     }
 
     &-error {
       background: rgba($ids-theme-status-error, 1) !important;;
-      background: rgba(var(--ids-theme-status-error, $ids-theme-status-error), 1) !important;;
+      background: rgba(var(--ids-theme-status-error-rgb, #{$ids-theme-status-error-rgb}), 1) !important;;
       color: $text-color;
       color: var(--ids-theme-text-color, $text-color);
     }
@@ -265,12 +265,12 @@ Advanced table-like component.
       background-image: linear-gradient(
           45deg,
           transparent 19.05%,
-          var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue) 19.05%,
+          var(--ids-theme-status-falsevalue, #{$ids-theme-status-falsevalue-rgb}) 19.05%,
           var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue) 50%,
           transparent 50%,
           transparent 69.05%,
-          var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue) 69.05%,
-          var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue) 100%
+          var(--ids-theme-status-falsevalue, #{$ids-theme-status-falsevalue-rgb}) 69.05%,
+          var(--ids-theme-status-falsevalue, #{$ids-theme-status-falsevalue-rgb}) 100%
       );
       background-size: 29.70px 29.70px;
     }

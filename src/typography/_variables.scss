@@ -1,5 +1,5 @@
 @import "../theme/variables";
-//@import "../base/variables";
+@import "../base/functions";
 
 // Links
 //
@@ -27,6 +27,7 @@ $text-font-family-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Conso
 $font-family-base: $text-font-family !default;
 
 $text-color: $color-base-white !default;
+$text-color-rgb: hex-to-rgb-numbers($color-base-white) !default;
 $text-color-gray: $color-gray-10 !default;
 $text-color-success: $ids-theme-status-success !default;
 $text-color-warning: $ids-theme-status-warning !default;
@@ -129,5 +130,6 @@ $ids-typography-theme-property-values: (
   hr-border-color: $hr-border-color,
   kbd-box-shadow: $kbd-box-shadow,
   text-highlight-background: $text-highlight-background,
+  text-highlight-background-rgb: hex-to-rgb-numbers($text-highlight-background),
   text-highlight-color: $color-base-black
 )

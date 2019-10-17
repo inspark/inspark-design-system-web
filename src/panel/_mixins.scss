@@ -170,11 +170,11 @@ markup:
 
   .c-panel_semitransparent {
     background: rgba($panel-bg, 0.8);
-    background: rgba(var(--ids-theme-panel-bg, $panel-bg), 0.8);
+    background: rgba(var(--ids-theme-panel-bg-rgb, #{$panel-bg-rgb}), 0.8);
   }
 
   .c-panel__body_bg-semitransparent {
-    background: rgba(var(--ids-theme-panel-bg, $panel-bg), 0.8);
+    background: rgba(var(--ids-theme-panel-bg-rgb, #{$panel-bg-rgb}), 0.8);
   }
 
   // Panel contents
@@ -530,27 +530,27 @@ markup:
 
   .c-panel_success {
     background: rgba($ids-theme-status-success, 0.23);
-    background: rgba(var(--ids-theme-status-success, $ids-theme-status-success), 0.23);
+    background: rgba(var(--ids-theme-status-success-rgb, $ids-theme-status-success), 0.23);
   }
 
   .c-panel_warning {
     background: rgba($ids-theme-status-warning, 0.25);
-    background: rgba(var(--ids-theme-status-warning, $ids-theme-status-warning), 0.25);
+    background: rgba(var(--ids-theme-status-warning-rgb, $ids-theme-status-warning), 0.25);
   }
 
   .c-panel_critical {
     background: rgba($ids-theme-status-critical, 0.33);
-    background: rgba(var(--ids-theme-status-critical, $ids-theme-status-critical), 0.33);
+    background: rgba(var(--ids-theme-status-critical-rgb, $ids-theme-status-critical), 0.33);
   }
 
   .c-panel_error {
     background: rgba($ids-theme-status-error, 0.33);
-    background: rgba(var(--ids-theme-status-error, $ids-theme-status-error), 0.33);
+    background: rgba(var(--ids-theme-status-error-rgb, $ids-theme-status-error), 0.33);
   }
 
   .c-panel_falsevalue {
     background: rgba($ids-theme-status-falsevalue, 0.33);
-    background: rgba(var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue), 0.33);
+    background: rgba(var(--ids-theme-status-falsevalue-rgb, $ids-theme-status-falsevalue), 0.33);
   }
 
 }
@@ -657,8 +657,8 @@ markup:
           rgba($panel-lighter-background, 0) 100%);
       background: linear-gradient(
           to bottom,
-          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 1) 40%,
-          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 0) 100%);
+          rgba(var(--ids-theme-panel-lighter-background-rgb, $panel-lighter-background), 1) 40%,
+          rgba(var(--ids-theme-panel-lighter-background-rgb, $panel-lighter-background), 0) 100%);
     }
 
     &:after {
@@ -672,12 +672,12 @@ markup:
       z-index: $zindex-1;
       background: linear-gradient(
           to top,
-          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 1) 0%,
-          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 0) 100%);
+          rgba(var(--ids-theme-panel-lighter-background-rgb, $panel-lighter-background), 1) 0%,
+          rgba(var(--ids-theme-panel-lighter-background-rgb, $panel-lighter-background), 0) 100%);
       background: linear-gradient(
           to top,
-          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 1) 0%,
-          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 0) 100%);
+          rgba(var(--ids-theme-panel-lighter-background-rgb, $panel-lighter-background), 1) 0%,
+          rgba(var(--ids-theme-panel-lighter-background-rgb, $panel-lighter-background), 0) 100%);
     }
   }
 
@@ -697,8 +697,8 @@ markup:
           rgba($panel-lighter-background, 0) 100%);
       background: linear-gradient(
           to bottom,
-          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 1) 40%,
-          rgba(var(--ids-theme-panel-lighter-background, $panel-lighter-background), 0) 100%);
+          rgba(var(--ids-theme-panel-lighter-background-rgb, $panel-lighter-background), 1) 40%,
+          rgba(var(--ids-theme-panel-lighter-background-rgb, $panel-lighter-background), 0) 100%);
     }
   }
 
@@ -732,7 +732,7 @@ markup:
     align-content: flex-start;
     z-index: $zindex-1;
     background: rgba($panel-comment-bg, 0.75);
-    background: rgba(var(--ids-theme-panel-comment-bg, $panel-comment-bg), 0.75);
+    background: rgba(var(--ids-theme-panel-comment-bg-rgb, $panel-comment-bg), 0.75);
   }
 
 }

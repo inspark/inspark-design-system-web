@@ -258,7 +258,7 @@ sg-wrapper:
 @mixin ids-navbar-brand {
   .c-navbar__brand {
     float: left;
-    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+    padding: $navbar-padding-vertical $unit-tiny;
     font-size: $font-size-lg;
     line-height: $line-height-computed;
     height: $navbar-height;
@@ -286,10 +286,20 @@ sg-wrapper:
   }
 
   .c-navbar__brand-logo {
+    display: flex;
+    height: 56px;
     max-height: 100%;
 
     svg {
       height: 100%;
+    }
+
+    img {
+      width: 108px;
+
+      @include screen_small-and-up {
+        width: auto;
+      }
     }
   }
 }
@@ -345,6 +355,8 @@ sg-wrapper:
 @mixin ids-navbar-nav {
   .c-navbar__nav {
     @include c-nav;
+
+    margin-left: $unit-tiny;
   }
 
   .c-navbar__nav-listitem {
