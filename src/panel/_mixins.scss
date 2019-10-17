@@ -152,8 +152,8 @@ markup:
   }
 
   .c-panel_dashed {
-    border: 4px dashed $panel-dashed-border-color;
-    border: 4px dashed var(--ids-theme-panel-dashed-border-color, $panel-dashed-border-color);
+    border: 4px dashed $panel-dashed-border-color!important;
+    border: 4px dashed var(--ids-theme-panel-dashed-border-color, $panel-dashed-border-color)!important;
   }
 
   .c-panel_min-height_100 {
