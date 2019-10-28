@@ -172,7 +172,7 @@ Advanced table-like component.
     @include grid__cell;
     @include grid__cells;
     width: 0;
-    padding: $unit-tiny $unit-small;
+    padding: $unit-small $unit;
     position: relative;
     border-bottom: none;
     overflow-wrap: break-word;
@@ -184,7 +184,7 @@ Advanced table-like component.
   }
 
   .c-tree-table__cell:not(.c-tree-table__cell_checkbox) {
-    min-width: 196px;
+    min-width: 150px;
   }
 
   .c-tree-table__cell_checkbox {
@@ -309,7 +309,7 @@ Advanced table-like component.
   }
 
   .c-tree-table__secondary-cell {
-    min-width: $tree-table-cell-width;
+    min-width: 104px;
   }
 
   .c-tree-table__first-cell {
