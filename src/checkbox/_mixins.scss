@@ -262,22 +262,37 @@ markup:
         border-radius: 30px;
       }
 
+      &::before {
+        background: var(--ids-theme-checkbox-switch-off-background, $color-gray-40);
+        border-color: var(--ids-theme-checkbox-switch-off-border-color, $color-base-white);
+      }
+
       &::after {
         width: 15px;
         height: 15px;
         transform: scale3d(1, 1, 1);
         background: $checkbox-switch-background;
-        background: var(--ids-theme-checkbox-switch-background, $checkbox-switch-background);
+        background: var(--ids-theme-checkbox-switch-knob-off-background, $color-gray-10);
         opacity: 1;
         top: 7px;
         border-radius: 30px;
         left: 3px;
+        box-shadow: 0 0 3px 0 $color-gray-90;
       }
     }
 
     #{$child-input-selector} {
       &:checked + #{$child-icon-selector} {
+        &::before {
+          background: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.3);
+          border: transparent;
+        }
+
         &::after {
+          content: "ON";
+          font-size: 8px;
+          font-style: normal;
+          color: var(--ids-theme-checkbox-switch-on-icon-text, $text-color-on-light);
           transform: translateX(1.3rem);
           transition: background-color 0.1s linear, transform 0.1s cubic-bezier(0.105, 0.42, 0.425, 1);
           background: none;
@@ -287,11 +302,15 @@ markup:
       }
 
       &[disabled] + #{$child-icon-selector} {
+        &::before {
+          background: var(--ids-theme-checkbox-switch-disabled-background, $checkbox-switch-disabled-background);
+          border: transparent;
+        }
         &::after {
           // scss-lint:disable ImportantRule
           background: none !important;
-          background-color: $checkbox-switch-disabled-background !important;
-          background-color: var(--ids-theme-checkbox-switch-disabled-background, $checkbox-switch-disabled-background) !important;
+          background-color: $checkbox-switch-knob-disabled-background !important;
+          background-color: var(--ids-theme-checkbox-switch-knob-disabled-background, $checkbox-switch-knob-disabled-background) !important;
           // scss-lint:enable ImportantRule
         }
       }
