@@ -207,8 +207,8 @@ $ids-input-theme-property-values: map-merge($ids-input-theme-property-values, (
 ));
 
 $ids-input-group-theme-property-values: map-merge($ids-input-group-theme-property-values, (
-  input-group-addon-border: $color-gray-20,
-  input-group-addon-background: $color-gray-20,
+  input-group-addon-border: $color-gray-10,
+  input-group-addon-background: $color-gray-10,
   input-group-addon-color: $color-gray-80
 ));
 
