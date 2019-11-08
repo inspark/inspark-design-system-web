@@ -140,9 +140,9 @@ markup:
 
   &[readonly] {
     border: $form-border_readonly;
-    border: var(--ids-theme-inuit-forms-border_readonly-rgb, $form-border_readonly);
+    border: var(--ids-theme-inuit-forms-border_readonly, $form-border_readonly);
     color: $form-color_readonly;
-    color: var(--ids-theme-inuit-forms-color_readonly-rgb, $form-color_readonly);
+    color: var(--ids-theme-inuit-forms-color_readonly, $form-color_readonly);
 
     &:focus {
       border-color: transparent;
