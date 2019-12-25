@@ -291,6 +291,8 @@ markup:
         &::after {
           content: "ON";
           font-size: 8px;
+          line-height: 15px;
+          text-align: center;
           font-style: normal;
           color: var(--ids-theme-checkbox-switch-on-icon-text, $text-color-on-light);
           transform: translateX(1.3rem);
