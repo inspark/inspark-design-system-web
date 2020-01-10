@@ -1,6 +1,6 @@
 {
   "name": "@inspark/components-web",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "description": "Web components for Inspark products",
   "main": "index.css",
   "author": "Inspark",
