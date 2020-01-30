@@ -45,6 +45,7 @@ $ids-theme-property-values: map-merge($ids-theme-property-values, (
   // Statuses
   status-active: var(--ids-theme-primary, $ids-theme-primary),
   status-highlight: $color-blue-dark,
+  status-highlight-rgb: hex-to-rgb-numbers($color-blue-dark),
   status-success: #31AC51,
   status-success-rgb: hex-to-rgb-numbers(#31AC51),
   status-warning: #EE9946,
