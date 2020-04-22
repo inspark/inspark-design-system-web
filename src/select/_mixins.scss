@@ -8,6 +8,7 @@
 // todo: отрефакторить структуру миксинов в core и названия переменных
 
 @mixin ids-select-core-styles {
+
   .c-select {
     @include c-select;
   }
@@ -131,6 +132,17 @@ markup:
     cursor: pointer;
     background: $select-multiple-background;
     background: var(--ids-theme-select-multiple-background, $select-multiple-background);
+  }
+
+  optgroup {
+    color: $color-base-black;
+
+    option {
+      background-color: $select-background;
+      background-color: var(--ids-theme-select-background, $select-background);
+      color: $select-color;
+      color: var(--ids-theme-select-color, $select-color);
+    }
   }
 }
 
