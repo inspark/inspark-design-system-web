@@ -47,3 +47,6 @@
 
 ## Разработка через npm-link
 - https://docs.npmjs.com/cli/link
+
+# Спецификация цветов
+https://www.figma.com/file/PAfIMHF2GSmLlFIZiGvRL4/ISS-Colors?node-id=0%3A1
