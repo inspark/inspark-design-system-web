@@ -1,0 +1,47 @@
+.theme-light {
+
+  // Backgrounds
+  --colorBg: #EBEBEB;
+  --colorBgLevel1: #494c55;
+  --colorBgLevel2: #ffffff;
+  --colorBgLevel3: #ffffff;
+  --colorBgLevel4: #b8b8b8;
+  --colorBgPrimary: #387382;
+  --colorBgSecondary: #1F5F81;
+  --colorBgInverse: #53555C;
+
+
+  // Statuses
+  --colorSuccess: #31ac51;
+  --colorWarning: #EE9946;
+  --colorError: #F95C5D;
+  --colorCritical: #a20000;
+  --colorNoControl: #7E8087;
+  --colorFalseValue: #85B3CB;
+
+
+  // Text
+  --colorText: #202127;
+  --colorTextSecondary: #282A31;
+  --colorTextOnInactive: rgba(32, 33, 39, 0.4);
+  --colorTextMuted: #30333C;
+  --colorTextPlaceholder: rgba(48, 51, 60, 0.7);
+  --colorTextTertiary: #282A31;
+  --colorTextOnStatus: #202127;
+  --colorTextOnCritical: #ffffff;
+  --colorTextOnNoControl: #ffffff;
+  --colorTextInverse: #ffffff;
+
+  // Link
+  --colorLink: #387382;
+  --colorLinkInverse: #78F4FF;
+  --colorLinkVisited: #387382;
+
+  // Icon
+  --colorIcon: #202127;
+  --colorIconPrimary: #387382;
+  --colorIconInverse: #ffffff;
+
+  // Overlay
+  --colorOverlay: rgba(0, 0, 0, 0.5);
+}

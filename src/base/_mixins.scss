@@ -804,31 +804,6 @@
 
   // Custom scroll for webkit
 
-  ::-webkit-scrollbar {
-    width: 16px;
-    height: 16px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 16px;
-    background: $webkit-scrollbar-track-bg;
-    background: var(--ids-theme-webkit-scrollbar-track-bg, $webkit-scrollbar-track-bg);
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    background: $webkit-scrollbar-thumb-bg;
-    background: var(--ids-theme-webkit-scrollbar-thumb-bg, $webkit-scrollbar-thumb-bg);
-  }
-
-  ::-webkit-scrollbar-corner {
-    background: $webkit-scrollbar-corner-bg;
-    background: var(--ids-theme-webkit-scrollbar-corner-bg, $webkit-scrollbar-corner-bg);
-  }
 
   // For link, used in body to fix bug when link create margin
 
@@ -1013,6 +988,7 @@
 
   fieldset {
     margin: 0;
+
     &, legend {
       border: 0;
       padding: 0;
