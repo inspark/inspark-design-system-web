@@ -135,13 +135,12 @@ markup:
   }
 
   optgroup {
-    color: $color-base-black;
+    color: initial;
+    background-color: initial;
 
     option {
-      background-color: $select-background;
-      background-color: var(--ids-theme-select-background, $select-background);
-      color: $select-color;
-      color: var(--ids-theme-select-color, $select-color);
+      background-color: initial;
+      color: initial;
     }
   }
 }
