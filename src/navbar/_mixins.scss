@@ -111,6 +111,7 @@ sg-wrapper:
   .c-navbar__header {
     @include clearfix;
     background: $navbar-default-bg;
+    height: $navbar-height;
     background: var(--ids-theme-navbar-default-bg, $navbar-default-bg);
   }
 }

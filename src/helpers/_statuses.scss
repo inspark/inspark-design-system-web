@@ -1,0 +1,29 @@
+.ins-success {
+  background: var(--colorSuccess);
+  color: var(--colorTextOnStatus);
+}
+
+.ins-warning {
+  background: var(--colorWarning);
+  color: var(--colorTextOnStatus);
+}
+
+.ins-error {
+  background: var(--colorError);
+  color: var(--colorTextOnStatus);
+}
+
+.ins-critical {
+  background: var(--colorCritical);
+  color: var(--colorTextOnCritical);
+}
+
+.ins-nocontrol {
+  color: var(--colorTextOnNoControl);
+  background: var(--colorNoControl);
+}
+
+.ins-falsevalue {
+  background: var(--colorFalseValue);
+  color: var(--colorTextOnStatus);
+}
