@@ -204,6 +204,8 @@ markup:
 
   // Optional heading
   .c-panel__heading {
+    display: flex;
+    flex-wrap: nowrap;
     position: relative;
     z-index: 1;
     padding: $panel-heading-padding;
@@ -223,8 +225,8 @@ markup:
   }
 
   .c-panel__heading-btn-block {
-    display: table-cell;
-    width: 20px;
+    display: flex;
+    width: 48px;
   }
 
   .c-panel__heading-btn {
@@ -243,6 +245,10 @@ markup:
   // Within heading, strip any `h*` tag of its default margins for spacing.
   .c-panel__heading-title {
     display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
     padding: $panel-heading-title-padding;
     margin-top: 0;
     margin-bottom: 0;
