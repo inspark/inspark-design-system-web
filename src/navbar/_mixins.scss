@@ -303,6 +303,14 @@ sg-wrapper:
       }
     }
   }
+
+  @media (max-width: 360px) {
+    .c-navbar__brand {
+      height: 40px;
+      padding: 0;
+      margin-top: 8px;
+    }
+  }
 }
 
 // Navbar toggle
