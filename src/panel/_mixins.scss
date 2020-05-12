@@ -219,14 +219,12 @@ markup:
   }
 
   .c-panel__heading_divided {
-    display: table;
     width: 100%;
     padding: 0;
   }
 
   .c-panel__heading-btn-block {
     display: flex;
-    width: 48px;
   }
 
   .c-panel__heading-btn {
@@ -252,6 +250,7 @@ markup:
     padding: $panel-heading-title-padding;
     margin-top: 0;
     margin-bottom: 0;
+    white-space: nowrap;
     vertical-align: middle;
     font-size: $inuit-font-size-h4;
     font-weight: bold;
