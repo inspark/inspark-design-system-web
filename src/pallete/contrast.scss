@@ -1,3 +1,5 @@
+@import "../base/functions";
+
 .theme-contrast {
 
   // Backgrounds
@@ -5,10 +7,12 @@
   --colorBgLevel1: #0d485a;
   --colorBgLevel2: #ffffff;
   --colorBgLevel3: #ffffff;
-  --colorBgLevel4: #b8b8b8;
+  --colorBgLevel4: #ffffff;
+  --colorBgLevel4_rgb: 255, 255, 255;
   --colorBgPrimary: #067394;
   --colorBgSecondary: #0d485a;
   --colorBgInverse: #265b6b;
+  --colorBgInverse_rgb: 38, 91, 107;
 
 
   // Statuses
