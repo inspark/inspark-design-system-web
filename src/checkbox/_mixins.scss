@@ -295,7 +295,7 @@ markup:
           text-align: center;
           font-style: normal;
           color: var(--ids-theme-checkbox-switch-on-icon-text, $text-color-on-light);
-          transform: translateX(1.3rem);
+          transform: translateX(18px);
           transition: background-color 0.1s linear, transform 0.1s cubic-bezier(0.105, 0.42, 0.425, 1);
           background: none;
           background-color: $ids-theme-primary;
