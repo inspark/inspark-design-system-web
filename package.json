@@ -1,6 +1,6 @@
 {
   "name": "@inspark/components-web",
-  "version": "0.1.41",
+  "version": "0.1.42",
   "description": "Web components for Inspark products",
   "main": "index.css",
   "author": "Inspark",
@@ -8,7 +8,10 @@
   "scripts": {
     "build": "sh build.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm publish ./dist/components-web"
+    "publish": "npm publish ./dist/components-web",
+    "tokens-to-props": "theo ./design-tokens/colors.yml --transform web --format custom-properties.css --dest ./design-tokens/dist/scss/",
+    "tokens-to-scss": "theo ./design-tokens/colors.yml --transform web --format scss --dest ./design-tokens/dist/scss/",
+    "tokens-to-html": "theo ./design-tokens/colors.yml --transform web --format html --dest ./design-tokens/dist/scss/"
   },
   "repository": {
     "type": "git",
@@ -34,6 +37,7 @@
     "precss": "^4.0.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
+    "theo": "^8.1.5",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6"
   },

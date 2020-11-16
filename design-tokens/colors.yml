@@ -1,0 +1,34 @@
+global:
+  type: color
+  category: palette
+  scope: global
+  primitive: true
+
+## Required
+## A map of property names and value objects
+props:
+  color_base_white:
+    ## Required
+    ## Can be any valid JSON value
+    value: "#ffffff"
+
+    ## Required
+    ## Describe the type of value
+    ## [color|number|...]
+    type: "color"
+
+    ## Required
+    ## Describe the category of this property
+    ## Often used for style guide generation
+    category: "palette"
+
+    ## Optional
+    ## This value will be included during transform
+    ## but excluded during formatting
+    meta:
+      ## This value might be needed for some special transform
+      foo: "bar"
+  color_base_black:
+    value: "#202127"
+    type: "color"
+    category: "palette"
