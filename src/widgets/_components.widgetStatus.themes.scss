@@ -21,19 +21,31 @@
 }
 
 .c-widget-status_icon-font-status-success {
-  color: $ids-theme-status-success;
+  color: var(--ids-theme-badge-text-on-light, $text-color-on-light);
+  background: var(--ids-theme-status-success, $ids-theme-status-success);
+  border-radius: 4px;
+  padding: 4px;
 }
 
 .c-widget-status_icon-font-status-warning {
-  color: $ids-theme-status-warning;
+  color: var(--ids-theme-badge-text-on-light, $text-color-on-light);
+  background: var(--ids-theme-status-warning, $ids-theme-status-warning);
+  border-radius: 4px;
+  padding: 4px;
 }
 
 .c-widget-status_icon-font-status-error {
-  color: $ids-theme-status-error;
+  color: var(--ids-theme-badge-text-on-light, $text-color-on-light);
+  background: var(--ids-theme-status-error, $ids-theme-status-error);
+  border-radius: 4px;
+  padding: 4px;
 }
 
 .c-widget-status_icon-font-status-critical {
-  color: $ids-theme-status-critical;
+  color: var(--ids-theme-badge-text-on-dark, $text-color-on-dark);
+  background: var(--ids-theme-status-critical, $ids-theme-status-critical);
+  border-radius: 4px;
+  padding: 4px;
 }
 
 // Widget styles

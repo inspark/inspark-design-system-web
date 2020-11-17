@@ -33,15 +33,13 @@
 @import "../tree-table/variables";
 @import "../typography/variables";
 
-$ids-theme-primary: #f5e57f;
-
 $ids-theme-property-values: map-merge($ids-theme-property-values, (
   // Primary
-  primary: #25b887,
+  primary: #0f7a65,
   primary-rgb: '37, 184, 135',
 
   // Secondary
-  secondary: #f5e57f,
+  secondary: #25b887,
   secondary-rgb: '255, 248, 153',
 
   // Statuses
