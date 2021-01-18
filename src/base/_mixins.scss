@@ -601,7 +601,6 @@
     font-family: 'Open Sans';
     src: url('#{$FontPathOpenSans}/Light/OpenSans-Light.eot');
     src: local('Open Sans Light'), local('OpenSans-Light'),
-    url('#{$FontPathOpenSans}/Light/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
     url('#{$FontPathOpenSans}/Light/OpenSans-Light.woff2') format('woff2'),
     url('#{$FontPathOpenSans}/Light/OpenSans-Light.woff') format('woff'),
     url('#{$FontPathOpenSans}/Light/OpenSans-Light.ttf') format('truetype'),
@@ -614,7 +613,6 @@
     font-family: 'Open Sans';
     src: url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.eot');
     src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'),
-    url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.eot?#iefix') format('embedded-opentype'),
     url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.woff2') format('woff2'),
     url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.woff') format('woff'),
     url('#{$FontPathOpenSans}/ExtraBold/OpenSans-Extrabold.ttf') format('truetype'),
@@ -627,7 +625,6 @@
     font-family: 'Open Sans';
     src: url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.eot');
     src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'),
-    url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.eot?#iefix') format('embedded-opentype'),
     url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.woff2') format('woff2'),
     url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.woff') format('woff'),
     url('#{$FontPathOpenSans}/LightItalic/OpenSansLight-Italic.ttf') format('truetype'),
@@ -640,7 +637,6 @@
     font-family: 'Open Sans';
     src: url('#{$FontPathOpenSans}/Regular/OpenSans.eot');
     src: local('Open Sans'), local('OpenSans'),
-    url('#{$FontPathOpenSans}/Regular/OpenSans.eot?#iefix') format('embedded-opentype'),
     url('#{$FontPathOpenSans}/Regular/OpenSans.woff2') format('woff2'),
     url('#{$FontPathOpenSans}/Regular/OpenSans.woff') format('woff'),
     url('#{$FontPathOpenSans}/Regular/OpenSans.ttf') format('truetype'),
@@ -653,7 +649,6 @@
     font-family: 'Open Sans';
     src: url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.eot');
     src: local('Open Sans Bold'), local('OpenSans-Bold'),
-    url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
     url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.woff2') format('woff2'),
     url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.woff') format('woff'),
     url('#{$FontPathOpenSans}/Bold/OpenSans-Bold.ttf') format('truetype'),
@@ -666,7 +661,6 @@
     font-family: 'Open Sans';
     src: url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.eot');
     src: local('Open Sans Semibold'), local('OpenSans-Semibold'),
-    url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
     url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.woff2') format('woff2'),
     url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.woff') format('woff'),
     url('#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.ttf') format('truetype'),
@@ -679,7 +673,6 @@
     font-family: 'Open Sans';
     src: url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.eot');
     src: local('Open Sans Italic'), local('OpenSans-Italic'),
-    url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
     url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.woff2') format('woff2'),
     url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.woff') format('woff'),
     url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.ttf') format('truetype'),
@@ -696,6 +689,38 @@
     url('#{$FontPathPrimeicons}/primeicons.woff') format('woff'),
     url('#{$FontPathPrimeicons}/primeicons.svg?#primeicons') format('svg');
     font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    src: url('#{$FontPathLato}/lato-regular.woff2') format('woff2'),
+    url('#{$FontPathLato}/lato-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Lato Italic';
+    src: url('#{$FontPathLato}/lato-italic.woff2') format('woff2'),
+    url('#{$FontPathLato}/lato-italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Lato Bold Italic';
+    src: url('#{$FontPathLato}/lato-bolditalic.woff2') format('woff2'),
+    url('#{$FontPathLato}/lato-bolditalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'Lato Bold';
+    src: url('#{$FontPathLato}/lato-bold.woff2') format('woff2'),
+    url('#{$FontPathLato}/lato-bold.woff') format('woff');
+    font-weight: 700;
     font-style: normal;
   }
 
