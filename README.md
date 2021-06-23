@@ -21,6 +21,7 @@
       - "node_modules/@inspark/components-web/index.css" заменить на: "<относительный путь к inspark-design-system-web>/dist/components-web/index.css"
     - package.json 
       - для "@inspark/components-web" номер версии пакета заменить на: "<относительный путь к inspark-design-system-web>/dist/components-web"
+    - ```npm i```
   - в приложении web-widget-container
     - angular.json
       - "node_modules/@inspark/components-web/index.css" заменить на: "<относительный путь к inspark-design-system-web>/dist/components-web/index.css"
