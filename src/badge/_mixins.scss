@@ -121,6 +121,11 @@
     );
   }
 
+  .c-badge_none {
+    color: $text-color;
+    color: var(--ids-theme-text-color, $text-color);
+  }
+
   // todo: remove unnecessary states
   .c-badge_danger {
     @include badge-variant($ids-theme-status-error, $badge-text-on-dark);
