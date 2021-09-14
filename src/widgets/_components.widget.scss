@@ -24,7 +24,7 @@
 }
 
 .c-widget_status-falsevalue {
-  background-image: linear-gradient(45deg, transparent 19.05%, $ids-theme-status-falsevalue 19.05%, $ids-theme-status-falsevalue 50%, transparent 50%, transparent 69.05%, $ids-theme-status-falsevalue 69.05%, $ids-theme-status-falsevalue 100%);
+  background-image: linear-gradient(45deg, transparent 19.05%, rgba($ids-theme-status-falsevalue, 0.5) 19.05%, rgba($ids-theme-status-falsevalue, 0.5) 50%, transparent 50%, transparent 69.05%, rgba($ids-theme-status-falsevalue, 0.5) 69.05%, rgba($ids-theme-status-falsevalue, 0.5) 100%);
   background-size: 29.70px 29.70px;
 }
 
