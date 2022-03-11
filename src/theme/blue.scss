@@ -120,10 +120,10 @@ $ids-button-theme-property-values: map-merge($ids-button-theme-property-values, 
   btn-primary-background--hover: #19343b,
   btn-primary-background--pressed: #000,
   btn-primary-background--disabled: $color-gray-10,
-  btn-primary-color--disabled: rgba($color-base-white, 0.4),
+  btn-primary-color--disabled: rgba($color-base-black, 0.4),
   btn-secondary-border-color: transparent,
   btn-secondary-background: var(--ids-theme-secondary, $ids-theme-secondary),
-  btn-secondary-color: $color-base-white,
+  btn-secondary-color: $color-base-black,
   btn-secondary-background--hover: #0b222f,
   btn-secondary-background--pressed: #000,
   btn-tertiary-border-color: transparent,
@@ -199,8 +199,8 @@ $ids-input-theme-property-values: map-merge($ids-input-theme-property-values, (
   inuit-forms-border_readonly: none,
   inuit-forms-color_readonly: $color-gray-10,
   inuit-forms-border_disabled: $color-gray-90,
-  inuit-forms-background_disabled: rgba($color-gray-10, 0.8),
-  inuit-forms-color_disabled: $color-gray-10,
+  inuit-forms-background_disabled: rgba($color-gray-10, 0.5),
+  inuit-forms-color_disabled: $color-gray-5,
   inuit-forms-color_placeholder: rgba($color-gray-10, 0.7),
   inuit-forms-validation-warning: var(--ids-theme-status-warning, $ids-theme-status-warning),
   inuit-forms-validation-error: var(--ids-theme-status-error, $ids-theme-status-error),
@@ -285,13 +285,13 @@ $ids-panel-theme-property-values: map-merge($ids-panel-theme-property-values, (
 ));
 
 $ids-card-theme-property-values: map-merge($ids-card-theme-property-values, (
-  card-border-color: rgba($color-base-white, .125),
-  card-cap-bg: rgba($color-base-white, .03),
-  card-bg: $color-gray-5
+  card-border-color: rgba($color-base-black, .125),
+  card-cap-bg: rgba($color-base-black, .03),
+  card-bg: #0B1A53
 ));
 
 $ids-radio-theme-property-values: map-merge($ids-radio-theme-property-values, (
-  radio-disabled-background: $color-gray-90
+  radio-disabled-background: $color-gray-10
 ));
 
 $ids-select-theme-property-values: map-merge($ids-select-theme-property-values, (
@@ -441,7 +441,7 @@ $ids-theme-property-values: map-collect(
   //}
 
   @import "../utilities/utilities.themes";
-  @import "../nvd3/variables-theme-green";
+  @import "../nvd3/variables";
   @import "../nvd3/components.charts-nvd3.themes";
 }
 
