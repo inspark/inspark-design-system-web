@@ -1,0 +1,447 @@
+@import './mixins';
+@import "../base/variables";
+@import "../badge/variables";
+@import "../box-shadow/variables";
+@import "../button/variables";
+@import "../checkbox/variables";
+@import "../container/variables";
+@import "../crop/variables";
+@import "../crumb/variables";
+@import "../form/variables";
+@import "../grid/variables";
+@import "../icon/variables";
+@import "../image/variables";
+@import "../input/variables";
+@import "../input-group/variables";
+@import "../label/variables";
+@import "../list/variables";
+@import "../list-group/variables";
+@import "../mediaqueries/variables";
+@import "../nav/variables";
+@import "../navbar/variables";
+//@import "../nvd3/components.charts-nvd3"; // заимпортить после рефакторинга
+@import "../panel/variables";
+@import "../card/variables";
+@import "../radio/variables";
+@import "../ratio/variables";
+@import "../select/variables";
+@import "../sidebar/variables";
+@import "../table/variables";
+@import "../textarea/variables";
+@import "../theme/variables";
+@import "../tooltip/variables";
+@import "../tree-table/variables";
+@import "../typography/variables";
+
+$ids-theme-property-values: map-merge($ids-theme-property-values, (
+  // Primary
+  primary: #78f4ff,
+  primary-rgb: '120, 244, 255',
+
+  // Secondary
+  secondary: #20aaff,
+  secondary-rgb: '32, 170, 255',
+
+  // Statuses
+  status-active: var(--ids-theme-primary, $ids-theme-primary),
+  status-highlight: $color-blue-dark,
+  status-highlight-rgb: hex-to-rgb-numbers($color-blue-dark),
+  status-success: #31AC51,
+  status-success-rgb: hex-to-rgb-numbers(#31AC51),
+  status-warning: #EE9946,
+  status-warning-rgb: hex-to-rgb-numbers(#EE9946),
+  status-error: #F95C5D,
+  status-error-rgb: hex-to-rgb-numbers(#F95C5D),
+  status-pending: $color-blue,
+  status-pending-rgb: hex-to-rgb-numbers($color-blue),
+  status-critical: #a20000,
+  status-critical-rgb: hex-to-rgb-numbers(#a20000),
+  status-disabled: #848484,
+  status-disabled-rgb: hex-to-rgb-numbers(#848484),
+  status-falsevalue: #85B3CB,
+  status-falsevalue-rgb: hex-to-rgb-numbers(#85B3CB),
+
+  // Functional colors
+  component-active-color: $color-base-white,
+  component-active-bg: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
+  state-success-bg: var(--ids-theme-status-success, $ids-theme-status-success),
+  state-success-text: $color-base-white,
+  state-warning-bg: var(--ids-theme-status-warning, $ids-theme-status-warning),
+  state-warning-text: $color-base-white,
+  state-error-bg: var(--ids-theme-status-error, $ids-theme-status-error),
+  state-error-text: $color-base-white,
+  state-pending-bg: var(--ids-theme-status-pending, $ids-theme-status-pending),
+  state-pending-text: $color-base-white,
+  state-critical-bg: var(--ids-theme-status-critical, $ids-theme-status-critical),
+  state-critical-text: $color-base-white,
+  state-falsevalue-bg: var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue),
+  state-falsevalue-text: $color-gray-80
+));
+
+$ids-base-theme-property-values: map-merge($ids-base-theme-property-values, (
+  body-bg: #00050F,
+  webkit-scrollbar-track-bg: transparent,
+  webkit-scrollbar-thumb-bg: #1C1E27,
+  webkit-scrollbar-corner-bg: $color-gray-5
+));
+
+$ids-crumb-theme-property-values: map-merge($ids-base-theme-property-values, (
+  breadcrumb-bg: #00050F,
+  breadcrumb-color: $color-base-white,
+  breadcrumb-active-color: $color-base-white
+));
+
+$ids-badge-theme-property-values: map-merge($ids-badge-theme-property-values, (
+  badge-primary-bg: var(--ids-theme-primary, $ids-theme-primary),
+  badge-success-bg: var(--ids-theme-state-success-bg, $state-success-bg),
+  badge-pending-bg: var(--ids-theme-state-pending-bg, $state-pending-bg),
+  badge-warning-bg: var(--ids-theme-state-warning-bg, $state-warning-bg),
+  badge-error-bg: var(--ids-theme-state-error-bg, $state-error-bg),
+  badge-critical-bg: var(--ids-theme-state-critical-bg, $state-critical-bg),
+  badge-falsevalue-bg: var(--ids-theme-state-falsevalue-bg, $state-falsevalue-bg),
+  badge-color: $color-base-white,
+  badge-link-hover-color: $badge-link-hover-color,
+  badge-default-bg: $color-gray-10,
+  badge-text-falsevalue: var(--ids-theme-state-falsevalue-text, $state-falsevalue-text)
+));
+
+$ids-button-theme-property-values: map-merge($ids-button-theme-property-values, (
+  btn-default-background: #152969,
+  btn-default-color: var(--ids-theme-text-color, $text-color),
+  btn-default-background--hover: #172e75,
+  btn-default-background--pressed: #101f4f,
+  btn-disabled-color: rgba($color-base-white, 0.4),
+  btn-bare-color--visited: $color-gray-10,
+  btn-bare-color--hover: $color-blue-dark-200,
+  btn-bare-color--pressed: var(--ids-theme-secondary, $ids-theme-secondary),
+  btn-primary-border-color: transparent,
+  btn-primary-background: var(--ids-theme-primary, $ids-theme-primary),
+  btn-primary-color: $color-base-black,
+  btn-primary-background--hover: #62c5cf,
+  btn-primary-background--pressed: #000,
+  btn-primary-background--disabled: $color-gray-10,
+  btn-primary-color--disabled: rgba($color-base-black, 0.4),
+  btn-secondary-border-color: transparent,
+  btn-secondary-background: var(--ids-theme-secondary, $ids-theme-secondary),
+  btn-secondary-color: $color-base-white,
+  btn-secondary-background--hover: #0b222f,
+  btn-secondary-background--pressed: #000,
+  btn-tertiary-border-color: transparent,
+  btn-tertiary-background: $color-gray-40,
+  btn-tertiary-color: $color-base-white,
+  btn-tertiary-background--hover: #1a1b1e,
+  btn-tertiary-background--pressed: #000,
+  btn-destroy-border-color: var(--ids-theme-status-error, $ids-theme-status-error),
+  btn-destroy-background: var(--ids-theme-status-error, $ids-theme-status-error),
+  btn-destroy-color: $color-base-white,
+  btn-disabled-border-color: transparent,
+  btn-disabled-background: $color-gray-5,
+  btn-datepicker-current-background: none,
+  btn-datepicker-current-color: var(--ids-theme-primary, $ids-theme-primary),
+  btn-datepicker-selected-color: $color-base-white,
+  btn-datepicker-selected-color-current: $color-base-white,
+  btn-datepicker-selected-color--hover: $color-base-white,
+  btn-datepicker-selected-color-current--hover: $color-base-white,
+  btn-menu-toggle: $color-gray-90,
+  btn-grouped-border-color: $color-gray-10
+));
+
+$ids-checkbox-theme-property-values: map-merge($ids-checkbox-theme-property-values, (
+  checkbox-border-color: $color-gray-10,
+  checkbox-img-checked: $checkbox-img-checked,
+  checkbox-disabled-border-color: $color-gray-90,
+  checkbox-img-disabled: $checkbox-img-disabled,
+  checkbox-img-indeterminate: $checkbox-img-indeterminate,
+  checkbox-img-indeterminate-disabled: $checkbox-img-indeterminate-disabled,
+  checkbox-switch-background: $color-gray-40,
+  checkbox-switch-off-background: $color-gray-40,
+  checkbox-switch-off-border-color: transparent,
+  checkbox-switch-knob-off-background: $color-gray-10,
+  checkbox-switch-disabled-background: $color-gray-80,
+  checkbox-switch-knob-disabled-background: $color-gray-20,
+  checkbox-swith-color-off: $color-gray-80,
+  checkbox-switch-on-icon-text: $color-base-black,
+));
+
+$ids-form-theme-property-values: map-merge($ids-form-theme-property-values, (
+  form-color: $color-base-black,
+  form-color_placeholder: rgba($color-gray-80, 0.7),
+  form-background: rgba($color-base-black, 0.1),
+  form-border_inner: $component-active-box-shadow,
+  form-border_outer: 1px solid transparent,
+  form-border_inner_focused: 0 0 7px 0 rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
+  form-border_outer_focused: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
+  form-color_disabled: $color-gray-80,
+  form-background_disabled: rgba($color-gray-10, 0.8),
+  form-border_disabled: $color-gray-5,
+  form-color_readonly: $color-gray-90,
+  form-background_readonly: transparent,
+  form-border_readonly: none,
+  form-color_help: var(--ids-theme-primary, $ids-theme-primary),
+  form-validation-warning: var(--ids-theme-status-warning, $ids-theme-status-warning),
+  form-validation-error: var(--ids-theme-status-error, $ids-theme-status-error),
+  form-validation-success: var(--ids-theme-status-success, $ids-theme-status-success),
+));
+
+$ids-icon-theme-property-values: map-merge($ids-icon-theme-property-values, (
+));
+
+$ids-input-theme-property-values: map-merge($ids-input-theme-property-values, (
+  input-tap-highlight-color: $color-base-white,
+  input-tap-highlight-color-rgb: hex-to-rgb-numbers($color-base-white),
+  inuit-forms-border_inner: inset 0 0 0 1px transparent,
+  inuit-forms-border_outer: $form-border_outer,
+  inuit-forms-background: rgba($color-base-white, 0.1),
+  inuit-forms-color: $color-base-white,
+  inuit-forms-color-rgb: $color-gray-40,
+  inuit-forms-border_outer_focused: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
+  inuit-forms-border_inner_focused: 0 0 7px 0 rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.4),
+  inuit-forms-border_readonly: none,
+  inuit-forms-color_readonly: $color-gray-10,
+  inuit-forms-border_disabled: $color-gray-90,
+  inuit-forms-background_disabled: rgba($color-gray-10, 0.5),
+  inuit-forms-color_disabled: rgba($color-base-white, 0.8),
+  inuit-forms-color_placeholder: rgba($color-gray-10, 0.7),
+  inuit-forms-validation-warning: var(--ids-theme-status-warning, $ids-theme-status-warning),
+  inuit-forms-validation-error: var(--ids-theme-status-error, $ids-theme-status-error),
+  inuit-forms-validation-success: var(--ids-theme-status-success, $ids-theme-status-success)
+));
+
+$ids-input-group-theme-property-values: map-merge($ids-input-group-theme-property-values, (
+  input-group-addon-border: $color-gray-90,
+  input-group-addon-background: $color-gray-90,
+  input-group-addon-color: $color-gray-10
+));
+
+$ids-label-theme-property-values: map-merge($ids-label-theme-property-values, (
+  label-color: $color-gray-10,
+  label-sub-color: $color-gray-20,
+));
+
+$ids-list-theme-property-values: map-merge($ids-list-theme-property-values, (
+  list-scrollable-border-color: $color-gray-10,
+  list-scrollable-background: $color-base-black,
+  list-item-background-hover: $color-gray-90,
+  list-item-background-hover-rgb: '40, 42, 29',
+  list-item-background-active: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.3)
+));
+
+$ids-list-group-theme-property-values: map-merge($ids-list-group-theme-property-values, (
+  list-group-color: $color-base-white,
+  list-group-bg: $color-base-black,
+  list-group-border-color: rgba($color-gray-80, 0.125),
+  list-group-hover-bg: $color-gray-40,
+  list-group-active-color: var(--ids-theme-component-active-color, $component-active-color),
+  list-group-active-bg: var(--ids-theme-component-active-bg, $component-active-bg),
+  list-group-active-border: var(--ids-theme-component-active-bg, $component-active-bg),
+  list-group-active-text-color: #9bc9d4,
+  list-group-disabled-color: $color-gray-20,
+  list-group-disabled-bg: $color-gray-40,
+  list-group-disabled-text-color: $color-gray-20,
+  list-group-link-color: $color-gray-10,
+  list-group-link-heading-color: $color-gray-10,
+  list-group-link-hover-color: $color-base-white,
+  list-group-link-active-color: $color-base-white,
+  list-group-link-active-bg: rgba(var(--ids-theme-secondary-rgb, $ids-theme-secondary), 0.5),
+));
+
+$ids-nav-theme-property-values: map-merge($ids-nav-theme-property-values, (
+  nav-link-hover-bg: rgba(var(--ids-theme-primary-rgb, $ids-theme-primary), 0.2),
+  nav-disabled-link-hover-color: $color-gray-40,
+));
+
+$ids-navbar-theme-property-values: map-merge($ids-navbar-theme-property-values, (
+  navbar-default-color: $color-base-white,
+  navbar-default-bg: linear-gradient(90deg, #034FB7 0%, #00050F 29.17%, #00050F 100%),
+  navbar-default-border: #dadada,
+  navbar-default-link-color: $color-base-white,
+  navbar-default-link-hover-color: var(--ids-theme-secondary, $ids-theme-secondary),
+  navbar-default-link-hover-bg: transparent,
+  navbar-default-link-active-color: var(--ids-theme-primary, $ids-theme-primary),
+  navbar-default-link-active-bg: #dadada,
+  navbar-default-link-disabled-color: $color-gray-40,
+  navbar-default-link-disabled-bg: transparent,
+  navbar-default-brand-color: $color-base-white,
+  navbar-default-brand-hover-color: #fff,
+  navbar-default-brand-hover-bg: transparent,
+  navbar-default-toggle-hover-color: var(--ids-theme-primary, $ids-theme-primary),
+  navbar-default-toggle-icon-bar-bg: #888,
+  navbar-default-toggle-border-color: #ddd,
+  navbar-default-toggle-color: $color-base-black
+));
+
+//$ids-nvd3-theme-property-values: map-merge($ids-nvd3-theme-property-values, (
+//
+//));
+
+$ids-panel-theme-property-values: map-merge($ids-panel-theme-property-values, (
+  panel-bg: #050E34,
+  panel-bg-rgb: hex-to-rgb-numbers(#050E34),
+  panel-lighter-background: #050e34,
+  panel-lighter-background-rgb: hex-to-rgb-numbers(#050E34),
+  panel-body-dashboard-bg: radial-gradient(50% 50% at 50% 50%, #01165A 0%, #010C2E 100%),
+  panel-comment-bg: $color-base-black,
+  panel-comment-bg-rgb: hex-to-rgb-numbers($color-base-black),
+));
+
+$ids-card-theme-property-values: map-merge($ids-card-theme-property-values, (
+  card-border-color: rgba($color-base-black, .125),
+  card-cap-bg: rgba($color-base-black, .03),
+  card-bg: #0B1A53
+));
+
+$ids-radio-theme-property-values: map-merge($ids-radio-theme-property-values, (
+  radio-disabled-background: $color-gray-10
+));
+
+$ids-select-theme-property-values: map-merge($ids-select-theme-property-values, (
+  select-background: rgba($color-base-white, 0.1),
+  select-arrow: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20viewBox%3D%220%200%20658%201024%22%3E%3Cpath%20fill%3D%22%23EEEEEE%22%20d%3D%22M614.286%20420.571q0%207.429-5.714%2013.143l-266.286%20266.286q-5.714%205.714-13.143%205.714t-13.143-5.714l-266.286-266.286q-5.714-5.714-5.714-13.143t5.714-13.143l28.571-28.571q5.714-5.714%2013.143-5.714t13.143%205.714l224.571%20224.571%20224.571-224.571q5.714-5.714%2013.143-5.714t13.143%205.714l28.571%2028.571q5.714%205.714%205.714%2013.143z%22%2F%3E%3C%2Fsvg%3E'),
+  select-color: $color-base-white,
+  select-shadow_dark: 0 1px 0 rgba($color-base-white, 0.1),
+  select-background_hover: rgba($color-base-white, 0.1),
+  select-border_hover: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.75),
+  select-border_pressed: rgba($ids-theme-primary, 0.4),
+  select-background_pressed: rgba($color-base-white, 0.1),
+  select-background_disabled: rgba($color-gray-10, 0.5),
+  select-arrow-disabled: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20viewBox%3D%220%200%20658%201024%22%3E%3Cpath%20fill%3D%22%23EEEEEE%22%20d%3D%22M614.286%20420.571q0%207.429-5.714%2013.143l-266.286%20266.286q-5.714%205.714-13.143%205.714t-13.143-5.714l-266.286-266.286q-5.714-5.714-5.714-13.143t5.714-13.143l28.571-28.571q5.714-5.714%2013.143-5.714t13.143%205.714l224.571%20224.571%20224.571-224.571q5.714-5.714%2013.143-5.714t13.143%205.714l28.571%2028.571q5.714%205.714%205.714%2013.143z%22%2F%3E%3C%2Fsvg%3E'),
+  select-color_disabled: rgba($color-base-white, 0.8),
+  select-multiple-background: $color-gray-80,
+  status-success: var(--ids-theme-status-success, $ids-theme-status-success),
+  status-warning: var(--ids-theme-status-warning, $ids-theme-status-warning),
+  status-error: var(--ids-theme-status-error, $ids-theme-status-error),
+));
+
+$ids-sidebar-theme-property-values: map-merge($ids-sidebar-theme-property-values, (
+  sidebar-bg: #00050F
+));
+
+$ids-table-theme-property-values: map-merge($ids-table-theme-property-values, (
+  table-bg: transparent,
+  table-border-color: $color-gray-80,
+  table-th-color: $color-gray-10,
+  table-bg-accent: rgba($color-base-white, 0.05),
+  table-th-bg: rgba($color-base-white, 0.2),
+  table-bg-active: rgba($color-base-white, 0.075),
+  table-bg-primary: var(--ids-theme-primary, $ids-theme-primary),
+));
+
+$ids-tooltip-theme-property-values: map-merge($ids-tooltip-theme-property-values, (
+  tooltip-bg: rgba($color-base-white, 0.95),
+  tooltip-color: $color-base-white,
+  tooltip-arrow-color: rgba($color-base-white, 0.95),
+  tooltip-arrow-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20viewBox%3D%225%205%2026%2026%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cstyle%3E.clr-i-outline%7Bfill%3A%23a32100%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctitle%3Eexclamation-circle-line%3C%2Ftitle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20class%3D%22clr-i-outline%20clr-i-outline-path-1%22%20d%3D%22M18%2C6A12%2C12%2C0%2C1%2C0%2C30%2C18%2C12%2C12%2C0%2C0%2C0%2C18%2C6Zm0%2C22A10%2C10%2C0%2C1%2C1%2C28%2C18%2C10%2C10%2C0%2C0%2C1%2C18%2C28Z%22%3E%3C%2Fpath%3E%3Cpath%20class%3D%22clr-i-outline%20clr-i-outline-path-2%22%20d%3D%22M18%2C20.07a1.3%2C1.3%2C0%2C0%2C1-1.3-1.3v-6a1.3%2C1.3%2C0%2C1%2C1%2C2.6%2C0v6A1.3%2C1.3%2C0%2C0%2C1%2C18%2C20.07Z%22%3E%3C%2Fpath%3E%3Ccircle%20class%3D%22clr-i-outline%20clr-i-outline-path-3%22%20cx%3D%2217.95%22%20cy%3D%2223.02%22%20r%3D%221.5%22%3E%3C%2Fcircle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fsvg%3E")
+));
+
+$ids-tree-table-theme-property-values: map-merge($ids-tree-table-theme-property-values, (
+  tree-table-cell-background: $color-gray-90,
+  tree-table__cell-content_header: $color-gray-10,
+  tree-table-cell-header-background: $color-base-white,
+  tree-table-cell-status-none-background: $color-gray-80
+));
+
+$ids-typography-theme-property-values: map-merge($ids-typography-theme-property-values, (
+  link-color: var(--ids-theme-primary, $ids-theme-primary),
+  link-hover-color: var(--ids-theme-secondary, $ids-theme-secondary),
+  link-disabled-color: $link-disabled-color,
+  text-color: $color-base-white,
+  text-color-on-dark: $text-color-on-dark,
+  text-color-on-light: $text-color-on-light,
+  text-color-rgb: '255, 255, 255',
+  text-color-gray: #b7b7b7,
+  text-color-success: var(--ids-theme-status-success, $ids-theme-status-success),
+  text-color-warning: var(--ids-theme-status-warning, $ids-theme-status-warning),
+  text-color-critical: var(--ids-theme-status-critical, $ids-theme-status-critical),
+  text-color-error: var(--ids-theme-status-error, $ids-theme-status-error),
+  paragraph-color: var(--ids-theme-text-color, $text-color),
+  headings-color: $color-gray-5,
+  headings-small-color: $color-base-white,
+  text-muted: $color-gray-35,
+  abbr-border-color: $color-gray-10,
+  blockquote-small-color: $color-gray-10,
+  blockquote-border-color: $color-gray-10,
+  hr-border-color: rgba($color-base-white, 0.1),
+  kbd-box-shadow: inset 0 -0.1rem 0 rgba($color-base-white, 0.25),
+  text-highlight-background: $color-yellow-dark-800,
+  text-highlight-color: $color-base-white
+));
+
+$ids-theme-property-values: map-collect(
+    $ids-theme-property-values,
+    $ids-base-theme-property-values,
+    $ids-typography-theme-property-values,
+    $ids-crumb-theme-property-values,
+    $ids-badge-theme-property-values,
+    $ids-button-theme-property-values,
+    $ids-checkbox-theme-property-values,
+    $ids-form-theme-property-values,
+    $ids-icon-theme-property-values,
+    $ids-input-theme-property-values,
+    $ids-input-group-theme-property-values,
+    $ids-label-theme-property-values,
+    $ids-list-theme-property-values,
+    $ids-list-group-theme-property-values,
+    $ids-nav-theme-property-values,
+    $ids-navbar-theme-property-values,
+    // $ids-nvd3-theme-property-values,
+    $ids-panel-theme-property-values,
+    $ids-card-theme-property-values,
+    $ids-radio-theme-property-values,
+    $ids-select-theme-property-values,
+    $ids-sidebar-theme-property-values,
+    $ids-table-theme-property-values,
+    $ids-tooltip-theme-property-values,
+    $ids-tree-table-theme-property-values
+);
+
+@include ids-theme-core-styles("theme-blue", $ids-theme-property-values);
+
+// todo: отрефакторить nvd3 и вынести в отдельный репозиторий и npm-пакет
+.theme-blue {
+  .c-navbar__nav-content > a,
+  .c-navbar__nav-content .c-dropdown__toggle{
+    color: #fff;
+  }
+
+  .c-navbar__nav-content .c-btn_menu-toggle {
+    color: #fff;
+  }
+
+  .c-main-menu__item-a .c-main-menu__item-symbol {
+    color: #fff;
+  }
+
+  .c-main-menu .c-main-menu__item-li {
+    //background: #0F7A65;
+
+    &:hover {
+      background: linear-gradient(90deg, #111e86 0%, #11288a 100%);
+
+      .c-main-menu__item-content {
+        background: linear-gradient(90deg, #111e86 0%, #11288a 100%);
+      }
+    }
+  }
+
+  .c-main-menu .is-main-menu__item-li_active {
+    //background: #0F7A65;
+    border-left: 4px solid var(--ids-theme-primary);
+  }
+
+  .c-login__form {
+    background: radial-gradient(50% 50% at 50% 50%, #01165A 0%, #010C2E 100%);
+  }
+
+  //.c-login__form .c-label,
+  //.c-login__form .c-input,
+  //.localization-picker .c-dropdown-menu__content,
+  //fieldset legend,
+  //.c-checkbox {
+  //  color: #fff;
+  //}
+
+  @import "../utilities/utilities.themes";
+  @import "../nvd3/variables";
+  @import "../nvd3/components.charts-nvd3.themes";
+}
+
