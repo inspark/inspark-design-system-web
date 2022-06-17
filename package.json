@@ -1,6 +1,6 @@
 {
   "name": "@inspark/components-web",
-  "version": "9.0.5",
+  "version": "9.0.6",
   "description": "Web components for Inspark products",
   "main": "index.css",
   "author": "Inspark",
@@ -47,5 +47,6 @@
     "ng-inline-svg": "^8.6.3",
     "ng2-nvd3": "^2.0.0",
     "nvd3": "^1.8.5"
-  }
+  },
+  "dependencies": {}
 }
