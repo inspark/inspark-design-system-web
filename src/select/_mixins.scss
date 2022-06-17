@@ -65,9 +65,7 @@ markup:
   border: $form-border_outer;
   border: var(--ids-theme-form-border_outer, $form-border_outer);
   border-radius: $global-radius;
-  background-color: $select-background;
   background-color: var(--ids-theme-select-background, $select-background);
-  background-image: $select-arrow;
   background-image: var(--ids-theme-select-arrow, $select-arrow);
   background-repeat: no-repeat;
   background-position: calc(100% - 8px);
@@ -75,27 +73,20 @@ markup:
   font-weight: $font-weight-normal;
   line-height: 1.3;
   cursor: pointer;
-  color: $select-color;
   color: var(--ids-theme-select-color, $select-color);
   -webkit-appearance: none;
   -moz-appearance: none;
 
   &:hover {
-    border: 1px solid $select-border_hover;
     border: 1px solid var(--ids-theme-select-border_hover, $select-border_hover);
-    box-shadow: $select-shadow_dark;
     box-shadow: var(--ids-theme-select-shadow_dark, $select-shadow_dark);
-    background-color: $select-background_hover;
     background-color: var(--ids-theme-select-background_hover, $select-background_hover);
   }
 
   &:focus,
   &:active {
-    border: 1px solid $select-border_hover;
     border: 1px solid var(--ids-theme-select-border_hover, $select-border_hover);
-    box-shadow: $select-shadow_dark;
     box-shadow: var(--ids-theme-select-shadow_dark, $select-shadow_dark);
-    background-color: $select-background_hover;
     background-color: var(--ids-theme-select-background_hover, $select-background_hover);
     outline: 0;
   }
@@ -104,23 +95,20 @@ markup:
     display: none;
   }
 
-  &:active {
-    border: 1px solid $select-border_pressed;
-    border: 1px solid var(--ids-theme-select-border_pressed, $select-border_pressed);
-    box-shadow: $select-shadow_dark;
-    box-shadow: var(--ids-theme-select-shadow_dark, $select-shadow_dark);
-    background-color: $select-background_pressed;
-    background-color: var(--ids-theme-select-background_pressed, $select-background_pressed);
-  }
+  //&:active {
+  //  border: 1px solid $select-border_pressed;
+  //  border: 1px solid var(--ids-theme-select-border_pressed, $select-border_pressed);
+  //  box-shadow: $select-shadow_dark;
+  //  box-shadow: var(--ids-theme-select-shadow_dark, $select-shadow_dark);
+  //  background-color: $select-background_pressed;
+  //  background-color: var(--ids-theme-select-background_pressed, $select-background_pressed);
+  //}
 
   &[disabled] {
     border: 1px solid transparent;
     box-shadow: none;
-    background-color: $select-background_disabled;
     background-color: var(--ids-theme-select-background_disabled, $select-background_disabled);
-    background-image: $select-arrow-disabled;
     background-image: var(--ids-theme-select-arrow-disabled, $select-arrow-disabled);
-    color: $select-color_disabled;
     color: var(--ids-theme-select-color_disabled, $select-color_disabled);
     cursor: not-allowed;
   }
@@ -134,14 +122,19 @@ markup:
     background: var(--ids-theme-select-multiple-background, $select-multiple-background);
   }
 
-  optgroup {
-    color: #000;
-    background-color: #fff;
+  option {
+    color: var(--colorText);
+    background-color: var(--ids-theme-select-background_hover, $select-background_hover);
+  }
 
-    option {
-      color: #000;
-      background-color: #fff;
-    }
+  optgroup {
+    color: var(--colorText);
+  //  background-color: #000;
+  //
+  //  option {
+  //    color: #13151c;
+  //    background-color: #fff;
+  //  }
   }
 }
 
@@ -198,34 +191,28 @@ markup:
 */
 
 @mixin c-select_is-success {
-  border-color: $ids-theme-status-success;
   border-color: var(--ids-theme-status-success, $ids-theme-status-success);
 
   &:hover,
   &:focus {
-    border-color: $ids-theme-status-success;
     border-color: var(--ids-theme-status-success, $ids-theme-status-success);
   }
 }
 
 @mixin c-select_is-warning {
-  border-color: $ids-theme-status-warning;
   border-color: var(--ids-theme-status-warning, $ids-theme-status-warning);
 
   &:hover,
   &:focus {
-    border-color: $ids-theme-status-warning;
     border-color: var(--ids-theme-status-warning, $ids-theme-status-warning);
   }
 }
 
 @mixin c-select_is-error {
-  border-color: $ids-theme-status-error;
   border-color: var(--ids-theme-status-error, $ids-theme-status-error);
 
   &:hover,
   &:focus {
-    border-color: $ids-theme-status-error;
     border-color: var(--ids-theme-status-error, $ids-theme-status-error);
   }
 }
