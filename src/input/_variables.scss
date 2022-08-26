@@ -5,16 +5,16 @@ $input-tap-highlight-color: $color-base-black !default;
 $input-tap-highlight-color-rgb: hex-to-rgb-numbers($color-base-black) !default;
 
 // Default `.form-control` height
-$input-height-base: calc(#{$line-height-computed} * #{$font-size-base} + (#{$unit} * 2) + 2) !default;
+$input-height-base: ($line-height-computed * $font-size-base + ($unit * 2) + 2) !default;
 
 // Large `.form-control` height
-$input-height-large: calc(ceil(#{$font-size-lg / 1} * #{$line-height-computed}) + (#{$unit-large} * 2) + 2) !default;
+$input-height-large: (ceil($font-size-lg * $line-height-computed) + ($unit-large * 2) + 2) !default;
 
 // Small `.form-control` height
-$input-height-small: calc(floor(#{$font-size-sm} * #{$line-height-computed}) + (#{$unit-small} * 2) + 2) !default;
+$input-height-small: (floor($font-size-sm * $line-height-computed) + ($unit-small * 2) + 2) !default;
 
 // Tiny `.form-control` height
-$input-height-tiny: calc(floor(#{$font-size-xs} * #{$line-height-computed}) + (#{$unit-tiny} * 2) + 2) !default;
+$input-height-tiny: (floor($font-size-xs * $line-height-computed) + ($unit-tiny * 2) + 2) !default;
 
 $ids-input-theme-property-values: (
   input-tap-highlight-color: $input-tap-highlight-color,
