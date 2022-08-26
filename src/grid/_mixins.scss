@@ -110,11 +110,11 @@
 @mixin grid__cells {
   @each $width, $fraction in $grid-widths {
     &_width-#{$width} {
-      @include grid__cell_width($fraction * 100%);
+      @include grid__cell_width(calc(#{$fraction} * 100%));
     }
 
     &_offset-#{$width} {
-      margin-left: $fraction * 100%;
+      margin-left: calc(#{$fraction} * 100%);
     }
   }
 }
@@ -130,12 +130,12 @@
     }
 
     &_width-#{$width}\@#{$screen-width} {
-      flex: 0 0 $fraction * 100%;
-      max-width: $fraction * 100%;
+      flex: 0 0 calc(#{$fraction} * 100%);
+      max-width: calc(#{$fraction} * 100%);
     }
 
     &_offset-#{$width}\@#{$screen-width} {
-      margin-left: $fraction * 100%;
+      margin-left: calc(#{$fraction} * 100%);
     }
 
     &_width-fixed\@#{$screen-width} {

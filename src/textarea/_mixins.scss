@@ -29,7 +29,7 @@ markup:
 
   width: 100%;
   overflow: auto;
-  min-height: calc(#{$line-height-computed * 6} + #{$inuit-global-spacing-unit-tiny * 2});
+  min-height: calc(#{$line-height-computed} * 6 + #{$inuit-global-spacing-unit-tiny * 2});
   padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
   resize: vertical;
 
