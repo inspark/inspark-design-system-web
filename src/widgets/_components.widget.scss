@@ -35,12 +35,12 @@
 .c-widget__block_status-success
 {
   background: rgba($ids-theme-status-success, 1);
-  color: $color-base-white;
+  color: $color-base-black;
 }
 
 .c-widget__block_status-warning {
   background: rgba($ids-theme-status-warning, 1);
-  color: $color-base-white;
+  color: $color-base-black;
 }
 
 .c-widget__block_status-critical {
@@ -50,7 +50,7 @@
 
 .c-widget__block_status-error {
   background: rgba($ids-theme-status-error, 1);
-  color: $color-base-white;
+  color: $color-base-black;
 }
 
 .c-widget__block_status-falsevalue {
