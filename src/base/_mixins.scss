@@ -816,6 +816,14 @@
     color: var(--ids-theme-text-color, $text-color);
     background-color: $body-bg;
     background-color: var(--ids-theme-body-bg, $body-bg);
+
+    // убирает зум по двойному тапу на мобильных
+    @media only screen
+    and (min-device-width: 320px)
+    and (max-device-width: 900px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+      touch-action: pan-y;
+    }
   }
 
   // Suppress the focus outline on elements that cannot be accessed via keyboard.
