@@ -95,13 +95,13 @@ markup:
 
 @mixin _c-input {
   padding: $unit-tiny $unit-small;
-  line-height: $line-height-computed;
+  line-height: 1.45;
   transition: all, $global-transition;
   border: $form-border_outer;
   border: var(--ids-theme-inuit-forms-border_outer, $form-border_outer);
   border-radius: $global-radius;
   font-family: inherit;
-  font-size: $font-size-base;
+  font-size: 16px;
   outline: 0;
   box-shadow: $form-border-inner;
   box-shadow: var(--ids-theme-inuit-forms-border-inner, $form-border-inner);
@@ -114,6 +114,14 @@ markup:
   -webkit-tap-highlight-color: rgba($input-tap-highlight-color, 0);
   -webkit-tap-highlight-color: rgba(var(--ids-theme-input-tap-highlight-color-rgb, #{$input-tap-highlight-color-rgb}), 0);
   -moz-appearance: none;
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: $screen-limit-larger)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    line-height: 1.45;
+    font-size: 16px;
+  }
 
   &::placeholder {
     color: rgba($form-color, 0.6);
