@@ -95,13 +95,13 @@ markup:
 
 @mixin _c-input {
   padding: $unit-tiny $unit-small;
-  line-height: 1.45;
+  line-height: $line-height-computed;
   transition: all, $global-transition;
   border: $form-border_outer;
   border: var(--ids-theme-inuit-forms-border_outer, $form-border_outer);
   border-radius: $global-radius;
   font-family: inherit;
-  font-size: 16px;
+  font-size: $font-size-base;
   outline: 0;
   box-shadow: $form-border-inner;
   box-shadow: var(--ids-theme-inuit-forms-border-inner, $form-border-inner);
