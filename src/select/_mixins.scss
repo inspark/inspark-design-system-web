@@ -77,6 +77,14 @@ markup:
   -webkit-appearance: none;
   -moz-appearance: none;
 
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: $screen-limit-larger)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
   &:hover {
     border: 1px solid var(--ids-theme-select-border_hover, $select-border_hover);
     box-shadow: var(--ids-theme-select-shadow_dark, $select-shadow_dark);
