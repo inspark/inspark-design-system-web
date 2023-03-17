@@ -60,7 +60,7 @@ markup:
 
 @mixin c-select {
   height: 37px;
-  padding: 6px $unit-large 6px $unit-tiny;
+  padding: 6px $unit-large 6px 12px;
   transition: box-shadow 0.2s linear, border-color 0.2s linear;
   border: $form-border_outer;
   border: var(--ids-theme-form-border_outer, $form-border_outer);
