@@ -260,6 +260,11 @@
       color: var(--ids-theme-status-disabled, $ids-theme-status-disabled);
     }
 
+    &_status-falsevalue {
+      color: $ids-theme-status-falsevalue;
+      color: var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue);
+    }
+
     &-map {
       &_status-success {
         color: $ids-theme-status-success;
@@ -286,7 +291,8 @@
         color: var(--ids-theme-status-disabled, $ids-theme-status-disabled);
       }
 
-      &_status-outofcontrol {
+      &_status-outofcontrol,
+      &_status-falsevalue {
         color: $ids-theme-status-falsevalue;
         color: var(--ids-theme-status-falsevalue, $ids-theme-status-falsevalue);
       }
