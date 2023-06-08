@@ -12,3 +12,11 @@ This project adheres to [GitFlow](http://nvie.com/posts/a-successful-git-branchi
 - добавлен иконочный шрифт InsparkIcons
 
 # Fixed
+
+
+# [9.0.18] - 08.06.2023
+
+# Added
+
+# Fixed
+- исправлены иконки в InsparkIcons
