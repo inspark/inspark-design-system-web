@@ -285,7 +285,6 @@ markup:
   // Optional footer (stays gray in every modifier class)
   .c-panel__footer {
     padding: $panel-footer-padding;
-    background-color: $panel-footer-bg;
     border-top: 1px solid $panel-inner-border;
 
     @include border-bottom-radius(($panel-border-radius - 1));
