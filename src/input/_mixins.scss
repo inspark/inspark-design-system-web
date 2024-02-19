@@ -115,6 +115,14 @@ markup:
   -webkit-tap-highlight-color: rgba(var(--ids-theme-input-tap-highlight-color-rgb, #{$input-tap-highlight-color-rgb}), 0);
   -moz-appearance: none;
 
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: $screen-limit-larger)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    line-height: 1.45;
+    font-size: 16px;
+  }
+
   &::placeholder {
     color: rgba($form-color, 0.6);
     color: rgba(var(--ids-theme-inuit-forms-color-rgb, #{$form-color-rgb}), 0.6);
