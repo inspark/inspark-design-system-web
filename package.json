@@ -1,6 +1,6 @@
 {
   "name": "@inspark/components-web",
-  "version": "14.0.0",
+  "version": "14.0.1",
   "description": "Web components for Inspark products",
   "main": "index.css",
   "author": "Inspark",
@@ -38,11 +38,13 @@
     "style-loader": "^0.23.1",
     "theo": "^8.1.5",
     "webpack": "^4.36.1",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "material-design-icons": "^3.0.1"
   },
   "peerDependencies": {
     "@ng-bootstrap/ng-bootstrap": "^13.1.1",
-    "d3": "^3.5.15",
+    "d3": "^7.8.5",
     "ng-inline-svg": "^8.6.3",
     "ng2-nvd3": "^2.0.0",
     "nvd3": "^1.8.5"

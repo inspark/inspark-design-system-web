@@ -1,3 +1,4 @@
+export NODE_OPTIONS=--openssl-legacy-provider
 rm -rf ./dist
 webpack --config webpack.config.js
 rm ./dist/*.js
