@@ -131,7 +131,7 @@ markup:
 @mixin ids-panel-component {
 
   .c-panel {
-    margin-bottom: $line-height-computed;
+    position: relative;
     background-color: $panel-bg;
     background-color: var(--ids-theme-panel-bg, $panel-bg);
     border: 1px solid transparent;

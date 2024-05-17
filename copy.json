@@ -1,0 +1,12 @@
+{
+  "copyFiles": [
+    {
+      "from": "./src/**/*",
+      "to": "./dist/components-web/src/"
+    },
+    {
+      "from": "./package.json",
+      "to": "./dist/components-web/"
+    }
+  ]
+}

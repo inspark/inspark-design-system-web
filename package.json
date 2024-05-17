@@ -6,7 +6,11 @@
   "author": "Inspark",
   "private": false,
   "scripts": {
-    "build": "sh build.sh",
+    "clean": "rm -rf dist/*",
+    "build_css": "webpack --config webpack.config.js",
+    "build_copy": "copy-files-from-to --config ./copy.json",
+    "build": "npm run clean && npm run build_css && npm run build_copy && node update_full.js",
+    "clean_js": "rm ./dist/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "npm publish ./dist/components-web",
     "tokens-to-props": "theo ./design-tokens/colors.yml --transform web --format custom-properties.css --dest ./design-tokens/dist/scss/",
@@ -24,10 +28,13 @@
   "homepage": "https://github.com/inspark/inspark-design-system-web#readme",
   "devDependencies": {
     "@csstools/postcss-sass": "^4.0.0",
+    "@fortawesome/fontawesome-free": "^5.8.2",
     "autoprefixer": "^9.6.1",
+    "copy-files-from-to": "^3.9.1",
     "css-loader": "^3.1.0",
     "extract-loader": "^3.1.0",
     "file-loader": "^4.1.0",
+    "material-design-icons": "^3.0.1",
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-clean": "^1.1.0",
     "postcss-font-magician": "^2.2.2",
@@ -38,9 +45,7 @@
     "style-loader": "^0.23.1",
     "theo": "^8.1.5",
     "webpack": "^4.36.1",
-    "webpack-cli": "^3.3.6",
-    "@fortawesome/fontawesome-free": "^5.8.2",
-    "material-design-icons": "^3.0.1"
+    "webpack-cli": "^3.3.6"
   },
   "peerDependencies": {
     "@ng-bootstrap/ng-bootstrap": "^13.1.1",
