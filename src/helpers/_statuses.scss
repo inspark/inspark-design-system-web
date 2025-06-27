@@ -23,6 +23,11 @@
   background: var(--colorNoControl);
 }
 
+.ins-maintenance {
+  background: var(--colorMaintenance);
+  color: var(--colorTextOnStatus);
+}
+
 .ins-falsevalue {
   background: var(--colorFalseValue);
   color: var(--colorTextOnStatus);
