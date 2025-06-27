@@ -16,6 +16,10 @@
   border-left-color: $ids-theme-status-error;
 }
 
+.c-widget-status_vertical-line-left-status-maintenance {
+  border-left-color: $ids-theme-status-pending;
+}
+
 .c-widget-status_vertical-line-left-status-critical {
   border-left-color: $ids-theme-status-critical;
 }
@@ -37,6 +41,13 @@
 .c-widget-status_icon-font-status-error {
   color: var(--ids-theme-badge-text-on-light, $text-color-on-light);
   background: var(--ids-theme-status-error, $ids-theme-status-error);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.c-widget-status_icon-font-status-maintenance {
+  color: var(--ids-theme-badge-text-on-light, $text-color-on-light);
+  background: var(--ids-theme-status-maintenance, $ids-theme-status-pending);
   border-radius: 4px;
   padding: 4px;
 }
