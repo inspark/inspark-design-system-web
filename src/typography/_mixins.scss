@@ -417,7 +417,7 @@
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: 24px; /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -437,122 +437,6 @@
     /* Support for IE. */
     font-feature-settings: 'liga';
   }
-
-  // InsparkIcons styles
-
-  .in {
-    line-height: 1;
-  }
-
-  [class^="in-"]:before, [class*=" in-"]:before {
-    font-family: "insparkicons";
-    font-style: normal;
-    font-weight: normal;
-    speak: never;
-
-    display: inline-block;
-    text-decoration: inherit;
-    width: 1em;
-    margin-right: 0;
-    text-align: center;
-    /* opacity: .8; */
-
-    /* For safety - reset parent styles, that can break glyph codes*/
-    font-variant: normal;
-    text-transform: none;
-
-    /* fix buttons height, for twitter bootstrap */
-    line-height: 1em;
-
-    /* Animation center compensation - margins should be symmetric */
-    /* remove if not needed */
-    margin-left: 0;
-
-    /* you can be more comfortable with increased icons size */
-    /* font-size: 120%; */
-
-    /* Font smoothing. That was taken from TWBS */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Uncomment for 3D effect */
-    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-  }
-
-  .in-account:before { content: '\e800'; } /* '' */
-  .in-activity-zone:before { content: '\e801'; } /* '' */
-  .in-apps:before { content: '\e802'; } /* '' */
-  .in-arrow-range:before { content: '\e803'; } /* '' */
-  .in-baseline-admin-panel-settings:before { content: '\e804'; } /* '' */
-  .in-baseline-brush:before { content: '\e805'; } /* '' */
-  .in-baseline-edit-attributes:before { content: '\e806'; } /* '' */
-  .in-baseline-folder-special:before { content: '\e807'; } /* '' */
-  .in-baseline-key:before { content: '\e808'; } /* '' */
-  .in-baseline-lock:before { content: '\e809'; } /* '' */
-  .in-calendar-clock:before { content: '\e80a'; } /* '' */
-  .in-calendar-multiple:before { content: '\e80b'; } /* '' */
-  .in-chart-line:before { content: '\e80c'; } /* '' */
-  .in-chart-pie-filled:before { content: '\e80d'; } /* '' */
-  .in-checklist:before { content: '\e80e'; } /* '' */
-  .in-chirpstack:before { content: '\e80f'; } /* '' */
-  .in-circle-notifications:before { content: '\e810'; } /* '' */
-  .in-cluster-solid:before { content: '\e811'; } /* '' */
-  .in-cogs:before { content: '\e812'; } /* '' */
-  .in-commands-log:before { content: '\e813'; } /* '' */
-  .in-company:before { content: '\e814'; } /* '' */
-  .in-contact-card-16-filled:before { content: '\e815'; } /* '' */
-  .in-cpu-settings:before { content: '\e816'; } /* '' */
-  .in-cpu:before { content: '\e817'; } /* '' */
-  .in-dashboard-rounded:before { content: '\e818'; } /* '' */
-  .in-data-object:before { content: '\e819'; } /* '' */
-  .in-ethernet:before { content: '\e81a'; } /* '' */
-  .in-event-note-outline:before { content: '\e81b'; } /* '' */
-  .in-event-note:before { content: '\e81c'; } /* '' */
-  .in-event:before { content: '\e81d'; } /* '' */
-  .in-export-errors:before { content: '\e81e'; } /* '' */
-  .in-export-notes:before { content: '\e81f'; } /* '' */
-  .in-export-setup:before { content: '\e820'; } /* '' */
-  .in-export:before { content: '\e821'; } /* '' */
-  .in-file-report-outline:before { content: '\e822'; } /* '' */
-  .in-file-report:before { content: '\e823'; } /* '' */
-  .in-file-tree:before { content: '\e824'; } /* '' */
-  .in-globe:before { content: '\e825'; } /* '' */
-  .in-home-iot-device:before { content: '\e826'; } /* '' */
-  .in-image-multiple:before { content: '\e827'; } /* '' */
-  .in-import:before { content: '\e828'; } /* '' */
-  .in-iot-16-filled:before { content: '\e829'; } /* '' */
-  .in-list-status:before { content: '\e82a'; } /* '' */
-  .in-list:before { content: '\e82b'; } /* '' */
-  .in-math-log:before { content: '\e82c'; } /* '' */
-  .in-multimedia:before { content: '\e82d'; } /* '' */
-  .in-notifications-log:before { content: '\e82e'; } /* '' */
-  .in-office-building-cog:before { content: '\e82f'; } /* '' */
-  .in-office-building-marker:before { content: '\e830'; } /* '' */
-  .in-parameter:before { content: '\e831'; } /* '' */
-  .in-pin-off:before { content: '\e832'; } /* '' */
-  .in-pin:before { content: '\e833'; } /* '' */
-  .in-problem:before { content: '\e834'; } /* '' */
-  .in-quick-reference-all:before { content: '\e835'; } /* '' */
-  .in-report-finance:before { content: '\e836'; } /* '' */
-  .in-report-pie:before { content: '\e837'; } /* '' */
-  .in-router:before { content: '\e838'; } /* '' */
-  .in-selection-marker:before { content: '\e839'; } /* '' */
-  .in-server-network:before { content: '\e83a'; } /* '' */
-  .in-settings-etl:before { content: '\e83b'; } /* '' */
-  .in-setvalue-log:before { content: '\e83c'; } /* '' */
-  .in-store:before { content: '\e83d'; } /* '' */
-  .in-system-log:before { content: '\e83e'; } /* '' */
-  .in-tag:before { content: '\e83f'; } /* '' */
-  .in-temperature-celsius:before { content: '\e840'; } /* '' */
-  .in-topology-star-3:before { content: '\e841'; } /* '' */
-  .in-tune:before { content: '\e842'; } /* '' */
-  .in-university:before { content: '\e843'; } /* '' */
-  .in-user-group:before { content: '\e844'; } /* '' */
-  .in-user-service:before { content: '\e845'; } /* '' */
-  .in-users:before { content: '\e846'; } /* '' */
-  .in-widgets-outline:before { content: '\e847'; } /* '' */
-  .in-widgets:before { content: '\e848'; } /* '' */
-
 }
 
 @mixin ids-typography-core-styles {
