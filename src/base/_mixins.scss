@@ -670,6 +670,15 @@
   }
 
   @font-face {
+    font-family: "OpenSans-SemiBold";
+    font-style: normal;
+    font-weight: 600;
+    src: url("#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.woff2") format("woff2"),
+    url("#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.woff") format("woff"),
+    url("#{$FontPathOpenSans}/Semibold/OpenSans-Semibold.ttf") format("truetype");
+  }
+
+  @font-face {
     font-family: 'Open Sans';
     src: url('#{$FontPathOpenSans}/Italic/OpenSans-Italic.eot');
     src: local('Open Sans Italic'), local('OpenSans-Italic'),
