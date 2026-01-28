@@ -1,64 +1,64 @@
 @mixin ids-particles-core-styles {
-  .c-particles {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: translateZ(0px);
-  }
-
-  .c-particles__item {
-    position: absolute;
-    border-radius: 50%;
-  }
-
-  // todo: convert styles to mixin
-
-  .c-particles__item_image_1 {
-    background-image: url(/assets/static/img/content/svg/image1.svg);
-  }
-
-  .c-particles__item_image_2 {
-    background-image: url(/assets/static/img/content/svg/image2.svg);
-  }
-
-  .c-particles__item_image_3 {
-    background-image: url(/assets/static/img/content/svg/image3.svg);
-  }
-
-  .c-particles__item_image_4 {
-    background-image: url(/assets/static/img/content/svg/image4.svg);
-  }
-
-  .c-particles__item_image_5 {
-    background-image: url(/assets/static/img/content/svg/image5.svg);
-  }
-
-  .c-particles__item_image_6 {
-    background-image: url(/assets/static/img/content/svg/image6.svg);
-  }
-
-  .c-particles__item_image_7 {
-    background-image: url(/assets/static/img/content/svg/image7.svg);
-  }
-
-  @for $i from 1 through 30 {
-    @keyframes particle-animation-#{$i} {
-      100% {
-        transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
-      }
-    }
-
-    .c-particles__item:nth-child(#{$i}) {
-      animation: particle-animation-#{$i} 60s infinite;
-      $size: random(50) + 50 + px;
-      opacity: 0.8;
-      height: $size;
-      width: $size;
-      animation-delay: -$i * .2s;
-      transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
-    }
-  }
+  //.c-particles {
+  //  position: absolute;
+  //  top: 0;
+  //  bottom: 0;
+  //  left: 0;
+  //  right: 0;
+  //  transform: translateZ(0px);
+  //}
+  //
+  //.c-particles__item {
+  //  position: absolute;
+  //  border-radius: 50%;
+  //}
+  //
+  //// todo: convert styles to mixin
+  //
+  //.c-particles__item_image_1 {
+  //  background-image: url(/assets/static/img/content/svg/image1.svg);
+  //}
+  //
+  //.c-particles__item_image_2 {
+  //  background-image: url(/assets/static/img/content/svg/image2.svg);
+  //}
+  //
+  //.c-particles__item_image_3 {
+  //  background-image: url(/assets/static/img/content/svg/image3.svg);
+  //}
+  //
+  //.c-particles__item_image_4 {
+  //  background-image: url(/assets/static/img/content/svg/image4.svg);
+  //}
+  //
+  //.c-particles__item_image_5 {
+  //  background-image: url(/assets/static/img/content/svg/image5.svg);
+  //}
+  //
+  //.c-particles__item_image_6 {
+  //  background-image: url(/assets/static/img/content/svg/image6.svg);
+  //}
+  //
+  //.c-particles__item_image_7 {
+  //  background-image: url(/assets/static/img/content/svg/image7.svg);
+  //}
+  //
+  //@for $i from 1 through 30 {
+  //  @keyframes particle-animation-#{$i} {
+  //    100% {
+  //      transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+  //    }
+  //  }
+  //
+  //  .c-particles__item:nth-child(#{$i}) {
+  //    animation: particle-animation-#{$i} 60s infinite;
+  //    $size: random(50) + 50 + px;
+  //    opacity: 0.8;
+  //    height: $size;
+  //    width: $size;
+  //    animation-delay: -$i * .2s;
+  //    transform: translate3d((random(90) * 1vw), (random(90) * 1vh), (random(100) * 1px));
+  //  }
+  //}
 }
 

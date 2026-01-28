@@ -113,11 +113,11 @@ $inuit-global-spacing-unit-huge:  round($inuit-global-spacing-unit * $inuit-glob
 
 // Connect all necessary font-families
 
-$FontPathOpenSans: "./assets/fonts/open-sans" !default;
-$FontPathPrimeicons: "./assets/fonts/primeicons" !default;
-$FontPathLato: "./assets/fonts/lato" !default;
-$FontPathMaterial: "../node_modules/material-design-icons/iconfont" !default;
-$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
+$FontPathOpenSans: "../assets/fonts/open-sans" !default;
+$FontPathPrimeicons: "../assets/fonts/primeicons" !default;
+$FontPathLato: "../assets/fonts/lato" !default;
+$FontPathMaterial: "../assets/fonts/material-design-icons" !default;
+//$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 
 
 // Standardise some UI treatments.
