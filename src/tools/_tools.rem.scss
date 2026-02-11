@@ -3,12 +3,13 @@
 //   ======================================================================== */
 
 // Convert any px value into its rem equivalent.
-
+@use "sass:math";
+@use "sass:meta";
 @function inuit-rem($value) {
 
-  @if (type-of($value) == number) {
+  @if (meta.type-of($value) == number) {
 
-    @if (unit($value) != "px") {
+    @if (math.unit($value) != "px") {
       @error "`#{$value}` needs to be a pixel value.";
     }
 
@@ -16,7 +17,7 @@
     @error "`#{$value}` needs to be a number.";
   }
 
-  @return $value / $inuit-global-font-size * 1rem;
+  @return math.div($value, $inuit-global-font-size) * 1rem;
 
 }
 
@@ -30,9 +31,9 @@
 
 @mixin inuit-rem($property, $value) {
 
-  @if (type-of($value) == number) {
+  @if (meta.type-of($value) == number) {
 
-    @if (unit($value) != "px") {
+    @if (math.unit($value) != "px") {
       @error "`#{$value}` needs to be a pixel value.";
     }
 

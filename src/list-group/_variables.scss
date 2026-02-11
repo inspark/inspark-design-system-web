@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // List group
 
 $list-group-color: $body-color !default;
@@ -12,7 +14,7 @@ $list-group-hover-bg: $color-gray-40 !default;
 $list-group-active-color: $component-active-color !default;
 $list-group-active-bg: $component-active-bg !default;
 $list-group-active-border: $list-group-active-bg !default;
-$list-group-active-text-color: lighten($list-group-active-bg, 50%) !default;
+$list-group-active-text-color: color.adjust($list-group-active-bg, $lightness: 50%) !default;
 
 $list-group-disabled-color: $color-gray-20 !default;
 $list-group-disabled-bg: $color-gray-40 !default;
@@ -33,7 +35,7 @@ $ids-list-group-theme-property-values: (
   list-group-active-color: $component-active-color,
   list-group-active-bg: $component-active-bg,
   list-group-active-border: $list-group-active-bg,
-  list-group-active-text-color: lighten($list-group-active-bg, 50%),
+  list-group-active-text-color: color.adjust($list-group-active-bg, $lightness: 50%),
   list-group-disabled-color: $color-gray-20,
   list-group-disabled-bg: $color-gray-40,
   list-group-disabled-text-color: $list-group-disabled-color,

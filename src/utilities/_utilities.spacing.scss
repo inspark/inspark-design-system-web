@@ -15,6 +15,8 @@
 
 /* stylelint-disable string-quotes */
 
+@use "sass:map";
+
 $inuit-spacing-directions: (
   null: null,
   '-top': '-top',
@@ -61,13 +63,13 @@ $inuit-spacing-sizes: (
 }
 
 .u-margin-bottom-none\@large {
-  @media (min-width: #{map-get($screen-limits, large)}) {
+  @media (min-width: #{map.get($screen-limits, large)}) {
     margin-bottom: 0 !important;
   }
 }
 
 .u-padding-right-tiny\@large {
-  @media (min-width: #{map-get($screen-limits, large)}) {
+  @media (min-width: #{map.get($screen-limits, large)}) {
     padding-right: $unit-tiny !important;
   }
 }

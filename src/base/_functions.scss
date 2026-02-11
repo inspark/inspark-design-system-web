@@ -5,11 +5,12 @@
 // Example usage:
 //
 // @if (inuit-config(debug) == true) { ...  }
-
+@use "sass:color";
+@use "sass:map";
 @function inuit-config($key) {
-  @return map-get($inuit-config, $key);
+  @return map.get($inuit-config, $key);
 }
 
 @function hex-to-rgb-numbers($color) {
-  @return red($color) + ',' + green($color) + ',' + blue($color)
+  @return color.channel($color, "red", $space: rgb) + ',' + color.channel($color, "green", $space: rgb) + ',' + color.channel($color, "blue", $space: rgb)
 }

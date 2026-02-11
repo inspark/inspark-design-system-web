@@ -364,7 +364,7 @@ markup:
   }
 
   &.c-btn_tiny {
-    padding: (($inuit-global-spacing-unit-tiny - $btn-ghost-border-width) / 2) ($inuit-global-spacing-unit-tiny - $btn-ghost-border-width);
+    padding: (($inuit-global-spacing-unit-tiny - $btn-ghost-border-width) * 0.5) ($inuit-global-spacing-unit-tiny - $btn-ghost-border-width);
   }
 
   &.c-btn_small {

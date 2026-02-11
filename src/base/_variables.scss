@@ -1,3 +1,5 @@
+@use "sass:math";
+@use "sass:meta";
 @import "../theme/variables";
 
 ///* ========================================================================
@@ -43,7 +45,7 @@ $inuit-global-line-height:  23px !default;
 // your baseline grid). It is not recommended that you modify these following
 // variables (it can break your vertical rhythm), but if you need to, you can.
 
-$inuit-global-spacing-unit: round($inuit-global-line-height) !default;
+$inuit-global-spacing-unit: math.round($inuit-global-line-height) !default;
 
 
 // How many times larger/smaller than the default should our spacing unit
@@ -70,9 +72,9 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
   $inuit-global-font-size
   $inuit-global-line-height {
 
-  @if (type-of($_inuit-font-globals) == number) {
+  @if (meta.type-of($_inuit-font-globals) == number) {
 
-    @if (unit($_inuit-font-globals) != "px") {
+    @if (math.unit($_inuit-font-globals) != "px") {
       @error "`#{$_inuit-font-globals}` needs to be a pixel value.";
     }
 
@@ -91,9 +93,9 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
   $inuit-global-spacing-unit-factor-large
   $inuit-global-spacing-unit-factor-huge {
 
-  @if (type-of($_inuit-spacing-unit) == number) {
+  @if (meta.type-of($_inuit-spacing-unit) == number) {
 
-    @if (unitless($_inuit-spacing-unit) == false) {
+    @if (math.is-unitless($_inuit-spacing-unit) == false) {
       @error "`#{$_inuit-spacing-unit}` needs to be unitless.";
     }
 
@@ -104,11 +106,11 @@ $inuit-global-spacing-unit-factor-huge:   4    !default;
 }
 
 
-// Private/framework-only reassignment. Do not alter anything below.
-$inuit-global-spacing-unit-tiny:  round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-tiny);
-$inuit-global-spacing-unit-small: round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-small);
-$inuit-global-spacing-unit-large: round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-large);
-$inuit-global-spacing-unit-huge:  round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-huge);
+// Private framework-only reassignment. Do not alter anything below.
+$inuit-global-spacing-unit-tiny:  math.round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-tiny);
+$inuit-global-spacing-unit-small: math.round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-small);
+$inuit-global-spacing-unit-large: math.round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-large);
+$inuit-global-spacing-unit-huge:  math.round($inuit-global-spacing-unit * $inuit-global-spacing-unit-factor-huge);
 
 
 // Connect all necessary font-families
@@ -124,9 +126,9 @@ $FontPathMaterial: "../assets/fonts/material-design-icons" !default;
 
 $global-radius: 3px !default;
 $global-radius-rounded: 30em !default;
-$global-transition: (1/3) + s !default;
+$global-transition: math.div(1,3) + s !default;
 
-$line-height-computed: $inuit-global-line-height / $inuit-global-font-size;
+$line-height-computed: math.div($inuit-global-line-height, $inuit-global-font-size);
 
 
 // Reassign `$inuit-global-spacing-unit` to `$unit`.
