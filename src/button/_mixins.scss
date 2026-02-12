@@ -590,7 +590,7 @@ Styleguide 6.1.1.5
   }
 
   .c-btn_border-free {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     @include c-btn_ghost;
 
