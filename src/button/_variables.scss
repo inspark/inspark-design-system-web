@@ -1,9 +1,13 @@
+@use "sass:color";
+
 $btn-border-radius: $global-radius !default;
 $btn-default-border: none !default;
 $btn-default-background: $color-gray-40 !default;
 $btn-default-color: $text-color !default;
-$btn-default-background--hover: darken($btn-default-background, 20%) !default;
-$btn-default-background--pressed: darken($btn-default-background, 40%) !default;
+$btn-default-background--hover: color.adjust($btn-default-background, $lightness: -20%) !default;
+$btn-default-background--hover-old: color.adjust($btn-default-background, $lightness: -20%) !default;
+$btn-default-background--pressed: color.adjust($btn-default-background, $lightness: -40%) !default;
+$btn-default-background--pressed-old: color.adjust($btn-default-background, $lightness: -40%) !default;
 
 $btn-shadow: none !default;
 
@@ -17,22 +21,22 @@ $btn-disabled-color: rgba($color-base-white, 0.4) !default;
 $btn-primary-color: $color-gray-80 !default;
 $btn-primary-border-color: transparent !default;
 $btn-primary-background: $ids-theme-primary !default;
-$btn-primary-background--hover: darken($btn-primary-background, 20%) !default;
-$btn-primary-background--pressed: darken($btn-primary-background, 40%) !default;
+$btn-primary-background--hover: color.adjust($btn-primary-background, $lightness: -20%) !default;
+$btn-primary-background--pressed: color.adjust($btn-primary-background, $lightness: -40%) !default;
 $btn-primary-background--disabled: $btn-disabled-background !default;
 $btn-primary-color--disabled: rgba($color-base-black, 0.4) !default;
 
 $btn-secondary-color: $color-base-white !default;
 $btn-secondary-border-color: transparent !default;
 $btn-secondary-background: $ids-theme-secondary !default;
-$btn-secondary-background--hover: darken($btn-secondary-background, 20%) !default;
-$btn-secondary-background--pressed: darken($btn-secondary-background, 40%) !default;
+$btn-secondary-background--hover: color.adjust($btn-secondary-background, $lightness: -20%) !default;
+$btn-secondary-background--pressed: color.adjust($btn-secondary-background, $lightness: -40%) !default;
 
 $btn-tertiary-color: $color-base-white !default;
 $btn-tertiary-border-color: transparent !default;
 $btn-tertiary-background: $color-gray-40 !default;
-$btn-tertiary-background--hover: darken($btn-tertiary-background, 20%) !default;
-$btn-tertiary-background--pressed: darken($btn-tertiary-background, 40%) !default;
+$btn-tertiary-background--hover: color.adjust($btn-tertiary-background, $lightness: -20%) !default;
+$btn-tertiary-background--pressed: color.adjust($btn-tertiary-background, $lightness: -40%) !default;
 
 $btn-disabled-border-color: transparent !default;
 $btn-disabled-background: $color-gray-35 !default;

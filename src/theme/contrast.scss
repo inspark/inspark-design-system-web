@@ -1,3 +1,4 @@
+@use "sass:map";
 @import './mixins';
 @import "../base/variables";
 @import "../badge/variables";
@@ -33,7 +34,7 @@
 @import "../tree-table/variables";
 @import "../typography/variables";
 
-$ids-theme-property-values: map-merge($ids-theme-property-values, (
+$ids-theme-property-values: map.merge($ids-theme-property-values, (
   // Primary
   primary: #067394,
   primary-rgb: hex-to-rgb-numbers(#067394),
@@ -78,20 +79,20 @@ $ids-theme-property-values: map-merge($ids-theme-property-values, (
   state-falsevalue-text: $color-base-white-5
 ));
 
-$ids-base-theme-property-values: map-merge($ids-base-theme-property-values, (
+$ids-base-theme-property-values: map.merge($ids-base-theme-property-values, (
   body-bg: $color-gray-5,
   webkit-scrollbar-track-bg: #f1f1f1,
   webkit-scrollbar-thumb-bg: $color-gray-10,
   webkit-scrollbar-corner-bg: $color-gray-5
 ));
 
-$ids-crumb-theme-property-values: map-merge($ids-base-theme-property-values, (
+$ids-crumb-theme-property-values: map.merge($ids-base-theme-property-values, (
   breadcrumb-bg: #e6eef1,
   breadcrumb-color: $color-base-black,
   breadcrumb-active-color: $color-gray-90
 ));
 
-$ids-badge-theme-property-values: map-merge($ids-badge-theme-property-values, (
+$ids-badge-theme-property-values: map.merge($ids-badge-theme-property-values, (
   badge-primary-bg: var(--ids-theme-primary, $ids-theme-primary),
   badge-success-bg: var(--ids-theme-state-success-bg, $state-success-bg),
   badge-pending-bg: var(--ids-theme-state-pending-bg, $state-pending-bg),
@@ -105,7 +106,7 @@ $ids-badge-theme-property-values: map-merge($ids-badge-theme-property-values, (
   badge-text-falsevalue: var(--ids-theme-state-falsevalue-text, $state-falsevalue-text)
 ));
 
-$ids-button-theme-property-values: map-merge($ids-button-theme-property-values, (
+$ids-button-theme-property-values: map.merge($ids-button-theme-property-values, (
   btn-default-background: $color-gray-5,
   btn-default-color: var(--ids-theme-text-color, $text-color),
   btn-default-background--hover: #b8b8b8,
@@ -146,7 +147,7 @@ $ids-button-theme-property-values: map-merge($ids-button-theme-property-values, 
   btn-grouped-border-color: $color-gray-10
 ));
 
-$ids-checkbox-theme-property-values: map-merge($ids-checkbox-theme-property-values, (
+$ids-checkbox-theme-property-values: map.merge($ids-checkbox-theme-property-values, (
   checkbox-border-color: $color-gray-80,
   checkbox-img-checked: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMjQgMjQiPiAgPHRpdGxlPiAgICBJY29uL2NoZWNrYm94X29uICA8L3RpdGxlPiAgPGRlc2M+ICAgIENyZWF0ZWQgd2l0aCBTa2V0Y2guICA8L2Rlc2M+ICA8ZGVmcz4gICAgPHBhdGggaWQ9ImNoZWNrYm94X29uLWEiIGQ9Ik0yLDMuOTkwNzk1MTQgQzIsMi44OTEzMDkzNCAyLjg5ODIxMjM4LDIgMy45OTA3OTUxNCwyIEwyMC4wMDkyMDQ5LDIgQzIxLjEwODY5MDcsMiAyMiwyLjg5ODIxMjM4IDIyLDMuOTkwNzk1MTQgTDIyLDIwLjAwOTIwNDkgQzIyLDIxLjEwODY5MDcgMjEuMTAxNzg3NiwyMiAyMC4wMDkyMDQ5LDIyIEwzLjk5MDc5NTE0LDIyIEMyLjg5MTMwOTM0LDIyIDIsMjEuMTAxNzg3NiAyLDIwLjAwOTIwNDkgTDIsMy45OTA3OTUxNCBaIE05LjMwMjc3MTI2LDE3LjkyNDc3MzMgTDE4LjgwOCw3LjQ2OTE5NjM2IEwxNy4xOTI5MzIyLDYgTDkuMjI4NTI1MywxNC43NjE4OTU3IEw2LjU0MzQ0MjMxLDEyLjA3NjgxMjggTDUsMTMuNjIxMTI4NSBMOS4zMDI3NzEyNiwxNy45MjQ3NzMzIFoiLz4gIDwvZGVmcz4gIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiPiAgICA8cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHg9IjIiIHk9IjIiLz4gICAgPG1hc2sgaWQ9ImNoZWNrYm94X29uLWIiIGZpbGw9IiNmZmYiPiAgICAgIDx1c2UgeGxpbms6aHJlZj0iI2NoZWNrYm94X29uLWEiLz4gICAgPC9tYXNrPiAgICA8Zy8+ICAgIDxnIGZpbGw9IiMzODczODIiIG1hc2s9InVybCgjY2hlY2tib3hfb24tYikiPiAgICAgIDxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgeD0iMCIgeT0iMCIvPiAgICA8L2c+ICA8L2c+PC9zdmc+'),
   checkbox-disabled-border-color: $color-gray-10,
@@ -163,7 +164,7 @@ $ids-checkbox-theme-property-values: map-merge($ids-checkbox-theme-property-valu
   checkbox-switch-on-icon-text: $color-base-white,
 ));
 
-$ids-form-theme-property-values: map-merge($ids-form-theme-property-values, (
+$ids-form-theme-property-values: map.merge($ids-form-theme-property-values, (
   form-color: $color-base-black,
   form-color_placeholder: rgba($color-gray-80, 0.7),
   form-background: rgba($color-base-black, 0.1),
@@ -183,10 +184,10 @@ $ids-form-theme-property-values: map-merge($ids-form-theme-property-values, (
   form-validation-success: var(--ids-theme-status-success, $ids-theme-status-success),
 ));
 
-$ids-icon-theme-property-values: map-merge($ids-icon-theme-property-values, (
+$ids-icon-theme-property-values: map.merge($ids-icon-theme-property-values, (
 ));
 
-$ids-input-theme-property-values: map-merge($ids-input-theme-property-values, (
+$ids-input-theme-property-values: map.merge($ids-input-theme-property-values, (
   input-tap-highlight-color: $color-base-white,
   input-tap-highlight-color-rgb: hex-to-rgb-numbers($color-base-white),
   inuit-forms-border_inner: inset 0 0 0 1px transparent,
@@ -207,18 +208,18 @@ $ids-input-theme-property-values: map-merge($ids-input-theme-property-values, (
   inuit-forms-validation-success: var(--ids-theme-status-success, $ids-theme-status-success)
 ));
 
-$ids-input-group-theme-property-values: map-merge($ids-input-group-theme-property-values, (
+$ids-input-group-theme-property-values: map.merge($ids-input-group-theme-property-values, (
   input-group-addon-border: $color-gray-10,
   input-group-addon-background: $color-gray-10,
   input-group-addon-color: $color-gray-80
 ));
 
-$ids-label-theme-property-values: map-merge($ids-label-theme-property-values, (
+$ids-label-theme-property-values: map.merge($ids-label-theme-property-values, (
   label-color: $color-gray-90,
   label-sub-color: $color-gray-80,
 ));
 
-$ids-list-theme-property-values: map-merge($ids-list-theme-property-values, (
+$ids-list-theme-property-values: map.merge($ids-list-theme-property-values, (
   list-scrollable-border-color: $color-gray-10,
   list-scrollable-background: $color-base-white,
   list-item-background-hover: $color-gray-5,
@@ -226,7 +227,7 @@ $ids-list-theme-property-values: map-merge($ids-list-theme-property-values, (
   list-item-background-active: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.3)
 ));
 
-$ids-list-group-theme-property-values: map-merge($ids-list-group-theme-property-values, (
+$ids-list-group-theme-property-values: map.merge($ids-list-group-theme-property-values, (
   list-group-color: $color-base-black,
   list-group-bg: $color-base-white,
   list-group-border-color: rgba($color-gray-20, 0.125),
@@ -245,12 +246,12 @@ $ids-list-group-theme-property-values: map-merge($ids-list-group-theme-property-
   list-group-link-active-bg: rgba(var(--ids-theme-secondary-rgb, #{$ids-theme-secondary-rgb}), 0.5),
 ));
 
-$ids-nav-theme-property-values: map-merge($ids-nav-theme-property-values, (
+$ids-nav-theme-property-values: map.merge($ids-nav-theme-property-values, (
   nav-link-hover-bg: rgba(var(--ids-theme-primary-rgb, #{$ids-theme-primary-rgb}), 0.2),
   nav-disabled-link-hover-color: $color-gray-40,
 ));
 
-$ids-navbar-theme-property-values: map-merge($ids-navbar-theme-property-values, (
+$ids-navbar-theme-property-values: map.merge($ids-navbar-theme-property-values, (
   navbar-default-color: $color-base-black,
   navbar-default-bg: $color-base-white,
   navbar-default-border: #eee,
@@ -270,11 +271,11 @@ $ids-navbar-theme-property-values: map-merge($ids-navbar-theme-property-values, 
   navbar-default-toggle-color: $color-base-black
 ));
 
-//$ids-nvd3-theme-property-values: map-merge($ids-nvd3-theme-property-values, (
+//$ids-nvd3-theme-property-values: map.merge($ids-nvd3-theme-property-values, (
 //
 //));
 
-$ids-panel-theme-property-values: map-merge($ids-panel-theme-property-values, (
+$ids-panel-theme-property-values: map.merge($ids-panel-theme-property-values, (
   panel-bg: $color-base-white,
   panel-bg-rgb: hex-to-rgb-numbers($color-base-white),
   panel-lighter-background: $color-base-white,
@@ -284,17 +285,17 @@ $ids-panel-theme-property-values: map-merge($ids-panel-theme-property-values, (
   panel-comment-bg-rgb: hex-to-rgb-numbers($color-base-white),
 ));
 
-$ids-card-theme-property-values: map-merge($ids-card-theme-property-values, (
+$ids-card-theme-property-values: map.merge($ids-card-theme-property-values, (
   card-border-color: rgba($color-base-white, .125),
   card-cap-bg: rgba($color-base-white, .03),
   card-bg: $color-gray-5
 ));
 
-$ids-radio-theme-property-values: map-merge($ids-radio-theme-property-values, (
+$ids-radio-theme-property-values: map.merge($ids-radio-theme-property-values, (
   radio-disabled-background: $color-gray-90
 ));
 
-$ids-select-theme-property-values: map-merge($ids-select-theme-property-values, (
+$ids-select-theme-property-values: map.merge($ids-select-theme-property-values, (
   select-background: rgba($color-base-black, 0.1),
   select-arrow: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20viewBox%3D%220%200%20658%201024%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M614.286%20420.571q0%207.429-5.714%2013.143l-266.286%20266.286q-5.714%205.714-13.143%205.714t-13.143-5.714l-266.286-266.286q-5.714-5.714-5.714-13.143t5.714-13.143l28.571-28.571q5.714-5.714%2013.143-5.714t13.143%205.714l224.571%20224.571%20224.571-224.571q5.714-5.714%2013.143-5.714t13.143%205.714l28.571%2028.571q5.714%205.714%205.714%2013.143z%22%2F%3E%3C%2Fsvg%3E'),
   select-color: $color-base-black,
@@ -312,11 +313,11 @@ $ids-select-theme-property-values: map-merge($ids-select-theme-property-values, 
   status-error: var(--ids-theme-status-error, $ids-theme-status-error),
 ));
 
-$ids-sidebar-theme-property-values: map-merge($ids-sidebar-theme-property-values, (
+$ids-sidebar-theme-property-values: map.merge($ids-sidebar-theme-property-values, (
   sidebar-bg: var(--ids-theme-secondary, $ids-theme-secondary)
 ));
 
-$ids-table-theme-property-values: map-merge($ids-table-theme-property-values, (
+$ids-table-theme-property-values: map.merge($ids-table-theme-property-values, (
   table-bg: transparent,
   table-border-color: $color-gray-20,
   table-th-color: $color-gray-90,
@@ -326,21 +327,21 @@ $ids-table-theme-property-values: map-merge($ids-table-theme-property-values, (
   table-bg-primary: var(--ids-theme-primary, $ids-theme-primary),
 ));
 
-$ids-tooltip-theme-property-values: map-merge($ids-tooltip-theme-property-values, (
+$ids-tooltip-theme-property-values: map.merge($ids-tooltip-theme-property-values, (
   tooltip-bg: rgba($color-base-white, 0.95),
   tooltip-color: $color-base-black,
   tooltip-arrow-color: rgba($color-base-white, 0.95),
   tooltip-arrow-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20viewBox%3D%225%205%2026%2026%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cstyle%3E.clr-i-outline%7Bfill%3A%23a32100%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Ctitle%3Eexclamation-circle-line%3C%2Ftitle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20class%3D%22clr-i-outline%20clr-i-outline-path-1%22%20d%3D%22M18%2C6A12%2C12%2C0%2C1%2C0%2C30%2C18%2C12%2C12%2C0%2C0%2C0%2C18%2C6Zm0%2C22A10%2C10%2C0%2C1%2C1%2C28%2C18%2C10%2C10%2C0%2C0%2C1%2C18%2C28Z%22%3E%3C%2Fpath%3E%3Cpath%20class%3D%22clr-i-outline%20clr-i-outline-path-2%22%20d%3D%22M18%2C20.07a1.3%2C1.3%2C0%2C0%2C1-1.3-1.3v-6a1.3%2C1.3%2C0%2C1%2C1%2C2.6%2C0v6A1.3%2C1.3%2C0%2C0%2C1%2C18%2C20.07Z%22%3E%3C%2Fpath%3E%3Ccircle%20class%3D%22clr-i-outline%20clr-i-outline-path-3%22%20cx%3D%2217.95%22%20cy%3D%2223.02%22%20r%3D%221.5%22%3E%3C%2Fcircle%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fsvg%3E")
 ));
 
-$ids-tree-table-theme-property-values: map-merge($ids-tree-table-theme-property-values, (
+$ids-tree-table-theme-property-values: map.merge($ids-tree-table-theme-property-values, (
   tree-table-cell-background: $color-gray-5,
   tree-table__cell-content_header: $color-gray-80,
   tree-table-cell-header-background: $color-base-white,
   tree-table-cell-status-none-background: $color-gray-20
 ));
 
-$ids-typography-theme-property-values: map-merge($ids-typography-theme-property-values, (
+$ids-typography-theme-property-values: map.merge($ids-typography-theme-property-values, (
   link-color: var(--ids-theme-primary, $ids-theme-primary),
   link-hover-color: var(--ids-theme-secondary, $ids-theme-secondary),
   link-disabled-color: $link-disabled-color,

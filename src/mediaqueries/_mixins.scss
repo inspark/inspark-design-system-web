@@ -1,79 +1,80 @@
+@use "sass:map";
 @import "./variables";
 
 @mixin screen_xsmall-and-up {
-  @media (min-width: #{map-get($screen-limits, xsmall)}) {
+  @media (min-width: #{map.get($screen-limits, xsmall)}) {
     @content;
   }
 }
 
 @mixin screen_small-and-up {
-  @media (min-width: #{map-get($screen-limits, small)}) {
+  @media (min-width: #{map.get($screen-limits, small)}) {
     @content;
   }
 }
 
 @mixin screen_medium-and-up {
-  @media (min-width: #{map-get($screen-limits, medium)}) {
+  @media (min-width: #{map.get($screen-limits, medium)}) {
     @content;
   }
 }
 
 @mixin screen_large-and-up {
-  @media (min-width: #{map-get($screen-limits, large)}) {
+  @media (min-width: #{map.get($screen-limits, large)}) {
     @content;
   }
 }
 
 @mixin screen_larger-and-up {
-  @media (min-width: #{map-get($screen-limits, larger)}) {
+  @media (min-width: #{map.get($screen-limits, larger)}) {
     @content;
   }
 }
 
 @mixin screen_xlarge-and-up {
-  @media (min-width: #{map-get($screen-limits, xlarge)}) {
+  @media (min-width: #{map.get($screen-limits, xlarge)}) {
     @content;
   }
 }
 
 @mixin screen_super-and-up {
-  @media (min-width: #{map-get($screen-limits, super)}) {
+  @media (min-width: #{map.get($screen-limits, super)}) {
     @content;
   }
 }
 
 @mixin screen_xsmall-only {
-  @media (max-width: #{map-get($screen-limits, xsmall) - $screen-adjustment}) {
+  @media (max-width: #{map.get($screen-limits, xsmall) - $screen-adjustment}) {
     @content;
   }
 }
 
 @mixin screen_small-only {
-  @media (min-width: #{map-get($screen-limits, xsmall)}) and (max-width: #{map-get($screen-limits, small) - $screen-adjustment}) {
+  @media (min-width: #{map.get($screen-limits, xsmall)}) and (max-width: #{map.get($screen-limits, small) - $screen-adjustment}) {
     @content;
   }
 }
 
 @mixin screen_medium-only {
-  @media (min-width: #{map-get($screen-limits, small)}) and (max-width: #{map-get($screen-limits, medium) - $screen-adjustment}) {
+  @media (min-width: #{map.get($screen-limits, small)}) and (max-width: #{map.get($screen-limits, medium) - $screen-adjustment}) {
     @content;
   }
 }
 
 @mixin screen_large-only {
-  @media (min-width: #{map-get($screen-limits, medium)}) and (max-width: #{map-get($screen-limits, large) - $screen-adjustment}) {
+  @media (min-width: #{map.get($screen-limits, medium)}) and (max-width: #{map.get($screen-limits, large) - $screen-adjustment}) {
     @content;
   }
 }
 
 @mixin screen_xlarge-only {
-  @media (min-width: #{map-get($screen-limits, large)}) and (max-width: #{map-get($screen-limits, xlarge)  - $screen-adjustment}) {
+  @media (min-width: #{map.get($screen-limits, large)}) and (max-width: #{map.get($screen-limits, xlarge)  - $screen-adjustment}) {
     @content;
   }
 }
 
 @mixin screen_super-only {
-  @media (min-width: #{map-get($screen-limits, large)}) {
+  @media (min-width: #{map.get($screen-limits, large)}) {
     @content;
   }
 }

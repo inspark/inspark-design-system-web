@@ -123,8 +123,8 @@ sg-wrapper:
 
 // todo: add _ to mixin name
 @mixin navbar-vertical-align($element-height) {
-  margin-top: (($navbar-height - $element-height) / 2);
-  margin-bottom: (($navbar-height - $element-height) / 2);
+  margin-top: (($navbar-height - $element-height) * 0.5);
+  margin-bottom: (($navbar-height - $element-height) * 0.5);
 }
 
 // Navbar collapse (body)

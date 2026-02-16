@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:map";
 @import "../base/variables";
 @import "./variables";
 @import "../mediaqueries/mixins";
@@ -18,7 +20,7 @@ Advanced table-like component.
     position: relative;
     align-content: flex-start;
 
-    @media (min-width: #{map-get($screen-limits, large)}) {
+    @media (min-width: #{map.get($screen-limits, large)}) {
       overflow: hidden;
       height: calc(100% - 50px);
       //height: calc(100vh - 306px);
@@ -144,7 +146,7 @@ Advanced table-like component.
   }
 
   .c-tree-table_controller_selected {
-    color: lighten($ids-theme-primary, 10%);
+    color: color.adjust($ids-theme-primary, $lightness: 10%);
     color: var(--ids-theme-primary, $ids-theme-primary);
     filter: brightness(110%);
   }
@@ -155,7 +157,7 @@ Advanced table-like component.
   }
 
   .c-tree-table_device_selected {
-    color: lighten($ids-theme-primary, 10%);
+    color: color.adjust($ids-theme-primary, $lightness: 10%);
     color: var(--ids-theme-primary, $ids-theme-primary);
     filter: brightness(110%);
   }

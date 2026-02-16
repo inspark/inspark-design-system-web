@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "sass:math";
 @import "../theme/variables";
 @import "../base/functions";
 
@@ -7,7 +9,8 @@
 
 $link-color: $ids-theme-primary !default;
 $link-decoration: none !default;
-$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-color: color.adjust($link-color, $lightness: -15%)!default;
+$link-hover-color-old: color.adjust($link-color, $lightness: -15%)!default;
 $link-disabled-color: $color-gray-40 !default;
 $link-hover-decoration: underline !default;
 
@@ -41,11 +44,11 @@ $line-height-1: 1;
 
 $paragraph-color: $color-base-white !default;
 
-$inuit-font-size-h1: round($inuit-global-font-size * 2.25) !default; // 32px
-$inuit-font-size-h2: round($inuit-global-font-size * 1.75) !default; //25px
-$inuit-font-size-h3: round($inuit-global-font-size * 1.5) !default; // 21px
-$inuit-font-size-h4: round($inuit-global-font-size * 1.25) !default; // 18px
-$inuit-font-size-h5: round($inuit-global-font-size * 1.125) !default; // 16px
+$inuit-font-size-h1: math.round($inuit-global-font-size * 2.25) !default; // 32px
+$inuit-font-size-h2: math.round($inuit-global-font-size * 1.75) !default; //25px
+$inuit-font-size-h3: math.round($inuit-global-font-size * 1.5) !default; // 21px
+$inuit-font-size-h4: math.round($inuit-global-font-size * 1.25) !default; // 18px
+$inuit-font-size-h5: math.round($inuit-global-font-size * 1.125) !default; // 16px
 $inuit-font-size-h6: $inuit-global-font-size !default; // 14px
 $inuit-font-size-large: $inuit-global-font-size * 1.125 !default; // 16px
 $inuit-font-size-small: 12px !default; // 12px

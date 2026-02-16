@@ -7,6 +7,8 @@
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 
+@use "sass:map";
+
 .u-hidden-visually {
   @include inuit-hidden-visually();
 }
@@ -24,13 +26,13 @@
 }
 
 .u-hidden-large-down {
-  @media (max-width: #{map-get($screen-limits, large)}) {
+  @media (max-width: #{map.get($screen-limits, large)}) {
     display: none;
   }
 }
 
 .u-hidden\@medium-down {
-  @media (max-width: #{map-get($screen-limits, medium)}) {
+  @media (max-width: #{map.get($screen-limits, medium)}) {
     display: none;
   }
 }

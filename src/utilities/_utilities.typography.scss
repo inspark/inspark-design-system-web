@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "../theme/variables";
 @import "../typography/variables";
 @import "../mediaqueries/variables";
@@ -102,7 +103,7 @@
 }
 
 .u-small\@xlarge {
-  @media (min-width: #{map-get($screen-limits, xlarge)}) {
+  @media (min-width: #{map.get($screen-limits, xlarge)}) {
     @include inuit-font-size($inuit-font-size-small);
   }
 }

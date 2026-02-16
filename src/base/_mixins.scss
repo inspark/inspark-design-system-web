@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "./variables";
 @import "./functions";
 @import "../typography/variables";
@@ -767,8 +768,8 @@
 
   html,
   %html {
-    font-size: (12px / 16px) * 1em; /* [1] */
-    line-height: $inuit-global-line-height / $inuit-global-font-size; /* [1] */
+    font-size: math.div(12, 16) * 1em; /* [1] */
+    line-height: math.div($inuit-global-line-height, $inuit-global-font-size); /* [1] */
     //overflow-y: scroll; /* [2] */
     //min-height: 100%; /* [3] */
     overflow-y: auto;
@@ -794,7 +795,7 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     @include screen_large-and-up {
-      font-size: ($inuit-global-font-size / 16px) * 1em;
+      font-size: math.div($inuit-global-font-size, 16px) * 1em;
     }
   }
 

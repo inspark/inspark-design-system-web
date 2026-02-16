@@ -1,3 +1,5 @@
+@use "sass:math";
+@use "sass:color";
 @import "../theme/variables";
 @import "../base/variables";
 
@@ -7,27 +9,26 @@
 $navbar-height: $inuit-global-spacing-unit-tiny * 9 !default;
 $navbar-margin-bottom: 0 !default; //$line-height-computed
 $navbar-border-radius: 0 !default;
-$navbar-padding-horizontal: floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-horizontal: math.floor(math.div($grid-gutter-width, 2)) !default;
 $navbar-line-height: $navbar-height !default;
-$navbar-padding-vertical: (($navbar-height - $navbar-line-height) / 2) !default;
+$navbar-padding-vertical: (math.div(($navbar-height - $navbar-line-height), 2)) !default;
 $navbar-collapse-max-height: 340px !default;
-
 $navbar-default-color: $color-base-white !default;
 $navbar-default-bg: $color-gray-80 !default;
-$navbar-default-border: darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-border: color.adjust($navbar-default-bg, $lightness: -6.5%) !default;
 
 // Navbar links
 $navbar-default-link-color: $color-base-white !default;
 $navbar-default-link-hover-color: $ids-theme-secondary !default;
 $navbar-default-link-hover-bg: transparent !default;
 $navbar-default-link-active-color: $ids-theme-primary !default;
-$navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-active-bg: color.adjust($navbar-default-bg, $lightness: -6.5%) !default;
 $navbar-default-link-disabled-color: #ccc !default;
 $navbar-default-link-disabled-bg: transparent !default;
 
 // Navbar brand label
 $navbar-default-brand-color: $navbar-default-link-color !default;
-$navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-color: color.adjust($navbar-default-brand-color, $lightness: -10%) !default;
 $navbar-default-brand-hover-bg: transparent !default;
 
 // Navbar toggle
@@ -39,16 +40,16 @@ $navbar-default-toggle-color: $color-base-white !default;
 
 //=== Inverted navbar
 // Reset inverted navbar basics
-$navbar-inverse-color: lighten($color-gray-35, 15%) !default;
+$navbar-inverse-color: color.adjust($color-gray-35, $lightness: 15%) !default;
 $navbar-inverse-bg: #222 !default;
-$navbar-inverse-border: darken($navbar-inverse-bg, 10%) !default;
+$navbar-inverse-border: color.adjust($navbar-inverse-bg, $lightness: -10%) !default;
 
 // Inverted navbar links
-$navbar-inverse-link-color: lighten($color-gray-35, 15%) !default;
+$navbar-inverse-link-color: color.adjust($color-gray-35, $lightness: 15%) !default;
 $navbar-inverse-link-hover-color: #fff !default;
 $navbar-inverse-link-hover-bg: transparent !default;
 $navbar-inverse-link-active-color: $navbar-inverse-link-hover-color !default;
-$navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 10%) !default;
+$navbar-inverse-link-active-bg: color.adjust($navbar-inverse-bg, $lightness: -10%) !default;
 $navbar-inverse-link-disabled-color: #444 !default;
 $navbar-inverse-link-disabled-bg: transparent !default;
 

@@ -1,3 +1,4 @@
+@use "sass:color";
 @import "../theme/variables";
 @import "../base/variables";
 @import "../typography/variables";
@@ -87,7 +88,7 @@ $nvd3-pie-path: $color-base-white !default;
 // Sparkline
 $nvd3-sparkline-path-fill: none !default;
 $nvd3-sparklineplus-hovervalue-stroke: $color-gray-80 !default;
-$nvd3-sparklineplus-yvalue-stroke: lighten($ids-theme-status-error, 20%) !default;
+$nvd3-sparklineplus-yvalue-stroke: color.adjust($ids-theme-status-error, $lightness: 20%) !default;
 $nvd3-sparklineplus-maxvalue-stroke: $ids-theme-status-success !default;
 $nvd3-sparklineplus-maxvalue-fill: $ids-theme-status-success !default;
 $nvd3-sparklineplus-minvalue-stroke: $ids-theme-status-error !default;
