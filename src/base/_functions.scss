@@ -12,5 +12,6 @@
 }
 
 @function hex-to-rgb-numbers($color) {
-  @return color.channel($color, "red", $space: rgb) + ',' + color.channel($color, "green", $space: rgb) + ',' + color.channel($color, "blue", $space: rgb)
+  @return '#{color.red($color)},#{color.green($color)},#{color.blue($color)}';
+  //@return color.channel($color, "red", $space: rgb) + ',' + color.channel($color, "green", $space: rgb) + ',' + color.channel($color, "blue", $space: rgb)
 }
