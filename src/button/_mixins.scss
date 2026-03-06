@@ -23,8 +23,8 @@ markup:
 
 @mixin c-btn {
   .c-btn {
-    display: inline-block; /* [1] */
-    vertical-align: middle; /* [2] */
+    display: inline-flex; /* [1] */
+    align-items: center; /* [2] */
     font: inherit; /* [3] */
     text-align: center; /* [4] */
     margin: 0; /* [4] */
