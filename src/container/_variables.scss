@@ -1,4 +1,6 @@
-@import "../grid/variables";
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
+@use "../grid/variables" as *;
 
 //== Container sizes [Deprecated]
 //

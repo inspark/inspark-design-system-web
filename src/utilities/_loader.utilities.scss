@@ -13,24 +13,21 @@ High-specificity, very explicit selectors. Overrides and helper classes (e.g. .u
 
 Styleguide 7.0
  */
-@import "utilities.clearfix";
-
-$inuit-offsets: true;
-
-@import "utilities.widths";
-@import "utilities.heights";
-@import "utilities.position";
-@import "utilities.headings";
-@import "utilities.typography";
-@import "utilities.spacing";
-@import "utilities.lineheight";
-@import "utilities.align";
-@import "utilities.float";
-@import "utilities.print";
-@import "utilities.hide";
-@import "utilities.border";
-@import "utilities.display";
-@import "utilities.overflow";
-@import "utilities.animation";
-@import "utilities.visibility";
+@use "utilities.clearfix" as *;
+@use "utilities.widths" as * with ($inuit-offsets: true);
+@use "utilities.heights" as *;
+@use "utilities.position" as *;
+@use "utilities.headings" as *;
+@use "utilities.typography" as *;
+@use "utilities.spacing" as *;
+@use "utilities.lineheight" as *;
+@use "utilities.align" as *;
+@use "utilities.float" as *;
+@use "utilities.print" as *;
+@use "utilities.hide" as *;
+@use "utilities.border" as *;
+@use "utilities.display" as *;
+@use "utilities.overflow" as *;
+@use "utilities.animation" as *;
+@use "utilities.visibility" as *;
 

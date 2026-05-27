@@ -1,4 +1,4 @@
-@import "./variables";
+@use "./variables" as *;
 
 @mixin ids-box-shadow-core-styles($size: 'default') {
   @if $size == 'tiny' { box-shadow: $box-shadow-tiny; }

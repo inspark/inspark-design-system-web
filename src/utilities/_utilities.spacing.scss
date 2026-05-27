@@ -16,6 +16,8 @@
 /* stylelint-disable string-quotes */
 
 @use "sass:map";
+@use "../base/variables" as *;
+@use "../mediaqueries/variables" as *;
 
 $inuit-spacing-directions: (
   null: null,

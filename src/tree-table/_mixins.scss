@@ -1,8 +1,12 @@
 @use "sass:color";
 @use "sass:map";
-@import "../base/variables";
-@import "./variables";
-@import "../mediaqueries/mixins";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "../mediaqueries/variables" as *;
+@use "./variables" as *;
+@use "../mediaqueries/mixins" as *;
+@use "../grid/mixins" as *;
 
 /*
 

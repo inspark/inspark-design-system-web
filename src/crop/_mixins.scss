@@ -1,6 +1,6 @@
 @use "sass:meta";
 @use "sass:math";
-@import "./variables";
+@use "./variables" as *;
 
 /* ==========================================================================
    #CROP

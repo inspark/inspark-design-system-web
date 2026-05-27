@@ -1,5 +1,9 @@
-@import "../base/variables";
-@import "./variables";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "../mediaqueries/mixins" as *;
+@use "../panel/variables" as *;
+@use "./variables" as *;
 
 // Tables
 

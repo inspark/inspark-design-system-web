@@ -1,4 +1,10 @@
-@import "./variables";
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
+@use "../typography/variables" as *;
+@use "./variables" as *;
+@use "../tools/tools.border-radius" as *;
+@use "../tools/tools.hover" as *;
+@use "../mediaqueries/mixins" as *;
 
 //
 // Base styles

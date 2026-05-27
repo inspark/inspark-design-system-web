@@ -1,6 +1,10 @@
-@import "../base/variables";
-@import "./variables";
-@import "../button-group/mixins";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../button/variables" as *;
+@use "../button/mixins" as *;
+@use "./variables" as *;
+@use "../button-group/mixins" as *;
+@use "../tools/tools.border-radius" as *;
 
 @mixin ids-input-group-core-styles {
   .c-input-group {
@@ -100,5 +104,5 @@ markup:
 }
 
 @mixin c-btn_in-input-group {
-  @include _c-btn_grouped;
+  @include c-btn_grouped;
 }

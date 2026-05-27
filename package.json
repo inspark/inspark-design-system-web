@@ -1,16 +1,15 @@
 {
   "name": "@inspark/components-web",
-  "version": "14.0.14",
+  "version": "19.0.0",
   "description": "Web components for Inspark products",
   "main": "index.css",
   "author": "Inspark",
   "private": false,
   "scripts": {
-    "clean": "rm -rf dist/*",
+    "clean": "rimraf dist",
     "build_css": "webpack --config webpack.config.js",
     "build_copy": "copy-files-from-to --config ./copy.json",
     "build": "npm run clean && npm run build_css && npm run build_copy && node update_full.js",
-    "clean_js": "rm ./dist/*.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "npm publish ./dist/components-web",
     "tokens-to-props": "theo ./design-tokens/colors.yml --transform web --format custom-properties.css --dest ./design-tokens/dist/scss/",
@@ -27,33 +26,19 @@
   },
   "homepage": "https://github.com/inspark/inspark-design-system-web#readme",
   "devDependencies": {
-    "@csstools/postcss-sass": "^4.0.0",
     "@fortawesome/fontawesome-free": "^5.8.2",
-    "autoprefixer": "^9.6.1",
     "copy-files-from-to": "^3.9.1",
     "css-loader": "^7.1.2",
-    "extract-loader": "^5.1.0",
-    "file-loader": "^6.2.0",
     "material-design-icons": "^3.0.1",
     "mini-css-extract-plugin": "^2.9.4",
-    "postcss-clean": "^1.1.0",
-    "postcss-font-magician": "^2.2.2",
-    "postcss-loader": "^3.0.0",
-    "postcss-scss": "^2.0.0",
-    "precss": "^4.0.0",
-    "resolve-url-loader": "^5.0.0",
+    "rimraf": "^6.0.1",
     "sass-loader": "^16.0.6",
-    "style-loader": "^4.0.0",
     "theo": "^8.1.5",
     "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1"
   },
   "peerDependencies": {
-    "@ng-bootstrap/ng-bootstrap": "^13.1.1",
-    "d3": "^7.8.5",
-    "ng-inline-svg": "^8.6.3",
-    "ng2-nvd3": "^2.0.0",
-    "nvd3": "^1.8.5"
+    "@ng-bootstrap/ng-bootstrap": "^17.0.0"
   },
   "dependencies": {
     "sass": "^1.70.0"

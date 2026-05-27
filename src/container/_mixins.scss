@@ -1,5 +1,6 @@
-@import "./variables";
-@import "../mediaqueries/mixins";
+@use "./variables" as *;
+@use "../mediaqueries/mixins" as *;
+@use "../mediaqueries/variables" as *;
 
 @mixin ids-containers-responsive($screen-width) {
   @each $size, $width in $screen-limits {

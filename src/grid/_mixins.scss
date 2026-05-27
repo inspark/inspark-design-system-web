@@ -1,6 +1,6 @@
-@import "./variables";
-@import "../mediaqueries/mixins";
-@import "../mediaqueries/mixins";
+@use "./variables" as *;
+@use "../mediaqueries/mixins" as *;
+@use "../mediaqueries/mixins" as *;
 
 @mixin grid {
   display: flex;

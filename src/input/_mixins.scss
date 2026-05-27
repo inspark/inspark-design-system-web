@@ -1,7 +1,10 @@
-@import "../base/variables";
-@import "../theme/variables";
-@import "../form/variables";
-@import "./variables";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "../mediaqueries/variables" as *;
+@use "../form/variables" as *;
+@use "./variables" as *;
+@use "../tools/tools.border-radius" as *;
 
 // todo: отрефакторить структуру миксинов в core и названия переменных
 
@@ -93,7 +96,7 @@ markup:
 
 */
 
-@mixin _c-input {
+@mixin c-input-base {
   padding: $unit-tiny $unit-small;
   line-height: $line-height-computed;
   transition: all, $global-transition;
@@ -198,7 +201,7 @@ markup:
 
 // todo: сократить количество миксинов
 @mixin c-input {
-  @include _c-input;
+  @include c-input-base;
 }
 
 %c-input {

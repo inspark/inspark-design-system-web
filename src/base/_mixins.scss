@@ -1,10 +1,10 @@
 @use "sass:math";
-@import "./variables";
-@import "./functions";
-@import "../typography/variables";
-@import "../tools/tools.rem";
-@import "../mediaqueries/mixins";
-@import "../table/variables";
+@use "./variables" as *;
+@use "./functions" as *;
+@use "../typography/variables" as *;
+@use "../tools/tools.rem" as *;
+@use "../mediaqueries/mixins" as *;
+@use "../table/variables" as *;
 
 @mixin ids-box-sizing {
   /* ==========================================================================

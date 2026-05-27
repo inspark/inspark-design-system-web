@@ -1,3 +1,5 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
 // Breadcrumbs
 $breadcrumb-padding-vertical: 8.5px !default;
 $breadcrumb-padding-horizontal: 15px !default;

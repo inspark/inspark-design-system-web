@@ -1,3 +1,5 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
 $box-shadow-tiny: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 $box-shadow-small: 0 2px 6px 0 rgba(0,0,0,.2);
 $box-shadow-default: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);

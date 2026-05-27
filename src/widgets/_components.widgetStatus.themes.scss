@@ -1,4 +1,6 @@
 // Widget status
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
 
 .c-widget-status_vertical-line-left {
   border-left: 2px solid $ids-theme-primary;

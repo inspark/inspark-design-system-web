@@ -1,8 +1,8 @@
 // todo: are we realy need sass-mq?
 @use "sass:math";
 @use "sass:meta";
-@import "../sass-mq/mixins";
-@import "../tools/tools.hidden";
+@use "../sass-mq/mixins" as *;
+@use "../tools/tools.hidden" as *;
 
 /* ==========================================================================
    #WIDTHS

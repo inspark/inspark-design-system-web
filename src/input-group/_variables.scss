@@ -1,5 +1,5 @@
-@import "../theme/variables";
-@import "../base/variables";
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
 
 $input-group-addon-border: $color-gray-80 !default;
 $input-group-addon-background: $color-gray-80 !default;

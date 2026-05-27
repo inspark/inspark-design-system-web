@@ -1,7 +1,8 @@
 @use "sass:math";
 @use "sass:color";
-@import "../theme/variables";
-@import "../base/variables";
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
+@use "../grid/variables" as *;
 
 // Navbar
 

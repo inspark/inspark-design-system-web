@@ -1,3 +1,5 @@
+@use "../base/variables" as *;
+
 .c-widget-value {
   position: relative;
   padding: $unit-small $unit;

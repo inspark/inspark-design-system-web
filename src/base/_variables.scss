@@ -1,6 +1,6 @@
 @use "sass:math";
 @use "sass:meta";
-@import "../theme/variables";
+@use "../theme/variables" as *;
 
 ///* ========================================================================
 //   #CONFIG

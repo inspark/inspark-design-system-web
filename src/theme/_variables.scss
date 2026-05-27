@@ -1,7 +1,8 @@
-//@import "../base/variables";
-@import "color-palette";
-//@import "../typography/variables";
-@import "../base/functions";
+// Forward shared foundation so all consumers get palette + functions via theme/variables
+@forward "color-palette";
+@forward "../base/functions";
+@use "color-palette" as *;
+@use "../base/functions" as *;
 
 /**
  * Primary

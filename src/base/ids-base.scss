@@ -1,6 +1,6 @@
-@import "./variables";
-@import "./mixins";
-@import "./functions";
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./functions" as *;
 
 @include ids-base-font-faces;
 //@import "~@fortawesome/fontawesome-free/scss/fontawesome";

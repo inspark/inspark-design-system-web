@@ -1,3 +1,6 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
+@use "../typography/variables" as *;
 @use "sass:color";
 
 $btn-border-radius: $global-radius !default;

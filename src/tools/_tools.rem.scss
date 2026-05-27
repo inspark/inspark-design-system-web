@@ -5,6 +5,7 @@
 // Convert any px value into its rem equivalent.
 @use "sass:math";
 @use "sass:meta";
+@use "../base/variables" as *;
 @function inuit-rem($value) {
 
   @if (meta.type-of($value) == number) {

@@ -1,7 +1,7 @@
-@import "./mixins";
+@use "./mixins" as *;
 @include ids-theme-core-styles;
 
-@import "./contrast";
-@import "./light";
-@import "./green";
-@import "./blue";
+@use "./contrast" as *;
+@use "./light" as *;
+@use "./green" as *;
+@use "./blue" as *;

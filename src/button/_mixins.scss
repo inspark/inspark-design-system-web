@@ -1,5 +1,9 @@
-@import "../base/variables";
-@import "./variables";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "../box-shadow/mixins" as *;
+@use "./variables" as *;
+@use "../tools/tools.border-radius" as *;
 
 /*
 
@@ -661,7 +665,7 @@ markup:
 
 */
 
-@mixin _c-btn_grouped {
+@mixin c-btn_grouped {
   margin-right: 0;
   margin-bottom: 0;
   border-left-width: 0;
@@ -685,7 +689,7 @@ markup:
 
 @mixin ids-btn-grouped {
   ._c-btn_grouped {
-    @include _c-btn_grouped;
+    @include c-btn_grouped;
   }
 }
 

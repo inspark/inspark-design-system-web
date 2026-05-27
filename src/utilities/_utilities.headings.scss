@@ -1,6 +1,8 @@
 /* ==========================================================================
    #HEADINGS
    ========================================================================== */
+@use "../typography/variables" as *;
+@use "../typography/mixins" as *;
 
 /**
  * Redefine all of our basic heading styles against utility classes so as to

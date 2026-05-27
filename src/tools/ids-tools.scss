@@ -1,9 +1,9 @@
-@import "tools.vendor-prefixes";
-@import "tools.border-radius";
-@import "tools.clearfix";
-@import "tools.hidden";
-@import "tools.hover";
-@import "tools.opacity";
-@import "tools.rem";
-@import "tools.reset-filter";
-@import "tools.text-truncate";
+@use "tools.vendor-prefixes" as *;
+@use "tools.border-radius" as *;
+@use "tools.clearfix" as *;
+@use "tools.hidden" as *;
+@use "tools.hover" as *;
+@use "tools.opacity" as *;
+@use "tools.rem" as *;
+@use "tools.reset-filter" as *;
+@use "tools.text-truncate" as *;

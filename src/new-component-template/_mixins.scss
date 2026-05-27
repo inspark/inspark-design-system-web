@@ -1,5 +1,5 @@
-@import "../base/variables";
-@import "./variables";
+@use "../base/variables" as *;
+@use "./variables" as *;
 
 @mixin ids-new-component-template-core-styles {
 

@@ -1,10 +1,12 @@
-@import "../theme/variables";
-@import "../base/variables";
-@import "../mediaqueries/mixins";
-@import "./variables";
-@import "../tools/tools.border-radius";
-@import "../tools/tools.clearfix";
-@import "../table/variables";
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
+@use "../typography/variables" as *;
+@use "../mediaqueries/mixins" as *;
+@use "../mediaqueries/variables" as *;
+@use "./variables" as *;
+@use "../tools/tools.border-radius" as *;
+@use "../tools/tools.clearfix" as *;
+@use "../table/variables" as *;
 
 /* ==========================================================================
    #Panels

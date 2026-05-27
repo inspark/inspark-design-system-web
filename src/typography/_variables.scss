@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "sass:math";
-@import "../theme/variables";
-@import "../base/functions";
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
 
 // Links
 //

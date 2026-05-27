@@ -1,3 +1,5 @@
+@use "../typography/variables" as *;
+
 .u-border-bottom-gray:not(:last-child) {
   border-bottom: 1px solid $text-muted;
 }

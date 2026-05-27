@@ -1,5 +1,6 @@
-@import "./variables";
-@import "../base/variables";
+@use "./variables" as *;
+@use "../base/variables" as *;
+@use "../tools/tools.border-radius" as *;
 
 
 /*

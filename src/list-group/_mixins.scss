@@ -1,6 +1,10 @@
 @use "sass:color";
-@import "../base/variables";
-@import "./variables";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "../tools/tools.hover" as *;
+@use "./variables" as *;
+@use "../tools/tools.border-radius" as *;
 
 
 /* ==========================================================================

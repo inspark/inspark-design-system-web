@@ -1,8 +1,8 @@
-@import "../base/variables";
-@import "../theme/variables";
-@import "../typography/variables";
-@import "../form/variables";
-@import "./variables";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "../form/variables" as *;
+@use "./variables" as *;
 
 // todo: отрефакторить структуру миксинов в core и названия переменных
 

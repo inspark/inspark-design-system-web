@@ -1,6 +1,8 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
+@use "../typography/variables" as *;
 @use "sass:math";
-@import "../form/variables";
-@import "../base/functions";
+@use "../form/variables" as *;
 
 $input-tap-highlight-color: $color-base-black !default;
 $input-tap-highlight-color-rgb: hex-to-rgb-numbers($color-base-black) !default;

@@ -1,3 +1,5 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
 // Nav
 
 $nav-link-padding: $unit-tiny;

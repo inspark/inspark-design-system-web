@@ -8,6 +8,8 @@
  */
 
 @use "sass:map";
+@use "../mediaqueries/variables" as *;
+@use "../tools/tools.hidden" as *;
 
 .u-hidden-visually {
   @include inuit-hidden-visually();

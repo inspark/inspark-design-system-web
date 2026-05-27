@@ -1,9 +1,11 @@
-@import "../base/variables";
-@import "../typography/variables";
-@import "../theme/variables";
-@import "../form/variables";
-@import "./variables";
-@import "../input/mixins";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "../mediaqueries/variables" as *;
+@use "../form/variables" as *;
+@use "./variables" as *;
+@use "../input/mixins" as *;
+@use "../tools/tools.border-radius" as *;
 
 // todo: отрефакторить структуру миксинов в core и названия переменных
 

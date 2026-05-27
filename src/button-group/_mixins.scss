@@ -1,5 +1,5 @@
-@import "../tools/tools.clearfix";
-@import "../button/mixins";
+@use "../tools/tools.clearfix" as *;
+@use "../button/mixins" as *;
 
 /* ==========================================================================
    #BUTTON GROUPS
@@ -56,7 +56,7 @@ markup:
 
 @mixin c-btn_in-btn-group {
   .c-btn_in-btn-group {
-    @include _c-btn_grouped;
+    @include c-btn_grouped;
   }
 }
 

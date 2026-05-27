@@ -1,38 +1,38 @@
 @use "sass:map";
-@import './mixins';
-@import "../base/variables";
-@import "../badge/variables";
-@import "../box-shadow/variables";
-@import "../button/variables";
-@import "../checkbox/variables";
-@import "../container/variables";
-@import "../crop/variables";
-@import "../crumb/variables";
-@import "../form/variables";
-@import "../grid/variables";
-@import "../icon/variables";
-@import "../image/variables";
-@import "../input/variables";
-@import "../input-group/variables";
-@import "../label/variables";
-@import "../list/variables";
-@import "../list-group/variables";
-@import "../mediaqueries/variables";
-@import "../nav/variables";
-@import "../navbar/variables";
-//@import "../nvd3/components.charts-nvd3"; // заимпортить после рефакторинга
-@import "../panel/variables";
-@import "../card/variables";
-@import "../radio/variables";
-@import "../ratio/variables";
-@import "../select/variables";
-@import "../sidebar/variables";
-@import "../table/variables";
-@import "../textarea/variables";
-@import "../theme/variables";
-@import "../tooltip/variables";
-@import "../tree-table/variables";
-@import "../typography/variables";
+@use "sass:meta";
+@use './mixins' as *;
+@use "../base/variables" as *;
+@use "../badge/variables" as *;
+@use "../box-shadow/variables" as *;
+@use "../button/variables" as *;
+@use "../checkbox/variables" as *;
+@use "../container/variables" as *;
+@use "../crop/variables" as *;
+@use "../crumb/variables" as *;
+@use "../form/variables" as *;
+@use "../grid/variables" as *;
+@use "../icon/variables" as *;
+@use "../image/variables" as *;
+@use "../input/variables" as *;
+@use "../input-group/variables" as *;
+@use "../label/variables" as *;
+@use "../list/variables" as *;
+@use "../list-group/variables" as *;
+@use "../mediaqueries/variables" as *;
+@use "../nav/variables" as *;
+@use "../navbar/variables" as *;
+@use "../panel/variables" as *;
+@use "../card/variables" as *;
+@use "../radio/variables" as *;
+@use "../ratio/variables" as *;
+@use "../select/variables" as *;
+@use "../sidebar/variables" as *;
+@use "../table/variables" as *;
+@use "../textarea/variables" as *;
+@use "../theme/variables" as *;
+@use "../tooltip/variables" as *;
+@use "../tree-table/variables" as *;
+@use "../typography/variables" as *;
 
 $ids-theme-property-values: map.merge($ids-theme-property-values, (
   // Primary
@@ -271,10 +271,6 @@ $ids-navbar-theme-property-values: map.merge($ids-navbar-theme-property-values, 
   navbar-default-toggle-color: $color-base-black
 ));
 
-//$ids-nvd3-theme-property-values: map.merge($ids-nvd3-theme-property-values, (
-//
-//));
-
 $ids-panel-theme-property-values: map.merge($ids-panel-theme-property-values, (
   panel-bg: #050E34,
   panel-bg-rgb: hex-to-rgb-numbers(#050E34),
@@ -384,7 +380,6 @@ $ids-theme-property-values: map-collect(
     $ids-list-group-theme-property-values,
     $ids-nav-theme-property-values,
     $ids-navbar-theme-property-values,
-    // $ids-nvd3-theme-property-values,
     $ids-panel-theme-property-values,
     $ids-card-theme-property-values,
     $ids-radio-theme-property-values,
@@ -397,7 +392,6 @@ $ids-theme-property-values: map-collect(
 
 @include ids-theme-core-styles("theme-blue", $ids-theme-property-values);
 
-// todo: отрефакторить nvd3 и вынести в отдельный репозиторий и npm-пакет
 .theme-blue {
   .c-navbar__nav-content > a,
   .c-navbar__nav-content .c-dropdown__toggle{
@@ -441,8 +435,6 @@ $ids-theme-property-values: map-collect(
   //  color: #fff;
   //}
 
-  @import "../utilities/utilities.themes";
-  @import "../nvd3/variables";
-  @import "../nvd3/components.charts-nvd3.themes";
+  @include meta.load-css("../utilities/utilities.themes");
 }
 

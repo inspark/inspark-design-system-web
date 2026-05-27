@@ -1,5 +1,8 @@
-@import "../base/variables";
-@import "./variables";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "../tools/tools.clearfix" as *;
+@use "./variables" as *;
 
 @mixin c-nav {
   margin-bottom: 0;

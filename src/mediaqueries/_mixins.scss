@@ -1,5 +1,5 @@
 @use "sass:map";
-@import "./variables";
+@use "./variables" as *;
 
 @mixin screen_xsmall-and-up {
   @media (min-width: #{map.get($screen-limits, xsmall)}) {

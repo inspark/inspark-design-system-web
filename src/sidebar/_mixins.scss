@@ -1,7 +1,7 @@
 @use "sass:map";
-@import "../base/variables";
-@import "./variables";
-@import "../mediaqueries/variables";
+@use "../base/variables" as *;
+@use "./variables" as *;
+@use "../mediaqueries/variables" as *;
 
 @mixin ids-sidebar-core-styles {
   .c-sidebar {

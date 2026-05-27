@@ -1,7 +1,12 @@
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
-@import "./variables";
+@use "./variables" as *;
+@use "../base/variables" as *;
+@use "../tools/tools.rem" as *;
+@use "../tools/tools.hover" as *;
+@use "../mediaqueries/mixins" as *;
+@use "../mediaqueries/variables" as *;
 
 ///* ========================================================================
 //   #FONT-SIZE

@@ -1,7 +1,8 @@
 @use "sass:map";
-@import "./color-palette";
-@import "./variables";
-@import "./functions";
+@use "./color-palette" as *;
+@use "./variables" as *;
+@forward "./functions";
+@use "./functions" as *;
 
 @mixin ids-theme-core-styles($theme-class: "theme-dark", $theme-map: $ids-theme-property-values) {
   .#{$theme-class} {

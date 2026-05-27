@@ -1,5 +1,5 @@
-@import "components.widget";
-@import "components.widget.themes";
-@import "components.widgetStatus";
-@import "components.widgetStatus.themes";
-@import "components.widgetValue";
+@use "components.widget" as *;
+@use "components.widget.themes" as *;
+@use "components.widgetStatus" as *;
+@use "components.widgetStatus.themes" as *;
+@use "components.widgetValue" as *;

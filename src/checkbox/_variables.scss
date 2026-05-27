@@ -1,3 +1,5 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
 $checkbox-size: 24px !default;
 $checkbox-border-color: #fff !default;
 $checkbox-swith-color-off: $color-gray-20 !default;

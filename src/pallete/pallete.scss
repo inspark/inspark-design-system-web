@@ -1,5 +1,5 @@
-@import "./blue";
-@import "./green";
-@import "./light";
-@import "./contrast";
-@import "./dark";
+@use "./blue" as *;
+@use "./green" as *;
+@use "./light" as *;
+@use "./contrast" as *;
+@use "./dark" as *;

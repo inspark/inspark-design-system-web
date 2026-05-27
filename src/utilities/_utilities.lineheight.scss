@@ -1,3 +1,5 @@
+@use "../typography/variables" as *;
+
 .u-line-height-1 {
   line-height: $line-height-1;
 }

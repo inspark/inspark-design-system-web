@@ -1,5 +1,5 @@
-@import "../typography/variables";
-@import "../mediaqueries/variables";
+@use "../typography/variables" as *;
+@use "../mediaqueries/variables" as *;
 
 // todo: need whole component refactoring
 

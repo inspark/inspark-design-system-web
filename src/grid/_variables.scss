@@ -1,6 +1,8 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
 @use 'sass:map';
 @use 'sass:math';
-@import "../mediaqueries/variables";
+@use "../mediaqueries/variables" as *;
 
 
 //== Grid system (from blaze.css) [Deprecated]

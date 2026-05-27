@@ -1,3 +1,5 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
 $radio-disabled-background: $color-gray-5 !default;
 
 $ids-radio-theme-property-values: (

@@ -1,7 +1,9 @@
 @use "sass:map";
-@import "../theme/variables";
-@import "../typography/variables";
-@import "../mediaqueries/variables";
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "../typography/mixins" as *;
+@use "../mediaqueries/variables" as *;
+@use "../mediaqueries/mixins" as *;
 
 /* ==========================================================================
    #Typography

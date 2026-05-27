@@ -1,5 +1,6 @@
-@import "../base/variables";
-@import "../base/functions";
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
+@use "../typography/variables" as *;
 //== Panels
 //
 //##

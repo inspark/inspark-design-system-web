@@ -1,3 +1,6 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
+
 .c-widget-parameter-icon {
   filter: none;
   opacity: 0.7;

@@ -1,7 +1,9 @@
 @use "sass:math";
-@import "../base/variables";
-@import "../typography/variables";
-@import "./variables";
+@use "../base/variables" as *;
+@use "../theme/variables" as *;
+@use "../typography/variables" as *;
+@use "./variables" as *;
+@use "../tools/tools.border-radius" as *;
 
 @mixin ids-icon-core-styles {
   @include ids-icon;

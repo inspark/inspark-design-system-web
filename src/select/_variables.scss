@@ -1,3 +1,6 @@
+@use "../theme/variables" as *;
+@use "../base/variables" as *;
+@use "../form/variables" as *;
 /// Sets the forms Select dropdown background color
 ///
 /// @group px-forms-design:variables:style

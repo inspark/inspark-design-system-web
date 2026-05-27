@@ -1,11 +1,14 @@
-@import "../base/variables";
-@import "./variables";
-@import "../tools/tools.clearfix";
-@import "../nav/mixins";
-@import "../tools/tools.border-radius";
-@import "../sidebar/variables";
-@import "../mediaqueries/mixins";
-@import "../typography/variables";
+@use "../base/variables" as *;
+@use "../grid/variables" as *;
+@use "../mediaqueries/variables" as *;
+@use "../input/variables" as *;
+@use "./variables" as *;
+@use "../tools/tools.clearfix" as *;
+@use "../nav/mixins" as *;
+@use "../tools/tools.border-radius" as *;
+@use "../sidebar/variables" as *;
+@use "../mediaqueries/mixins" as *;
+@use "../typography/variables" as *;
 
 @mixin ids-navbar-core-styles {
   @include ids-navbar;

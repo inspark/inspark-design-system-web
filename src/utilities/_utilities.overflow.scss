@@ -1,4 +1,4 @@
-@import "../tools/tools.text-truncate";
+@use "../tools/tools.text-truncate" as *;
 
 .u-text-truncate {
   @include text-truncate;
