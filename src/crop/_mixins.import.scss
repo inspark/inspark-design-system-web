@@ -2,9 +2,6 @@
 // Same as _mixins.scss but without @use of user modules —
 // in @import mode those are already in global scope.
 
-@use "sass:meta";
-@use "sass:math";
-
 /* ==========================================================================
    #CROP
    ========================================================================== */
@@ -113,16 +110,16 @@ markup:
 
     @each $antecedent, $consequent in $crop {
 
-      @if (meta.type-of($antecedent) != number) {
+      @if (type-of($antecedent) != number) {
         @error "`#{$antecedent}` needs to be a number."
       }
 
-      @if (meta.type-of($consequent) != number) {
+      @if (type-of($consequent) != number) {
         @error "`#{$consequent}` needs to be a number."
       }
 
       .o-crop_#{$antecedent}\:#{$consequent} {
-        padding-bottom: math.div($consequent, $antecedent) * 100%;
+        padding-bottom: ($consequent / $antecedent) * 100%;
       }
 
     }

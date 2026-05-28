@@ -2,8 +2,6 @@
 // Same as _mixins.scss but without @use of user modules —
 // in @import mode those are already in global scope.
 
-@use "sass:map";
-
 @mixin ids-sidebar-core-styles {
   .c-sidebar {
     max-width: $sidebar-open-width;
@@ -44,7 +42,7 @@
   }
 
   .is-sidebar_collapsed {
-    @media (max-width: #{map.get($screen-limits, large)}) {
+    @media (max-width: #{map-get($screen-limits, large)}) {
       position: absolute;
       left: -30000px;
       visibility: hidden;

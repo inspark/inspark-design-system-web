@@ -2,9 +2,6 @@
 // Same as _mixins.scss but without @use of user modules —
 // in @import mode those are already in global scope.
 
-@use "sass:color";
-@use "sass:map";
-
 /*
 
 Tree-table
@@ -21,7 +18,7 @@ Advanced table-like component.
     position: relative;
     align-content: flex-start;
 
-    @media (min-width: #{map.get($screen-limits, large)}) {
+    @media (min-width: #{map-get($screen-limits, large)}) {
       overflow: hidden;
       height: calc(100% - 50px);
       //height: calc(100vh - 306px);
@@ -147,7 +144,7 @@ Advanced table-like component.
   }
 
   .c-tree-table_controller_selected {
-    color: color.adjust($ids-theme-primary, $lightness: 10%);
+    color: adjust-color($ids-theme-primary, $lightness: 10%);
     color: var(--ids-theme-primary, $ids-theme-primary);
     filter: brightness(110%);
   }
@@ -158,7 +155,7 @@ Advanced table-like component.
   }
 
   .c-tree-table_device_selected {
-    color: color.adjust($ids-theme-primary, $lightness: 10%);
+    color: adjust-color($ids-theme-primary, $lightness: 10%);
     color: var(--ids-theme-primary, $ids-theme-primary);
     filter: brightness(110%);
   }

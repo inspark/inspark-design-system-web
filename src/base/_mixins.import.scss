@@ -2,8 +2,6 @@
 // Same as _mixins.scss but without @use of user modules —
 // in @import mode those are already in global scope.
 
-@use "sass:math";
-
 @mixin ids-box-sizing {
   /* ==========================================================================
    #BOX-SIZING
@@ -766,8 +764,8 @@
 
   html,
   %html {
-    font-size: math.div(12, 16) * 1em; /* [1] */
-    line-height: math.div($inuit-global-line-height, $inuit-global-font-size); /* [1] */
+    font-size: (12 / 16) * 1em; /* [1] */
+    line-height: ($inuit-global-line-height / $inuit-global-font-size); /* [1] */
     //overflow-y: scroll; /* [2] */
     //min-height: 100%; /* [3] */
     overflow-y: auto;
@@ -793,7 +791,7 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     @include screen_large-and-up {
-      font-size: math.div($inuit-global-font-size, 16px) * 1em;
+      font-size: ($inuit-global-font-size / 16px) * 1em;
     }
   }
 

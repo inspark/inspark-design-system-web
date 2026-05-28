@@ -1,20 +1,15 @@
-﻿// Import-only compatibility file.
+// Import-only compatibility file.
 // Same as _mixins.scss but without @use of user modules —
 // in @import mode those are already in global scope.
-
-// @use must come before any @import rules.
-@use "sass:map";
-@forward "./functions";
+// sass:map is also NOT loaded here — use legacy map-get/map-keys global functions instead.
 
 // Ensure theme variables (including $ids-theme-property-values) are in scope.
 @import "variables";
 
 @mixin ids-theme-core-styles($theme-class: "theme-dark", $theme-map: $ids-theme-property-values) {
   .#{$theme-class} {
-    @each $style in map.keys($theme-map) {
-      --ids-theme-#{$style}: #{map.get($theme-map, $style)};
+    @each $style in map-keys($theme-map) {
+      --ids-theme-#{$style}: #{map-get($theme-map, $style)};
     }
   }
 }
-
-

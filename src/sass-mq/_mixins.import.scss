@@ -2,13 +2,6 @@
 // Same as _mixins.scss but without @use of user modules —
 // in @import mode those are already in global scope.
 
-@use "sass:list";
-@use "sass:math";
-@use "sass:map";
-@use "sass:meta";
-@use "sass:string";
-
-
 // See https://github.com/sass-mq/sass-mq/pull/10
 
 /// Base font size on the `<body>` element
@@ -96,13 +89,13 @@ $mq-media-type: all !default;
 /// @requires $mq-base-font-size
 /// @returns {Number}
 @function mq-px2em($px, $base-font-size: $mq-base-font-size) {
-  @if math.is-unitless($px) {
+  @if unitless($px) {
     @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
     @return mq-px2em($px * 1px, $base-font-size);
-  } @else if math.unit($px) == em {
+  } @else if unit($px) == em {
     @return $px;
   }
-  @return math.div($px, $base-font-size) * 1em;
+  @return ($px / $base-font-size) * 1em;
 }
 
 /// Get a breakpoint's width
@@ -117,8 +110,8 @@ $mq-media-type: all !default;
 ///
 /// @returns {Number} Value in pixels
 @function mq-get-breakpoint-width($name, $breakpoints: $mq-breakpoints) {
-  @if map.has-key($breakpoints, $name) {
-    @return map.get($breakpoints, $name);
+  @if map-has-key($breakpoints, $name) {
+    @return map-get($breakpoints, $name);
   } @else {
     @warn "Breakpoint #{$name} wasn't found in $breakpoints.";
   }
@@ -186,7 +179,7 @@ $mq-media-type: all !default;
 
   // From: this breakpoint (inclusive)
   @if $from {
-    @if meta.type-of($from) == number {
+    @if type-of($from) == number {
       $min-width: mq-px2em($from);
     } @else {
       $min-width: mq-px2em(mq-get-breakpoint-width($from, $breakpoints));
@@ -195,7 +188,7 @@ $mq-media-type: all !default;
 
   // Until: that breakpoint (exclusive)
   @if $until {
-    @if meta.type-of($until) == number {
+    @if type-of($until) == number {
       $max-width: mq-px2em($until);
     } @else {
       $max-width: mq-px2em(mq-get-breakpoint-width($until, $breakpoints)) - .01em;
@@ -229,7 +222,7 @@ $mq-media-type: all !default;
     // Remove unnecessary media query prefix 'all and '
     @if ($media-type == 'all' and $media-query != '') {
       $media-type: '';
-      $media-query: string.slice(string.unquote($media-query), 6);
+      $media-query: str-slice(unquote($media-query), 6);
     }
 
     @media #{$media-type + $media-query} {
@@ -250,7 +243,7 @@ $mq-media-type: all !default;
 ///  @include mq(tvscreen) {}
 @mixin mq-add-breakpoint($name, $width) {
   $new-breakpoint: ($name: $width);
-  $mq-breakpoints: map.merge($mq-breakpoints, $new-breakpoint) !global;
+  $mq-breakpoints: map-merge($mq-breakpoints, $new-breakpoint) !global;
 }
 
 /// Show the active breakpoint in the top right corner of the viewport
@@ -292,7 +285,7 @@ $mq-media-type: all !default;
   }
 }
 
-@if list.length($mq-show-breakpoints) > 0 {
+@if length($mq-show-breakpoints) > 0 {
   @include mq-show-breakpoints;
 }
 

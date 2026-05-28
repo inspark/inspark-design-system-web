@@ -2,14 +2,11 @@
 // Same as _tools.rem.scss but without @use of user modules —
 // in @import mode those variables are already in global scope.
 
-@use "sass:math";
-@use "sass:meta";
-
 @function inuit-rem($value) {
 
-  @if (meta.type-of($value) == number) {
+  @if (type-of($value) == number) {
 
-    @if (math.unit($value) != "px") {
+    @if (unit($value) != "px") {
       @error "`#{$value}` needs to be a pixel value.";
     }
 
@@ -17,16 +14,16 @@
     @error "`#{$value}` needs to be a number.";
   }
 
-  @return math.div($value, $inuit-global-font-size) * 1rem;
+  @return ($value / $inuit-global-font-size) * 1rem;
 
 }
 
 
 @mixin inuit-rem($property, $value) {
 
-  @if (meta.type-of($value) == number) {
+  @if (type-of($value) == number) {
 
-    @if (math.unit($value) != "px") {
+    @if (unit($value) != "px") {
       @error "`#{$value}` needs to be a pixel value.";
     }
 

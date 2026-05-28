@@ -2,8 +2,6 @@
 // Same as _mixins.scss but without @use of user modules —
 // in @import mode those are already in global scope.
 
-@use "sass:math";
-
 @mixin ids-icon-core-styles {
   @include ids-icon;
 }
@@ -13,7 +11,7 @@
     &_flag {
       position: relative;
       display: inline-block;
-      width: math.div(4, 3) * 1em;
+      width: (4 / 3) * 1em;
       padding: 0;
       border-radius: 0;
       line-height: $line-height-base;

@@ -2,9 +2,6 @@
 // Same as _mixins.scss but without @use of user modules —
 // in @import mode those are already in global scope.
 
-@use "sass:color";
-
-
 /* ==========================================================================
    #LIST-GROUPS
    ========================================================================== */
@@ -253,7 +250,7 @@ markup:
 
     @include hover-focus {
       color: $color;
-      background-color: color.adjust($background, $lightness: -5%);
+      background-color: adjust-color($background, $lightness: -5%);
     }
 
     &.active {
