@@ -36,7 +36,16 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                // Suppress deprecation for color.red/green/blue —
+                // needed for Angular DevKit compatibility (bundles Sass 1.54.x which lacks color.channel)
+                silenceDeprecations: ['color-functions'],
+              },
+            },
+          },
         ],
       },
       {

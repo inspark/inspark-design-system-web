@@ -11,7 +11,8 @@
   @return map.get($inuit-config, $key);
 }
 
+// color.red/green/blue are deprecated in Sass 1.79+ but required for compatibility
+// with consumers that use Angular DevKit's bundled Sass (1.54.x) which lacks color.channel().
 @function hex-to-rgb-numbers($color) {
-  @return '#{color.channel($color, "red", $space: rgb)},#{color.channel($color, "green", $space: rgb)},#{color.channel($color, "blue", $space: rgb)}';
-  //@return color.channel($color, "red", $space: rgb) + ',' + color.channel($color, "green", $space: rgb) + ',' + color.channel($color, "blue", $space: rgb)
+  @return '#{color.red($color)},#{color.green($color)},#{color.blue($color)}';
 }
