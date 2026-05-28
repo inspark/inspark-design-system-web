@@ -1,0 +1,41 @@
+﻿// Import-only compatibility file.
+// Same as _variables.scss but without @use of user modules —
+// in @import mode those variables are already in global scope.
+
+@use "sass:math";
+
+$input-tap-highlight-color: $color-base-black !default;
+$input-tap-highlight-color-rgb: hex-to-rgb-numbers($color-base-black) !default;
+
+// Default `.form-control` height
+$input-height-base: ($line-height-computed * $font-size-base + ($unit * 2) + 2) !default;
+
+// Large `.form-control` height
+$input-height-large: (math.ceil($font-size-lg * $line-height-computed) + ($unit-large * 2) + 2) !default;
+
+// Small `.form-control` height
+$input-height-small: (math.floor($font-size-sm * $line-height-computed) + ($unit-small * 2) + 2) !default;
+
+// Tiny `.form-control` height
+$input-height-tiny: (math.floor($font-size-xs * $line-height-computed) + ($unit-tiny * 2) + 2) !default;
+
+$ids-input-theme-property-values: (
+  input-tap-highlight-color: $input-tap-highlight-color,
+  input-tap-highlight-color-rgb: hex-to-rgb-numbers($input-tap-highlight-color),
+  inuit-forms-border_inner: $form-border-inner,
+  inuit-forms-border_outer: $form-border_outer,
+  inuit-forms-background: $form-background,
+  inuit-forms-color: $form-color,
+  inuit-forms-color-rgb: hex-to-rgb-numbers($form-color),
+  inuit-forms-border_outer_focused: $form-border_outer_focused,
+  inuit-forms-border_inner_focused: $form-border_inner_focused,
+  inuit-forms-border_readonly: $form-border_readonly,
+  inuit-forms-color_readonly: $form-color_readonly,
+  inuit-forms-border_disabled: $form-border_disabled,
+  inuit-forms-background_disabled: $form-background_disabled,
+  inuit-forms-color_disabled: $form-color_disabled,
+  inuit-forms-color_placeholder: $form-color_placeholder,
+  inuit-forms-validation-warning: $form-validation-warning,
+  inuit-forms-validation-error: $form-validation-error,
+  inuit-forms-validation-success: $form-validation-success
+);

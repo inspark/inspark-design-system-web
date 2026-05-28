@@ -1,0 +1,13 @@
+// Import-only compatibility file.
+// Uses @import instead of @use so Sass loads .import.scss variants of tool files,
+// avoiding duplicate variable errors in @import compat mode.
+
+@import "tools.vendor-prefixes";
+@import "tools.border-radius";
+@import "tools.clearfix";
+@import "tools.hidden";
+@import "tools.hover";
+@import "tools.opacity";
+@import "tools.rem";
+@import "tools.reset-filter";
+@import "tools.text-truncate";

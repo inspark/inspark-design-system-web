@@ -1,0 +1,12 @@
+﻿// Import-only compatibility file.
+// Same as _variables.scss but without @use of user modules —
+// in @import mode those variables are already in global scope.
+
+
+$sidebar-open-width: 260px !default;
+$sidebar-collapsed-width: 47px !default;
+$sidebar-bg: $color-gray-90 !default;
+
+$ids-sidebar-theme-property-values: (
+  sidebar-bg: $sidebar-bg
+);

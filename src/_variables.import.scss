@@ -1,0 +1,57 @@
+// Import-only compatibility file for legacy @import consumers (e.g. Angular apps using @import "variables")
+// When a consumer does @import "variables", Sass loads this file instead of _variables.scss.
+// Using @import here (not @use) so all variables are exposed to the importing scope globally.
+//
+// NOTE: Do NOT explicitly @import color-palette or base/functions here.
+// In Sass 1.54.x @import compatibility mode, when a file that contains @use is itself @import-ed,
+// those @use-d modules are re-exported to global scope. So @import "theme/variables" already
+// makes $color-gray-*, $color-blue-*, hex-to-rgb-numbers(), etc. globally available.
+// Explicit @import of those same files would cause "duplicate variable" conflicts.
+
+// 1. Theme variables — transitively pulls in color-palette ($color-gray-*, $color-blue-*, etc.)
+//    and base/functions (hex-to-rgb-numbers, inuit-config) via @use re-export in @import mode
+@import "theme/variables";
+
+// 2. Base variables — exposes $body-bg, $unit-tiny, $enable-rounded, etc.
+@import "base/variables";
+
+// 5. inuit-rem function (used by typography/variables for $headings-margin-bottom)
+@import "tools/tools.rem";
+
+// 6. Typography — exposes $text-color, $font-size-base, $line-height-base, $font-size-xs, etc.
+@import "typography/variables";
+
+// 7. Component variable files — ordered by dependency:
+//    mediaqueries first (no component deps)
+//    grid after mediaqueries (grid depends on mediaqueries)
+//    form before input/select (input and select depend on form)
+//    container/navbar after grid (they depend on grid)
+@import "mediaqueries/variables";
+@import "grid/variables";
+@import "form/variables";
+@import "badge/variables";
+@import "box-shadow/variables";
+@import "button/variables";
+@import "checkbox/variables";
+@import "container/variables";
+@import "crop/variables";
+@import "crumb/variables";
+@import "icon/variables";
+@import "image/variables";
+@import "input/variables";
+@import "input-group/variables";
+@import "label/variables";
+@import "list/variables";
+@import "list-group/variables";
+@import "nav/variables";
+@import "navbar/variables";
+@import "panel/variables";
+@import "radio/variables";
+@import "ratio/variables";
+@import "select/variables";
+@import "sidebar/variables";
+@import "table/variables";
+@import "textarea/variables";
+@import "tooltip/variables";
+@import "tree-table/variables";
+@import "sass-mq/variables";

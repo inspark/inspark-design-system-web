@@ -1,0 +1,29 @@
+// Import-only compatibility file.
+// Same as _tools.border-radius.scss but without @use of user modules —
+// in @import mode those variables are already in global scope.
+
+@mixin border-radius($radius: $global-radius-rounded) {
+    @if $enable-rounded {
+        border-radius: $radius;
+    }
+}
+
+@mixin border-top-radius($radius) {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+}

@@ -1,0 +1,10 @@
+﻿// Import-only compatibility file.
+// Same as _variables.scss but without @use of user modules —
+// in @import mode those variables are already in global scope.
+
+
+$icon-point-outofcontrol-box-shadow: $color-blue-dark-300 !default;
+
+$ids-icon-theme-property-values: (
+  icon-point-outofcontrol-box-shadow: $icon-point-outofcontrol-box-shadow
+);

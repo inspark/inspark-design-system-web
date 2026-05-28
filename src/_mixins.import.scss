@@ -1,0 +1,46 @@
+// Import-only compatibility file for legacy @import consumers (e.g. Angular apps using @import "mixins")
+// When a consumer does @import "mixins", Sass loads this file instead of _mixins.scss.
+// Using @import here so all mixins are exposed to the importing scope globally.
+
+// Load all variables first so mixin bodies can reference them at call time.
+@import "variables";
+
+@import "base/mixins";
+@import "tools/ids-tools";
+@import "typography/mixins";
+@import "input/mixins";
+@import "badge/mixins";
+@import "box-shadow/mixins";
+@import "button/mixins";
+@import "button-group/mixins";
+@import "checkbox/mixins";
+@import "container/mixins";
+@import "crop/mixins";
+@import "crumb/mixins";
+@import "flex/mixins";
+@import "form/mixins";
+@import "form-group/mixins";
+@import "grid/mixins";
+@import "icon/mixins";
+@import "image/mixins";
+@import "input-group/mixins";
+@import "label/mixins";
+@import "list/mixins";
+@import "list-group/mixins";
+@import "mediaqueries/mixins";
+@import "nav/mixins";
+@import "navbar/mixins";
+@import "overlay/mixins";
+@import "panel/mixins";
+@import "particles/mixins";
+@import "radio/mixins";
+@import "ratio/mixins";
+@import "select/mixins";
+@import "sidebar/mixins";
+@import "static/mixins";
+@import "table/mixins";
+@import "textarea/mixins";
+@import "theme/mixins";
+@import "tooltip/mixins";
+@import "tree-table/mixins";
+@import "sass-mq/mixins";
