@@ -799,6 +799,37 @@
     }
   }
 
+  * {
+    scrollbar-width: thin;
+    scrollbar-color:
+      var(--ids-theme-webkit-scrollbar-thumb-bg, #{$webkit-scrollbar-thumb-bg})
+      var(--ids-theme-webkit-scrollbar-track-bg, #{$webkit-scrollbar-track-bg});
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--ids-theme-webkit-scrollbar-track-bg, #{$webkit-scrollbar-track-bg});
+    border-radius: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: var(--ids-theme-webkit-scrollbar-thumb-bg, #{$webkit-scrollbar-thumb-bg});
+    border: 2px solid var(--ids-theme-webkit-scrollbar-track-bg, #{$webkit-scrollbar-track-bg});
+    border-radius: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--ids-theme-webkit-scrollbar-thumb-hover-bg, #{$webkit-scrollbar-thumb-hover-bg});
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: var(--ids-theme-webkit-scrollbar-corner-bg, #{$webkit-scrollbar-corner-bg});
+  }
+
   /**
    * the html and :host declarations cannot be adjacent to one other
    * or cssmin will combine them into a single rule, breaking in
