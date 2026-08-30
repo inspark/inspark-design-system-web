@@ -83,6 +83,7 @@ $ids-base-theme-property-values: map.merge($ids-base-theme-property-values, (
   body-bg: #00050F,
   webkit-scrollbar-track-bg: transparent,
   webkit-scrollbar-thumb-bg: #1C1E27,
+  webkit-scrollbar-thumb-hover-bg: $color-gray-40,
   webkit-scrollbar-corner-bg: $color-gray-5
 ));
 

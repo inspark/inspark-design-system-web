@@ -151,9 +151,10 @@ $border-width: 1px !default;
 
 // Scroll customization
 
-$webkit-scrollbar-track-bg: $color-base-black !default;
-$webkit-scrollbar-thumb-bg: $color-gray-20 !default;
-$webkit-scrollbar-corner-bg: $color-gray-20 !default;
+$webkit-scrollbar-track-bg: $color-gray-90 !default;
+$webkit-scrollbar-thumb-bg: $color-gray-35 !default;
+$webkit-scrollbar-thumb-hover-bg: $color-gray-20 !default;
+$webkit-scrollbar-corner-bg: $color-gray-90 !default;
 
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -217,5 +218,6 @@ $ids-base-theme-property-values: (
   global-radius: $global-radius,
   webkit-scrollbar-track-bg: $webkit-scrollbar-track-bg,
   webkit-scrollbar-thumb-bg: $webkit-scrollbar-thumb-bg,
+  webkit-scrollbar-thumb-hover-bg: $webkit-scrollbar-thumb-hover-bg,
   webkit-scrollbar-corner-bg: $webkit-scrollbar-corner-bg
 );

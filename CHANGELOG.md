@@ -1,6 +1,16 @@
 # Change log
 All notable changes to this project will be documented in this file.
 
+# [19.0.18] - 30.08.2026
+
+# Added
+- Добавлена глобальная стилизация полос прокрутки с поддержкой Firefox (`scrollbar-width`, `scrollbar-color`) и Chromium/WebKit (`::-webkit-scrollbar-*`)
+- Добавлена тематическая переменная `--ids-theme-webkit-scrollbar-thumb-hover-bg` для состояния ползунка при наведении
+
+# Changed
+- Цвета полос прокрутки теперь автоматически соответствуют активной теме (`dark`, `light`, `green`, `contrast`, `blue`)
+- Для темной темы цвета дорожки, ползунка, состояния наведения и угла полосы прокрутки приведены к палитре дизайн-системы
+
 # [19.0.0] - 27.05.2026
 
 # Added
